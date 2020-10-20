@@ -218,5 +218,38 @@ body {
         list-style-type: none;
       }
 
-      
+      /* Table Eventos */
+      #cronograma main .eventos table{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #cronograma main .eventos table thead, #cronograma main .eventos table tbody{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .TrTitulo{
+          font-size: 20px;
+          color: var(--CorTitulo);
+      }
+      .TrDados{
+          font-size: 15px;
+          color: var(--CorDados);
+      }
+      #cronograma main .eventos table tr{
+          width: 100%;
+          padding: 10px 0;
+          border-bottom: 0.5px solid ;
+      }
+      #cronograma main .eventos table tr td{
+          margin: 0;
+          padding: 0 10px;
+      }
     
+      /* CSS - Variáveis */
+
+      :root{
+          --CorTitulo: rgba(229, 71, 75, 0.75);
+          --CorDados: rgba(229, 71, 75, 0.75);
+      }
