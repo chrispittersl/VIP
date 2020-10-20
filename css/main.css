@@ -1,0 +1,222 @@
+@import url(font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico");
+
+@font-face 
+    {
+       font-family: "Bebas";
+        src: url("fonts/Bebas.ttf");
+    }
+
+body {
+    position: relative;
+    padding-top: 5em;
+    
+}
+
+#header {
+    background: #1c1c1c;
+    color: #d5d5d5;
+    cursor: default;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 100%;
+    z-index: 10001;
+}
+
+    #header .cabecalho {
+        max-width: 65em;
+        width: calc(100% - 6em);
+        margin: 0 auto;
+        position: relative;
+    }
+
+        @media screen and (max-width: 480px) {
+
+            #header .cabecalho {
+                max-width: 90%;
+                width: 90%;
+            }
+
+        }
+
+        #header .logo:hover {
+            color: rgba(229, 71, 75, 0.75);
+        }
+
+    #header a {
+        -moz-transition: color 0.2s ease-in-out;
+        -webkit-transition: color 0.2s ease-in-out;
+        -ms-transition: color 0.2s ease-in-out;
+        transition: color 0.2s ease-in-out;
+        display: inline-block;
+        padding: 0 2em;
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: .85em;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+        #header a:hover {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        #header a:last-child {
+            padding-right: 0em;
+        }
+
+        @media screen and (max-width: 736px) {
+
+            #header a {
+                padding: 0 0.5em;
+            }
+
+        }
+
+@media screen and (max-width: 480px) {
+
+    #header {
+        min-width: 320px;
+    }
+
+}
+
+#navigation{
+    display: inline-block;
+    padding-right: 50px;
+} 
+
+
+#header .logo {
+    font-family: 'Pacifico', cursive;
+    display: inline-block;
+    height: inherit;
+    left: 0;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    color: #e5474b;
+    font-size: 1.75em;
+    text-transform: none;
+    font-weight: normal;
+    padding: 0;
+    padding-left: 30px;
+}
+
+    #header .logo:hover {
+        color: rgba(229, 71, 75, 0.75);
+    }
+
+    section.special, article.special {
+        text-align: center;
+        color: #e5474b;
+        font-size: 35px;
+	}
+
+	section .inner {
+		max-width: 65em;
+		width: calc(100% - 6em);
+        margin: 0 auto;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+	}
+
+		@media screen and (max-width: 480px) {
+
+			section .inner {
+				max-width: 90%;
+				width: 90%;
+			}
+
+		}
+
+	header p {
+		position: relative;
+		margin: 0 0 1.5em 0;
+	}
+
+	header h2 + p {
+		font-size: 1.25em;
+        margin-top: -1em;
+        
+	}
+
+	header h3 + p {
+		font-size: 1.1em;
+		margin-top: -0.8em;
+	}
+
+	header h4 + p,
+	header h5 + p,
+	header h6 + p {
+		font-size: 0.9em;
+		margin-top: -0.6em;
+	}
+
+	header p {
+		color: #717171;
+    }
+    h2{
+        font-size: 40px;
+    }
+
+    /* rodapé*/
+    .footer 
+    {
+        display: inline-block;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height:100px;
+        padding-left:100px;
+        background-color: #1c1c1c;
+        color: white;
+        text-align: left;
+        
+      }
+
+      .IconFone
+      {
+        color: white; 
+      }
+
+      .IconFone:hover
+      {
+        color: red ;
+      }
+      
+      .IconWpp
+      {
+          color: white;
+      }
+
+      .IconWpp:hover
+      {
+        color: red ;
+      }
+
+      .IconMapa
+      {
+        color: white;
+      }
+      
+          
+      
+      /* listas */
+      li 
+      {
+        font-family: "Bebas";
+        font-size: 20px;
+        color: red;
+        list-style-type: none;
+      }
+
+      
+    
