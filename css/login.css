@@ -24,7 +24,7 @@
 .form {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
+  background:#1c1c1c;
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
@@ -62,7 +62,7 @@
 .form .message {
   font-family: 'Lato';
   margin: 15px 0 0;
-  color: #1c1c1c;
+  color: #FFFFFF;
   font-size: 14px;
 }
 .form .message a {
