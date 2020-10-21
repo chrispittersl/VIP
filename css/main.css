@@ -7,6 +7,13 @@
         src: url("fonts/Bebas.ttf");
     }
 
+ @font-face 
+    {
+       font-family: "Simplicity";
+        src: url("fonts/Simplicity.ttf");
+    }
+
+
 body {
     position: relative;
     padding-top: 5em;
@@ -88,7 +95,7 @@ body {
 
 #navigation{
     display: inline-block;
-    padding-right: 50px;
+    padding-right: 10px;
 } 
 
 
@@ -104,10 +111,11 @@ body {
     top: 0;
     color: #e5474b;
     font-size: 1.75em;
+    text-align: right;
     text-transform: none;
     font-weight: normal;
-    padding: 0;
-    padding-left: 30px;
+    padding-bottom: 10px;
+    padding-left: 500px;
 }
 
     #header .logo:hover {
@@ -166,94 +174,16 @@ body {
         font-size: 40px;
     }
 
-    /* rodapé*/
-    .footer 
-    {
-        display: inline-block;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height:100px;
-        padding-left:100px;
-        background-color: #1c1c1c;
-        color: white;
-        text-align: left;
-        
-      }
-
-      .IconFone
-      {
-        color: white; 
-      }
-
-      .IconFone:hover
-      {
-        color: red ;
-      }
-      
-      .IconWpp
-      {
-          color: white;
-      }
-
-      .IconWpp:hover
-      {
-        color: red ;
-      }
-
-      .IconMapa
-      {
-        color: white;
-      }
+    
       
           
-      
-      /* listas */
-      li 
-      {
-        font-family: "Bebas";
-        font-size: 20px;
-        color: red;
-        list-style-type: none;
-      }
+  
+     
 
 <<<<<<< HEAD
       
-    /*slides*/
-  
+   
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 3000px;
-  position: relative;
-  margin: 10%;
-
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-=======
       /* Table Eventos */
       #cronograma main .eventos table{
         width: 100%;
@@ -289,4 +219,210 @@ body {
           --CorTitulo: rgba(229, 71, 75, 0.75);
           --CorDados: rgba(229, 71, 75, 0.75);
       }
->>>>>>> 62498eca09801d02a28907d77663c7fc4f22708d
+
+      /*Menu Side*/
+      .sidepanel {
+        height: 100%; /* Specify a height */
+        width: 0; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0;
+        left: 0;
+        background-color:  #1c1c1c; 
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 10px; /* Place content 60px from the top */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+      }
+      
+      
+      .sidepanel a 
+      {
+        padding-left: 10px ; 
+        padding-top: 60px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        transition: 0.3s;
+      }
+      
+      /* When you mouse over the navigation links, change their color */
+      .sidepanel a:hover {
+        color: #f1f1f1;
+      }
+      
+      /* Position and style the close button (top right corner) */
+      .sidepanel .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 20px;
+      }
+      
+      /* Style the button that is used to open the sidepanel */
+      .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #1c1c1c;
+        color: white;
+        padding: 20px 20px;
+        border: none;
+      }
+      
+      .openbtn:hover {
+        background-color: #444;
+      }
+
+      li
+      {
+        text-align: left;
+        list-style-type: none;
+      }
+
+    
+
+     /*BANNER*/
+     #banner {
+		color: #f2a3a5;
+		padding: 13em 0 11em 0;
+		background-color: #0c0c0c;
+		background-image: url("images/1.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 15% left;
+		text-align: left;
+		position: relative;
+		z-index: 9999;
+	}
+
+		#banner input, #banner select, #banner textarea {
+			color: #ffffff;
+		}
+
+		#banner a {
+			color: #ffffff;
+		}
+
+		#banner strong, #banner b {
+			color: #ffffff;
+		}
+
+		#banner h1, #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
+			color: #fff;
+		}
+
+		#banner blockquote {
+			border-left-color: #fff;
+		}
+
+		#banner code {
+			background: none;
+			border-color: #fff;
+		}
+
+		#banner hr {
+			border-bottom-color: #fff;
+		}
+
+        
+		#banner:after {
+			-moz-transition: opacity 4s ease;
+			-webkit-transition: opacity 4s ease;
+			-ms-transition: opacity 4s ease;
+			transition: opacity 4s ease;
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			display: block;
+			top: 0;
+			left: 0;
+			background-color: #0c0c0c;
+			opacity: 0.25;
+		}
+
+		#banner .inner {
+			max-width: 65em;
+			width: calc(100% - 6em);
+			margin: 0 auto;
+			position: relative;
+			z-index: 10000;
+			line-height: 1.5;
+		}
+
+			@media screen and (max-width: 480px) {
+
+				#banner .inner {
+					max-width: 90%;
+					width: 90%;
+				}
+
+			}
+
+		#banner h1 {
+			font-size: 2em;
+			margin: 0 0 1em 0;
+			padding: 0;
+			letter-spacing: 3px;
+			font-weight: 700;
+		}
+
+			#banner h1 span {
+				font-weight: 400;
+			}
+
+		body.is-loading #banner:after {
+			opacity: 1;
+		}
+
+		@media screen and (max-width: 1680px) {
+
+			#banner {
+				padding: 10em 0 8em 0;
+			}
+
+		}
+
+		@media screen and (max-width: 1280px) {
+
+			#banner {
+				padding: 8em 0 6em 0;
+			}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			#banner {
+				padding: 12em 0 10em 0;
+			}
+
+				#banner br {
+					display: none;
+				}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#banner {
+				padding: 4em 0 2em 0;
+			}
+
+				#banner h1 {
+					font-size: 1.75em;
+				}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			#banner {
+				padding: 5em 0 3em 0;
+			}
+
+				#banner ul {
+					margin-top: 1em;
+				}
+
+		}
