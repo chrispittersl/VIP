@@ -1,50 +1,39 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
     <head>
         <title>Home</title>
-        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/pag.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <!--<link rel="stylesheet" href="">-->
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel = "shortcut icon" type = "imagem/x-icon" href = "img/logo.ico"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
         
     </head>
 
     <body>
-
-        <header id="header">
-            <div class="inner">
-                <a href="home.html" class="logo">Virtual Increased Plan</a>
-                <nav class="navbar navbar-expand-lg fixed-top">
-                    <div id="mySidepanel" class="sidepanel">
-                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                      
-                        <ul>
-                            <li>
-                                <a href="#">HOME</a>
-                            </li>
-                            <li>
-                                <a href="#">MAPA</a>
-                            </li>
-                            <li>
-                                <a href="#">ADMINISTRADOR</a>
-                            </li>
-                        </ul>
-                    
-                      </div>
-                      
-                      <button class="openbtn" onclick="openNav()">&#9776;</button>
-                </nav>
+      <header class="cabecalho"></header>
+        <nav class="menu">
+          <div id="mySidebar" class="sidebar">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <ul>
+                <li><a href="#">Lorem Ipsum</a></li>
+                <li><a href="#">Lorem Ipsum</a></li>
+                <li><a href="#">Lorem Ipsum</a></li>
+              </ul>
             </div>
-        </header>
+            
+          <div id="main">
+              <button onclick="openNav()"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button>
+              <h2 class="logo"><a href="index.html" title="logo">Logo</a></h2>
+          </div>
 
-        <section id="banner">
-            <div class="inner">
-                <h2>Acesso ao Mapa </h2>
-                <ul class="actions">
-                    <li><a href="#" class="button alt">Clique aqui</a></li>
-                </ul>
-            </div>
-        </section>
-    <script src = "js/slides.js"></script>
+        </nav>
+
+      </header>
+        <script src="js/script.js"></script>
     </body>
 </html>
