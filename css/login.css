@@ -96,35 +96,35 @@ input[type="submit"]:hover{
   transition: .5s;
 }
 
-/*PC 1400RESOLUCAO*/
-@media screen and (min-width: 1400px)
-{
+
+/*PC 1280*/
+@media screen and (min-width: 1280px){
   .container{
-  width: 550px;
-  height:450px;
-  margin-top: 25vh;
-  }
-
-  label{
-    font-size: 2em;
-  }
-
-  h1{
-    font-size: 3em;
-  }
-
-  input{
-    font-size: 2em;
-  }
-
-  input[type="submit"]{
-    font-size: 2em;
-    height:  50px;
-  }
-
-  #visitante{
-    font-size: 1.5em;
+    width: 450px;
+    height:450px;
+    margin-top: 15vh;
+    }
+  
+    label{
+      font-size: 2em;
+    }
+  
+    h1{
+      font-size: 3em;
+    }
+  
+    input{
+      font-size: 2em;
+    }
+  
+    input[type="submit"]{
+      font-size: 2em;
+      height:  50px;
+    }
+  
+    #visitante{
+      font-size: 1.5em;
+      
+    }
     
-  }
 }
-
