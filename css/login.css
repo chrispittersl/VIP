@@ -1,211 +1,94 @@
-@import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico");
+/*GERAL - reset*/
 
-#camponome{
-    font-family: "Lato", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #e5474b;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;;
-
-}
-.login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
-}
-.form {
-  position: relative;
-  z-index: 1;
-  background:#1c1c1c;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-.form input {
-  font-family: "Lato", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-.form button {
-  font-family: "Lato", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #e5474b;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-#camponome:hover,#camponome:active,#camponome:ocus {
-  background: #e5474b;
-}
-.form .message {
-  font-family: 'Lato';
-  margin: 15px 0 0;
-  color: #FFFFFF;
-  font-size: 14px;
-}
-.form .message a {
-  color: #e5474b;
-  text-decoration: none;
-}
-.form .register-form {
-  display: none;
-}
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
-}
-.container:before, .container:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.container .info {
-  margin: 50px auto;
-  text-align: center;
-}
-.container .info h1 {
-  margin: 0 0 15px;
+*{
+  margin: 0;
   padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
+  box-sizing: border-box;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color:#1c1c1c;
+  border:none;
+  font-size:100%;
 }
-.container .info span {
-  color: #4d4d4d;
-  font-size: 12px;
-}
-.container .info span a {
-  color: #1c1c1c;
+
+a{
   text-decoration: none;
-}
-.container .info span .fa {
-  color: #f2a3a5;
-}
-body {
-  background: #1c1c1c; /* fallback for old browsers */
-  background: -webkit-linear-gradient(right, #e5474b, #e5474b);
-  background: -moz-linear-gradient(right, #e5474b, #e5474b);
-  background: -o-linear-gradient(right, #e5474b, #e5474b);
-  background: linear-gradient(to left, #e5474b, #e5474b);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
-}
-body {
-  position: relative;
-  padding-top: 5em;
-}
-    
-/* Header */
-
-#header {
-  background: #1c1c1c;
-  color: #d5d5d5;
-  cursor: default;
-  height: 5em;
-  left: 0;
-  line-height: 5em;
-  position: fixed;
-  text-align: right;
-  top: 0;
-  width: 100%;
-  z-index: 10001;
+  font-size: .8rem; 
 }
 
-  #header .inner {
-    max-width: 100%;
-    width: calc(100% - 20%);
-    margin: 0 auto;
-    position: relative;
-  }
-
-    @media screen and (max-width: 480px) {
-
-      #header .inner {
-        max-width: 90%;
-        width: 90%;
-      }
-
-    }
-
-  #header .logo {
-    font-family: "Pacifico", cursive;
-    display: inline-block;
-    height: Lato;
-    left: 0;
-    line-height: Lato;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 0;
-    color: #e5474b;
-    font-size: 2em;
-    text-transform: none;
-    font-weight: normal;
-    padding: 0;
-  }
-
-    #header .logo:hover {
-      color: rgba(229, 71, 75, 0.75);
-    }
-
-  #header a {
-    -moz-transition: color 0.2s ease-in-out;
-    -webkit-transition: color 0.2s ease-in-out;
-    -ms-transition: color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out;
-    display: inline-block;
-    padding: 0 2em;
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: .85em;
-  }
-
-    #header a:hover {
-      color: rgba(255, 255, 255, 0.75);
-    }
-
-    #header a:last-child {
-      padding-right: 0em;
-    }
-
-    @media screen and (max-width: 736px) {
-
-      #header a {
-        padding: 0 0.5em;
-      }
-
-    }
-
-@media screen and (max-width: 480px) {
-
-  #header {
-    min-width: 320px;
-  }
-
+body{
+  background:#e5474b;
 }
+
+a:hover{
+  color:rgba(229, 71, 75, 0.75);
+}
+
+h1{
+  font-size: 2em;
+}
+/*CONTAINER*/
+#container{
+  background-color: #fff;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 30px;
+  margin-top: 25vh;
+  border-radius: 10px ;
+  text-align: center;
+}
+
+/*FORMULARIO*/
+
+form{
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+label, input{
+  display: block;
+  width:100%;
+  text-align:left;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+label{
+  font-weight: bold;
+  font-size:1.2em;
+}
+
+input{
+  border-bottom: 2px solid rgba(28, 28, 28, 0.75);
+  padding:10px;
+  font-size:1.2em;
+}
+
+input:focus{
+  border-bottom: 2px solid rgba(229, 71, 75, 0.75);
+}
+
+#visitante{
+  text-align:center;
+  display:block;
+  font-size:1em;
+  margin-top: 10px;
+}
+
+input[type="submit"]{
+  text-align:center;
+  text-transform: uppercase;
+  font-size:1.2em;
+  border:none;
+  height:40px;
+  border-radius: 20px;
+  margin-top: 25px;
+  color: #fff;
+  background-color: #1c1c1c;
+  cursor:pointer;
+}
+input[type="submit"]:hover{
+  background-color:rgba(28, 28, 28, 0.75) ;
+  transition: .5s;
+}
+

@@ -12,7 +12,8 @@
 		<!--BOOTSTRAP-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		
-
+		<!--FONTE-->
+		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
 		<!--JAVASCRIPT-->
 		<script language="javascript">
 
@@ -46,20 +47,20 @@
 	</head>
 
 	<body>
-		<div class="login-page">
-			<div class="form">
-				<form class="register-form">
-					<input type="text" placeholder="Usuário"/>
-					<input type="password" placeholder="Senha"/>
-					<button>create</button>
-				</form>
-				<form name="f1" action="Login.php" method="post" class="login-form">
-					<input type="text" name="login" maxlength="12" placeholder="Usuário"/>
-					<input type="password" name="senha" maxlength="6" placeholder="Senha" onkeypress  = "return blokletras(event)"/>
-					<input type="button" name="verificar" value="LOGIN" id="camponome" onclick="valida ()">
-					<p class="message">Acesso como <a href="index.html">Visitante</a></p>
-				</form>
-			</div>
+		<div id="container">
+			<h1>Login</h1>
+
+			<form action="" method="POST">
+				<label for="email"> Usuário</label>
+				<input type="text" name="user" id="user" placeholder="Digite seu User" autocomplete="off">
+				<label for="password"> Senha</label>
+				<input type="password" name="senha" id="senha" placeholder="Digite sua senha" maxlength="5" autocomplete="off">
+				<input type="submit" value="Login">
+				<a href="#" id="visitante">Acesse como Visitante</a>
+
+			</form>
 		</div>
+		
+			
 	</body>
 </html>
