@@ -10,16 +10,16 @@
     include 'config.php';
     include 'mysqlexecuta.php';
     $con = conectar ();
-    mysql_select_db ('bd_acesso');
-    $Login = $_POST['login'];
+    mysql_select_db ('vip');
+    $Usuario = $_POST['user'];
     $Senha = $_POST ['senha'];
-    $sql="SELECT * FROM acesso where Login like '$Login' && Senha like '$Senha'";
+    $sql="SELECT * FROM usuario where usuario like '$Usuario' && senha like '$Senha'";
     $res = mysqlexecuta($con, $sql);
     $quant = (mysql_num_rows($res));
 
     if($quant==0)
     {
-    echo "<p align='center'><b><font color='#FA058C'>Login ou Senha Inválidos !!! </font></b></p>";
+    echo "<p align='center'><b><font color='#e5474b'>Login ou Senha Inválidos !!! </font></b></p>";
     }
     else
     {

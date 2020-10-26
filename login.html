@@ -15,53 +15,25 @@
 		
 		<!--FONTE-->
 		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
-		<!--JAVASCRIPT-->
-		<script language="javascript">
-
-			$('.message a').click(function()
-			{
-			$('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-			});
-
-
-			function valida ()
-			{
-				vazio = false;
-				if(document.f1.login.value=="")
-				{
-					alert("O Login tem que ser preenchido");
-					vazio = true;
-				}
-				if(document.f1.senha.value=="")
-				{
-					alert("A senha tem que ser preenchida");
-					vazio = true;
-				}
-				
-				if(vazio==false) 
-				{
-					document.f1.submit();
-				}
-			}
-
-		</script>
+		
 	</head>
 
 	<body>
 		<div class="container">
 			<h1>Login</h1>
 
-			<form action="" method="POST">
+			<form name="Login" action="Login.php" method="POST">
 				<label for="email"> Usuário</label>
-				<input type="text" name="user" id="user" placeholder="Digite seu usuário" autocomplete="off">
+				<input type="text" name="user" id="user" placeholder="Digite seu usuário" maxlength="5" autocomplete="off" required>
 				<label for="password"> Senha</label>
-				<input type="password" name="senha" id="senha" placeholder="Digite sua senha" maxlength="5" autocomplete="off">
-				<input type="submit" value="Login">
+				<input type="password" name="senha" id="senha" placeholder="Digite sua senha" maxlength="5" autocomplete="off" onkeypress  = "return blokletras(event)" required>
+				<input type="submit" value="Login" onclick="valida ()">
 				<a href="#" id="visitante">Acesse como Visitante</a>
 
 			</form>
 		</div>
-		
-			
+
+	<!--IMPORTANDO O JAVASCRIPT-->
+	<script src="js/script.js"></script>		
 	</body>
 </html>

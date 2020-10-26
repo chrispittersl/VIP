@@ -10,30 +10,48 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
-        
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     </head>
 
     <body>
-      <header class="cabecalho"></header>
-        <nav class="menu">
-          <div id="mySidebar" class="sidebar">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <ul>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-              </ul>
-            </div>
-            
-          <div id="main">
-              <button onclick="openNav()"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button>
-              <h2 class="logo"><a href="index.html" title="logo">Logo</a></h2>
+      <!--MENU E NAVEGAÇÃO-->
+      <header class="cabecalho">
+          <a href="home.html"><h1 class="logo">Virtual Increased Plan</h1></a>
+          <div class="btn">
+            <span class="fas fa-bars"></span>
           </div>
-
+        <nav class="sidebar">
+          <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li>
+              <a href="#" class="feat-btn">Cronogramas
+                <span class="fas fa-caret-down first"></span>
+              </a>
+              <ul class="feat-show">
+                <li><a href="#">TCCs</a></li>
+                <li><a href="#">Reuniões</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Administrador</a></li>
+          </ul>
         </nav>
+      </header>  
 
-      </header>
-        <script src="js/script.js"></script>
+      <script>
+            $('.btn').click(function(){
+              $(this).toggleClass("click");
+              $('.sidebar').toggleClass("show");
+            });
+              $('.feat-btn').click(function(){
+                $('nav ul .feat-show').toggleClass("show");
+                $('nav ul .first').toggleClass("rotate");
+              });
+              $('nav ul li').click(function(){
+                $(this).addClass("active").siblings().removeClass("active");
+              });
+      </script>
+        
     </body>
 </html>
+        
