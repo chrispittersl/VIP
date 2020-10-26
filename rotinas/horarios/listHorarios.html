@@ -1,0 +1,40 @@
+<html>
+<head><title>Pesquisa de Horários</title>
+<script language="javascript">
+
+function blockletras(objEvent)
+{
+	var iKeyCode;
+	iKeyCode = objEvent.keyCode;
+	if(iKeyCode>=48 && iKeyCode<=57) return true;
+	return false;
+}
+</script>
+
+</head>
+<body bgcolor=white>
+<form action="listHorarios.php" method="POST" name="f1">
+<table p align ="center" border="1" width="750">
+	<tr> 
+		<td p aling="center">
+			<center><img src="logotipo-cps.png" width="440" height="120" border="0" align=center></center>	
+		</td> 
+	</tr>
+	<tr>
+		<td bgcolor=white>
+			<font color=#A0232C><p align="center">Pesquisa Dados dos Alunos</font></b></p>
+		</td>
+	</tr>
+	<tr> 
+		<td bgcolor=white> 
+			<font bgcolor=#A0232C><center>Série da Turma: <input type="text" name="serieTurma" required></center>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor=white>
+			<center><input type="submit" value="Pesquisar"></center>
+		</td>
+	</tr>
+</table></form>
+</body>
+</html>

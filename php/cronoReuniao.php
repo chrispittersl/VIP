@@ -10,15 +10,16 @@
         </style>
     </head>
     <body>
-        <h1>Cronograma de TCCs</h1>
+        <h1>Cronograma de Reuniões</h1>
         <table>
-            <caption>Trabalhos de Conclusão de Curso</caption>
+            <caption>Reuniões</caption>
             <thead>
                 <tr>
-                    <th>TCC</th>
+                    <th>Reunião</th>
                     <th>Descrição</th>
                     <th>Horário</th>
                     <th>Data</th>
+                    <th>Local</th>
                 </tr>
             </thead>
 
@@ -29,7 +30,7 @@
                     include 'mysqlexecuta.php';
                     $con = conectar();
                     mysql_select_db('vip');
-                    $sql = "SELECT * FROM tcc order by data_tcc ASC";
+                    $sql = "SELECT R.nome, R.descricao, R.horario_reuniao, R.data_reuniao, S.local_sala FROM reunioes as R INNER JOIN sala AS S ON R.num_sala = S.num_sala order by data_reuniao ASC";
 
 
                     $consulta = mysqlexecuta($con,$sql);
@@ -40,8 +41,10 @@
                                 <tr>
                                     <td>'.$row['nome'].'</td>
                                     <td>'.$row['descricao'].'</td>
-                                    <td>'.$row['horario_tcc'].'</td>
-                                    <td>'.$row['data_tcc'].'</td>
+                                    <td>'.$row['horario_reuniao'].'</td>
+                                    <td>'.$row['data_reuniao'].'</td>
+                                    <td>'.$row['local_sala'].'</td>
+                                    
                                 </tr>';
                                     
                         }

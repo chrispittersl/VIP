@@ -1,0 +1,61 @@
+<html>
+<head><title>Cadastro de Horários</title>
+<meta charset="utf-8">
+<script language="javascript">
+
+
+function blockletras(objEvent)
+{
+	var iKeyCode;
+	iKeyCode = objEvent.keyCode;
+	if(iKeyCode>=48 && iKeyCode<=57) return true;
+	return false;
+}
+</script>
+</head>
+<body>
+<form action="cadHorarios.php" method="POST" name="f1">
+<table p align ="center" border="1" width="750">
+	<tr> 
+		<td p aling="center">
+			<center><img src="logotipo-cps.png" width="440" height="120" border="0" align=center></center>	
+		</td> 
+	</tr>
+	<tr>
+		<td >
+			<p align="center"><b><font color=#000000>Inclusão de dados: Horários de Aula</font></b></p>
+		</td>
+	</tr>
+	<tr> 
+		<td >
+			<font color=#000000><center>Horario de início: <input type="text" name="horainicio" required></center>
+		</td>
+    </tr>
+    <tr> 
+		<td >
+			<font color=#000000><center>Horario de fim: <input type="text" name="horafim" required></center>
+		</td>
+	</tr>
+	<tr> 
+		<td >
+			<font color=#000000><center>Dia da Semana: <input type="text" name="diaSemana" onkeypress= "return blockletras(event)" required></center>
+		</td>
+	</tr>
+	<tr> 
+		<td >
+			<font color=#000000><center>Matéria: <input type="text" name="mat" onkeypress= "return blockletras(event)" required></center>
+		</td>
+	</tr>
+	<tr> 
+		<td >
+			<font color=#000000><center>Professor: <input type="text" name="prof" onkeypress= "return blockletras(event)" required></center>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<center><input type="submit" value="Pesquisar"></center>
+		</td>
+	</tr>
+</table></form>
+</body>
+</html>

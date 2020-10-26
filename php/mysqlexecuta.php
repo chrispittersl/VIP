@@ -1,10 +1,15 @@
 <HTML>
 <HEAD>
+<<<<<<< HEAD
  <TITLE>PHP - Fun��o Executa Comandos SQL</TITLE>
+=======
+ <TITLE>PHP - Função Executa Comandos SQL</TITLE>
+>>>>>>> e76a255b6cc6cc3b7a5820f9f9caf58069a497f5
 </HEAD>
 <BODY>
 <?php
 
+<<<<<<< HEAD
 /*
 $id - ponteiro da conex�o aberta
 $sql - clausula sql a executar
@@ -27,6 +32,19 @@ function mysqlexecuta($id, $sql, $erro = 1)
      return $res;
 }
 
+=======
+function mysqlexecuta($id,$sql,$erro = 1){
+         if(empty($sql) or !($id))
+         return 0;
+         if (!($res = @mysql_query($sql,$id))){
+            if($erro)
+            echo "Ocorreu um erro na execução do Comando SQL no banco de dados. Favor Contactar o Administrador";
+            echo "<br>" .  "<b> Comando: </b>" . $sql . "<b><br>Id: </b>" . $id . "<br>";
+            exit;
+         }
+          return $res;
+         }
+>>>>>>> e76a255b6cc6cc3b7a5820f9f9caf58069a497f5
 ?>
 </BODY>
 </HTML>
