@@ -1,28 +1,24 @@
-<html>
+<html lang="pt-br">
 <head>
-<title>Exclusão de Tcc</title>
+<title>Exclusão de TCC</title>
 </head>
-<body bgcolor=white>
-<center> <img src="logotipo-cps.png"> </center>
+<body >
+ <img src="logotipo-cps.png"> 
 <?php
 	include 'config.php';
 	include 'mysqlexecuta.php';
 	$con = conectar();
 	mysql_select_db('vip');
 	$cod_usuario = $_POST["codusuario"];
-	$sql =  "SELECT * FROM tcc where cod_tcc = $cod_usuario";
+	$sql =  "SELECT * FROM TCC where cod_TCC = $cod_usuario";
 	$res = mysqlexecuta($con,$sql);
 	$quant = (mysql_num_rows($res)); 
-	if ($quant==0){
-		echo "<p align='center'<b><font color=#A22529>Tcc não Cadastrado(a)</font></b></p>";
+	if ($quant==0){echo "<p align='center'TCC não Cadastrado(a)";
 	}
-	else{
-		$sql = "delete from tcc where cod_tcc = $cod_usuario";
-		$res = mysqlexecuta($con,$sql);
-		echo "<p><b> Excluido com Sucesso</b></p>";
+	else{$sql = "delete from TCC where cod_TCC = $cod_usuario";$res = mysqlexecuta($con,$sql);echo " Excluido com Sucesso";
 	}
 ?>
-<br><br><br>
-<a href = 'pesqTcc_geral.php'><p align = "center">Listagem Tcc</p></a>
+
+<a href = 'pesqTCC_geral.php'>Listagem TCC</a>
 </body>
 </html>

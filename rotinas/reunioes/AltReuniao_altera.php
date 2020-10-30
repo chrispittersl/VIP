@@ -20,6 +20,5 @@
 	nome = '$nome', data_agendamento = '$data_agendamento', num_sala = $num_sala, cod_usuario = $cod_usuario where cod_reuniao = '$cod_reuniao'";
 	$res = mysqlexecuta($con,$sql);
 ?>
-<p align="center"><b>Reunião alterada com sucesso!</b></p>
-<br><br><br>
+Reunião alterada com sucesso!
 </body></html>

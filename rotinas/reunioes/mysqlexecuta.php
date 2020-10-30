@@ -1,4 +1,4 @@
-<html>
+<html lang="pt-br">
 <head>
 <title>PHP - Função Executa Comandos SQL</title>
 </head>
@@ -10,7 +10,7 @@
 		if(!($res = @mysql_query($sql,$id))){
 			if($erro)
 				echo "Ocorreu um erro na excução do Comando SQL no banco de dados. Favor Contactar o Administrador";
-				echo "<br>"."<b> Comando: </b>".$sql."<br>"."<b>Id: </b>".$id."<br>";
+				echo ""." Comando: ".$sql."Id: ".$id."";
 				exit;
 		}
 		return $res;

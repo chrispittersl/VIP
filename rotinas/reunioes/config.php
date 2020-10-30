@@ -2,7 +2,7 @@
 <head>
 <title>Configurar</title>
 </head>
-<body bgcolor=white>
+<body >
 <?php
 	
 	error_reporting (E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);

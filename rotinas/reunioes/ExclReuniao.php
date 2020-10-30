@@ -15,14 +15,14 @@
 			$res = mysqlexecuta($con,$sql);
 			$quant = (mysql_num_rows($res)); 
 			if ($quant==0){
-				echo "<p align='center'><b>Aluno(a) não Cadastrado(a)</b></p>";
+				echo "Aluno(a) não Cadastrado(a)";
 			}
 			else{
 				$sql = "delete from reunioes where cod_reuniao = $cod_reuniao";
 				$res = mysqlexecuta($con,$sql);
-				echo "<p align = 'center'><b> Excluido com Sucesso</b></p>";
+				echo " Excluido com Sucesso";
 			}
 		?>
-	<a href = 'PesqReuniao_geral.php'><p align = "center"> Listar Reuniões </p></a>
+	<a href = 'PesqReuniao_geral.php'><p align = "center"> Listar Reuniões </a>
 	</body>
 </html>

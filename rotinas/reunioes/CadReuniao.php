@@ -26,7 +26,7 @@
 			
 			$res = mysqlexecuta($con,$sql);
 			
-			echo "<p align='center'>" . "inclusão efetuada com sucesso!" . "</p>" . "<br>";
+			echo "" . "inclusão efetuada com sucesso!" . "" . "";
 		?>
 	</body>
 </hmtl>

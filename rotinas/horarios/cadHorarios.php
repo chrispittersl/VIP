@@ -5,10 +5,10 @@
         </title>
         <meta charset="utf-8">
 	</head>
-	<body bgcolor=white>
-		<center>
+	<body >
+		
 			<img src="logotipo-cps.png">
-		</center>
+		
 		<?php
             $horarioinicio=$_POST["horainicio"];
             $horariofim=$_POST["horafim"];
@@ -27,8 +27,7 @@
 			
 			$res = mysqlexecuta($con,$sql);
 			
-			echo "<p align='center'>" . "<b>" . "<font color = red>" . "inclusão efetuada com sucesso !!" . "</font>" . "</b>" . "</p>" . "<br>";
-			echo "<a href = 'pesqcurso_geral.php'><font color=#A22529><p align = 'center'>Listar Cursos</p></a>"
+			echo "" . "." . ">" . "inclusão efetuada com sucesso !!";
 		?>
 	</body>
 </hmtl>
