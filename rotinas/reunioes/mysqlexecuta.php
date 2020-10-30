@@ -2,7 +2,7 @@
 <head>
 <title>PHP - Função Executa Comandos SQL</title>
 </head>
-<body >
+<body>
 <?php
 	function mysqlexecuta($id,$sql,$erro = 1){
 		if(empty($sql) or !(id))

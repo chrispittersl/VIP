@@ -1,26 +1,23 @@
-<html>
+<html lang="pt-br">
 <head>
-<title> Alteração de Tcc</title>
+<title> Alteração de TCC</title>
 </head>
-<body bgcolor=white>
+<body >
 <?php
 	include 'config.php';
 	include 'mysqlexecuta.php';
 	$con = conectar();
 	mysql_select_db('vip');
-	$cod_tcc= $_POST["cod_tcc"];
-	$horario_tcc= $_POST["horario_tcc"];
-	$data_tcc= $_POST["data_tcc"];
+	$cod_TCC= $_POST["cod_TCC"];
+	$horario_TCC= $_POST["horario_TCC"];
+	$data_TCC= $_POST["data_TCC"];
 	$descricao= $_POST["descricao"];
 	$nome= $_POST["nome"];
 	$data_agendamento= $_POST["data_agendamento"];
 	$num_sala= $_POST["num_sala"];
 	$cod_usuario= $_POST["cod_usuario"];
-	$sql = "UPDATE tcc set horario_tcc = '$horario_tcc', data_tcc = '$data_tcc', descricao = '$descricao', nome = $nome, data_agendamento = '$data_agendamento', num_sala = '$num_sala', cod_usuario = cod_usuario where matricula = $cod_tcc";
+	$sql = "UPDATE TCC set horario_TCC = '$horario_TCC', data_TCC = '$data_TCC', descricao = '$descricao', nome = $nome, data_agendamento = '$data_agendamento', num_sala = '$num_sala', cod_usuario = cod_usuario where matricula = $cod_TCC";
 	$res = mysqlexecuta($con,$sql);
 ?>
-<p align="center"><b><font color="#A22529">Tcc alterado com sucesso !!!</font></b></p>
-<br><br><br><
-<a href='pesq_geral.php'><p align="center"> Listar Tcc</p></a>
-<p> <a href='index.html'><p align="center">Voltar para Menu Principal</p></a>
+TCC alterado com sucesso !!!
 </body></html>

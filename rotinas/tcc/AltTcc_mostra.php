@@ -1,4 +1,4 @@
-<html><head><title> Alteração de Tcc</title>
+<html lang="pt-br"><head><title> Alteração de TCC</title>
 <script language = "javascript">
 
 function blockletras(objEvent)
@@ -12,23 +12,24 @@ function blockletras(objEvent)
 
 </script>
  </head>
-<body bgcolor=white>
+<body >
 <?php
 include 'config.php';
 include 'mysqlexecuta.php';
 $con = conectar();
 mysql_select_db('vip');
-$cod_tcc = $_POST["txtCod"];
-$sql="SELECT * from tcc where cod_tcc = $cod_tcc";
+$cod_TCC = $_POST["txtCod"];
+$sql="SELECT * from TCC where cod_TCC = $cod_TCC";
 $res = mysqlexecuta($con,$sql);
 $quant = (mysql_num_rows($res));
 
 if ($quant==0) {
-	echo "<p align='center'>"."<b>"."<font color='red'>"."Tcc não Cadastrado !!"."</font>"."</b>"."</p>";
+	echo ""."TCC não Cadastrado !!".""."";
 	}
 	else 	{
 		$row = mysql_fetch_array($res);
 	?>
+<<<<<<< HEAD
 		<form name = "f1" method="POST" action="AltTcc_altera.php">
 		<p><b>Código do Tcc: </b> <?php echo $row['cod_tcc'] ?></p>
 		<input type="hidden" name="cod_usuario" value=<?php echo $row['cod_tcc'];?>>
@@ -47,10 +48,30 @@ if ($quant==0) {
 		<p><b>Código do Usuario:</b><input type='text' name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
 		</p>
 		<center> <br> <br>	<input type="submit"  value="Alterar Dados"></p><br>	</center>
+=======
+		<form name = "f1" method="POST" action="AltTCC_altera.php">
+		Código do TCC:  <?php echo $row['cod_TCC'] ?>
+		<input type="hidden" name="cod_usuario" value=<?php echo $row['cod_TCC'];?>>
+		Horário TCC: <input type='text' name='horario_TCC' value='<?php echo $row['horario_TCC'];?>' required>
+		
+		Data TCC: <input type='text' name='data_TCC' value='<?php echo $row['data_TCC'];?>' required>
+		
+		Descricao: <input type='text' name='descricao' value='<?php echo $row['descricao'];?>' required>
+		
+		Nome: <input type='text' name='nome' value='<?php echo $row['nome'];?>' required>
+		
+		Data de Agendamento: <input type='text' name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
+		
+		Numero Sala: <input type='text' name='num_sala' value='<?php echo $row['num_sala'];?>' required>
+		
+		Código do Usuario:<input type='text' name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
+		
+		  	<input type="button" name ="botao" value="Alterar Dados">	
+>>>>>>> d6e9fa9867aeab914aba3c31877761ccadd12ed6
 		</form>
 		<?php
 	}
 ?>
-<p>		<a href='index.html'><p align="center">Voltar para Menu Principal</p></a>
+		<a href='index.html'>Voltar para Menu Principal</a>
 </body>
 </html>

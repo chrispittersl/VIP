@@ -1,9 +1,9 @@
-<html>
+<html lang="pt-br">
 <head>
 <title>Exclusão de cursos</title>
 </head>
-<body bgcolor=white>
-<center> <img src="logotipo-cps.png"> </center>
+<body >
+ <img src="logotipo-cps.png"> 
 <?php
 	include 'config.php';
 	include 'mysqlexecuta.php';
@@ -13,16 +13,12 @@
 	$sql =  "SELECT * FROM horario_aula where cod_horario = $cod_horario";
 	$res = mysqlexecuta($con,$sql);
 	$quant = (mysql_num_rows($res)); 
-	if ($quant==0){
-		echo "<p align='center'><b><font color=#A22529>Horário não Cadastrado</font></b></p>";
+	if ($quant==0){echo "Horário não Cadastrado";
 	}
-	else{
-		$sql = "delete from horario_aula where cod_horario = $cod_horario";
-		$res = mysqlexecuta($con,$sql);
-		echo "<p align = 'center'><b><font color=#A22529><font color = '#A22529'> Excluido com Sucesso</font></b></p>";
+	else{$sql = "delete from horario_aula where cod_horario = $cod_horario";$res = mysqlexecuta($con,$sql);echo " Excluido com Sucesso";
 	}
 	?>
-	<br><br><br>
-	<a href = 'pesqcurso_geral.php'><font color=#A22529><p align = "center">Listar Disciplinas</p></a>
+	
+	<a href = 'pesqcurso_geral.php'>Listar Disciplinas</a>
 	</body>
 	</html>

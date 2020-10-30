@@ -1,4 +1,4 @@
-<html lang="pt-br">
+<html>
 <head>
 <title>Configurar</title>
 </head>

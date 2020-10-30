@@ -1,4 +1,4 @@
-<html><head><title> Alteração de dados: Horários</title>
+<html lang="pt-br"><head><title> Alteração de dados: Horários</title>
 <meta charset="utf-8"> 
 <script language = "javascript">
 
@@ -12,7 +12,7 @@ function blockletras(objEvent)
 
 </script>
 </head>
-<body bgcolor=white>
+<body >
 <?php
 include 'config.php';
 include 'mysqlexecuta.php';
@@ -24,29 +24,28 @@ $res = mysqlexecuta($con,$sql);
 $quant = (mysql_num_rows($res));
 
 if ($quant==0) {
-	echo "<p align='center'>"."<b>"."<font color='red'>"."Horário não Cadastrado !!"."</font>"."</b>"."</p>";
+	echo ""."Horário não Cadastrado !!";
 	}
 	else 	{
 		$row = mysql_fetch_array($res);
 	?>
 		<form name="f1" method="POST" action="altHorarios_change.php">
-		<p><b>Código: </b> <?php echo $row['cod_horario'] ?></p>
-		<input type="hidden" name="cod_horario"  onkeypress= "return blockletras(event)" value=<?php echo $row['cod_horario'];?>>
-		<p><b>Horário de Início: </b><input type='text' name='horainicio' value='<?php echo $row['horainicio'];?>' required>
-        </p>
-        <p><b>Horário de Fim: </b><input type='text' name='horafim' value='<?php echo $row['horafim'];?>' required>
-        </p>
-        <p><b>Dia Da Semana: </b><input type='text' name='diaSemana' value='<?php echo $row['diaSemana'];?>' required>
-        </p>
-        <p><b>Matéria: </b><input type='text' name='materia' value='<?php echo $row['materia'];?>' required>
-        </p>
-        <p><b>Professor: </b><input type='text' name='professor' value='<?php echo $row['professor'];?>' required>
-		</p>
-		<center> <br> <br>	<input type="submit" name ="botao" value="Alterar Dados"></p><br>	</center>
+		Código:  <?php echo $row['cod_horario'] ?>
+		<input type="hidden" name="cod_horario"  onkeypress= "return blockletras(event)" value=<?php echo $row['cod_horario'];?>
+		Horário de Início: <input type='text' name='horainicio' value='<?php echo $row['horainicio'];?>' required>
+        
+        Horário de Fim: <input type='text' name='horafim' value='<?php echo $row['horafim'];?>' required>
+        
+        Dia Da Semana: <input type='text' name='diaSemana' value='<?php echo $row['diaSemana'];?>' required>
+        
+        Matéria: <input type='text' name='materia' value='<?php echo $row['materia'];?>' required>
+        
+        Professor: <input type='text' name='professor' value='<?php echo $row['professor'];?>' required>
+		
+		<input type="submit" name ="botao" value="Alterar Dados">	
 		</form>
 		<?php
 	}
 ?>
-<p>		<a href='index.html'><p align="center">Voltar para Menu Principal</p></a>
 </body>
 </html>

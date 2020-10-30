@@ -1,5 +1,5 @@
-<html>
-<head><title>PHP - Excluir Tcc</title>
+<html lang="pt-br">
+<head><title>PHP - Excluir TCC</title>
 <script language="javascript">
 
 function blockletras(objEvent)
@@ -12,32 +12,8 @@ function blockletras(objEvent)
 </script>
 
 </head>
-<body bgcolor=white>
-<form action="exclTcc.php" method="POST" name="f1">
-<table p align ="center" border="1" width="750">
-	<tr> 
-		<td p aling="center">
-			<center>
-				<img src="logotipo-cps.png" width="440" height="120" border="0" align=center>	
-			</center>
-		</td> 
-	</tr>
-	<tr>
-		<td bgcolor=white>
-			<p align="center"> <b><font color=#A0232C>Exclusao de Dados do Tcc</font></font></b></p>
-		</td>
-	</tr>
-<table p align ="center" width="750" cellpadding="0" cellspacing="0" border="1">
-	<tr> 
-		<td bgcolor=white>
-			<font color=#A0232C><center> Codigo do TCC <input type="text" name="codusuario" onkeypress= "return blockletras(event)" required></center></font>
-		</td>
-	</tr>
-	<tr>
-		<td bgcolor=white>
-			<font color=#A0232C><center><input type="submit" value="Excluir"></center></font>
-		</td>
-	</tr>
-</table></form>
+<body >
+<form action="exclTCC.php" method="POST" name="f1">					 	 Exclusao de Dados do TCC
+<table p align ="center" width="750" cellpadding="0" cellspacing="0" border="1">	 Codigo do TCC <input type="text" name="codusuario" onkeypress= "return blockletras(event)" required>	<input type="submit" value="Excluir"></form>
 </body>
 </html>

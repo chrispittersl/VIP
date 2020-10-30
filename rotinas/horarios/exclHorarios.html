@@ -1,4 +1,4 @@
-<html>
+<html lang="pt-br">
 <head><title>Exclusão de dados: Horário</title>
 <meta charset="utf-8">
 <script language="javascript">
@@ -12,30 +12,11 @@ function blockletras(objEvent)
 </script>
 
 </head>
-<body bgcolor=white>
-<form action="exclcurso.php" method="POST" name="f1">
-<table p align ="center" border="1" width="750">
-	<tr> 
-		<td p aling="center">
-			<center><img src="logotipo-cps.png" width="440" height="120" border="0" align=center></center>	
-		</td> 
-	</tr>
-	<tr>
-		<td bgcolor=white>
-			<p align="center"> <b><font color=#A0232C>Exclusão de Horários</font></b></p>
-		</td>
-	</tr>
-<table p align ="center" width="750" cellpadding="0" cellspacing="0" border="1">
-	<tr> 
-		<td bgcolor=white>
-			<font color=#A0232C><center>Código do Horário <input type="text" name="cod_horario" onkeypress= "return blockletras(event)" required></center>
-		</td>
-	</tr>
-	<tr>
-		<td bgcolor=white>
-			<center><input type="submit" value="Excluir"></center>
-		</td>
-	</tr>
-</table></form>
+<body >
+	<form action="exclcurso.php" method="POST" name="f1">
+			Exclusão de Horários
+			Código do Horário <input type="text" name="cod_horario" onkeypress= "return blockletras(event)" required>
+			<input type="submit" value="Excluir">
+	</form>
 </body>
 </html>
