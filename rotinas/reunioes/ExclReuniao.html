@@ -1,0 +1,39 @@
+<html lang="pt-br">
+	<head>
+		<title>
+			Exclusão de Reuniões
+		</title>
+		<meta charset="utf=8">
+		<script language="javascript">
+			function blockletras(objEvent)
+			{
+				var iKeyCode;
+				iKeyCode = objEvent.keyCode;
+				if(iKeyCode>=48 && iKeyCode<=57) return true;
+				return false;
+			}
+		</script>
+	</head>
+	<body>
+		<form action="ExclReuniao.php" method="POST" name="f1">
+			<table p align ="center" border="1" width="750">
+				<tr>
+					<td>
+						<p align="center"><b>Exclusao de Dados da Reunião</b></p>
+					</td>
+				</tr>
+			<table p align ="center" width="750" cellpadding="0" cellspacing="0" border="1">
+				<tr> 
+					<td>
+						<center>Código da Reunião<input type="text" name="cod_reuniao" onkeypress= "return blockletras(event)" required></center>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<center><input type="submit" value="Excluir"></center>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

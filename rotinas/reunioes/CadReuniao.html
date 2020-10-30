@@ -1,0 +1,66 @@
+	<html lang="pt-br">
+		<head>
+		<title>Listagem Reuniões</title>
+			<meta charset="utf=8">
+			<script language="javascript">
+			function blockletras(objEvent)
+			{
+				var iKeyCode;
+				iKeyCode = objEvent.keyCode;
+				if(iKeyCode>=48 && iKeyCode<=57) return true;
+				return false;
+			}
+			</script>
+		</head>
+	<body>
+		<form action="CadReuniao.php" method="POST" name="f1">
+			<table p align ="center" border="1" width="750">
+				<tr>
+					<td>
+						<p align="center">Inclusao de dados: Reuniao </b></p>
+					</td>
+				</tr>
+				<tr> 
+					<td>
+						<center>Horário Reunião <input type="text" name="horario_reuniao" placeholder = "xx:xx:xx" required></center>
+					</td>
+				</tr>
+				<tr> 
+					<td>
+						<center>Data Reunião <input type="text" name="data_reuniao"  placeholder = "xx/xx/xxxx" required></center>
+					</td>
+				</tr>
+				<tr> 
+					<td>
+						<center>Descrição <input type="text" name="descricao" required></center>
+					</td>
+				</tr>
+				<tr> 
+					<td>
+						<center>Nome <input type="text" name="nome" required></center>
+					</td>
+				</tr>
+				<tr> 
+					<td>
+						<center>Data de Agendamento <input type="text" name="data_agendamento" placeholder = "xx/xx/xxxx"  required></center>
+					</td>
+				</tr>
+				<tr> 
+					<td>
+						<center>Número da sala <input type="text" name="num_sala" onkeypress= "return blockletras(event)" required></center>
+					</td>
+				</tr>
+				<tr> 
+					<td>
+						<center>Código de usuário <input type="text" name="cod_usuario" onkeypress= "return blockletras(event)" required></center>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<center><input type="submit" value="Cadastrar"></center>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
