@@ -1,0 +1,102 @@
+/*GERAL - reset*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color:#1c1c1c;
+    border:none;
+    font-size:100%;
+  }
+  
+  a{
+    text-decoration: none;
+    font-size: .8rem; 
+  }
+  
+  body{
+    background:#1c1c1c;
+  }
+  
+  a:hover{
+    color:rgba(229, 71, 75, 0.75);
+  }
+  
+  h1{
+    font-size: 3em;
+    text-transform: uppercase;
+    margin-bottom: 5%;
+  }
+
+  /*CONTAINER*/
+.container{
+    background-color: #fff;
+    width: 450px;
+    height:350px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 20vh;
+    border-radius: 10px ;
+    text-align: center;
+  }
+
+  
+  /*FORMULARIO*/
+
+form
+{
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  
+  label, input
+  {
+    display: block;
+    width:100%;
+    text-align:left;
+    
+  }
+  
+  label
+  {
+    font-weight: bold;
+    font-size: 2em;
+    margin-top: 5%;
+    margin-bottom: 4%;
+  }
+  
+  input
+  {
+    border-bottom: 2px solid rgba(28, 28, 28, 0.75);
+    padding:10px;
+    font-size: 2em;
+    margin-bottom: 3%;
+  }
+  
+  input:focus
+  {
+    border-bottom: 2px solid rgba(229, 71, 75, 0.75);
+  }
+  
+  
+  input[type="submit"]
+  {
+    text-align:center;
+    text-transform: uppercase;
+    border:none;
+    border-radius: 20px;
+    margin-top: 25px;
+    color: #fff;
+    background-color: #e5474b;
+    cursor:pointer;
+    font-size: 2em;
+    height:  50px;
+  }
+
+  input[type="submit"]:hover
+  {
+    background-color:rgba(229, 71, 75, 0.75) ;
+    transition: .5s;
+  }

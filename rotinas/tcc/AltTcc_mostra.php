@@ -46,7 +46,7 @@ if ($quant==0) {
 		</p>
 		<p><b>Código do Usuario:</b><input type='text' name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
 		</p>
-		<center> <br> <br>	<input type="button" name ="botao" value="Alterar Dados"></p><br>	</center>
+		<center> <br> <br>	<input type="submit"  value="Alterar Dados"></p><br>	</center>
 		</form>
 		<?php
 	}

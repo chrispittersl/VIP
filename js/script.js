@@ -17,8 +17,6 @@ function openNav() {
 			$('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 			});
 			
-
-
 			function blokletras(objEvent)
 			{
 				var iKeyCode;

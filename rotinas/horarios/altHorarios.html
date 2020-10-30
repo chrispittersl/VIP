@@ -1,41 +1,32 @@
+<!DOCTYPE html>
 <html lang="pt-br">
-<head><title>Alteração de Dados: Horários</title>
-<meta charset="utf-8">
-<script language="javascript">
+	<head>
+		<title>
+			Alteração de Dados - Horários
+		</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--CSS-->
+		<link rel="stylesheet" type="text/css" href="../../css/rotinas.css">
+		<!--ICON-->
+		<link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
+		<!--BOOTSTRAP-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<!--FONTE-->
+		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
 
-function blockletras(objEvent)
-{
-	var iKeyCode;
-	iKeyCode = objEvent.keyCode;
-	if(iKeyCode>=48 && iKeyCode<=57) return true;
-	return false;
-}
-</script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Alterar Horários</h1>
 
-</head>
-<body bgcolor=white>
-<form action="altHorarios_show.php" method="POST" name="f1">
-<table p align ="center" border="1" width="750">
-	<tr> 
-		<td p aling="center">
-			<center><img src="logotipo-cps.png" width="440" height="120" border="0" align=center></center>	
-		</td> 
-	</tr>
-	<tr>
-		<td bgcolor=white>
-			<p align="center"><font color=#A0232C>Alteração de dados: Horários</font></b></p>
-		</td>
-	</tr>
-	<tr> 
-		<td bgcolor=white>
-			<font color=#A0232C><center>Código Do Horário<input type="text" name="txtCod" onkeypress= "return blockletras(event)" required></center>
-		</td>
-	</tr>
-	<tr>
-		<td bgcolor=white>
-			<center><input type="submit" value="Pesquisar"></center>
-		</td>
-	</tr>
-</table></form>
-</body>
+			<form name="Alterar" action="altHorarios_show.php" method="POST" >
+			<label for="text">Código do horário</label>
+			<input type="text" name="txtCod" autocomplete="off" required onkeypress= "return blockletras(event)">
+			<input type="submit" value="Pesquisar">
+			</form>
+		</div>
+
+		<!--IMPORTANDO O JAVASCRIPT-->
+		<script src="../../js/script.js"></script>
+	</body>
 </html>
