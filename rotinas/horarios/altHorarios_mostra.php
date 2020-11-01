@@ -31,14 +31,14 @@ if ($quant==0) {
 	?>
 		<form name="f1" method="POST" action="altHorarios_altera.php">
 		Código de horário:  <?php echo $row['cod_horario'] ?>
-		Código de usuário: <input type='text' name='cod_usuario' placeholder="<?php echo $row['cod_usuario'];?>" required>
-		Código de turma: <input type='text' name='cod_turma' placeholder='<?php echo $row['cod_turma'];?>' required>
-		Horário de Início: <input type='text' name='horainicio' placeholder='<?php echo $row['horainicio'];?>' required>
-        Horário de Fim: <input type='text' name='horafim' placeholder='<?php echo $row['horafim'];?>' required>
-        Dia Da Semana: <input type='text' name='diaSemana' placeholder='<?php echo $row['dia da semana'];?>' required>
-        Matéria: <input type='text' name='materia' placeholder='<?php echo $row['materia'];?>' required>
-        Professor: <input type='text' name='professor' placeholder='<?php echo $row['professor'];?>' required>
-		<input type="submit" name ="botao" placeholder="Alterar Dados">	
+		Código de usuário: <input type='text' name='cod_usuario' value="<?php echo $row['cod_usuario'];?>" required>
+		Código de turma: <input type='text' name='cod_turma' value='<?php echo $row['cod_turma'];?>' required>
+		Horário de Início: <input type='text' name='horainicio' value='<?php echo $row['horainicio'];?>' required>
+        Horário de Fim: <input type='text' name='horafim' value='<?php echo $row['horafim'];?>' required>
+        Dia Da Semana: <input type='text' name='diaSemana' value='<?php echo $row['dia da semana'];?>' required>
+        Matéria: <input type='text' name='materia' value='<?php echo $row['materia'];?>' required>
+        Professor: <input type='text' name='professor' value='<?php echo $row['professor'];?>' required>
+		<input type="submit" name ="botao" value="Alterar Dados">	
 		</form>
 		<?php
 	}

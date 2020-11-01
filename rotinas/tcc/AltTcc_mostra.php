@@ -30,14 +30,14 @@ if ($quant==0) {
 		<form name = "f1" method="POST" action="Alttcc_altera.php">
 		Código de tcc: <?php echo $row['cod_tcc']?>
 		<input type="hidden" name="cod_tcc" value=<?php echo $row['cod_tcc'];?>>
-		Horário tcc: <input type='text' name='horario_tcc' placeholder='<?php echo $row['horario_tcc'];?>' required>
-		data tcc: <input type='text' name='data_tcc' placeholder='<?php echo $row['data_tcc'];?>' required>
-		Descricao: <input type='text' name='descricao' placeholder='<?php echo $row['descricao'];?>' required>
-		Nome: <input type='text' name='nome' placeholder='<?php echo $row['nome'];?>' required>
-		data de agendamento: <input type='text' name='data_agendamento' placeholder='<?php echo $row['data_agendamento'];?>' required>
-		Numero Sala: <input type='text' name='num_sala' onkeypress= "return blockletras(event)" placeholder='<?php echo $row['num_sala'];?>' required>
-		Código de Usuario:<input type='text' name='cod_usuario' onkeypress= "return blockletras(event)" placeholder='<?php echo $row['cod_usuario'];?>' required>
-		<input type="submit" name ="botao" placeholder="Alterar dados">	
+		Horário tcc: <input type='text' name='horario_tcc' value='<?php echo $row['horario_tcc'];?>' required>
+		data tcc: <input type='text' name='data_tcc' value='<?php echo $row['data_tcc'];?>' required>
+		Descricao: <input type='text' name='descricao' value='<?php echo $row['descricao'];?>' required>
+		Nome: <input type='text' name='nome' value='<?php echo $row['nome'];?>' required>
+		data de agendamento: <input type='text' name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
+		Numero Sala: <input type='text' name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $row['num_sala'];?>' required>
+		Código de Usuario:<input type='text' name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
+		<input type="submit" name ="botao" value="Alterar dados">	
 		</form>
 		<?php
 	}
