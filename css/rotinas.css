@@ -24,9 +24,11 @@
   }
   
   h1{
+    /* font-family: 'Pacifico', cursive; */
     font-size: 3em;
-    text-transform: uppercase;
     margin-bottom: 5%;
+    color:#e5474b;
+    font-weight: bold;
   }
 
   /*CONTAINER*/
@@ -61,6 +63,7 @@ form
   
   label
   {
+    
     font-weight: bold;
     font-size: 2em;
     margin-top: 5%;
@@ -69,15 +72,16 @@ form
   
   input
   {
-    border-bottom: 2px solid rgba(28, 28, 28, 0.75);
-    padding:10px;
-    font-size: 2em;
+    border: 2px solid rgba(28, 28, 28, 0.75);
+    padding:8px;
+    font-size: 1.8em;
     margin-bottom: 3%;
+    border-radius: 30px;
   }
   
   input:focus
   {
-    border-bottom: 2px solid rgba(229, 71, 75, 0.75);
+    border: 2px solid rgba(229, 71, 75, 0.75);
   }
   
   
@@ -86,17 +90,21 @@ form
     text-align:center;
     text-transform: uppercase;
     border:none;
-    border-radius: 20px;
+    border-radius: 30px;
     margin-top: 25px;
     color: #fff;
-    background-color: #e5474b;
+    background-color: #1c1c1c;
     cursor:pointer;
     font-size: 2em;
     height:  50px;
+    width:50%;
+    margin-left:95px;
   }
 
   input[type="submit"]:hover
   {
-    background-color:rgba(229, 71, 75, 0.75) ;
-    transition: .5s;
+    font-weight: bold;
+    background-color:transparent ;
+    border: 2px solid #e5474b;
+    color: #1c1c1c;
   }
