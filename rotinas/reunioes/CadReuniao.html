@@ -13,54 +13,15 @@
 			</script>
 		</head>
 	<body>
-		<form action="CadReuniao.php" method="POST" name="f1">
-			<table p align ="center" border="1" width="750">
-				<tr>
-					<td>
-						Inclusao de dados: Reuniao 
-					</td>
-				</tr>
-				<tr> 
-					<td>
-						Horário Reunião <input type="text" name="horario_reuniao" placeholder = "xx:xx:xx" required>
-					</td>
-				</tr>
-				<tr> 
-					<td>
-						Data Reunião <input type="text" name="data_reuniao"  placeholder = "xx/xx/xxxx" required>
-					</td>
-				</tr>
-				<tr> 
-					<td>
-						Descrição <input type="text" name="descricao" required>
-					</td>
-				</tr>
-				<tr> 
-					<td>
-						Nome <input type="text" name="nome" required>
-					</td>
-				</tr>
-				<tr> 
-					<td>
-						Data de Agendamento <input type="text" name="data_agendamento" placeholder = "xx/xx/xxxx"  required>
-					</td>
-				</tr>
-				<tr> 
-					<td>
-						Número da sala <input type="text" name="num_sala" onkeypress= "return blockletras(event)" required>
-					</td>
-				</tr>
-				<tr> 
-					<td>
-						Código de usuário <input type="text" name="cod_usuario" onkeypress= "return blockletras(event)" required>
-					</td>
-				</tr>
-				<tr>
-					<td>
+		<form action="CadReuniao.php" method="POST" name="f1"> 
+						Horário Reunião <input type="text" name="horario_reuniao" placeholder = "horas:minutos:segundos" required>
+						Data Reunião <input type="text" name="data_reuniao"  placeholder = "ano-mes-dia" required>
+						Descrição <input type="text" name="descricao"  placeholder = "descrição" required>
+						Nome <input type="text" name="nome" placeholder = "Nome" required>
+						Data de Agendamento <input type="text" name="data_agendamento" placeholder = "ano-mes-dia"  required>
+						Número da sala <input type="text" name="num_sala" onkeypress= "return blockletras(event)" placeholder = "Número" required>
+						Código de usuário <input type="text" name="cod_usuario" onkeypress= "return blockletras(event)" placeholder = "Código" required>
 						<input type="submit" value="Cadastrar">
-					</td>
-				</tr>
-			</table>
 		</form>
 	</body>
 </html>

@@ -10,7 +10,7 @@
 		if(!($res = @mysql_query($sql,$id))){
 			if($erro)
 				echo "Ocorreu um erro na excução do Comando SQL no banco de dados. Favor Contactar o Administrador";
-				echo ""." Comando: ".$sql."Id: ".$id."";
+				echo "<br> Comando: ".$sql."Id: ".$id;
 				exit;
 		}
 		return $res;

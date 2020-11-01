@@ -13,22 +13,36 @@
 	$sql = "SELECT * FROM TCC where nome like '$nome%' order by nome";
 	$res = mysqlexecuta($con,$sql);
 	$quant = (mysql_num_rows($res));
-	if ($quant==0){echo "TCC não Cadastrado(a)";
+	if ($quant==0){echo "TCC requerido está sem cadastro(a)";
 	}
 	else{
 ?>
-
-	TCC em Ordem Alfabética
-<table>	Código TCC\/b>	Horario TCC	Data TCC	Descricao	Nome	Data de Agendamento	Numero Sala	Código Usuario
+	Código TCC	
+	Horario TCC	
+	data TCC	
+	Descricao	
+	Nome	
+	data de agendamento	
+	Nmero 
+	Sala	
+	Código de usuário
 <?php
 	while ($row = mysql_fetch_array($res)) {
-?>	<?php echo $row['cod_TCC'];?>	<?php echo $row['horario_TCC'];?>	<?php echo $row['data_TCC'];?>	<?php echo $row['descricao'];?>	<?php echo $row['nome'];?>	<?php echo $row['data_agendamento'];?>	<?php echo $row['num_sala'];?>	<?php echo $row['cod_usuario'];?>
+?>	
+	<br>
+	<?php echo $row['cod_TCC'];?>	
+	<?php echo $row['horario_TCC'];?>	
+	<?php echo $row['data_TCC'];?>	
+	<?php echo $row['descricao'];?>	
+	<?php echo $row['nome'];?>	
+	<?php echo $row['data_agendamento'];?>	
+	<?php echo $row['num_sala'];?>	
+	<?php echo $row['cod_usuario'];?>
 
 <?php
 	} //fecha o while
 	} // fecha o if
 ?>
 
-<a href='pesqTCC_geral.php'>Listar TCC</a>
 </body>
 </html>

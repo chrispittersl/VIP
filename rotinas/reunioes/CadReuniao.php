@@ -5,6 +5,7 @@
 		</title>
 	<meta charset="utf=8">
 	</head>
+	<body>
 		<?php
 			$horario_reuniao=$_POST["horario_reuniao"];
 			$data_reuniao=$_POST["data_reuniao"];

@@ -10,10 +10,12 @@ function blockletras(objEvent)
 	return false;
 }
 </script>
-
 </head>
-<body >
-<form action="exclTCC.php" method="POST" name="f1">					 	 Exclusao de Dados do TCC
-<table p align ="center" width="750" cellpadding="0" cellspacing="0" border="1">	 Codigo do TCC <input type="text" name="codusuario" onkeypress= "return blockletras(event)" required>	<input type="submit" value="Excluir"></form>
+<body>
+<form action="exclTCC.php" method="POST" name="f1">	 
+Codigo de TCC 
+<input type="text" name="cod_TCC" onkeypress= "return blockletras(event)" required>	
+<input type="submit" value="Excluir">
+</form>
 </body>
 </html>

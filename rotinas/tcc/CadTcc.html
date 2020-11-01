@@ -12,7 +12,16 @@ function blockletras(objEvent)
 </script>
 
 </head>
-<body >
-<form action="CadTCC.php" method="POST" name="f1">		 	Inclusao de dados: TCC	Horário TCC<input type="text" name="nome" required>	Data TCC<input type="text" name="Endereco" required>	Descricao<input type="text" name="Cidade" required>	Codigo do Curso<input type="text" name="codcurso" onkeypress= "return blockletras(event)" required>	<input type="submit" value="Pesquisar" ></form>
+<body>
+	<form action="CadTCC.php" method="POST" name="f1">
+		Horário TCC<input type="text" name="horario_TCC" placeholder="Horas:Minutos:Segundos" required>	
+		data TCC<input type="text" name="data_TCC" placeholder="Ano-Mes-Dia" required>	
+		Descricao<input type="text" name="descricao" placeholder="Descrição" required>
+		Nome<input type="text" name="nome" placeholder="Nome" required>	
+		data de agendamento<input type="text" name="data_agendamento" placeholder="Ano-Mes-Dia" required>	
+		Número de sala<input type="text" name="num_sala" placeholder="Número" required>
+		Código de usuario<input type="text" name="cod_usuario" placeholder="Código" required>
+		<input type="submit" value="cadastrar">
+	</form>
 </body>
 </html>

@@ -8,6 +8,7 @@
 	include 'mysqlexecuta.php';
 	$con = conectar();
 	mysql_select_db('vip');
+	$cod_tcc= $_POST["cod_tcc"];
 	$cod_reuniao= $_POST["cod_reuniao"];
 	$horario_reuniao= $_POST["horario_reuniao"];
 	$data_reuniao= $_POST["data_reuniao"];

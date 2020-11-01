@@ -28,8 +28,8 @@ if ($quant==0) {
 		$row = mysql_fetch_array($res);
 	?>
 		<form name = "f1" method="POST" action="AltReuniao_altera.php">
-		Código da reunião: <?php echo $row['cod_reuniao'] ?>
-		<input type="hidden" name="cod_reuniao" value=<?php echo $row['cod_reuniao'];?>
+		Código: <?php echo $row['cod_reuniao'] ?>
+		<input type="hidden" name="cod_reuniao" value=<?php echo $row['cod_reuniao'];?>>
 		Horário da Reunião:<input type='text' name='horario_reuniao' value='<?php echo $row['horario_reuniao'];?>' required>
 		
 		Data da reunião:<input type='text' name='data_reuniao' value='<?php echo $row['data_reuniao'];?>' required>

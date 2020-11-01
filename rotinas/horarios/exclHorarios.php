@@ -3,7 +3,6 @@
 <title>Exclusão de cursos</title>
 </head>
 <body >
- <img src="logotipo-cps.png"> 
 <?php
 	include 'config.php';
 	include 'mysqlexecuta.php';
@@ -18,7 +17,5 @@
 	else{$sql = "delete from horario_aula where cod_horario = $cod_horario";$res = mysqlexecuta($con,$sql);echo " Excluido com Sucesso";
 	}
 	?>
-	
-	<a href = 'pesqcurso_geral.php'>Listar Disciplinas</a>
 	</body>
 	</html>

@@ -15,12 +15,13 @@ function blockletras(objEvent)
 </head>
 <body>
 <form action="cadHorarios.php" method="POST" name="f1">
-			Inclusão de dados: Horários de Aula
+			Código de usuário: <input type="text" name="cod_usuario" onkeypress= "return blockletras(event)" required>
+			Código de turma: <input type="text" name="cod_turma" onkeypress= "return blockletras(event)" required>
 			Horario de início: <input type="text" name="horainicio" required>
 			Horario de fim: <input type="text" name="horafim" required>
-			Dia da Semana: <input type="text" name="diaSemana" onkeypress= "return blockletras(event)" required>
-			Matéria: <input type="text" name="mat" onkeypress= "return blockletras(event)" required>
-			Professor: <input type="text" name="prof" onkeypress= "return blockletras(event)" required>
-			<input type="submit" value="Pesquisar"></form>
+			Dia da Semana: <input type="text" name="diadasemana" required>
+			Matéria: <input type="text" name="materia" required>
+			Professor: <input type="text" name="professor" required>
+			<input type="submit" value="Cadastrar"></form>
 </body>
 </html>

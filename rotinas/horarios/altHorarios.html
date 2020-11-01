@@ -1,43 +1,22 @@
-<!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<title>
-			Alteração de Dados - Horários
-		</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<!--CSS-->
-		<link rel="stylesheet" type="text/css" href="../../css/rotinas.css">
-		<!--ICON-->
-		<link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
-		<!--BOOTSTRAP-->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<!--FONTE-->
-		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+<head><title>Alteração de Dados: Horários</title>
+<meta charset="utf-8">
+<script language="javascript">
 
-	</head>
-	<body>
-		<div class="container">
-			<h1>Alterar Horários</h1>
+function blockletras(objEvent)
+{
+	var iKeyCode;
+	iKeyCode = objEvent.keyCode;
+	if(iKeyCode>=48 && iKeyCode<=57) return true;
+	return false;
+}
+</script>
 
-<<<<<<< HEAD
-			<form name="Alterar" action="altHorarios_show.php" method="POST" >
-			<label for="text">Código do horário</label>
-			<input type="text" name="txtCod" autocomplete="off" required onkeypress= "return blockletras(event)">
-			<input type="submit" value="Pesquisar">
-			</form>
-		</div>
-
-		<!--IMPORTANDO O JAVASCRIPT-->
-		<script src="../../js/script.js"></script>
-	</body>
-=======
 </head>
 <body >
-<form action="altHorarios_show.php" method="POST" name="f1">
-			Alteração de dados: Horários
+<form action="altHorarios_mostra.php" method="POST" name="f1">
 			Código Do Horário
 			<input type="text" name="txtCod" onkeypress= "return blockletras(event)" required>
 			<input type="submit" value="Pesquisar"></form>
 </body>
->>>>>>> d6e9fa9867aeab914aba3c31877761ccadd12ed6
 </html>

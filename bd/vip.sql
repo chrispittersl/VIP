@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 31-Out-2020 às 16:35
+-- Generation Time: 01-Nov-2020 às 01:08
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -59,7 +59,7 @@ CREATE TABLE `horario_aula` (
   `cod_turma` int(2) NOT NULL,
   `horainicio` time NOT NULL,
   `horafim` time NOT NULL,
-  `dia da semana` varchar(15) NOT NULL,
+  `dia_da_semana` varchar(15) NOT NULL,
   `materia` varchar(50) NOT NULL,
   `professor` varchar(60) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -68,7 +68,7 @@ CREATE TABLE `horario_aula` (
 -- Extraindo dados da tabela `horario_aula`
 --
 
-INSERT INTO `horario_aula` (`cod_horario`, `cod_usuario`, `cod_turma`, `horainicio`, `horafim`, `dia da semana`, `materia`, `professor`) VALUES
+INSERT INTO `horario_aula` (`cod_horario`, `cod_usuario`, `cod_turma`, `horainicio`, `horafim`, `dia_da_semana`, `materia`, `professor`) VALUES
 (1, 1, 1, '08:20:00', '09:10:00', 'Segunda-feira', 'LE', 'Leandro Pedrosa'),
 (2, 1, 1, '09:10:00', '10:00:00', 'Segunda-feira', 'LE', 'Leandro Pedrosa'),
 (3, 1, 1, '10:15:00', '11:05:00', 'Segunda-feira', 'GFE', 'Amanda'),

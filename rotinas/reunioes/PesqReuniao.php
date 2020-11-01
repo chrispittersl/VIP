@@ -18,9 +18,6 @@
 	}
 	else{
 ?>
-<p align = "center">
-Reuniões em Ordem Alfabética
-<table width=750 cellpadding=0 cellspacing=0 border=1>
 			Nome
 			Código da reunião
 			Horário da reunião
@@ -30,8 +27,10 @@ Reuniões em Ordem Alfabética
 			Número da sala
 			Código de usuário
 <?php
-	while ($row = mysql_fetch_array($res)) {
+echo "<br>";	
+while ($row = mysql_fetch_array($res)) {
 ?>
+			<br>
 			<?php echo $row['nome'];?>
 			<?php echo $row['cod_reuniao'];?>
 			<?php echo $row['horario_reuniao'];?>
@@ -44,7 +43,5 @@ Reuniões em Ordem Alfabética
 	} //fecha o while
 	} // fecha o if
 ?>
-
-<a href='PesqReuniao_geral.php'>Listar Reuniões</a>
 </body>
 </html>

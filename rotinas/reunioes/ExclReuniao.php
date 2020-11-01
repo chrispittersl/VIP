@@ -23,6 +23,5 @@
 				echo " Excluido com Sucesso";
 			}
 		?>
-	<a href = 'PesqReuniao_geral.php'><p align = "center"> Listar Reuniões </a>
 	</body>
 </html>
