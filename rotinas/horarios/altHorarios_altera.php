@@ -15,7 +15,7 @@
     $diaSemana= $_POST["diaSemana"];
     $materia= $_POST["materia"];
     $professor= $_POST["professor"];
-	$sql = "UPDATE horario_aula set cod_usuario = cod_usuario ,cod_turma = cod_turma ,horainicio = '$horainicio',horafim = '$horafim',dia da semana = '$diaSemana',materia = '$materia',professor = '$professor' where cod_turma = $cod_turma";
+	$sql = "UPDATE horario_aula set cod_usuario = $cod_usuario ,cod_turma = $cod_turma ,horainicio = '$horainicio',horafim = '$horafim',dia_da_semana = '$diaSemana',materia = '$materia',professor = '$professor' where cod_turma = $cod_turma";
 	$res = mysqlexecuta($con,$sql);
 ?>
 Horário alterado com sucesso !!!
