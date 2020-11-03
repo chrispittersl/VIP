@@ -21,4 +21,5 @@
 	$res = mysqlexecuta($con,$sql);
 ?>
 Alterado com sucesso !
-</body></html>
+</body>
+</html>
