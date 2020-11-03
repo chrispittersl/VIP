@@ -1,27 +1,56 @@
+<!DOCTYPE html>
 <html lang="pt-br">
-<head><title>Cadastro de Horários</title>
-<meta charset="utf-8">
-<script language="javascript">
+	<head>
+		<title>Cadastro de Horários</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--CSS-->
+		<link rel="stylesheet" href="../../css/rotinas2.css">
+		<!--ICONES BOOTSTRAP-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
+		<!--ICON PAGINA-->
+		<link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
+		<!--FONTE GOOGLE USADA-->
+		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<form action="altHorarios_mostra.php" method="POST" name="f1">
 
 
-function blockletras(objEvent)
-{
-	var iKeyCode;
-	iKeyCode = objEvent.keyCode;
-	if(iKeyCode>=48 && iKeyCode<=57) return true;
-	return false;
-}
-</script>
-</head>
-<body>
-<form action="cadHorarios.php" method="POST" name="f1">
-			Código de usuário: <input type="text" name="cod_usuario" onkeypress= "return blockletras(event)" required>
-			Código de turma: <input type="text" name="cod_turma" onkeypress= "return blockletras(event)" required>
-			Horario de início: <input type="text" name="horainicio" required>
-			Horario de fim: <input type="text" name="horafim" required>
-			Dia da Semana: <input type="text" name="diadasemana" required>
-			Matéria: <input type="text" name="materia" required>
-			Professor: <input type="text" name="professor" required>
-			<input type="submit" value="Cadastrar"></form>
-</body>
+				<h1>Cadastrar</h1>
+
+				<label for="txtCod">Código Horário</label>
+				<input type="text" name="txtCod" autocomplete="off" required onkeypress="return blokletras(event)">
+
+				<label for="cod_usuario">Código de usuário</label>
+				<input type="text" name="cod_usuario" onkeypress= "return blockletras(event)" required>
+
+				<label for="cod_turma">Código de turma</label>
+				<input type="text" name="cod_turma" onkeypress= "return blockletras(event)" required>
+
+				<label for="horainicio">Horario de início</label>
+				<input type="text" name="horainicio" required>
+
+				<label for="horafim">Horario de fim</label>
+				<input type="text" name="horafim" required>
+
+				<label for="diadasemana">Dia da Semana</label>
+				<input type="text" name="diadasemana" required>
+
+				<label for="materia">Matéria</label>
+				<input type="text" name="materia" required>
+
+				<label for="professor">Professor</label>
+				<input type="text" name="professor" required>
+				
+				<input type="submit" value="Cadastrar">
+
+			</form>
+		</div>
+		<script src="../../js/blockletras.js"></script> 
+		<script src="../../js/script.js"></script> 
+
+		</body>
 </html>
