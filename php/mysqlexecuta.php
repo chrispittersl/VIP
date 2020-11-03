@@ -1,30 +1,25 @@
 <HTML>
 <HEAD>
-<<<<<<< HEAD
- <TITLE>PHP - Funï¿½ï¿½o Executa Comandos SQL</TITLE>
-=======
- <TITLE>PHP - FunÃ§Ã£o Executa Comandos SQL</TITLE>
->>>>>>> e76a255b6cc6cc3b7a5820f9f9caf58069a497f5
+ <TITLE>PHP - Função Executa Comandos SQL</TITLE>
 </HEAD>
 <BODY>
 <?php
 
-<<<<<<< HEAD
 /*
-$id - ponteiro da conexï¿½o aberta
+$id - ponteiro da conexão aberta
 $sql - clausula sql a executar
-$erro - Especifica se a funï¿½ï¿½o exibe ou nï¿½o (0=nï¿½o, 1=sim)
+$erro - Especifica se a função exibe ou não (0=não, 1=sim)
 $res - resposta
 */
 function mysqlexecuta($id, $sql, $erro = 1)
 {
      if (empty($sql) OR !($id))
-     return 0; //erro na conexï¿½o ou no comando sql
+     return 0; //erro na conexão ou no comando sql
      
      if (!($res = @mysql_query($sql, $id)))
      {
      if($erro)
-		echo "Ocorreu um erro na execuÃ§Ã£o do comando sql no banco de dados. Favor contactar o administrador";
+		echo "Ocorreu um erro na execução do comando sql no banco de dados. Favor contactar o administrador";
 		echo "<br>" . "<b> Comando: </b>" . $sql . "<br> id: </b>" . $id . "<br>";
 	
      exit;
@@ -32,19 +27,6 @@ function mysqlexecuta($id, $sql, $erro = 1)
      return $res;
 }
 
-=======
-function mysqlexecuta($id,$sql,$erro = 1){
-         if(empty($sql) or !($id))
-         return 0;
-         if (!($res = @mysql_query($sql,$id))){
-            if($erro)
-            echo "Ocorreu um erro na execuÃ§Ã£o do Comando SQL no banco de dados. Favor Contactar o Administrador";
-            echo "<br>" .  "<b> Comando: </b>" . $sql . "<b><br>Id: </b>" . $id . "<br>";
-            exit;
-         }
-          return $res;
-         }
->>>>>>> e76a255b6cc6cc3b7a5820f9f9caf58069a497f5
 ?>
 </BODY>
 </HTML>

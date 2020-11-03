@@ -23,7 +23,7 @@
     }
     else
     {
-        header("location:home.html");
+        header("location:../html/home.html");
     }
 
     ?>
