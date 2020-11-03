@@ -1,15 +1,37 @@
+<!DOCTYPE html>
 <html lang="pt-br">
-<head><title>Alunos </title></head>
-<script language = "javascript">
+	<head>
+		<title>Altera TCC</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--CSS-->
+		<link rel="stylesheet" href="../../css/rotinas2.css">
+		<!--ICONES BOOTSTRAP-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
+		<!--ICON PAGINA-->
+		<link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
+		<!--FONTE GOOGLE USADA-->
+		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container"></div>
+			<form name="f1" action="Alttcc_mostra.php" method="POST" name="f1"></form>
 
-function blockletras(objEvent)
-{
-	var iKeyCode;
-	iKeyCode = objEvent.keyCode;
-	if(iKeyCode>=48 && iKeyCode<=57) return true;
-	return false;
-}
+				<h1>Alterar</h1>
 
+<<<<<<< HEAD
+				<label for="cod_tcc">Código TCC</label>
+				<input type="text" name="cod_tcc" size="50" maxlength="35" onkeypress= "return blockletras(event)" required>
+				
+				<input type="submit" name ="botao" value="alterar" >
+
+			</form>
+		</div>
+		<script src="../../js/blockletras.js"></script> 
+		<script src="../../js/script.js"></script> 
+	</body>
+=======
 </script>
 <form name="f1" action="AltTcc_mostra.php" method="POST" name="f1">
 <body>
@@ -18,4 +40,5 @@ Codigo de tcc:
 <input type="submit" name ="botao" value="alterar" >
 </form>
 </body>
+>>>>>>> a53dbbcf34b7c4f78d4960fc073eb960fb7c01e9
 </html>

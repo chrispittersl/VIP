@@ -1,27 +1,52 @@
+<!DOCTYPE html>
 <html lang="pt-br">
-<head><title>PHP - Pesquisa geral de TCC</title>
-<script language="javascript">
+	<head>
+		<title>Cadastro de TCC</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--CSS-->
+		<link rel="stylesheet" href="../../css/rotinas2.css">
+		<!--ICONES BOOTSTRAP-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
+		<!--ICON PAGINA-->
+		<link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
+		<!--FONTE GOOGLE USADA-->
+		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<form action="CadTCC.php" method="POST" name="f1">
 
-function blockletras(objEvent)
-{
-	var iKeyCode;
-	iKeyCode = objEvent.keyCode;
-	if(iKeyCode>=48 && iKeyCode<=57) return true;
-	return false;
-}
-</script>
+				<h1>Cadastrar</h1>
 
-</head>
-<body>
-	<form action="CadTCC.php" method="POST" name="f1">
-		Horário TCC<input type="text" name="horario_TCC" placeholder="Horas:Minutos:Segundos" required>	
-		data TCC<input type="text" name="data_TCC" placeholder="Ano-Mes-Dia" required>	
-		Descricao<input type="text" name="descricao" placeholder="Descrição" required>
-		Nome<input type="text" name="nome" placeholder="Nome" required>	
-		data de agendamento<input type="text" name="data_agendamento" placeholder="Ano-Mes-Dia" required>	
-		Número de sala<input type="text" name="num_sala" placeholder="Número" required>
-		Código de usuario<input type="text" name="cod_usuario" placeholder="Código" required>
-		<input type="submit" value="cadastrar">
-	</form>
-</body>
+			<label for="horario_TCC">Horário TCC</label>
+			<input type="text" name="horario_TCC" placeholder="Horas:Minutos:Segundos" required>	
+			
+			<label for="data_TCC">Data TCC</label>
+			<input type="text" name="data_TCC" placeholder="Ano-Mes-Dia" required>	
+			
+			<label for="descricao">Descricao</label>
+			<input type="text" name="descricao" placeholder="Descrição" required>
+			
+			<label for="nome">Nome</label>
+			<input type="text" name="nome" placeholder="Nome" required>	
+			
+			<label for="data_agendamento">Data de agendamento</label>
+			<input type="text" name="data_agendamento" placeholder="Ano-Mes-Dia" required>	
+			
+			<label for="num_sala">Número de sala</label>
+			<input type="text" name="num_sala" placeholder="Número" required>
+			
+			<label for="cod_usuario">Código de usuario</label>
+			<input type="text" name="cod_usuario" placeholder="Código" required>
+			
+			<input type="submit" value="cadastrar">
+
+			</form>
+		</div>
+		<script src="../../js/blockletras.js"></script> 
+		<script src="../../js/script.js"></script> 
+
+	</body>
 </html>
