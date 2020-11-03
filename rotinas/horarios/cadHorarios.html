@@ -15,35 +15,32 @@
 		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<div class="container">
-			<form action="altHorarios_mostra.php" method="POST" name="f1">
+		<div class="container2">
+			<h1>Cadastrar</h1>
+			<form action="cadHorarios.php" method="POST" name="f1">
 
-
-				<h1>Cadastrar</h1>
-
-				<label for="txtCod">Código Horário</label>
-				<input type="text" name="txtCod" autocomplete="off" required onkeypress="return blokletras(event)">
-
+				
+				
 				<label for="cod_usuario">Código de usuário</label>
-				<input type="text" name="cod_usuario" onkeypress= "return blockletras(event)" required>
+				<input type="text" name="cod_usuario" autocomplete="off" required onkeypress= "return blockletras(event)">
 
 				<label for="cod_turma">Código de turma</label>
-				<input type="text" name="cod_turma" onkeypress= "return blockletras(event)" required>
+				<input type="text" name="cod_turma" autocomplete="off"  required onkeypress= "return blockletras(event)">
 
 				<label for="horainicio">Horario de início</label>
-				<input type="text" name="horainicio" required>
+				<input type="text" name="horainicio" required autocomplete="off" placeholder="Ex: 08:00:00">
 
 				<label for="horafim">Horario de fim</label>
-				<input type="text" name="horafim" required>
+				<input type="text" name="horafim" required autocomplete="off" placeholder="Ex: 16:20:00">
 
 				<label for="diadasemana">Dia da Semana</label>
-				<input type="text" name="diadasemana" required>
+				<input type="text" name="diadasemana" required autocomplete="off" placeholder="Ex: Segunda-Feira">
 
 				<label for="materia">Matéria</label>
-				<input type="text" name="materia" required>
+				<input type="text" name="materia" required autocomplete="off" placeholder="Ex: Filosofia">
 
 				<label for="professor">Professor</label>
-				<input type="text" name="professor" required>
+				<input type="text" name="professor" required autocomplete="off" placeholder="Ex: Marlon">
 				
 				<input type="submit" value="Cadastrar">
 

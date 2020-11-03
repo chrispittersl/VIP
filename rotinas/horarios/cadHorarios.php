@@ -22,8 +22,6 @@
 			
 			mysql_select_db('vip');
 			
-			$sql = "insert into reunioes(horario_reuniao,data_reuniao,descricao,nome,data_agendamento,num_sala,cod_usuario)
-			Values('$horario_reuniao','$data_reuniao','$descricao','$nome','$data_agendamento',$num_sala,$cod_usuario)";
 			
 			$sql = "insert into horario_aula(cod_usuario,cod_turma,horainicio,horafim,dia_da_semana,materia,professor) 
 			Values ($cod_usuario,$cod_turma,'$horainicio','$horafim','$diadasemana','$materia','$professor')";

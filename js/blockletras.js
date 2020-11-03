@@ -4,7 +4,7 @@
 			$('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 			});
 			
-			function blokletras(objEvent)
+			function blockletras(objEvent)
 			{
 				var iKeyCode;
 				iKeyCode = objEvent.keyCode;
