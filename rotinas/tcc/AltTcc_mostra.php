@@ -49,10 +49,10 @@
 					<input type='text' name='data_tcc' value='<?php echo $row['data_tcc'];?>' required>
 					
 					<label for="descricao">Descricao :</label> 
-					<input type='text' name='descricao' value='<?php echo $row['descricao'];?>' required>
+					<input type='text' name='descricao' value='<?php echo utf8_encode($row['descricao']);?>' required>
 					
 					<label for="nome">Nome:</label> 
-					<input type='text' name='nome' value='<?php echo $row['nome'];?>' required>
+					<input type='text' name='nome' value='<?php echo utf8_encode($row['nome']);?>' required>
 					
 					<label for="data_agendamento">Data de Agendamento:</label>
 					<input type='text' name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
