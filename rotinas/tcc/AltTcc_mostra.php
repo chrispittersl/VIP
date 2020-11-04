@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<title> Alteração de dados: TC</title>
+		<title> Alteração de dados: TCC</title>
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS-->
@@ -38,29 +38,29 @@
 				<h1>Alteração</h1>
 
 					<form name = "f1" method="POST" action="AltTcc_altera.php">
-					<label>Código de TCC:</label>
-					<label id="cod"><?php echo $row['cod_tcc']?>
+					<label>Código de TCC</label>
+					<label id="cod"><?php echo $row['cod_tcc']?></label>
 					<input type="hidden" name="cod_tcc" value=<?php echo $row['cod_tcc'];?>>
 					
-					<label>Horário TCC::</label>
+					<label for="horario_tcc">Horário TCC:</label>
 					<input type='text' name='horario_tcc' value='<?php echo $row['horario_tcc'];?>' required>
 					
-					<label>Data TCC::</label>
+					<label for="data_tcc">Data TCC:</label>
 					<input type='text' name='data_tcc' value='<?php echo $row['data_tcc'];?>' required>
 					
-					<label>Descricao ::</label> 
+					<label for="descricao">Descricao :</label> 
 					<input type='text' name='descricao' value='<?php echo $row['descricao'];?>' required>
 					
-					<label>Nome::</label> 
+					<label for="nome">Nome:</label> 
 					<input type='text' name='nome' value='<?php echo $row['nome'];?>' required>
 					
-					<label>Data de Agendamento::</label>
+					<label for="data_agendamento">Data de Agendamento:</label>
 					<input type='text' name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
 					
-					<label>Numero Sala::</label>
+					<label for="num_sala">Numero Sala:</label>
 					<input type='text' name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $row['num_sala'];?>' required>
 					
-					<label>Código de Usuario::</label>
+					<label for="cod_usuario">Código de Usuario:</label>
 					<input type='text' name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
 					
 					<input type="submit" name ="botao" value="Alterar dados">	

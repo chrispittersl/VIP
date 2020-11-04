@@ -23,8 +23,8 @@
 			include 'mysqlexecuta.php';
 			$con = conectar();
 			mysql_select_db('vip');
-			$ReuniaoNome = $_POST["Nome"];
-			$sql = "SELECT * FROM reunioes where nome like '$ReuniaoNome%' order by nome";
+			$cod_reuniao = $_POST["cod_reuniao"];
+			$sql = "SELECT * FROM reunioes where cod_reuniao like '$cod_reuniao%' order by cod_reuniao";
 			$res = mysqlexecuta($con,$sql);
 			$quant = (mysql_num_rows($res));
 			if ($quant==0){

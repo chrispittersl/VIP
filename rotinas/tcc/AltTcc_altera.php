@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<title> Alteração de tcc</title>
+		<title>Alteração de tcc</title>
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS-->
@@ -28,10 +28,10 @@
 			$data_agendamento= $_POST["data_agendamento"];
 			$num_sala= $_POST["num_sala"];
 			$cod_usuario= $_POST["cod_usuario"];
-			$sql = "UPDATE tcc set cod_tcc = $cod_tcc, horario_tcc = '$horario_tcc', data_tcc = '$data_tcc', descricao = '$descricao', nome = '$nome', data_agendamento = '$data_agendamento', num_sala = $num_sala, cod_usuario = $cod_usuario where cod_tcc = $cod_tcc";
+			$sql = "UPDATE tcc set cod_tcc = $cod_tcc, horario_tcc = '$horario_tcc', data_tcc = '$data_tcc', descricao = '$descricao',
+			nome = '$nome', data_agendamento = '$data_agendamento', num_sala = $num_sala, cod_usuario = $cod_usuario where cod_tcc = $cod_tcc";
 			$res = mysqlexecuta($con,$sql);
 		?>
-			TCC alterado com sucesso !
-
+			TCC alterado com sucesso!
 	</body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<title> Alteração de Reuniões</title>
+		<title>Alteração de reuniões</title>
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS-->

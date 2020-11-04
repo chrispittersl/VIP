@@ -14,7 +14,6 @@
 		<!--FONTE GOOGLE USADA-->
 		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
 	</head>
-
 	<body >
 		<?php
 			include 'config.php';
@@ -42,22 +41,20 @@
 					<th>Materia</th>
 					<th>Professor</th>
 				</tr>	
-		<?php
-			while ($row = mysql_fetch_array($res)) 
-			{
-		?>
-					<tr>
-						<td><?php echo $row['cod_horario'];?></td>
-						<td><?php echo $row['cod_usuario'];?></td>
-						<td><?php echo $row['cod_turma'];?></td>
-						<td><?php echo $row['horainicio'];?></td>
-						<td><?php echo $row['horafim'];?></td>
-						<td><?php echo $row['dia_da_semana'];?></td>
-						<td><?php echo $row['materia'];?></td>
-						<td><?php echo $row['professor'];?></td>
-					</tr>
-						
-		
+			<?php
+				while ($row = mysql_fetch_array($res)) 
+				{
+			?>
+				<tr>
+					<td><?php echo $row['cod_horario'];?></td>
+					<td><?php echo $row['cod_usuario'];?></td>
+					<td><?php echo $row['cod_turma'];?></td>
+					<td><?php echo $row['horainicio'];?></td>
+					<td><?php echo $row['horafim'];?></td>
+					<td><?php echo $row['dia_da_semana'];?></td>
+					<td><?php echo $row['materia'];?></td>
+					<td><?php echo $row['professor'];?></td>
+				</tr>
 		<?php
 			} 
 		} 

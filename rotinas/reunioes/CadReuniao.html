@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-		<head>
-			<title>Listagem de Reuniões</title>
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<!--CSS-->
-			<link rel="stylesheet" href="../../css/rotinas2.css">
-			<!--ICONES BOOTSTRAP-->
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-			<link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
-			<!--ICON PAGINA-->
-			<link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
-			<!--FONTE GOOGLE USADA-->
-			<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
-
-		</head>
-		<body>
-			<div class="container">
+	<head>
+		<title>Listagem de reuniões</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--CSS-->
+		<link rel="stylesheet" href="../../css/rotinas2.css">
+		<!--ICONES BOOTSTRAP-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
+		<!--ICON PAGINA-->
+		<link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
+		<!--FONTE GOOGLE USADA-->
+		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container2">
 			<h1>Cadastro</h1>
-			<form action="CadReuniao.php" method="POST" name="f1"> 
+			<form action="CadReuniao.php" method="POST" name="f1">
 
+				<label for="horario_reuniao">Horário Reunião</label>
+				<input type="text" name="horario_reuniao" placeholder = "Ex: 08:00:00" required onkeypress="return blokletras(event)">
 
-				
-				<label for="text">Horário Reunião</label>
-				<input type="text" name="horario_reuniao" placeholder = "horas:minutos:segundos" required onkeypress="return blokletras(event)">
+				<label for="data_reuniao">Data Reunião</label>
+				<input type="text" name="data_reuniao"  placeholder = "Ex: 2001-01-01" required onkeypress="return blokletras(event)">
 
-				<label for="text">Data Reunião</label>
-				<input type="text" name="data_reuniao"  placeholder = "ano-mes-dia" required onkeypress="return blokletras(event)">
+				<label for="descricao">Descrição</label>
+				<input type="text" name="descricao"  placeholder = "Ex: Reunião para discussão sobre..." required>
 
-				<label for="text">Descrição</label>
-				<input type="text" name="descricao"  placeholder = "descrição" required>
+				<label for="nome">Nome</label>
+				<input type="text" name="nome" placeholder = "Ex: Reunião de pais e mestres" required>
 
-				<label for="text">Nome</label>
-				<input type="text" name="nome" placeholder = "Nome" required>
+				<label for="data_agendamento">Data de Agendamento</label>
+				<input type="text" name="data_agendamento" placeholder = "Ex: 2001-01-01"  required onkeypress="return blokletras(event)">
 
-				<label for="text">Data de Agendamento</label>
-				<input type="text" name="data_agendamento" placeholder = "ano-mes-dia"  required onkeypress="return blokletras(event)">
+				<label for="num_sala">Número da sala</label>
+				<input type="text" name="num_sala" onkeypress= "return blockletras(event)" required>
 
-				<label for="text">Número da sala</label>
-				<input type="text" name="num_sala" onkeypress= "return blockletras(event)" placeholder = "Número" required>
-
-				<label for="text">Código de usuário</label>
-				<input type="text" name="cod_usuario" onkeypress= "return blockletras(event)" placeholder = "Código" required>
+				<label for="cod_usuario">Código de usuário</label>
+				<input type="text" name="cod_usuario" onkeypress= "return blockletras(event)" required>
 
 				<input type="submit" value="Cadastrar">
 			</form>
