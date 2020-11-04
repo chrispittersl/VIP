@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Nov-2020 às 20:13
+-- Generation Time: 04-Nov-2020 às 20:36
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -209,11 +209,11 @@ CREATE TABLE `reunioes` (
 --
 
 INSERT INTO `reunioes` (`cod_reuniao`, `horario_reuniao`, `data_reuniao`, `descricao`, `nome`, `data_agendamento`, `num_sala`, `cod_usuario`) VALUES
-(1, '15:30:00', '2020-10-08', 'Reunião de pais da turma 3 ano Etim Informáica, a professora Ivonete conduzirá a reunião', 'Reunião de pais e mestres', '2020-09-01', 28, 2),
-(2, '12:30:00', '2020-10-23', 'Reunião de pais da turma 2 ano MTEC Recursos Humanos, o professor Elpidio conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-15', 8, 2),
-(3, '12:30:00', '2020-10-23', 'Reunião de pais da turma 1 módulo do curso Técnico Administração, a professora Amanda conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-07', 6, 2),
-(4, '16:35:00', '2020-11-01', 'Reunião de pais da turma 3 ano Etim administração, professora Silvana conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-16', 1, 2),
-(5, '19:00:00', '2020-11-10', 'Reunião de pais da turma 1 módulo do curso Técnico Serviços Jurídicos, professor Francimar conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-13', 3, 2);
+(1, '15:30:00', '2020-10-08', 'Reunião de pais da turma 3 ano Etim Informáica, a professora Ivonete conduzirá a reunião', 'Reunião de pais e mestres', '2020-09-01', 28, 1),
+(2, '12:30:00', '2020-10-23', 'Reunião de pais da turma 2 ano MTEC Recursos Humanos, o professor Elpidio conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-15', 8, 1),
+(3, '12:30:00', '2020-10-23', 'Reunião de pais da turma 1 módulo do curso Técnico Administração, a professora Amanda conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-07', 6, 1),
+(4, '16:35:00', '2020-11-01', 'Reunião de pais da turma 3 ano Etim administração, professora Silvana conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-16', 1, 1),
+(5, '19:00:00', '2020-11-10', 'Reunião de pais da turma 1 módulo do curso Técnico Serviços Jurídicos, professor Francimar conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-13', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -282,11 +282,11 @@ CREATE TABLE `tcc` (
 --
 
 INSERT INTO `tcc` (`cod_tcc`, `horario_tcc`, `data_tcc`, `descricao`, `nome`, `data_agendamento`, `num_sala`, `cod_usuario`) VALUES
-(1, '13:00:00', '2020-10-30', 'Apresentação de TCC do grupo VIP - Virtual Increased Plan; Curso: 3 ano Etim Informática.\r\nIntegrantes: Christopher Pitter, Gustavo Lopes, Isabele Vallim, Izabella Rodrigues e João Victor Galdino.', 'Apresentação de TCC', '2020-09-01', 8, 2),
-(2, '09:00:00', '2020-11-19', 'Apresenação de TCC do grupo Mulheres na Prisão; Curso: 3 ano Etim Administração.\r\nIntegrantes: Maria joaquina, Bruno Santos e Antônia Pereira.', 'Apresentação de TCC', '2020-10-30', 7, 2),
-(3, '14:00:00', '2020-11-09', 'Apresentação de TCC do grupo Adoção nos Dias de Hoje; Curso: 3 ano Etim Administração.\r\nIntegrantes: Pedro Souza, Henrique Alves, Beijamin Martins.', 'Apresentação de TCC', '2020-10-29', 7, 2),
-(4, '15:30:00', '2020-11-18', 'Apresentação de TCC do grupo Novas estratégias de processos seletivos; Curso: 3 ano Etim Administração.\r\nIntegrantes: Mariane Barbosa, Cibele Silva e Lucas Garcia.', 'Apresentação de TCC', '2020-10-18', 7, 2),
-(5, '13:00:00', '2020-10-30', 'Apresentação de TCC do grupo Meio Ambiente; Curso: 3 ano Etim Informática.\r\nIntegrantes: Pedro Henrique, João Pedro e Juan de Matos.', 'Apresentação de TCC', '2020-09-09', 8, 2);
+(1, '13:00:00', '2020-10-30', 'Apresentação de TCC do grupo VIP - Virtual Increased Plan; Curso: 3 ano Etim Informática.\r\nIntegrantes: Christopher Pitter, Gustavo Lopes, Isabele Vallim, Izabella Rodrigues e João Victor Galdino.', 'Apresentação de TCC', '2020-09-01', 10, 1),
+(2, '09:00:00', '2020-11-19', 'Apresenação de TCC do grupo Mulheres na Prisão; Curso: 3 ano Etim Administração.\r\nIntegrantes: Maria joaquina, Bruno Santos e Antônia Pereira.', 'Apresentação de TCC', '2020-10-30', 7, 1),
+(3, '14:00:00', '2020-11-09', 'Apresentação de TCC do grupo Adoção nos Dias de Hoje; Curso: 3 ano Etim Administração.\r\nIntegrantes: Pedro Souza, Henrique Alves, Beijamin Martins.', 'Apresentação de TCC', '2020-10-29', 14, 1),
+(4, '15:30:00', '2020-11-18', 'Apresentação de TCC do grupo Novas estratégias de processos seletivos; Curso: 3 ano Etim Administração.\r\nIntegrantes: Mariane Barbosa, Cibele Silva e Lucas Garcia.', 'Apresentação de TCC', '2020-10-18', 28, 1),
+(5, '13:00:00', '2020-10-30', 'Apresentação de TCC do grupo Meio Ambiente; Curso: 3 ano Etim Informática.\r\nIntegrantes: Pedro Henrique, João Pedro e Juan de Matos.', 'Apresentação de TCC', '2020-09-09', 27, 1);
 
 -- --------------------------------------------------------
 
