@@ -36,8 +36,8 @@
 			<div class="container2">
 				<h1>Alteração</h1>
 					<form name="f1" method="POST" action="altHorarios_altera.php">
-						<label id="cod">Código de horário</label>
-						<label id="cod_horario"><?php echo $row['cod_horario'] ?></label>
+						<label>Código de horário</label>
+						<label id="cod"><?php echo $row['cod_horario'] ?></label>
 						<input type="hidden" name="cod_horario" value=<?php echo $row ['cod_horario'];?>>
 
 						<label for="cod_usuario">Código de usuário</label>
@@ -53,13 +53,13 @@
 						<input type='text' name='horafim' value='<?php echo $row['horafim'];?>' required>
 							
 						<label for="diaSemana">	Dia da semana</label>
-						<input type='text' name='diaSemana' value='<?php echo $row['dia_da_semana'];?>' required>
+						<input type='text' name='diaSemana' value='<?php echo utf8_encode($row['dia_da_semana']);?>' required>
 							
 						<label for="materia">Matéria</label>
-						<input type='text' name='materia' value='<?php echo $row['materia'];?>' required>
+						<input type='text' name='materia' value='<?php echo utf8_encode($row['materia']);?>' required>
 							
 						<label for="professor">Professor</label>
-						<input type='text' name='professor' value='<?php echo $row['professor'];?>' required>
+						<input type='text' name='professor' value='<?php echo utf8_encode($row['professor']);?>' required>
 						
 						<input type="submit" name ="botao" value="Alterar Dados">	
 					</form>

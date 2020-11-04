@@ -51,9 +51,9 @@
 					<td><?php echo $row['cod_turma'];?></td>
 					<td><?php echo $row['horainicio'];?></td>
 					<td><?php echo $row['horafim'];?></td>
-					<td><?php echo $row['dia_da_semana'];?></td>
-					<td><?php echo $row['materia'];?></td>
-					<td><?php echo $row['professor'];?></td>
+					<td><?php echo utf8_encode($row['dia_da_semana']);?></td>
+					<td><?php echo utf8_encode($row['materia']);?></td>
+					<td><?php echo utf8_encode($row['professor']);?></td>
 				</tr>
 		<?php
 			} 
