@@ -19,10 +19,12 @@
 	</head>
 
 	<body>
+		
+
 		<div class="container">
 			<h1>Login</h1>
 
-			<form name="Login" action="../php/Login.php" method="POST">
+			<form name="Login" action="login.php" method="GET">
 				<label for="email"> Usuário</label>
 				<input type="text" name="user" id="user" placeholder="Digite seu usuário" maxlength="5" autocomplete="off" required>
 				<label for="password"> Senha</label>
@@ -31,6 +33,32 @@
 				<a href="#" id="visitante">Acesse como Visitante</a>
 
 			</form>
+			<?php
+				$Usuario = $_GET['user'];
+				$Senha = $_GET ['senha'];
+				include 'config.php';
+				include 'mysqlexecuta.php';
+				$con = conectar ();
+				mysql_select_db ('vip');
+
+				
+				$sql="SELECT * FROM usuario where usuario like '$Usuario' && senha like '$Senha'";
+				$res = mysqlexecuta($con, $sql);
+				$quant = (mysql_num_rows($res));
+				
+				if($quant==0 && $Usuario!="")
+				{
+					echo "<script type='javascript'> alert('Login ou Senha Inválidos !!!') </script>";
+				}
+				else
+				{
+					header("location:../html/home.html");
+				}
+				
+
+				
+			?>
+
 		</div>
 
 	<!--IMPORTANDO O JAVASCRIPT-->
