@@ -9,10 +9,12 @@
     box-sizing: border-box;
     border: none;
     outline: none;
+    
 }
 
 body {
   background: #d4d2d2 ;
+ 
  
 }
 
@@ -285,4 +287,30 @@ img {
   color: #1c1c1c;
   background-color: transparent;
   border: 2px solid #e5474b;
+}
+
+/*=============RODAPE==========*/
+
+
+.copyright {
+  color: rgba(255, 255, 255, 0.7);
+   margin-top:2%;
+  }
+.bg-gradient {
+  background: #1c1c1c
+}
+.container {
+  width: 100%; 
+  float: left; 
+  padding: 1% 2%; 
+  text-align: center;
+}
+
+.linha{
+  width: 100%;
+}
+hr{
+  border:2px solid rgba(229, 71, 75,0.89);
+  width: 100%;
+ 
 }
