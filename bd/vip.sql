@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Nov-2020 às 01:08
+-- Generation Time: 04-Nov-2020 às 20:13
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -209,7 +209,7 @@ CREATE TABLE `reunioes` (
 --
 
 INSERT INTO `reunioes` (`cod_reuniao`, `horario_reuniao`, `data_reuniao`, `descricao`, `nome`, `data_agendamento`, `num_sala`, `cod_usuario`) VALUES
-(1, '15:30:00', '2020-10-08', 'Reunião de pais da turma 3 ano Etim Informáica, a professora Ivonete conduzirá a reunião', 'Reunião de pais e mestres', '2020-09-01', 6, 2),
+(1, '15:30:00', '2020-10-08', 'Reunião de pais da turma 3 ano Etim Informáica, a professora Ivonete conduzirá a reunião', 'Reunião de pais e mestres', '2020-09-01', 28, 2),
 (2, '12:30:00', '2020-10-23', 'Reunião de pais da turma 2 ano MTEC Recursos Humanos, o professor Elpidio conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-15', 8, 2),
 (3, '12:30:00', '2020-10-23', 'Reunião de pais da turma 1 módulo do curso Técnico Administração, a professora Amanda conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-07', 6, 2),
 (4, '16:35:00', '2020-11-01', 'Reunião de pais da turma 3 ano Etim administração, professora Silvana conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-16', 1, 2),
@@ -231,14 +231,34 @@ CREATE TABLE `sala` (
 --
 
 INSERT INTO `sala` (`num_sala`, `nome_sala`) VALUES
-(1, 'sala de aula'),
-(2, 'sala de aula'),
-(3, 'sala de aula'),
-(4, 'sala de aula'),
-(5, 'sala de aula'),
-(6, 'anexo'),
-(7, 'auditório'),
-(8, 'mini auditório');
+(1, 'Sala de Aula - Bloco A'),
+(2, 'Sala de Aula - Bloco A'),
+(3, 'Sala de Aula - Bloco A'),
+(4, 'Sala de Aula - Bloco A'),
+(5, 'Sala de Aula - Bloco A'),
+(6, 'Sala de Aula - Bloco A'),
+(7, 'Sala de Aula - Bloco A'),
+(8, 'Sala de Aula - Bloco A'),
+(9, 'Sala de Aula - Bloco A'),
+(10, 'Sala de Aula - Bloco A'),
+(11, 'Sala de Aula - Bloco A'),
+(12, 'Sala de Aula - Bloco A'),
+(13, 'Sala de Aula - Bloco B'),
+(14, 'Sala de Aula - Bloco B'),
+(15, 'Sala de Aula - Bloco B'),
+(16, 'Sala de Aula - Bloco B'),
+(17, 'Sala de Aula - Bloco B'),
+(18, 'Sala de Aula - Bloco B'),
+(19, 'Sala de Aula - Bloco B'),
+(20, 'Sala de Aula - Bloco B'),
+(21, 'Sala de Aula - Bloco B'),
+(22, 'Sala de Aula - Bloco B'),
+(23, 'Sala de Aula - Bloco B'),
+(24, 'Sala de Aula - Bloco B'),
+(25, 'Sala 1 - Anexo'),
+(26, 'Sala 2 - Anexo'),
+(27, 'Miniauditório'),
+(28, 'Auditório');
 
 -- --------------------------------------------------------
 
@@ -381,7 +401,7 @@ ALTER TABLE `reunioes`
 -- AUTO_INCREMENT for table `sala`
 --
 ALTER TABLE `sala`
-  MODIFY `num_sala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `num_sala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `tcc`
 --
