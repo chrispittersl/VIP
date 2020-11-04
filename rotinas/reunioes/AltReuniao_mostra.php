@@ -48,10 +48,10 @@
 							<input type='text' name='data_reuniao' value='<?php echo $row['data_reuniao'];?>' required>
 							
 							<label for="descricao">Descrição</label>
-							<textarea name="descricao"><?php echo $row['descricao'];?> </textarea>
+							<textarea name="descricao"><?php echo utf8_encode($row['descricao']);?> </textarea>
 							
 							<label for="nome">Nome</label>
-							<input type='text' name='nome' value='<?php echo $row['nome'];?>' required>
+							<input type='text' name='nome' value='<?php echo utf8_encode($row['nome']);?>' required>
 							
 							<label for="data_agendamento">Data de agentamento</label>
 							<input type='text' name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>

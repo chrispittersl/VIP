@@ -49,11 +49,11 @@
 		?>
 
 					<tr>
-						<td><?php echo $row['nome'];?></td>
+						<td><?php echo utf8_encode($row['nome']);?></td>
 						<td><?php echo $row['cod_reuniao'];?></td>
 						<td><?php echo $row['horario_reuniao'];?></td>
 						<td><?php echo $row['data_reuniao'];?></td>
-						<td><?php echo $row['descricao'];?></td>
+						<td><?php echo utf8_encode($row['descricao']);?></td>
 						<td><?php echo $row['data_agendamento'];?></td>
 						<td><?php echo $row['num_sala'];?></td>
 						<td><?php echo $row['cod_usuario'];?></td>
