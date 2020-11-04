@@ -1,36 +1,30 @@
-.mostrar{
-    display: none;
-    border: 1px double #000;
-    font-size: 20;
-    width: 200px;
-    height: 100px;
+/*===============RESET===============*/
+* 
+{
+    font-family: 'Archivo Narrow', sans-serif;
+    margin:0;
+    padding:0;
+    font-size:100%;
+    font-weight: normal;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
 }
 
-.wrapper{ position: absolute; }
-
-.item li{
-    display: block;
-    color: black;
-    float: left;
+body {
+  background: #d4d2d2 ;
+ 
 }
 
-#container{
-    background-color: #000;
-    border-radius: 15px;
+
+
+ul {
+    list-style: none;
 }
 
-body{
-    background-image: url(../img/banner.jpg);
+a {
+    text-decoration: none;
 }
 
-#conteudo{
-    background-color: black;
-    margin: 20px;
-    width: 300px;
-    height: 300px;
-}
 
-.blocoA .blocoB{
-    color: black;
-    border: 1px;
-}
+
