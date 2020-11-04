@@ -33,9 +33,11 @@
 			{
 				$row = mysql_fetch_array($res);
 		?>
-			<div class="container2">	
+			<div class="container2">
+
 				<h1>Alteração</h1>
-					<form name = "f1" method="POST" action="Alttcc_altera.php">
+
+					<form name = "f1" method="POST" action="AltTcc_altera.php">
 					<label>Código de TCC:</label>
 					<label id="cod"><?php echo $row['cod_tcc']?>
 					<input type="hidden" name="cod_tcc" value=<?php echo $row['cod_tcc'];?>>

@@ -29,7 +29,7 @@
 		mysql_select_db('vip');		
 		$sql = "insert into TCC(horario_TCC,data_TCC,descricao,nome,data_agendamento,num_sala,cod_usuario )Values('$horario_TCC','$data_TCC','$descricao','$nome','$data_agendamento','$num_sala', '$cod_usuario')";		
 		$res = mysqlexecuta($con,$sql);		
-		echo  "inclusão efetuado com sucesso !!";
+		echo  "inclusão efetuada com sucesso !!";
 		?>
 	</body>
 </html>
