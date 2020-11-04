@@ -1,0 +1,36 @@
+.mostrar{
+    display: none;
+    border: 1px double #000;
+    font-size: 20;
+    width: 200px;
+    height: 100px;
+}
+
+.wrapper{ position: absolute; }
+
+.item li{
+    display: block;
+    color: black;
+    float: left;
+}
+
+#container{
+    background-color: #000;
+    border-radius: 15px;
+}
+
+body{
+    background-image: url(../img/banner.jpg);
+}
+
+#conteudo{
+    background-color: black;
+    margin: 20px;
+    width: 300px;
+    height: 300px;
+}
+
+.blocoA .blocoB{
+    color: black;
+    border: 1px;
+}
