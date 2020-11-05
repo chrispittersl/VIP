@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color:#fff;
+    color:#1c1c1c;
     border:none;
     font-size:100%;
   }
@@ -22,18 +22,20 @@
     color:rgba(229, 71, 75, 0.75);
   }
   
-  h1{
+  h2{
     /* font-family: 'Pacifico', cursive; */
-    font-size: 3em;
-    margin-bottom: 5%;
+    font-size: 2.5em;
+    margin-top:10px;
+    margin-bottom:0;
     color:#e5474b;
     font-weight: 350;
     text-align: center;
+    padding:2px;
   }
-
+  
   /*TABELAS*/
   table, th, td{
-      border:none;
+      border:1px solid #1c1c1c;
       border-collapse: collapse;
   }
 
@@ -43,7 +45,6 @@
     margin-left:15%;
     font-size:1.2em;
     margin-bottom:5%;
-    margin-top:2%;
     border-radius: 10px;
   }
 
@@ -51,7 +52,7 @@
   tr{
     text-align: center;
     height: 35px;
-    background-color: #1c1c1c;  
+    background-color: transparent;  
     
   }
   td{
@@ -60,9 +61,45 @@
   
   
   th{
-      color:#e5474b;
-      background-color: #1c1c1c;
+      color:#1c1c1c;
+      background-color: #e5474b;
       font-weight: 100;
       font-size:1.5em;
       padding:15px;
+      border: none;
+  }
+
+  .cronograma{
+    width: 100%;
+    float:left;
+    overflow: hidden;
+  }
+
+  .titulo{
+    padding:10px;
+    margin-top:20px;
+    width:70%;
+    background-color: #1c1c1c;
+    margin-left:15%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .fechando{
+    font-size:30px;
+    color:#1c1c1c;
+    margin-top:-5%;
+    width:70%;
+    background-color: #1c1c1c;
+    margin-left:15%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  #col-data{
+    width:100px;
+  }
+
+  .fa-caret-down{
+    color:#fff;
   }

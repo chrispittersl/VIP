@@ -45,7 +45,11 @@
           </nav>
       </header>  
 
-        <h1>Cronograma de TCCs</h1>
+      <div class="cronograma">
+        <div class="titulo">
+          <h2>Cronograma de TCCs</h2>
+        </div>
+
         <table>
             
             <!-- <!-- <thead> -->
@@ -53,7 +57,7 @@
                     <th>TCC</th>
                     <th>Descrição</th>
                     <th>Horário</th>
-                    <th>Data</th>
+                    <th id="col-data">Data</th>
                 </tr>
             <!-- </thead> -->
         
@@ -87,7 +91,9 @@
                         ?>
             <!-- </tbody> -->
         </table>
-
+        <div class="fechando">
+          <h3>.</h3>
+       </div>
         <!--SCRIPT PARA NAVBAR COLLAPSE-->
       <script>
             $('.btn').click(function(){
