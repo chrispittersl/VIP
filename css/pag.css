@@ -38,6 +38,7 @@ a {
   background: #1c1c1c;
   height:90px;
   margin:0%;
+ 
 
 }
 
@@ -142,7 +143,7 @@ a {
   float:left;
   width: 100%;
   overflow: hidden;
-  
+
 }
 
 
@@ -291,7 +292,9 @@ img {
 
 /*=============RODAPE==========*/
 
-
+.rodape{
+  position: sticky;
+}
 .copyright {
   color: rgba(255, 255, 255, 0.7);
    margin-top:2%;
@@ -313,4 +316,41 @@ hr{
   border:2px solid rgba(229, 71, 75,0.89);
   width: 100%;
  
+}
+
+/*========== CRONOGRAMAS =============*/
+
+table, th, td{
+    border:none;
+    border-collapse: collapse;
+}
+
+table{
+  width:70%;
+  text-align: center;
+  margin-left:15%;
+  font-size:1.2em;
+  margin-bottom:5%;
+  margin-top:2%;
+  border-radius: 10px;
+}
+
+
+tr{
+  text-align: center;
+  height: 35px;
+  background-color: #1c1c1c;  
+  
+}
+td{
+    padding:6px;
+}
+
+
+th{
+    color:#e5474b;
+    background-color: #1c1c1c;
+    font-weight: 100;
+    font-size:1.5em;
+    padding:15px;
 }
