@@ -28,18 +28,26 @@
           <nav class="sidebar">
             <div id="mySidebar" class="sidebar">
               <ul>
-                <li class="margin"><a href="../html/home.html">Home</a></li>
+                <li class="margin"><a href="../html/homeadm.html">Home</a></li>
+                <li>
+                  <button class="dropdown-btn">Monitorar
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <ul class="dropdown-container">
+                    <li><a href="../html/tcc.html">TCCs</a></li>
+                    <li><a href="../html/reuniao.html">Reuniões</a></li> 
+                    <li><a href="../html/horario.html">Horários</a></li> 
+                  </ul>
+                </li>
                 <li>
                   <button class="dropdown-btn">Cronogramas
                     <i class="fa fa-caret-down"></i>
                   </button>
                   <ul class="dropdown-container">
-                    <li><a href="CronoEventos.php">TCCs</a></li>
-                    <li><a href="cronoReuniao.php">Reuniões de pais</a></li> 
+                    <li><a href="../php/ListarReuniao.php">Listar - Reuniões</a></li>
+                    <li><a href="../php/ListarTCC.php">Listar - TCCs</a></li> 
                   </ul>
                 </li>
-                <li><a href="../html/login.html">Administrador</a></li>
-              </ul>
             </div>
           </nav>
       </header> 

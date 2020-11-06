@@ -16,11 +16,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
         <!--IMPORTANDO JQUERY-->
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-       
+    
     </head>
 
     <body>
-    <header class="cabecalho">
+        <!--MENU E NAVEGAÇÃO-->
+        <header class="cabecalho">
           <a href="home.html"><h1 class="logo">Virtual Increased Plan</h1></a>
           <div class="btn">
             <span class="fas fa-bars"></span>
@@ -28,42 +29,54 @@
           <nav class="sidebar">
             <div id="mySidebar" class="sidebar">
               <ul>
-                <li class="margin"><a href="../html/home.html">Home</a></li>
+                <li class="margin"><a href="../html/homeadm.html">Home</a></li>
+                <li>
+                  <button class="dropdown-btn">Monitorar
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <ul class="dropdown-container">
+                    <li><a href="../html/tcc.html">TCCs</a></li>
+                    <li><a href="../html/reuniao.html">Reuniões</a></li> 
+                    <li><a href="../html/horario.html">Horários</a></li> 
+                  </ul>
+                </li>
                 <li>
                   <button class="dropdown-btn">Cronogramas
                     <i class="fa fa-caret-down"></i>
                   </button>
                   <ul class="dropdown-container">
-                    <li><a href="CronoEventos.php">TCCs</a></li>
-                    <li><a href="cronoReuniao.php">Reuniões de pais</a></li> 
+                    <li><a href="../php/ListarReuniao.php">Listar - Reuniões</a></li>
+                    <li><a href="../php/ListarTCC.php">Listar - TCCs</a></li> 
                   </ul>
                 </li>
-                <li><a href="../html/login.html">Administrador</a></li>
-              </ul>
             </div>
           </nav>
       </header> 
-      
+
       <div class="cronograma">
         <div class="titulo">
-          <h2>Cronograma de Reuniões</h2>
+          <h2>Cronograma de TCCs</h2>
         </div>
 
         <table>
+            
+            <!-- <!-- <thead> -->
                 <tr>
-                    <th>Reunião</th>
+                    <th>TCC</th>
                     <th>Descrição</th>
                     <th>Horário</th>
                     <th id="col-data">Data</th>
                 </tr>
-            
+            <!-- </thead> -->
+        
+            <!-- <tbody> -->
                 <?php 
                 
                     include 'config.php';
                     include 'mysqlexecuta.php';
                     $con = conectar();
                     mysql_select_db('vip');
-                    $sql = "SELECT * FROM reunioes order by data_reuniao ASC";
+                    $sql = "SELECT * FROM tcc order by data_tcc ASC";
 
 
                     $consulta = mysqlexecuta($con,$sql);
@@ -71,19 +84,20 @@
                     //if($rows > 0){ 
                         while($row = mysql_fetch_assoc($consulta))
                         {
-                ?>
+                            ?>
                                 <tr>
+                                
                                     <td><?php echo utf8_encode($row['nome']);?></td>
                                     <td><?php echo utf8_encode($row['descricao']);?></td>
-                                    <td><?php echo utf8_encode($row['horario_reuniao']);?></td>
-                                    <td><?php echo utf8_encode($row['data_reuniao']);?></td>
-                                    
-                                    
+                                    <td><?php echo utf8_encode($row['horario_tcc']);?></td>
+                                    <td><?php echo utf8_encode($row['data_tcc']);?></td>
                                 </tr>
-                <?php
-                                
+                           <?php
+                                    
                         }
-                ?>
+            
+                        ?>
+            <!-- </tbody> -->
         </table>
         <div class="fechando">
           <h3>.</h3>
