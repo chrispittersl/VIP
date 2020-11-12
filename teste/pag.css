@@ -140,6 +140,7 @@ font-size:1em !important;
     grid-template-columns: 1fr 1fr 1fr;
     /* grid-template-rows: 700px auto;  */
     justify-items: center;
+    gap:15px;
 }
 /* ocupa todas as colunas */
 .todas-colunas {
@@ -152,7 +153,7 @@ font-size:1em !important;
     background-size: cover;
     height: 40rem;
     width: 100%;
-    margin: 10px 20px;
+    margin: 0px 20px;
     display: grid;
     grid-template-rows: 2fr 1fr;
 } 
@@ -167,14 +168,14 @@ font-size:1em !important;
     color:#fff;
 }
 .banner a{
-    padding:10px 20px;
+    padding:10px ;
     font-size: 20px;
     background: #e5474b;
     color: #fff;
     border: 3px solid transparent;
     border-radius: 30px;
     transition: 0.5s;
-    width:200px !important;
+    width:220px !important;
     height: 30px !important; 
     text-align: center;
     justify-self: center;
@@ -191,4 +192,183 @@ font-size:1em !important;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px; 
+}
+
+/* ==== DIV SOBRE NÓS ==== */
+.sobre{
+    background: #e4e3e3;
+    border-radius: 5px;
+    padding:15px;
+    margin: 10px;
+}
+.titulo{
+    font-family: 'Anton', serif;
+    font-weight: 200;
+    color:#3d3939;
+    font-size:2em;
+    margin:30px 40px 10px ;
+}
+.sobre hr{
+    border: 1px solid #e5474b;
+    max-width: 75%;
+    margin-left: 20px;
+    margin-top: 2px;
+} 
+.sobre p{
+    font-size: 1.2em;
+    text-align: justify;
+    margin: 25px 10px;
+}
+.sobre li {
+    margin:0 25px 8px;
+}
+.fa-check-circle{
+    color:#e5474b;
+    margin-right: 5px;
+}
+
+/* ==== AREA DOS SERVIÇOS==== */
+.servicos{
+    background:#e4e3e3;
+    border-radius: 5px;
+    padding:15px;
+    margin: 0px 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+.titulo2{
+    font-family: 'Anton', serif;
+    font-weight: 200;
+    color:#3d3939;
+    font-size:2em;
+    justify-self: end;
+    margin: 30px 40px 0px;
+
+}
+.servicos hr{
+    border: 1px solid #e5474b;
+    max-width: 75%;
+    margin-right: 20px;
+    margin-top: 2px;
+    margin-left: 25%;
+}
+.cor{
+    color:#818181;
+}
+.cronogramas{
+    padding:15px;
+    color:#1c1c1c;
+    text-align: center;
+} 
+.cronogramas p{
+    font-size: 1em;
+    margin-top:10px;
+    padding:0px 60px;
+    margin-bottom: 10px;
+}
+.cronogramas h2, .mapeamento h2, .horario-aula h2{
+    font-weight: 200;
+    font-size: 1.3em;
+    color:#1c1c1c;
+    margin-top:10px;
+    transition: 0.5s;
+}
+.mapeamento{
+    padding:15px;
+    color:#1c1c1c;
+    text-align: center;
+}
+.mapeamento p{
+    font-size: 1em;
+    margin-top:10px;
+    padding:0px 60px;
+}
+.horario-aula{
+    padding:15px;
+    color:#1c1c1c;
+    text-align: center;
+}
+.horario-aula p{
+    font-size: 1em;
+    margin-top:10px;
+    padding:0px 60px;
+}
+.mapeamento:hover>h2, .mapeamento:hover>i{
+    color: #e5474b;
+}
+.cronogramas:hover>h2, .cronogramas:hover>i{
+    color: #e5474b;
+}
+.horario-aula:hover>h2, .horario-aula:hover>i{
+    color:#e5474b;
+}
+.cronogramas i, .mapeamento i, .horario-aula i{
+    transition: 0.5s ease-out;
+}
+.cronogramas i, .mapeamento i, .horario-aula i{
+    margin-top: 20px;
+}
+
+/* ==== PARTE PARA IR PARA O MAPA ==== */
+.mapa, .reuniao, .tcc{
+    margin: 10px;
+    background: #e4e3e3;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow:0px 5px 5px 0px rgba(0,0,0,0.25) ;
+    margin-bottom: 40px;
+}
+.borda{
+    border-radius: 5px;
+}
+.mapa button, .reuniao button, .tcc button{
+    margin:15px 0px 25px ;
+    padding:10px;
+    width: 250px;
+    background: transparent;
+    border:3px solid #e5474b;
+    border-radius: 30px;
+    font-weight: 300;
+    color:#1c1c1c;
+    transition: 0.5s;
+    cursor: pointer;
+    text-align: center;
+}
+.mapa button:hover, .reuniao button:hover, .tcc button:hover{
+    border-color: transparent;
+    background: #e5474b;
+    color:#fff;
+
+}
+
+.mapa p, .reuniao p, .tcc p{
+    margin:20px 10px 0px 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color:#3d3939;
+    font-size:1.2em;
+
+}
+
+/* ==== RODAPE ==== */
+.footer{
+    background: #1c1c1c;
+    padding: 25px;
+    color: rgba(255,255,255, 0.75);
+    text-align: center;
+}
+.footer p{
+    font-size: 1em;
+}
+.footer a{
+    color: rgba(255,255,255, 0.75);
+    transition: 0.3s;
+}
+.footer a:hover{
+    color:#e5474b;
+}
+hr{
+    border: 2px solid #e5474b;
+ 
 }
