@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--CSS-->
+        <link rel="stylesheet" href="pag.css">
+        <!--ICONES BOOTSTRAP-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
+        <!--ICON PAGINA-->
+        <link rel = "shortcut icon" type = "imagem/x-icon" href = "../img/logo.ico"/>
+        <!--FONTE GOOGLE USADA TITULO-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        <!-- FONTE CORPO DO SITE -->
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo&display=swap" rel="stylesheet">
+        <!--IMPORTANDO JQUERY-->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    </head>
+
+    <body>
+        <div class="tudo">
+            <header class="header">
+                <a href="#" class="logo"><img src="../img/logonome.png"></a>
+                <div class="btn">
+                  <span class="fas fa-bars"></span>
+                </div>
+                <nav class="sidebar">
+                  <div id="mySidebar" class="sidebar">
+                    <ul>
+                      <li class="margin-top margin-bottom"><a href="home.html">Home</a></li>
+                      <li>
+                        <button class="dropdown-btn margin-bottom">Cronogramas
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-container">
+                          <li><a href="../php/CronoEventos.php" class="margin-bottom">TCCs</a></li>
+                          <li><a href="../php/cronoReuniao.php" class="margin-bottom">Reuniões de pais</a></li> 
+                        </ul>
+                      </li>
+                      <li><a href="login.html">Administrador</a></li>
+                    </ul>
+                  </div>
+                </nav>
+            </header>  
+       
+
+        <main class="conteudo">
+            <div class="banner todas-colunas">
+                <span>Quer conseguir se localizar com precisão dentro da Etec da Zona Leste?</span>
+               <br>
+                <a href="#sobre">SAIBA MAIS</a>
+                
+            </div>
+            <div class="sobre nós  todas-colunas">
+                <h1>SOBRE NÓS</h1>
+                <p>Somos uma plataforma web que visa ajudar os usuários da instituição de ensino Etec da Zona Leste a se situarem e transitarem sem dificuldades dentro desta organização através de um mapa virtual 
+                Nosso objetivo é fazer com que os alunos, funcionarios e visitantes chegem ao seu destido dentro da instituição com mais facilidade na comodidade de seu dispositivo
+                </p>
+            </div>
+            
+            <div id="sobre" class="todas-colunas">
+                <div class="mapa">
+                    <img src="../img/Mapeamento/Mapa.png">
+                    <p>Falar sobre o mapa</p>
+                    <a href="#"><button> MAPA</button></a>
+                </div>
+                
+    
+                <div class="reuniao">
+                    <!-- IMAGEM QUALQUER PRA FAZER O CSS -->
+                    <img src="../img/slide2.jpg">
+                    <p>Falar sobre cronograma de reuniões</p>
+                    <a href="#"><button> REUNIÕES</button></a>
+                </div>
+
+                <div class="tcc">
+                    <!-- IMAGEM QUALQUER PRA FAZER O CSS -->
+                    <img src="../img/slide2.jpg">
+                    <p>Falar sobre cronograma de tccs</p>
+                    <a href="#"><button> TCCS</button></a>
+                </div>
+
+                
+            </div>
+        </main>
+
+        <footer class="footer  todas-colunas">
+            <p>Virtual Increased Plan © Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    <!--SCRIPT PARA NAVBAR COLLAPSE-->
+    <script>
+        $('.btn').click(function(){
+          $(this).toggleClass("click");
+          $('.sidebar').toggleClass("show");
+        });
+        
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) 
+        {
+          dropdown[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+          } 
+          else 
+          {
+          dropdownContent.style.display = "block";
+          }
+          });
+        }
+    </script>
+    
+    </body>
+</html>

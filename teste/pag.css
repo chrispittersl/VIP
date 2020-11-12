@@ -1,0 +1,194 @@
+/* ==== RESET ==== */
+*{
+    font-size:100%;
+    margin: 0;
+    padding:0;
+}
+body{
+    background: #d4d2d2;
+    font-family: 'Archivo', sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+
+/* ==== ESTRUTURA ==== */
+
+.tudo{
+    display:grid;
+    grid-template-columns: minmax(160px, 1fr) 3fr 300px;
+    grid-template-areas: 
+        "header   header   header"
+        "conteudo conteudo conteudo"
+        "rodape   rodape   rodape";
+}
+/* ==== CABEÇALHO - HEADER ==== */
+.header{
+    grid-area: header;
+    background:#1c1c1c ;
+    padding:13px;
+    color:#fff;
+    display:grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.logo{
+    max-width: 200px;
+    justify-self: end;
+}
+
+/* ==== NAVEGAÇÃO ==== */
+
+.btn{
+    position: absolute;
+    margin:1.5% 4%;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    background: #1c1c1c;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: left 0.4s ease;
+  }
+
+.header .btn.click{
+left: 190px;
+}
+.header .btn span{
+color: white;
+font-size: 28px;
+line-height: 45px;
+}
+.btn.click span:before{
+content: '\f00d';
+}
+.sidebar{
+position: fixed;
+width: 250px;
+height: 100%;
+left: -250px;
+background: #1c1c1c;
+transition: left 0.4s ease;
+}
+.sidebar.show{
+left: 0px;
+}
+.margin-first{
+margin-top:10%;
+}
+.sidebar a {
+margin-left: 6%;
+padding:4px;
+text-decoration: none;
+font-size: 22px;
+color: #818181;
+display: block;
+transition: 0.3s;
+
+}
+.margin-top{
+    margin-top: 20px;
+}
+.margin-bottom{
+    margin-bottom: 20px;
+}
+.sidebar a:hover, .dropdown-btn:hover {
+color: #f1f1f1;
+
+}
+.dropdown-btn {
+margin-left:6%;
+padding: 4px;
+text-decoration: none;
+font-size: 22px;
+color: #818181;
+display: block;
+border: none;
+background: none;
+width: 100%;
+text-align: left;
+outline: none;
+}
+
+.fa-caret-down {
+padding-left: 10%;
+cursor: pointer;
+color:#fff;
+}
+.fa-caret-down:hover{
+color:#e5474b;
+}
+.dropdown-container {
+display: none;
+padding-left: 10%;
+font-size:1em !important; 
+}
+
+/* ==== CONTEUDO - MAIN ==== */
+
+
+.conteudo{
+    grid-area: conteudo;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: 700px auto;  */
+    justify-items: center;
+}
+/* ocupa todas as colunas */
+.todas-colunas {
+    grid-column: 1/-1;
+}
+
+/* parte do banner */
+.banner{
+    background-image: url("../img/slide1.png");
+    background-size: cover;
+    height: 40rem;
+    width: 100%;
+    margin: 10px 20px;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+} 
+.banner span{
+    font-family: 'Anton', serif;
+    text-transform: uppercase;
+    font-size: 4.2em;
+    align-self: end;
+    justify-self: end;
+    text-align: center;
+    margin: auto 20px;
+    color:#fff;
+}
+.banner a{
+    padding:10px 20px;
+    font-size: 20px;
+    background: #e5474b;
+    color: #fff;
+    border: 3px solid transparent;
+    border-radius: 30px;
+    transition: 0.5s;
+    width:200px !important;
+    height: 30px !important; 
+    text-align: center;
+    justify-self: center;
+    grid-row: 2/4;
+    
+}
+.banner a:hover{
+    background: rgba(255,255,255, 0.4);
+    border-color: #e5474b;
+    color:rgba(0,0,0,0.75);
+}
+
+#sobre{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px; 
+}
