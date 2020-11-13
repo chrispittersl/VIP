@@ -487,13 +487,13 @@ input[type="submit"]:hover{
     color: #3d3939;
 }
 .fa-user-circle{
-    color:#e5474b;
+    color:#3d3939;
     position:absolute;
     margin-left:25px;
     margin-top:12px;
 }
 .fa-key{
-    color:#e5474b;
+    color:#3d3939;
     position: absolute;
     margin-left:25px;
     margin-top:80px;
