@@ -39,3 +39,17 @@
 		})
 
 	});
+
+	$(document).ready(function(){
+		$(document).on("click",".view_data",function(){
+			var sala = $(this).attr("id");
+			var dados = {
+				sala: sala
+			};
+			$.post('tempoReal.php', dados, function(retorno){
+				$("#materia").html(retorno);
+				$("#modalAcontecimentos").modal("show");
+			});
+		});
+		
+	});
