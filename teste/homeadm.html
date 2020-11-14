@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+      <title>Administrador</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!--CSS-->
+      <link rel="stylesheet" href="pag.css">
+      <!--ICONES BOOTSTRAP-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
+      <!--ICON PAGINA-->
+      <link rel = "shortcut icon" type = "imagem/x-icon" href = "../img/logo.ico"/>
+      <!--FONTE GOOGLE USADA TITULO-->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+      <!-- FONTE CORPO DO SITE -->
+      <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo&display=swap" rel="stylesheet">
+      <!--IMPORTANDO JQUERY-->
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+  </head>
+
+  <body>
+    
+    <div class="tudo"><!-- DIV QUE FARÁ AS COLUNAS -->
+      <!-- HEADER -->
+      <header class="header todas-colunas">
+          <a href="#" class="logo"><img src="../img/logonome.png"></a>
+          <div class="btn">
+            <span class="fas fa-bars"></span>
+          </div>
+          <!-- NAVEGAÇÃO  -->
+          <nav class="sidebar">
+            <div id="mySidebar" class="sidebar">
+              <ul>
+                <li class="margin-top margin-bottom"><a href="home.html">Home</a></li>
+                <li>
+                  <button class="dropdown-btn margin-bottom ">Monitorar
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <ul class="dropdown-container ">
+                    <li><a href="tcc.html" class="margin-bottom">TCCs</a></li>
+                    <li><a href="reuniao.html" class="margin-bottom">Reuniões</a></li> 
+                    <li><a href="horario.html" class="margin-bottom">Horários</a></li> 
+                  </ul>
+                </li>
+                <li>
+                  <button class="dropdown-btn margin-bottom">Listar
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <ul class="dropdown-container">
+                    <li><a href="../php/CronoEventos.php" class="margin-bottom">TCCs</a></li>
+                    <li><a href="../php/cronoReuniao.php" class="margin-bottom">Reuniões de pais</a></li> 
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      </header>  
+      
+      <!-- CONTEUDO  -->
+      <main class="adm-conteudo">
+        <!-- banner  -->
+        <div class="banner-adm">
+          <p>Administrar a página para deixar tudo organizado e atualizado</p>
+          <a href="#rotinas">ADMINISTRAR</a>
+        </div>
+        
+        <div class="crono todas-colunas">
+          <p>Acesso aos cronogramas</p>
+          <hr>
+          <div class="crono-reuniao">
+            <p>Reuniões</p>
+            <a href=""><button>Listar </button></a>
+          </div>
+          <div class="crono-tcc">
+            <p>TCCs</p>
+            <a href=""><button>Listar </button></a>
+          </div>
+        </div>
+
+        <div id="#rotinas" class="rotinas">
+          <div class="rotina-tcc">
+              <h1 class="todas-colunas">MONITORAR TCC</h1>
+              <hr class="todas-colunas">
+            <div class="lupa">
+              <i class="fa fa-search fa-4x" aria-hidden="true"></i> 
+            </div>
+            <div class="mais">
+              <i class="fa fa-plus fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="pencil">
+              <i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="borracha">
+              <i class="fa fa-eraser fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="pesq">
+              <p>Pesquisar</p>
+              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+            </div>
+            <div class="inc">
+              <p>Incluir</p>
+              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+            </div>
+            <div class="alt">
+              <p>Alterar</p>
+              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+            </div>
+            <div class="exc">
+              <p>Excluir</p>
+              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+            </div>
+          </div>
+
+          <div class="rotinas-reuniao">
+            <h1 class="todas-colunas">MONITORAR REUNIÕES</h1>
+            <hr class="todas-colunas">
+            <div class="lupa">
+              <i class="fa fa-search fa-4x" aria-hidden="true"></i> 
+            </div>
+            <div class="mais">
+              <i class="fa fa-plus fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="pencil">
+              <i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="borracha">
+              <i class="fa fa-eraser fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="pesq">
+              <p>Pesquisar</p>
+              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+            </div>
+            <div class="inc">
+              <p>Incluir</p>
+              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+            </div>
+            <div class="alt">
+              <p>Alterar</p>
+              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+            </div>
+            <div class="exc">
+              <p>Excluir</p>
+              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+            </div>
+          </div>
+
+          <div class="rotinas-reuniao">
+            <h1 class="todas-colunas">MONITORAR HORÁRIOS DE AULA</h1>
+            <hr class="todas-colunas">
+            <div class="lupa">
+              <i class="fa fa-search fa-4x" aria-hidden="true"></i> 
+            </div>
+            <div class="mais">
+              <i class="fa fa-plus fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="pencil">
+              <i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="borracha">
+              <i class="fa fa-eraser fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="pesq">
+              <p>Pesquisar</p>
+              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+            </div>
+            <div class="inc">
+              <p>Incluir</p>
+              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+            </div>
+            <div class="alt">
+              <p>Alterar</p>
+              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+            </div>
+            <div class="exc">
+              <p>Excluir</p>
+              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- linha no rodape -->
+      <hr class="todas-colunas">
+      <!-- rodape  -->
+      <footer class="footer todas-colunas">
+        <p><a href="#">Virtual Increased Plan</a> © Todos os direitos reservados - 2020</p>
+      </footer>
+    </div>
+
+  <!--SCRIPT PARA NAVBAR COLLAPSE-->
+  <script>
+      $('.btn').click(function(){
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+      });
+      
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
+
+      for (i = 0; i < dropdown.length; i++) 
+      {
+        dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+        } 
+        else 
+        {
+        dropdownContent.style.display = "block";
+        }
+        });
+      }
+  </script>
+  </body>
+</html>

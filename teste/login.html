@@ -21,33 +21,34 @@
 
     </head>
     <body>
+        <!-- div que divide colunas e linhas  -->
         <div class="tudo-login">
-            <!-- DEPOIS COLOCA UMA IMAGEM MELHOR -->
+            <!-- parte esquerda do login  -->
             <div class="esquerda-foto">
                 <img src="../img/logo-mobile.png">
                 <h1>LOGIN</h1>
-
                 <a href="#" id="visitante">Acesse como <span>Visitante</span></a>
             </div>
-
+            <!-- parte direita do login  -->
             <div class="direita-form">
                 <form id="form-login" name="form-login" action="Login.php" method="POST">
-                    <!-- <label class="label-input" for=""> -->
-                        <input type="text" name="user" id="user" placeholder="Digite seu usuário" maxlength="5" autocomplete="off" required>
-                        <i class='far fa-user-circle fa-lg'></i>
-                    <!-- </label> -->
+                    <input type="text" name="user" id="user" placeholder="Digite seu usuário" maxlength="5" autocomplete="off" required>
+                    <i class='far fa-user-circle fa-lg'></i>
+
                     <input type="password" name="senha" id="senha" placeholder="Digite sua senha" maxlength="5" autocomplete="off" onkeypress  = "return blockletras(event)" required>
                     <i class='fas fa-key fa-lg'></i>
+
+                    <!-- div para o erro de seção  -->
                     <div class="error">
 
                     </div>
-                    <input type="submit" form="form-login"  value="Login" id="btn-submit">
 
-                    
+                    <input type="submit" form="form-login"  value="Login" id="btn-submit">
                 </form>
             </div>
             
-
+        <!-- script  -->
         <script src="../js/blockletras.js"></script>	
         </div>
     </body>
+</html>
