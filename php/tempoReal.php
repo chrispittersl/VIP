@@ -39,8 +39,8 @@
         else if($sala == "sala16")
             $sala = "Sala 16 - Bloco B";
 
-        /* Indetificando e formatando o valor da sala */
-
+        /* Setando o fuso horário local do servidor */
+        
         setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
         $dia = ucfirst(strftime('%A'));
         $hora = ucfirst(strftime('%T'));
@@ -49,6 +49,7 @@
         nome_sala FROM horario_aula AS H INNER JOIN turma  AS T ON H.cod_turma = T.cod_turma INNER JOIN curso AS 
         C ON T.cod_curso = C.cod_curso INNER JOIN sala AS S ON T.num_sala = S.num_sala WHERE nome_sala LIKE '$sala' AND '$hora'
         BETWEEN horainicio AND horafim AND dia_da_semana LIKE '$dia'");
+
         $stmt->execute();
         $dados = $stmt->fetch(PDO::FETCH_ASSOC);
         $num_rows = $stmt->rowCount();
