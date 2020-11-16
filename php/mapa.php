@@ -84,16 +84,7 @@
                         </button>
                     </div>
 
-                    <div class="modal-body">
-                        <ul>
-                            <li>Matéria: <span id="materia"></span></li>
-                            <li>Tipo do Curso: <span id="tipocurso"></span></li>
-                            <li>Curso: <span id="curso"></span></li>
-                            <li>Série: <span id="serie"></span></li>
-                            <li>Horario de Início: <span id="horainicio"></span></li>
-                            <li>Horario de Fim: <span id="horafim"></span></li>
-                            <li>Professor: <span id="professor"></span></li>
-                        </ul>
+                    <div id="conteudo" class="modal-body">
                     </div>
                         
                     <div class="modal-footer">
