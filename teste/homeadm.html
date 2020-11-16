@@ -5,7 +5,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!--CSS-->
-      <link rel="stylesheet" href="pag.css">
+      <link rel="stylesheet" href="pagadm.css">
       <!--ICONES BOOTSTRAP-->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
       <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
@@ -63,132 +63,179 @@
       <main class="adm-conteudo">
         <!-- banner  -->
         <div class="banner-adm">
-          <p>Administrar a página para deixar tudo organizado e atualizado</p>
-          <a href="#rotinas">ADMINISTRAR</a>
+          <div class="banner-tcc">
+            <p>Rotinas Tccs</p>
+            <a href="#tcc">MONITORAR</a>
+          </div>
+          <div class="banner-reuniao">
+            <p>Rotinas Reuniões</p>
+            <a href="#reuniao">MONITORAR</a>
+          </div>
+          <div class="banner-horario">
+            <p>Rotinas Horários</p>
+            <a href="#horario">MONITORAR</a>
+          </div>
         </div>
         
-        <div class="crono todas-colunas">
-          <p>Acesso aos cronogramas</p>
-          <hr>
-          <div class="crono-reuniao">
-            <p>Reuniões</p>
-            <a href=""><button>Listar </button></a>
-          </div>
-          <div class="crono-tcc">
-            <p>TCCs</p>
-            <a href=""><button>Listar </button></a>
+
+        <div id="tcc" class="rotinas">
+          <div class="rotina-tcc">
+            <h1 class="todas-colunas">MONITORAR TCC</h1>
+            <hr class="todas-colunas">
+            <div class="lupa">
+              <div class="org-lupa">
+                <br>
+                <i class="fa fa-search fa-6x" aria-hidden="true"></i> 
+              </div>
+              <div class="pesq">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+            <div class="mais">
+              <div class="org-mais">
+                <br>
+                <i class="fa fa-plus fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="inc">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+            <div class="pencil">
+              <div class="org-pencil">
+                <br>
+                <i class="fa fa-pencil-square-o fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="alt">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+            <div class="borracha">
+              <div class="org-borracha">
+                <br>
+                <i class="fa fa-trash fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="exc">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div id="#rotinas" class="rotinas">
-          <div class="rotina-tcc">
-              <h1 class="todas-colunas">MONITORAR TCC</h1>
-              <hr class="todas-colunas">
-            <div class="lupa">
-              <i class="fa fa-search fa-4x" aria-hidden="true"></i> 
-            </div>
-            <div class="mais">
-              <i class="fa fa-plus fa-4x" aria-hidden="true"></i>
-            </div>
-            <div class="pencil">
-              <i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i>
-            </div>
-            <div class="borracha">
-              <i class="fa fa-eraser fa-4x" aria-hidden="true"></i>
-            </div>
-            <div class="pesq">
-              <p>Pesquisar</p>
-              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
-            </div>
-            <div class="inc">
-              <p>Incluir</p>
-              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
-            </div>
-            <div class="alt">
-              <p>Alterar</p>
-              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
-            </div>
-            <div class="exc">
-              <p>Excluir</p>
-              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
-            </div>
-          </div>
-
-          <div class="rotinas-reuniao">
+        <div id="reuniao" class="rotinas">
+          <div class="rotina-reuniao">
             <h1 class="todas-colunas">MONITORAR REUNIÕES</h1>
             <hr class="todas-colunas">
             <div class="lupa">
-              <i class="fa fa-search fa-4x" aria-hidden="true"></i> 
+              <div class="org-lupa">
+                <br>
+                <i class="fa fa-search fa-6x" aria-hidden="true"></i> 
+              </div>
+              <div class="pesq">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
             </div>
             <div class="mais">
-              <i class="fa fa-plus fa-4x" aria-hidden="true"></i>
+              <div class="org-mais">
+                <br>
+                <i class="fa fa-plus fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="inc">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
             </div>
             <div class="pencil">
-              <i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i>
+              <div class="org-pencil">
+                <br>
+                <i class="fa fa-pencil-square-o fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="alt">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
             </div>
             <div class="borracha">
-              <i class="fa fa-eraser fa-4x" aria-hidden="true"></i>
-            </div>
-            <div class="pesq">
-              <p>Pesquisar</p>
-              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
-            </div>
-            <div class="inc">
-              <p>Incluir</p>
-              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
-            </div>
-            <div class="alt">
-              <p>Alterar</p>
-              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
-            </div>
-            <div class="exc">
-              <p>Excluir</p>
-              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
-            </div>
-          </div>
-
-          <div class="rotinas-reuniao">
-            <h1 class="todas-colunas">MONITORAR HORÁRIOS DE AULA</h1>
-            <hr class="todas-colunas">
-            <div class="lupa">
-              <i class="fa fa-search fa-4x" aria-hidden="true"></i> 
-            </div>
-            <div class="mais">
-              <i class="fa fa-plus fa-4x" aria-hidden="true"></i>
-            </div>
-            <div class="pencil">
-              <i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i>
-            </div>
-            <div class="borracha">
-              <i class="fa fa-eraser fa-4x" aria-hidden="true"></i>
-            </div>
-            <div class="pesq">
-              <p>Pesquisar</p>
-              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
-            </div>
-            <div class="inc">
-              <p>Incluir</p>
-              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
-            </div>
-            <div class="alt">
-              <p>Alterar</p>
-              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
-            </div>
-            <div class="exc">
-              <p>Excluir</p>
-              <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              <div class="org-borracha">
+                <br>
+                <i class="fa fa-trash fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="exc">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
             </div>
           </div>
         </div>
-      </main>
 
-      <!-- linha no rodape -->
-      <hr class="todas-colunas">
-      <!-- rodape  -->
-      <footer class="footer todas-colunas">
+        <div id="horario" class="rotinas">
+          <div class="rotina-horario">
+            <h1 class="todas-colunas">MONITORAR HORÁRIOS</h1>
+            <hr class="todas-colunas">
+            <div class="lupa">
+              <div class="org-lupa">
+                <br>
+                <i class="fa fa-search fa-6x" aria-hidden="true"></i> 
+              </div>
+              <div class="pesq">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+            <div class="mais">
+              <div class="org-mais">
+                <br>
+                <i class="fa fa-plus fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="inc">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+            <div class="pencil">
+              <div class="org-pencil">
+                <br>
+                <i class="fa fa-pencil-square-o fa-6x" aria-hidden="true"></i> 
+              </div>
+              <div class="alt">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+            <div class="borracha">
+              <div class="org-borracha">
+                <br>
+                <i class="fa fa-trash fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="exc">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="crono">
+          <h1 class="todas-colunas">listagem dos cronogramas</h1>
+          <hr class="todas-colunas">
+  
+          <div class="crono-tcc">
+            <img src="../img/tcc.png">
+            <a href="#"><button>Listar</button></a>
+          </div>
+          <div class="crono-reuniao">
+            <img src="../img/reuniao.png">
+            <a href="#"><button>Listar</button></a>
+          </div>
+        </div>
+
+        <div class="home">
+          <img src="../img/home.png">
+          <p>Voltar para a <a href="#">Página Inicial</a></p>
+      
+          <hr>
+        </div>
+      </main>
+       
+      
+     
+      <footer class="footer ">
         <p><a href="#">Virtual Increased Plan</a> © Todos os direitos reservados - 2020</p>
+        
       </footer>
-    </div>
+    </div> 
 
   <!--SCRIPT PARA NAVBAR COLLAPSE-->
   <script>

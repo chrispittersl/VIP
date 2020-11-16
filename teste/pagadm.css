@@ -1,0 +1,442 @@
+/* ==== RESET - GERAL ==== */
+*{
+    font-size:100%;
+    margin: 0;
+    padding:0;
+}
+body{
+    background: #d4d2d2;
+    font-family: 'Archivo', sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+
+/* estrutura - colunas e linhas */
+.tudo{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "header   header   header"
+        "conteudo conteudo conteudo"
+        "rodape   rodape   rodape";
+}
+.header{
+    grid-area: header;
+    background:#1c1c1c ;
+    padding:13px;
+    color:#fff;
+    display:grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+.logo{
+    max-width: 200px;
+    justify-self: end;
+}
+
+/* navegação */
+
+.btn{
+    position: absolute;
+    margin:1.5% 4%;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    background: #1c1c1c;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: left 0.4s ease;
+}
+.header .btn.click{
+left: 190px;
+}
+.header .btn span{
+color: white;
+font-size: 28px;
+line-height: 45px;
+}
+.btn.click span:before{
+content: '\f00d';
+}
+.sidebar{
+position: fixed;
+width: 250px;
+height: 100%;
+left: -250px;
+background: #1c1c1c;
+transition: left 0.4s ease;
+}
+.sidebar.show{
+left: 0px;
+}
+.margin-first{
+margin-top:10%;
+}
+.sidebar a {
+margin-left: 6%;
+padding:4px;
+text-decoration: none;
+font-size: 22px;
+color: #818181;
+display: block;
+transition: 0.3s;
+}
+.margin-top{
+    margin-top: 20px;
+}
+.margin-bottom{
+    margin-bottom: 20px;
+}
+.sidebar a:hover, .dropdown-btn:hover {
+color: #f1f1f1;
+}
+.dropdown-btn {
+margin-left:6%;
+padding: 4px;
+text-decoration: none;
+font-size: 22px;
+color: #818181;
+display: block;
+border: none;
+background: none;
+width: 100%;
+text-align: left;
+outline: none;
+}
+.fa-caret-down {
+padding-left: 10%;
+cursor: pointer;
+color:#fff;
+}
+.fa-caret-down:hover{
+color:#e5474b;
+}
+.dropdown-container {
+display: none;
+padding-left: 10%;
+font-size:1em !important; 
+}
+/* CONTEUDO  */
+.adm-conteudo{
+    grid-area: conteudo;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap:20px;
+}
+
+.banner-adm{
+    background:#e23135;
+    background-size: cover;
+    height: 40rem;
+    width:100%;
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.banner-tcc{
+    background:  #5b1c1e;
+    grid-row: 1/-1;
+    display:grid;
+    grid-template-rows: 2fr 1fr;
+    transition: 0.5s;
+}
+.banner-tcc:hover{
+    background: #441516;
+}
+
+.banner-reuniao{
+    background: #892a2d;
+    grid-row: 1/-1;
+    display:grid;
+    grid-template-rows: 2fr 1fr;
+    transition: 0.5s;
+}
+.banner-reuniao:hover{
+    background:#722325 ;
+}
+.banner-horario{
+    background: #b7383c;
+    grid-row: 1/-1;
+    display:grid;
+    grid-template-rows: 2fr 1fr;
+    transition: 0.5s;
+}
+.banner-horario:hover{
+    background: #a03134;
+}
+.banner-adm p{
+    text-align: center;
+    align-self: end;
+    margin-bottom:15%;
+    font-family: 'Anton', serif;
+    text-transform: uppercase;
+    color:#fff;
+    font-weight: 200;
+    letter-spacing: .5px;
+    font-size: 3em;
+}
+.banner-adm a{
+    text-align: center;
+    align-self: start;
+    color:#fff;
+    font-size:20px;
+    background: #1c1c1c;
+    border: 3px solid transparent;
+    justify-self: center;
+    width:220px !important;
+    padding:15px 10px 10px 10px;
+    height: 30px;
+    border-radius: 30px;
+    transition: 0.4s;
+    margin-top:20px;
+}
+.banner-adm a:hover{
+    border-color: #1c1c1c;
+    background: rgba(255,255,255, 0.4);
+    color:#1c1c1c;
+}
+/* cronogramas  */
+.crono{
+   display: grid;
+   grid-template-columns: 1fr 1fr; 
+   gap:15px; 
+   margin: 20px 10px 10px;
+   border-radius: 5px; 
+}
+.todas-colunas{
+    grid-column: 1/-1;
+}
+.crono h1{
+    justify-self: end;
+    font-family: 'Anton', serif;
+    font-size:2em;
+    color: #3d3939;
+    text-transform: uppercase;
+    font-weight: 200;
+    margin: 50px 40px 0px !important;
+}
+.crono hr{
+    justify-self: end;
+    border: 1px solid #e5474b;
+    width: 75%;
+    margin: 0px 20px ;
+}
+
+.crono-tcc, .crono-reuniao{
+    justify-self: center;
+    width: 600px;
+    font-size: 1.2em;
+    margin-top: 30px;
+    text-align: center;
+    background: #e4e3e3;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 30px;
+    box-shadow:0px 5px 5px 0px rgba(0,0,0,0.25) ;
+}
+.crono-tcc img, .crono-reuniao img{
+   
+    width: 600px;
+    border-top-left-radius:5px ;
+    border-top-right-radius: 5px;
+}
+.crono-tcc button, .crono-reuniao button{
+    text-align: center;
+    width:300px;
+    border: 2px solid transparent;
+    background: #e5474b;
+    border-radius: 30px;
+    height: 40px;
+    transition: .4s;
+    margin-top: 30px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #fff;
+}
+.crono-tcc button:hover, .crono-reuniao button:hover{
+    background: transparent;
+    border-color: #e5474b ;
+    color: #3d3939;
+}
+/* rotinas  */
+
+.rotinas{
+    border-radius: 5px;
+    padding:15px;
+    margin: 5px;
+}
+.rotina-tcc h1{
+    font-family: 'Anton', serif;
+    font-size:2em;
+    color: #3d3939;
+    text-transform: uppercase;
+    font-weight: 200;
+    margin: 40px 40px 0px;
+}
+.rotina-tcc hr{
+    border: 1px solid #e5474b;
+    width: 75%;
+    margin: 0px 20px ;
+}
+.rotina-tcc{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    background: #e4e3e3;
+    border-radius: 5px;
+}
+
+.lupa, .mais, .pencil, .borracha{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top:20px;
+    text-align: center;
+    color: #1c1c1c;
+}
+.pesq, .inc, .alt, .exc{
+    font-size: 1.5em;
+    margin:20px 0px 30px; 
+    justify-self: start;
+    
+}
+.pesq button, .inc button, .alt button, .exc button{
+    background: #1c1c1c;
+    color: #fff;
+    width:80px;
+    height: 150px;
+    border:3px solid transparent;
+    margin-top: 10px;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.pesq button:hover, .inc button:hover, .alt button:hover, .exc button:hover{
+    background: #3d3939;
+    font-size: 1.8em;
+}
+.rotina-tcc p{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #f1f1f1;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.org-lupa, .org-mais, .org-pencil, .org-borracha{
+    background: #e5474b;
+    justify-self: end;
+    height: 150px;
+    margin-top: 30px;
+    width: 130px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+
+.rotina-reuniao h1{
+    font-family: 'Anton', serif;
+    font-size:2em;
+    color: #3d3939;
+    text-transform: uppercase;
+    font-weight: 200;
+    margin: 40px 40px 0px;
+}
+.rotina-reuniao hr{
+    border: 1px solid #e5474b;
+    width: 75%;
+    margin: 0px 20px;
+}
+.rotina-reuniao{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    background: #e4e3e3;
+    border-radius: 5px;
+}
+
+.rotina-horario h1{
+    font-family: 'Anton', serif;
+    font-size:2em;
+    color: #3d3939;
+    text-transform: uppercase;
+    font-weight: 200;
+    margin: 40px 40px 0px;
+}
+.rotina-horario hr{
+    border: 1px solid #e5474b;
+    width: 75%;
+    margin: 0px 20px ;
+}
+.rotina-horario{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    background: #e4e3e3;
+    border-radius: 5px;
+}
+
+.footer{
+    grid-area: rodape;
+    background: #1c1c1c;
+    padding: 25px;
+    color: rgba(255,255,255, 0.75);
+    text-align: center;
+}
+hr{
+    grid-area:conteudo;
+    border-top: none;
+    border-bottom: 4px solid  #e5474b;
+    border-left: none;
+    border-right: none;
+}
+.footer p{
+    font-size: 1em;
+}
+.footer a{
+    color: rgba(255,255,255, 0.75);
+    transition: 0.3s;
+}
+.footer a:hover{
+    color:#e5474b;
+}
+.home{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin:0px 25px 30px;
+    background: #e4e3e3;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+
+}
+.home img{
+    width:600px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.home p{
+    align-self: center;
+    text-align: center;
+    font-size: 2em;
+    color: #1c1c1c;
+    font-weight:560;
+    text-transform: uppercase;
+}
+.home a{
+    color: #1c1c1c;
+    transition: .4s;
+}
+.home a:hover{
+    color: #e5474b;
+}
