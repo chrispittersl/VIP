@@ -142,35 +142,35 @@ font-size:1em !important;
     grid-template-columns: 1fr 1fr 1fr;
 }
 .banner-tcc{
-    background: #892a2d;
+    background:  #5b1c1e;
     grid-row: 1/-1;
     display:grid;
     grid-template-rows: 2fr 1fr;
     transition: 0.5s;
 }
 .banner-tcc:hover{
-    background: #722325;
+    background: #441516;
 }
 
 .banner-reuniao{
-    background: #b7383c;
+    background: #892a2d;
     grid-row: 1/-1;
     display:grid;
     grid-template-rows: 2fr 1fr;
     transition: 0.5s;
 }
 .banner-reuniao:hover{
-    background:#a03134 ;
+    background:#722325 ;
 }
 .banner-horario{
-    background:#e5474b;
+    background: #b7383c;
     grid-row: 1/-1;
     display:grid;
     grid-template-rows: 2fr 1fr;
     transition: 0.5s;
 }
 .banner-horario:hover{
-    background: #ce3f43;
+    background: #a03134;
 }
 .banner-adm p{
     text-align: center;
