@@ -21,24 +21,30 @@
 		});
 	}
 
-	$('form').submit(function(e){
+	$("#form-login").on("submit",function(e){
 		e.preventDefault();
 
-		var u_user = $('#user').val();
-		var u_senha = $('#senha').val();
-
+		var user = $('#user').val();
+		var password = $('#password').val();
+		
 		$.ajax({
-			url: 'http://127.0.0.1/VIP/php/login.php',
+			url: 'http://localhost/VIP/php/validarLogin.php',
 			method: 'POST',
-			data: {user: u_user,senha: u_senha},
+			data: {user: user, password: password},
 			dataType: 'json'
-		}).done(function(resultado){
+		}).done(function(result){
 			$('#user').val('');
-			$('#senha').val('');
-			console.log(resultado);
-		})
+			$('#password').val('');
 
-	});
+			if(result == "válido"){
+				window.location.href = "home.html";
+			}
+			else{
+				$('#errorLogin').html("As crendenciais estão incorretas.")
+			}
+		})
+	})
+
 
 	$(document).ready(function(){
 		$(document).on("click",".view_data",function(){
