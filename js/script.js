@@ -47,7 +47,7 @@
 				sala: sala
 			};
 			$.post('tempoReal.php', dados, function(retorno){
-				$("#materia").html(retorno);
+				$("#conteudo").html(retorno);
 				$("#modalAcontecimentos").modal("show");
 			});
 		});
