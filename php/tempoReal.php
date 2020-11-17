@@ -47,7 +47,7 @@
 
         $stmt = $pdo->prepare("SELECT horainicio,horafim,dia_da_semana,materia,professor,serie,nome_curso,tipo_curso,
         nome_sala FROM horario_aula AS H INNER JOIN turma  AS T ON H.cod_turma = T.cod_turma INNER JOIN curso AS 
-        C ON T.cod_curso = C.cod_curso INNER JOIN sala AS S ON T.num_sala = S.num_sala WHERE nome_sala LIKE '$sala' AND '14:00:00'
+        C ON T.cod_curso = C.cod_curso INNER JOIN sala AS S ON T.num_sala = S.num_sala WHERE nome_sala LIKE '$sala' AND '$hora'
         BETWEEN horainicio AND horafim AND dia_da_semana LIKE '$dia'");
 
         $stmt->execute();
