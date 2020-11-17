@@ -78,7 +78,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">O que está acontecendo</h5>
+                        <h5 class="modal-title">O que está ocorrendo?</h5>
                         <button type="button" class="close" data-dismiss="modal">
                             <span>x</span>
                         </button>
