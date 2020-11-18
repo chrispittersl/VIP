@@ -12,7 +12,8 @@
 		<!--ICON PAGINA-->
 		<link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
 		<!--FONTE GOOGLE USADA-->
-		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container2">
@@ -26,8 +27,8 @@
 				<input type="text" name="data_reuniao"  placeholder = "Ex: 2001-01-01" required onkeypress="return blokletras(event)">
 
 				<label for="descricao">Descrição</label>
-				<input type="text" name="descricao"  placeholder = "Ex: Reunião para discussão sobre..." required>
-
+				<textarea name="descricao"  placeholder="Ex: Reunião para discussão sobre..."> </textarea>
+				
 				<label for="nome">Nome</label>
 				<input type="text" name="nome" placeholder = "Ex: Reunião de pais e mestres" required>
 
@@ -41,6 +42,7 @@
 				<input type="text" name="cod_usuario" onkeypress= "return blockletras(event)" required>
 
 				<input type="submit" value="Cadastrar">
+				<span>voltar para o <a href="#">menu</a></span>	
 			</form>
 		</div>
 	<script src="../js/script.js"></script>	

@@ -12,18 +12,19 @@
 		<!--ICON PAGINA-->
 		<link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
 		<!--FONTE GOOGLE USADA-->
-		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	</head>
 	<body>	
 		<div class="container">
+			<h1>Exclusão</h1>
 			<form action="exclTCC.php" method="POST" name="f1">	 
-
-				<h1>Excluir</h1>
 
 				<label for="cod_TCC">Codigo de TCC</label>
 				<input type="text" name="cod_TCC" onkeypress= "return blockletras(event)" required>	
 				
 				<input type="submit" value="Excluir">
+				<span>voltar para o <a href="#">menu</a></span>	
 			</form>
 		</div>
 		<script src="../../js/blockletras.js"></script> 

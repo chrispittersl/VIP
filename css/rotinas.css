@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Archivo', sans-serif;
     color:#fff;
     border:none;
     font-size:100%;
@@ -19,16 +19,15 @@
     background:#d4d2d2;
   }
   
-  a:hover{
-    color:rgba(229, 71, 75, 0.75);
-  }
+ 
   
   h1{
-    /* font-family: 'Pacifico', cursive; */
-    font-size: 3em;
+    font-family: 'Anton', serif;
+    font-size: 2.6em;
     margin-bottom: 5%;
     color:#e5474b;
     font-weight: 350;
+    text-transform: uppercase;
   }
 
   /*CONTAINER*/
@@ -51,7 +50,7 @@ form
 {
     margin-top: 30px;
     margin-bottom: 40px;
-  }
+}
   
   label, input
   {
@@ -63,9 +62,8 @@ form
   
   label
   {
-    
     font-weight: 350;
-    font-size: 2em;
+    font-size: 1.6em;
     margin-top: 5%;
     margin-bottom: 4%;
   }
@@ -74,7 +72,7 @@ form
   {
     border: 2px solid#d4d2d2;
     padding:8px;
-    font-size: 1.8em;
+    font-size: 1.6em;
     margin-bottom: 3%;
     border-radius: 30px;
     background:initial;
@@ -90,25 +88,41 @@ form
   {
     text-align:center;
     text-transform: uppercase;
-    border: none;
+    border: 3px solid transparent;
     border-radius: 30px;
     margin-top: 25px;
     color: #fff;
     background-color: #e5474b;
     cursor:pointer;
-    font-size: 2em;
-    height:  50px;
+    font-size: 1.3em;
+    height:  45px;
     width:50%;
     margin-left:95px;
+    transition: 0.4s;
+    margin-bottom: 20px;
   }
 
   input[type="submit"]:hover
   {
     
-    background-color:transparent ;
-    border: 2px solid #e5474b;
-    color: #fff;
-  }
+    background-color:rgba(255, 255, 255, 0.5) ;
+    border-color:#e5474b;
+    color: #3d3939;
 
+  }
+ 
+.container span{
+  margin-top: 20px;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.container a{
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 17px;
+  transition: .4s;
+}
+.container a:hover{
+  color:rgba(229, 71, 75, 0.75);
+}
   /*PARTE DA TABELA NA PESQUISA*/
  

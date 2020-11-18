@@ -12,7 +12,8 @@
         <!--ICON PAGINA-->
         <link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
         <!--FONTE GOOGLE USADA-->
-        <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<?php
@@ -49,7 +50,7 @@
 					<input type='text' name='data_tcc' value='<?php echo $row['data_tcc'];?>' required>
 					
 					<label for="descricao">Descricao :</label> 
-					<input type='text' name='descricao' value='<?php echo utf8_encode($row['descricao']);?>' required>
+					<textarea name="descricao"><?php echo utf8_encode($row['descricao']);?></textarea>
 					
 					<label for="nome">Nome:</label> 
 					<input type='text' name='nome' value='<?php echo utf8_encode($row['nome']);?>' required>
@@ -63,7 +64,8 @@
 					<label for="cod_usuario">Código de Usuario:</label>
 					<input type='text' name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
 					
-					<input type="submit" name ="botao" value="Alterar dados">	
+					<input type="submit" name ="botao" value="Alterar dados">
+					<span>voltar para o <a href="#">menu</a></span>		
 				</form>
 			</div>	
 		<?php

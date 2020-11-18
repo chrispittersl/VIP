@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Archivo', sans-serif;
     color:#fff;
     border:none;
     font-size:100%;
@@ -24,11 +24,12 @@
   }
   
   h1{
-    /* font-family: 'Pacifico', cursive; */
-    font-size: 3em;
+    font-family: 'Anton', serif;
+    font-size: 2.6em;
     margin-bottom: 5%;
     color:#e5474b;
     font-weight: 350;
+    text-transform: uppercase;
   }
 
   /*CONTAINER*/
@@ -64,9 +65,9 @@ form
   
   label
   {
-    
+    font-family: 'Archivo', sans-serif;
     font-weight: 350;
-    font-size: 2em;
+    font-size: 1.6em;
     margin-top: 5%;
     margin-bottom: 2%;
   }
@@ -75,11 +76,11 @@ form
   {
     border: 2px solid#d4d2d2;
     padding:8px;
-    font-size: 1.8em;
+    font-size: 1.3em;
     margin-bottom: 3%;
     border-radius: 30px;
     background:initial;
-    color: #e7e5e5;
+    color:rgba(255, 255, 255, 0.75);
   }
   
   input:focus
@@ -92,26 +93,60 @@ form
   {
     text-align:center;
     text-transform: uppercase;
-    border: none;
+    border: 3px solid transparent;
     border-radius: 30px;
     margin-top: 25px;
     color: #fff;
     background-color: #e5474b;
     cursor:pointer;
-    font-size: 2em;
+    font-size: 1.3em;
     height:  50px;
     width:50%;
     margin-left:125px;
+    margin-bottom: 30px;
+    transition: 0.4s;
   }
 
   input[type="submit"]:hover
   {
     
-    background-color:transparent ;
-    border: 2px solid #e5474b;
-    color: #fff;
+    background-color:rgba(255, 255, 255, 0.5) ;
+    border-color: #e5474b;
+    color: #3d3939;;
   }
 
   #cod{
       margin-top:0px;
+      font-size: 1.3em;
+      color:rgba(255, 255, 255, 0.75);
   }
+
+  .container2 span{
+    margin-top: 20px;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .container2 a{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 17px;
+    transition: .4s;
+  }
+  .container2 a:hover{
+    color:rgba(229, 71, 75, 0.75);
+  }
+  .container2 textarea{
+    width:530px;
+    height: 110px;
+    resize: none;
+    color:rgba(255, 255, 255, 0.75);
+    background: initial;
+    border: 2px solid#d4d2d2;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1.3em;
+  }
+  .container2 textarea:focus{
+    border: 2px solid rgba(229, 71, 75, 0.75);
+  }
+
+  

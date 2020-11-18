@@ -12,7 +12,8 @@
         <!--ICON PAGINA-->
         <link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
         <!--FONTE GOOGLE USADA-->
-        <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<?php
@@ -61,7 +62,8 @@
 						<label for="professor">Professor</label>
 						<input type='text' name='professor' value='<?php echo utf8_encode($row['professor']);?>' required>
 						
-						<input type="submit" name ="botao" value="Alterar Dados">	
+						<input type="submit" name ="botao" value="Alterar Dados">
+						<span>voltar para o <a href="#">menu</a></span>	
 					</form>
 			</div>
 		<?php

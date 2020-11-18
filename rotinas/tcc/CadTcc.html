@@ -12,7 +12,8 @@
 		<!--ICON PAGINA-->
 		<link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
 		<!--FONTE GOOGLE USADA-->
-		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container2">
@@ -26,7 +27,7 @@
 				<input type="text" name="data_TCC" placeholder="Ex: 2001-01-01" required>	
 				
 				<label for="descricao">Descricao</label>
-				<input type="text" name="descricao" placeholder="Ex: Apresentação de TCC do grupo..." required>
+				<textarea name="descricao" placeholder="Ex: Apresentação de TCC do grupo..." required></textarea>
 				
 				<label for="nome">Nome</label>
 				<input type="text" name="nome" placeholder="Ex: VIP - Virtual Increased Plan" required>	
@@ -41,6 +42,7 @@
 				<input type="text" name="cod_usuario" placeholder="" required onkeypress= "return blockletras(event)">
 				
 				<input type="submit" value="cadastrar">
+				<span>voltar para o <a href="#">menu</a></span>	
 
 			</form>
 		</div>

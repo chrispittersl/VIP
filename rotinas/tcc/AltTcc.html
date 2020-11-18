@@ -12,18 +12,21 @@
 		<!--ICON PAGINA-->
 		<link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
 		<!--FONTE GOOGLE USADA-->
-		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container">
+			<h1>Alteração</h1>
 			<form name="f1" action="AltTcc_mostra.php" method="POST" name="f1">
 
-				<h1>Alterar</h1>
+				
 
 				<label for="cod_tcc">Código TCC</label>
 				<input type="text" name="cod_tcc" size="50" maxlength="35" onkeypress= "return blockletras(event)" required>
 				
 				<input type="submit" name ="botao" value="alterar" >
+				<span>voltar para o <a href="#">menu</a></span>	
 
 			</form>
 		</div>

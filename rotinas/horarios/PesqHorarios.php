@@ -12,7 +12,8 @@
 		<!--ICON PAGINA-->
 		<link rel = "shortcut icon" type = "imagem/x-icon" href = "../../img/logo.ico"/>
 		<!--FONTE GOOGLE USADA-->
-		<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	</head>
 	<body >
 		<?php
