@@ -21,25 +21,6 @@
 		});
 	}
 
-	$('form').submit(function(e){
-		e.preventDefault();
-
-		var u_user = $('#user').val();
-		var u_senha = $('#senha').val();
-
-		$.ajax({
-			url: 'http://127.0.0.1/VIP/php/login.php',
-			method: 'POST',
-			data: {user: u_user,senha: u_senha},
-			dataType: 'json'
-		}).done(function(resultado){
-			$('#user').val('');
-			$('#senha').val('');
-			console.log(resultado);
-		})
-
-	});
-
 	$(document).ready(function(){
 		$(document).on("click",".view_data",function(){
 			var sala = $(this).attr("id");

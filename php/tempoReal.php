@@ -58,13 +58,14 @@
         if($num_rows != 0){
             $resultado = 
             "  <ul>
+                <li>Sala: ".$dados['nome_sala']."</li>
                 <li>Matéria: ".$dados['materia']."</li>
                 <li>Tipo do Curso: ".$dados['tipo_curso']."</li>
                 <li>Curso: ".$dados['nome_curso']."</li>
                 <li>Série: ".$dados['serie']."</li>
                 <li>Horario de Início: ".$dados['horainicio']."</li>
-                <li>Horario de Fim: ".$dados['horafim']."</span></li>
-                <li>Professor: ".$dados['professor']."</span></li>
+                <li>Horario de Fim: ".$dados['horafim']."</li>
+                <li>Professor: ".$dados['professor']."</li>
             </ul>";
         }
         else{
