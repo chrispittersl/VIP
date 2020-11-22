@@ -5,7 +5,7 @@
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS-->
-		<link rel="stylesheet" href="../../css/rotinas2.css">
+		<link rel="stylesheet" href="../css/rotinas-tudo.css">
         <!--ICONES BOOTSTRAP-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
@@ -35,7 +35,7 @@
 					$row = mysql_fetch_array($res);
 		?>
 
-					<div class="container2">
+					<div class="cont-rotinas-gd">
 						<h1>Alteração</h1>
 						<form name = "f1" method="POST" action="AltReuniao_altera.php">
 							<label>Código de reunião</label>
@@ -63,8 +63,8 @@
 							<label for="cod_usuario">Código de usuário</label>
 							<input type='text' name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
 						
-							<input type="submit" name ="botao" value="Alterar Dados">
-							<span>voltar para o <a href="#">menu</a></span>	
+							<input type="submit" name ="botao" value="Alterar dados">
+							<a href="#">Voltar para a <span>home</span></a>
 						</form>
 					</div>
 				<?php

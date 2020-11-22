@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Archivo', sans-serif;
+    color:#1c1c1c;
+    border:none;
+    font-size:100%;
+  }
+a{
+    text-decoration: none;
+    font-size: .8rem; 
+}
+body{
+    background-image: url(../slide1.png);
+    
+}
+h1{
+    font-family: 'Anton', serif;
+    font-size: 2em;
+    margin-bottom: 5%;
+    color:#3d3939;
+    font-weight: 350;
+    text-transform: uppercase;
+  }
+/*  ==================================
+        CONTAINER - ROTINAS PEQUENAS
+    ================================== */
+
+.cont-rotinas{
+    background:#fff;
+    width: 550px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30vh;
+    text-align: center;
+    padding: 15px 20px;
+    border-radius: 15px;
+} 
+.cont-rotinas form{
+    display: flex;
+    flex-direction:column;
+    gap:20px;
+}
+.cont-rotinas input[type="submit"]{
+    align-self: center;
+    background: #e5474b;
+    width: 200px;
+    height: 36px;
+    color:#fff;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    text-align: center;
+    padding: 0px !important;
+    transition: .4s;
+}
+.cont-rotinas input{
+    align-self: center;
+    width: 80%;
+    height: 40px;
+    font-size:1.2em;
+    padding: 0px 0px 0px 45px;
+    border: 1.4px solid rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    background: initial;
+    z-index: 2;
+    cursor: pointer;
+}
+.cont-rotinas input:focus{
+    border-color:#e5474b;
+}
+.fa-list-ol{
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 50px;
+    padding:12px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    z-index: 1;
+    color: #3d3939;
+}
+.cont-rotinas input[type="submit"]:hover{
+    color: #1c1c1c;
+    border-color: #e5474b;
+    background: transparent;
+}
+.cont-rotinas span{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1em;
+}
+.cont-rotinas a{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1em;
+}
+.cont-rotinas span:hover{
+    color: rgba(229, 71, 75, 0.75);
+    font-size: 1em;
+}
+/*  ==================================
+        CONTAINER - ROTINAS GRANDES
+    ================================== */
+.cont-rotinas-gd{
+    background:#fff;
+    width: 620px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    margin-bottom:5vh;
+    text-align: center;
+    padding: 15px 20px;
+    border-radius: 15px;
+} 
+.cont-rotinas-gd form{
+    display: flex;
+    flex-direction:column;
+}
+.cont-rotinas-gd input[type="submit"]{
+    margin-top: 20px;
+    margin-bottom:20px;
+    align-self: center;
+    background: #e5474b;
+    width: 220px;
+    height: 36px;
+    color:#fff;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    text-align: center;
+    padding: 0px !important;
+    transition: .4s;
+}
+.cont-rotinas-gd input{
+    align-self: center;
+    width: 80%;
+    height: 40px;
+    font-size:1.2em;
+    padding: 0px 0px 0px 10px;
+    border: 1.4px solid rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    background: initial;
+    z-index: 2;
+    cursor: pointer;
+}
+.cont-rotinas-gd input[type="submit"]:hover{
+    color: #1c1c1c;
+    border-color: #e5474b;
+    background: transparent;
+}
+.cont-rotinas-gd span{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1em;
+}
+.cont-rotinas-gd a{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1em;
+}
+.cont-rotinas-gd span:hover{
+    color: rgba(229, 71, 75, 0.75);
+    font-size: 1em;
+}
+.cont-rotinas-gd label{
+    text-align:left;
+    margin-left:10%;
+    font-size:1.4em;
+    margin-top: 20px;
+    margin-bottom:5px;
+}
+#cod{
+    margin-top:0;
+    margin-left:12%;
+    font-size:1.2em;
+}
+.cont-rotinas-gd textarea{
+    align-self:center;
+    width:80%;
+    height: 110px;
+    resize: none;
+    border: 1.4px solid rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    background: initial;
+    padding: 10px 10px 0px 10px;
+    font-size:1.2em;
+    text-align:justify;
+}
+.cont-rotinas-gd textarea:focus{
+    border-color: #e5474b;
+}
+.cont-rotinas-gd input:focus{
+    border-color:#e5474b;
+}
