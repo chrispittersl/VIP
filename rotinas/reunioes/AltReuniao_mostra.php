@@ -37,31 +37,31 @@
 
 					<div class="container2">
 						<h1>Alteração</h1>
-						<form name = "f1" method="POST" action="AltReuniao_altera.php">
+						<form id="form-altera-reunioes" name = "f1">
 							<label>Código de reunião</label>
 							<label id="cod"><?php echo $row['cod_reuniao'] ?></label>
-							<input type="hidden" name="cod_reuniao" value=<?php echo $row['cod_reuniao'];?>>
+							<input type="hidden" id="cod_reuniao" name="cod_reuniao" value=<?php echo $row['cod_reuniao'];?>>
 
 							<label for="horario_reuniao">Horário da Reunião</label>
-							<input type='text' name='horario_reuniao' value='<?php echo $row['horario_reuniao'];?>' required>
+							<input type='text' id="horario_reuniao" name='horario_reuniao' value='<?php echo $row['horario_reuniao'];?>' required>
 							
 							<label for="data_reuniao">Data da reunião</label>
-							<input type='text' name='data_reuniao' value='<?php echo $row['data_reuniao'];?>' required>
+							<input type='text' id="data_reuniao" name='data_reuniao' value='<?php echo $row['data_reuniao'];?>' required>
 							
 							<label for="descricao">Descrição</label>
-							<textarea name="descricao"><?php echo utf8_encode($row['descricao']);?> </textarea>
+							<textarea id="descricao" name="descricao"><?php echo utf8_encode($row['descricao']);?> </textarea>
 							
 							<label for="nome">Nome</label>
-							<input type='text' name='nome' value='<?php echo utf8_encode($row['nome']);?>' required>
+							<input type='text' id="nome" name='nome' value='<?php echo utf8_encode($row['nome']);?>' required>
 							
 							<label for="data_agendamento">Data de agentamento</label>
-							<input type='text' name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
+							<input type='text' id="data_agendamento" name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
 							
 							<label for="num_sala">Número de sala</label>
-							<input type='text' name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $row['num_sala'];?>' required>
+							<input type='text' id="num_sala" name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $row['num_sala'];?>' required>
 							
 							<label for="cod_usuario">Código de usuário</label>
-							<input type='text' name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
+							<input type='text' id="cod_usuario" name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
 						
 							<input type="submit" name ="botao" value="Alterar Dados">
 							<span>voltar para o <a href="#">menu</a></span>	
@@ -70,6 +70,7 @@
 				<?php
 				}
 				?>
+	<script src="../js/rotinas.js"></script>
 	<script src="../js/script.js"></script>	
 	<script src="../js/blockletras.js"></script>	
 	</body>
