@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--CSS-->
-		<link rel="stylesheet" href="../../css/pesquisas.css">
+		<link rel="stylesheet" href="../css/pesquisas.css">
 		<!--ICONES BOOTSTRAP-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
@@ -31,15 +31,16 @@
 			}
 			else{
 		?>
+		<div class="cont-pesq">
 			<table> 
 				<tr id="titulo"> 
-					<th>Cód. Horário</th>
-					<th>Cód. Usuário</th>
-					<th>Cód. Turma</th>
-					<th>Hora Inicio</th>
+					<th id="espaco">Cód. Horário</th>
+					<th id="espaco">Cód. Usuário</th>
+					<th id="espaco">Cód. Turma</th>
+					<th>Hora Início</th>
 					<th>Hora Fim</th>
 					<th>Dia</th>
-					<th>Materia</th>
+					<th>Matéria</th>
 					<th>Professor</th>
 				</tr>	
 			<?php
@@ -60,6 +61,9 @@
 			} 
 		} 
 		?>
-		</table>
+
+			</table>
+			<a href="#">home </a>
+		</div>
 	</body>
 </html>

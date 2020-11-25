@@ -54,13 +54,13 @@
 						<input type='text' name='horafim' value='<?php echo $row['horafim'];?>' required>
 							
 						<label for="diaSemana">	Dia da semana</label>
-						<input type='text' name='diaSemana' value='<?php echo utf8_encode($row['dia_da_semana']);?>' required>
+						<input type='text' name='diaSemana' value='<?php echo $row['dia_da_semana'];?>' required>
 							
 						<label for="materia">Matéria</label>
-						<input type='text' name='materia' value='<?php echo utf8_encode($row['materia']);?>' required>
+						<input type='text' name='materia' value='<?php echo $row['materia'];?>' required>
 							
 						<label for="professor">Professor</label>
-						<input type='text' name='professor' value='<?php echo utf8_encode($row['professor']);?>' required>
+						<input type='text' name='professor' value='<?php echo $row['professor'];?>' required>
 						
 						<button id="btn-alt2-h"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> </button>
 						<a href="#">Voltar para a <span>home</span></a>
