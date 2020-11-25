@@ -63,7 +63,7 @@ $(document).ready(function(){
     })
 
     // form Alterar Reunioes
-    $("#form-altera-reunioes").on("submit",function(e){
+    $("#btn-alt2-r").on("click",function(e){
         e.preventDefault();
         var cod_reuniao = $('#cod_reuniao').val();
         var horario_reuniao = $('#horario_reuniao').val();
@@ -94,28 +94,28 @@ $(document).ready(function(){
         })
     })
     // form Cadastrar Reunioes
-    $("#form-cadastrar-reunioes").on("submit",function(e){
+    $("#btn-cad-r").on("click",function(e){
         e.preventDefault();
-        var cod_usuario = $('#cod_usuario').val();
-        var cod_turma = $('#cod_turma').val();
-        var horainicio = $('#horainicio').val();
-        var horafim = $('#horafim').val();
-        var diadasemana = $('#diadasemana').val();
-        var materia = $('#materia').val();
-        var professor = $('#professor').val();
+        var horario_reuniao = $('#horario_reuniao').val();
+        var data_reuniao = $('#data_reuniao').val();
+        var descricao = $('#descricao').val();
+        var nome = $('#nome').val();
+        var data_agendamento = $('#data_agendamento').val();
+        var num_sala = $('#num_sala').val();
+        var cod_sala = $('#cod_sala').val();
         
         $.ajax({
-            url: 'http://localhost/VIP/rotinas/horarios/CadReuniao.php',
+            url: 'CadReuniao.php',
             method: 'POST',
-            data: {cod_usuario: cod_usuario, cod_turma: cod_turma, 
-                horainicio: horainicio, horafim: horafim,
-                diadasemana: diadasemana, materia: materia,
-                professor: professor},
+            data: {horario_reuniao: horario_reuniao, data_reuniao: data_reuniao, 
+                descricao: descricao, nome: nome,
+                data_agendamento: data_agendamento, num_sala: num_sala,
+                cod_sala: cod_sala},
             dataType: 'json'
         }).done(function(result){
             if(result == "0"){
                 alert("Registro cadastrado com sucesso!");
-                window.location.href = "cadHorarios.html";
+                window.location.href = "CadReuniao.html";
             }
             else{
                 alert("Falha ao cadastrar o registro, favor contactar o administrador.");
