@@ -7,7 +7,7 @@ $(document).ready(function(){
         var password = $('#password').val();
         
         $.ajax({
-            url: 'http://localhost/VIP/php/validarLogin.php',
+            url: '../php/validarLogin.php',
             method: 'POST',
             data: {user: user, password: password},
             dataType: 'json'

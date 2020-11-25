@@ -30,17 +30,16 @@
                 </div>
 
                 <div class="second-column">
-                    <form action="#" id="form-login" name="form-login">
+                    <form id="form-login" name="form-login">
                         <input type="text" name="user" id="user" placeholder="Digite seu usuário" maxlength="5" autocomplete="off" required>
                         <i class='far fa-user-circle fa-lg'></i>
                         
                         <input type="password" name="password" id="password" placeholder="Digite sua senha" maxlength="5" autocomplete="off" onkeypress  = "return blockletras(event)" required>
                         <i class='fas fa-key fa-lg'></i>
-
-                        <div id="errorLogin">
-                            As crendenciais inseridas estão incorretas
+                        <div class="erro" id="errorLogin">
+                            Login Inválido
                         </div>
-
+                    
                         <input type="submit" form="form-login"  value="Login" id="btn-submit">
                     </form>
                 </div>
@@ -50,7 +49,6 @@
         <!-- script  -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         <script src="../js/blockletras.js"></script>
         <script src="../js/login.js"></script>	
     </body>
