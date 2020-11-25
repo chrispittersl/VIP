@@ -1,6 +1,6 @@
 /*===============RESET===============*/
-* 
-{
+
+*{
     font-family: 'Archivo Narrow', sans-serif;
     margin:0;
     padding:0;
@@ -13,10 +13,7 @@
 
 body {
   background: #d4d2d2 ;
- 
 }
-
-
 
 ul {
     list-style: none;
@@ -28,3 +25,4 @@ a {
 
 
 
+    

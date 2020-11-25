@@ -17,26 +17,16 @@
 	</head>
 	<body>
 		<?php
-			include 'config.php';
-			include 'mysqlexecuta.php';
-			$con = conectar();
-			mysql_select_db('vip');
+			include_once "../../php/conexao.php";
 			$cod_tcc = $_POST["cod_tcc"];
-			$sql="SELECT * from tcc where cod_tcc = $cod_tcc";
-			$res = mysqlexecuta($con,$sql);
-			$quant = (mysql_num_rows($res));
-
-			if ($quant==0) 
-			{
-				echo "TCC requerido está sem cadastro!";
-			}
-			else 
-			{
-				$row = mysql_fetch_array($res);
+			$stmt = $pdo->prepare("SELECT * from tcc where cod_tcc = $cod_tcc");
+			$stmt->execute();
+			$num_rows = $stmt->rowCount();
+			$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		?>
-			<div class="cont-rotinas-gd">
+		<div class="cont-rotinas-gd">
 
-				<h1>Alteração</h1>
+			<h1>Alteração</h1>
 
 					<form name = "f1" method="POST" action="AltTcc_altera.php">
 					<label>Código do TCC</label>

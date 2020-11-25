@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS-->
-		<link rel="stylesheet" href="../../css/rotinas.css">
+		<link rel="stylesheet" href="../css/rotinas-tudo.css">
         <!--ICONES BOOTSTRAP-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
@@ -17,13 +17,16 @@
 
 	</head>
 	<body>
-		<div class="container">
+		<div class="cont-rotinas">
 			<h1>Exclusão</h1>
 			<form action="ExclReuniao.php" method="POST" name="f1">
-				<label for="text">Código da Reunião</label>
-				<input type="text" name="cod_reuniao" autocomplete="off" required onkeypress="return blokletras(event)">
-				<input type="submit" value="Excluir">
-				<span>voltar para o <a href="#">menu</a></span>	
+				<input type="text" list="cod" name="cod_reuniao" autocomplete="off" required onkeypress="return blokletras(event)">
+				<datalist id="cod">
+					<!-- ADICIONAR DIRETO DO BD -->
+				</datalist>
+				<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
+				<button id="btn-exc-r"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+				<a href="#">Voltar para a <span>home</span></a>
 			</form>
 		</div>
 	<script src="../js/script.js"></script>	

@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--CSS-->
-		<link rel="stylesheet" href="../../css/rotinas2.css">
+		<link rel="stylesheet" href="../css/rotinas-tudo.css">
 		<!--ICONES BOOTSTRAP-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
@@ -16,7 +16,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<div class="container2">
+		<div class="cont-rotinas-gd">
 			<h1>Cadastro</h1>
 			<form action="CadReuniao.php" method="POST" name="f1">
 
@@ -41,8 +41,8 @@
 				<label for="cod_usuario">Código de usuário</label>
 				<input type="text" name="cod_usuario" onkeypress= "return blockletras(event)" required>
 
-				<input type="submit" value="Cadastrar">
-				<span>voltar para o <a href="#">menu</a></span>	
+				<button id="btn-cad-r"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
+				<a href="#">Voltar para a <span>home</span></a>
 			</form>
 		</div>
 	<script src="../js/script.js"></script>	

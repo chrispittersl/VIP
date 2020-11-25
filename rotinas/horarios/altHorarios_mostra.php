@@ -62,7 +62,7 @@
 						<label for="professor">Professor</label>
 						<input type='text' name='professor' value='<?php echo utf8_encode($row['professor']);?>' required>
 						
-						<input type="submit" name ="botao" value="Alterar dados">
+						<button id="btn-alt2-h"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> </button>
 						<a href="#">Voltar para a <span>home</span></a>
 					</form>
 			</div>

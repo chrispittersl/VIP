@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--CSS-->
-		<link rel="stylesheet" href="../../css/rotinas2.css">
+		<link rel="stylesheet" href="../css/rotinas-tudo.css">
 		<!--ICONES BOOTSTRAP-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
@@ -16,22 +16,20 @@
 		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<div class="container2">
+		<div class="cont-rotinas-gd">
 			<h1>Cadastrar</h1>
 			<form action="cadHorarios.php" method="POST" name="f1">
 
-				
-				
 				<label for="cod_usuario">Código de usuário</label>
 				<input type="text" name="cod_usuario" autocomplete="off" required onkeypress= "return blockletras(event)">
 
 				<label for="cod_turma">Código de turma</label>
 				<input type="text" name="cod_turma" autocomplete="off"  required onkeypress= "return blockletras(event)">
 
-				<label for="horainicio">Horario de início</label>
+				<label for="horainicio">Horário de início</label>
 				<input type="text" name="horainicio" required autocomplete="off" placeholder="Ex: 08:00:00">
 
-				<label for="horafim">Horario de fim</label>
+				<label for="horafim">Horário de fim</label>
 				<input type="text" name="horafim" required autocomplete="off" placeholder="Ex: 16:20:00">
 
 				<label for="diadasemana">Dia da Semana</label>
@@ -43,8 +41,8 @@
 				<label for="professor">Professor</label>
 				<input type="text" name="professor" required autocomplete="off" placeholder="Ex: Marlon">
 				
-				<input type="submit" value="Cadastrar">
-				<span>voltar para o <a href="#">menu</a></span>
+				<button id="btn-cad-h"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
+				<a href="#">Voltar para a <span>home</span></a>
 
 			</form>
 		</div>

@@ -17,30 +17,21 @@
 	</head>
 	<body>
 		<?php
-			include 'config.php';
-			include 'mysqlexecuta.php';
-			$con = conectar();
-			mysql_select_db('vip');
+			
+			include_once "../../php/conexao.php";
 			$cod_reuniao = $_POST["cod_reuniao"];
-			$sql="SELECT * from reunioes where cod_reuniao = $cod_reuniao";
-			$res = mysqlexecuta($con,$sql);
-			$quant = (mysql_num_rows($res));
-
-			if ($quant==0) 
-			{
-				echo " Reunião não Cadastrada!! ";
-			}
-			else 	
-			{
-					$row = mysql_fetch_array($res);
+			$stmt = $pdo->prepare("SELECT * from reunioes where cod_reuniao = $cod_reuniao");
+			$stmt->execute();
+			$num_rows = $stmt->rowCount();
+				$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		?>
 
-					<div class="cont-rotinas-gd">
-						<h1>Alteração</h1>
-						<form name = "f1" method="POST" action="AltReuniao_altera.php">
-							<label>Código de reunião</label>
-							<label id="cod"><?php echo $row['cod_reuniao'] ?></label>
-							<input type="hidden" name="cod_reuniao" value=<?php echo $row['cod_reuniao'];?>>
+		<div class="cont-rotinas-gd">
+			<h1>Alteração</h1>
+			<form id="form-altera-reunioes" name = "f1">
+				<label>Código de reunião</label>
+				<label id="cod"><?php echo $row['cod_reuniao'] ?></label>
+				<input type="hidden" id="cod_reuniao" name="cod_reuniao" value=<?php echo $row['cod_reuniao'];?>>
 
 							<label for="horario_reuniao">Horário da Reunião</label>
 							<input type='text' name='horario_reuniao' value='<?php echo $row['horario_reuniao'];?>' required>
