@@ -120,7 +120,7 @@ $(document).on("click",".rota",function(){
 		case 'btn-portaria':
 			img.src = "../img/Mapeamento/Externos/Portaria.png";
 			break;
-		case 'btn-Anexo':
+		case 'btn-anexo':
 			img.src = "../img/Mapeamento/Bloco_ADM/Anexo.png";
 			break;
 		case 'btn-quadra_coberta':
