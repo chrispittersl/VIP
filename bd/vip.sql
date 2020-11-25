@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.9.5deb2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: 24-Nov-2020 às 22:42
--- Versão do servidor: 5.7.17
--- PHP Version: 5.6.30
+-- Host: localhost:3306
+-- Tempo de geração: 25/11/2020 às 16:38
+-- Versão do servidor: 8.0.22-0ubuntu0.20.04.2
+-- Versão do PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,25 +19,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `vip`
+-- Banco de dados: `vip`
 --
-CREATE DATABASE IF NOT EXISTS `vip` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
-USE `vip`;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `curso`
+-- Estrutura para tabela `curso`
 --
 
 CREATE TABLE `curso` (
-  `cod_curso` int(11) NOT NULL,
+  `cod_curso` int UNSIGNED NOT NULL,
   `nome_curso` varchar(40) NOT NULL,
   `tipo_curso` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `curso`
+-- Despejando dados para a tabela `curso`
 --
 
 INSERT INTO `curso` (`cod_curso`, `nome_curso`, `tipo_curso`) VALUES
@@ -46,24 +44,24 @@ INSERT INTO `curso` (`cod_curso`, `nome_curso`, `tipo_curso`) VALUES
 (3, 'Serviços Jurídicos ', 'TÉCNICO'),
 (4, 'Informática', 'ETIM'),
 (5, 'Administração', 'TÉCNICO'),
-(7, 'Desenvolvimento de Sistema', 'MTEC'),
-(8, 'Contabilidade', 'TÈCNICO'),
-(9, 'Desenvolvimento de Sistema', 'TÉCNICO'),
-(10, 'Logística', 'MTEC'),
-(11, 'Logística', 'TÈCNICO'),
-(12, 'Logística', 'ETIM'),
-(31, 'Administração', 'MTEC');
+(6, 'Desenvolvimento de Sistema', 'MTEC'),
+(7, 'Contabilidade', 'TÈCNICO'),
+(8, 'Desenvolvimento de Sistema', 'TÉCNICO'),
+(9, 'Logística', 'MTEC'),
+(10, 'Logística', 'TÈCNICO'),
+(11, 'Logística', 'ETIM'),
+(12, 'Administração', 'MTEC');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `horario_aula`
+-- Estrutura para tabela `horario_aula`
 --
 
 CREATE TABLE `horario_aula` (
-  `cod_horario` int(11) NOT NULL,
-  `cod_usuario` int(11) NOT NULL,
-  `cod_turma` int(11) NOT NULL,
+  `cod_horario` int NOT NULL,
+  `cod_usuario` int NOT NULL,
+  `cod_turma` int NOT NULL,
   `horainicio` time NOT NULL,
   `horafim` time NOT NULL,
   `dia_da_semana` varchar(15) NOT NULL,
@@ -72,7 +70,7 @@ CREATE TABLE `horario_aula` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `horario_aula`
+-- Despejando dados para a tabela `horario_aula`
 --
 
 INSERT INTO `horario_aula` (`cod_horario`, `cod_usuario`, `cod_turma`, `horainicio`, `horafim`, `dia_da_semana`, `materia`, `professor`) VALUES
@@ -197,22 +195,22 @@ INSERT INTO `horario_aula` (`cod_horario`, `cod_usuario`, `cod_turma`, `horainic
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `reunioes`
+-- Estrutura para tabela `reunioes`
 --
 
 CREATE TABLE `reunioes` (
-  `cod_reuniao` int(11) NOT NULL,
+  `cod_reuniao` int NOT NULL,
   `horario_reuniao` time NOT NULL,
   `data_reuniao` date NOT NULL,
   `descricao` varchar(250) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `data_agendamento` date NOT NULL,
-  `num_sala` int(11) NOT NULL,
-  `cod_usuario` int(11) NOT NULL
+  `num_sala` int NOT NULL,
+  `cod_usuario` int NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `reunioes`
+-- Despejando dados para a tabela `reunioes`
 --
 
 INSERT INTO `reunioes` (`cod_reuniao`, `horario_reuniao`, `data_reuniao`, `descricao`, `nome`, `data_agendamento`, `num_sala`, `cod_usuario`) VALUES
@@ -225,16 +223,16 @@ INSERT INTO `reunioes` (`cod_reuniao`, `horario_reuniao`, `data_reuniao`, `descr
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sala`
+-- Estrutura para tabela `sala`
 --
 
 CREATE TABLE `sala` (
-  `num_sala` int(10) UNSIGNED NOT NULL,
+  `num_sala` int UNSIGNED NOT NULL,
   `nome_sala` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `sala`
+-- Despejando dados para a tabela `sala`
 --
 
 INSERT INTO `sala` (`num_sala`, `nome_sala`) VALUES
@@ -262,22 +260,22 @@ INSERT INTO `sala` (`num_sala`, `nome_sala`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tcc`
+-- Estrutura para tabela `tcc`
 --
 
 CREATE TABLE `tcc` (
-  `cod_tcc` int(11) NOT NULL,
+  `cod_tcc` int NOT NULL,
   `horario_tcc` time NOT NULL,
   `data_tcc` date NOT NULL,
   `descricao` varchar(250) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `data_agendamento` date NOT NULL,
-  `num_sala` int(11) NOT NULL,
-  `cod_usuario` int(11) NOT NULL
+  `num_sala` int NOT NULL,
+  `cod_usuario` int NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `tcc`
+-- Despejando dados para a tabela `tcc`
 --
 
 INSERT INTO `tcc` (`cod_tcc`, `horario_tcc`, `data_tcc`, `descricao`, `nome`, `data_agendamento`, `num_sala`, `cod_usuario`) VALUES
@@ -290,18 +288,18 @@ INSERT INTO `tcc` (`cod_tcc`, `horario_tcc`, `data_tcc`, `descricao`, `nome`, `d
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `turma`
+-- Estrutura para tabela `turma`
 --
 
 CREATE TABLE `turma` (
-  `cod_turma` int(11) NOT NULL,
-  `serie` varchar(30) COLLATE utf8_bin NOT NULL,
-  `num_sala` int(11) NOT NULL,
-  `cod_curso` int(11) NOT NULL
+  `cod_turma` int NOT NULL,
+  `serie` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `num_sala` int NOT NULL,
+  `cod_curso` int NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Extraindo dados da tabela `turma`
+-- Despejando dados para a tabela `turma`
 --
 
 INSERT INTO `turma` (`cod_turma`, `serie`, `num_sala`, `cod_curso`) VALUES
@@ -342,17 +340,17 @@ INSERT INTO `turma` (`cod_turma`, `serie`, `num_sala`, `cod_curso`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
-  `cod_usuario` int(11) NOT NULL,
+  `cod_usuario` int NOT NULL,
   `usuario` varchar(20) NOT NULL,
   `senha` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Despejando dados para a tabela `usuario`
 --
 
 INSERT INTO `usuario` (`cod_usuario`, `usuario`, `senha`) VALUES
@@ -360,90 +358,97 @@ INSERT INTO `usuario` (`cod_usuario`, `usuario`, `senha`) VALUES
 (2, 'geral', '456');
 
 --
--- Indexes for dumped tables
+-- Índices de tabelas apagadas
 --
 
 --
--- Indexes for table `curso`
+-- Índices de tabela `curso`
 --
 ALTER TABLE `curso`
   ADD PRIMARY KEY (`cod_curso`);
 
 --
--- Indexes for table `horario_aula`
+-- Índices de tabela `horario_aula`
 --
 ALTER TABLE `horario_aula`
   ADD PRIMARY KEY (`cod_horario`);
 
 --
--- Indexes for table `reunioes`
+-- Índices de tabela `reunioes`
 --
 ALTER TABLE `reunioes`
   ADD PRIMARY KEY (`cod_reuniao`);
 
 --
--- Indexes for table `sala`
+-- Índices de tabela `sala`
 --
 ALTER TABLE `sala`
   ADD PRIMARY KEY (`num_sala`);
 
 --
--- Indexes for table `tcc`
+-- Índices de tabela `tcc`
 --
 ALTER TABLE `tcc`
   ADD PRIMARY KEY (`cod_tcc`);
 
 --
--- Indexes for table `turma`
+-- Índices de tabela `turma`
 --
 ALTER TABLE `turma`
   ADD PRIMARY KEY (`cod_turma`);
 
 --
--- Indexes for table `usuario`
+-- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`cod_usuario`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
--- AUTO_INCREMENT for table `curso`
+-- AUTO_INCREMENT de tabela `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `cod_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `cod_curso` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
--- AUTO_INCREMENT for table `horario_aula`
+-- AUTO_INCREMENT de tabela `horario_aula`
 --
 ALTER TABLE `horario_aula`
-  MODIFY `cod_horario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `cod_horario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+
 --
--- AUTO_INCREMENT for table `reunioes`
+-- AUTO_INCREMENT de tabela `reunioes`
 --
 ALTER TABLE `reunioes`
-  MODIFY `cod_reuniao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cod_reuniao` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
--- AUTO_INCREMENT for table `sala`
+-- AUTO_INCREMENT de tabela `sala`
 --
 ALTER TABLE `sala`
-  MODIFY `num_sala` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `num_sala` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
--- AUTO_INCREMENT for table `tcc`
+-- AUTO_INCREMENT de tabela `tcc`
 --
 ALTER TABLE `tcc`
-  MODIFY `cod_tcc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cod_tcc` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
--- AUTO_INCREMENT for table `turma`
+-- AUTO_INCREMENT de tabela `turma`
 --
 ALTER TABLE `turma`
-  MODIFY `cod_turma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `cod_turma` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+  MODIFY `cod_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
