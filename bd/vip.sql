@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.7deb1
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Tempo de geração: 16-Nov-2020 às 16:15
--- Versão do servidor: 8.0.22-0ubuntu0.20.10.2
--- versão do PHP: 7.4.9
+-- Host: 127.0.0.1
+-- Generation Time: 24-Nov-2020 às 22:42
+-- Versão do servidor: 5.7.17
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,8 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `vip`
+-- Database: `vip`
 --
+CREATE DATABASE IF NOT EXISTS `vip` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `vip`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +31,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `curso` (
-  `cod_curso` int NOT NULL,
+  `cod_curso` int(11) NOT NULL,
   `nome_curso` varchar(40) NOT NULL,
   `tipo_curso` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -43,7 +45,14 @@ INSERT INTO `curso` (`cod_curso`, `nome_curso`, `tipo_curso`) VALUES
 (2, 'Recursos Humanos', 'MTEC'),
 (3, 'Serviços Jurídicos ', 'TÉCNICO'),
 (4, 'Informática', 'ETIM'),
-(5, 'Administração', 'TÉCNICO');
+(5, 'Administração', 'TÉCNICO'),
+(7, 'Desenvolvimento de Sistema', 'MTEC'),
+(8, 'Contabilidade', 'TÈCNICO'),
+(9, 'Desenvolvimento de Sistema', 'TÉCNICO'),
+(10, 'Logística', 'MTEC'),
+(11, 'Logística', 'TÈCNICO'),
+(12, 'Logística', 'ETIM'),
+(31, 'Administração', 'MTEC');
 
 -- --------------------------------------------------------
 
@@ -52,9 +61,9 @@ INSERT INTO `curso` (`cod_curso`, `nome_curso`, `tipo_curso`) VALUES
 --
 
 CREATE TABLE `horario_aula` (
-  `cod_horario` int NOT NULL,
-  `cod_usuario` int NOT NULL,
-  `cod_turma` int NOT NULL,
+  `cod_horario` int(11) NOT NULL,
+  `cod_usuario` int(11) NOT NULL,
+  `cod_turma` int(11) NOT NULL,
   `horainicio` time NOT NULL,
   `horafim` time NOT NULL,
   `dia_da_semana` varchar(15) NOT NULL,
@@ -192,14 +201,14 @@ INSERT INTO `horario_aula` (`cod_horario`, `cod_usuario`, `cod_turma`, `horainic
 --
 
 CREATE TABLE `reunioes` (
-  `cod_reuniao` int NOT NULL,
+  `cod_reuniao` int(11) NOT NULL,
   `horario_reuniao` time NOT NULL,
   `data_reuniao` date NOT NULL,
   `descricao` varchar(250) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `data_agendamento` date NOT NULL,
-  `num_sala` int NOT NULL,
-  `cod_usuario` int NOT NULL
+  `num_sala` int(11) NOT NULL,
+  `cod_usuario` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -220,7 +229,7 @@ INSERT INTO `reunioes` (`cod_reuniao`, `horario_reuniao`, `data_reuniao`, `descr
 --
 
 CREATE TABLE `sala` (
-  `num_sala` int UNSIGNED NOT NULL,
+  `num_sala` int(10) UNSIGNED NOT NULL,
   `nome_sala` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -257,14 +266,14 @@ INSERT INTO `sala` (`num_sala`, `nome_sala`) VALUES
 --
 
 CREATE TABLE `tcc` (
-  `cod_tcc` int NOT NULL,
+  `cod_tcc` int(11) NOT NULL,
   `horario_tcc` time NOT NULL,
   `data_tcc` date NOT NULL,
   `descricao` varchar(250) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `data_agendamento` date NOT NULL,
-  `num_sala` int NOT NULL,
-  `cod_usuario` int NOT NULL
+  `num_sala` int(11) NOT NULL,
+  `cod_usuario` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -285,22 +294,50 @@ INSERT INTO `tcc` (`cod_tcc`, `horario_tcc`, `data_tcc`, `descricao`, `nome`, `d
 --
 
 CREATE TABLE `turma` (
-  `cod_turma` int NOT NULL,
-  `serie` varchar(30) NOT NULL,
-  `num_sala` int NOT NULL,
-  `cod_curso` int NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `cod_turma` int(11) NOT NULL,
+  `serie` varchar(30) COLLATE utf8_bin NOT NULL,
+  `num_sala` int(11) NOT NULL,
+  `cod_curso` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `turma`
 --
 
 INSERT INTO `turma` (`cod_turma`, `serie`, `num_sala`, `cod_curso`) VALUES
-(1, '3 ano A', 1, 1),
-(2, '2 ano A', 2, 2),
-(3, '3 ano A', 3, 4),
-(4, '1 módulo', 4, 3),
-(5, '1 módulo', 5, 5);
+(1, '3 ano B', 2, 1),
+(2, '2 ano A', 15, 2),
+(3, '3 ano A', 9, 4),
+(4, '1 ano A', 15, 3),
+(5, '3 ano c', 6, 5),
+(6, '1 ano A', 6, 10),
+(7, '2 ano A', 16, 7),
+(8, '3 ano A', 16, 3),
+(9, '2 ano A', 14, 31),
+(10, '3 ano B', 14, 11),
+(11, '1 ano A', 13, 7),
+(12, '2 ano B', 13, 11),
+(13, '1 ano A', 12, 2),
+(14, '3 ano B', 12, 8),
+(15, '1 ano A', 11, 31),
+(16, '2 ano B', 11, 8),
+(17, '3 ano A', 10, 12),
+(18, '1 ano B', 10, 11),
+(19, '1 ano B', 9, 8),
+(20, '2 ano A', 8, 3),
+(21, '1 ano A', 7, 9),
+(22, '3 ano A', 5, 5),
+(23, '1 ano B', 5, 31),
+(24, '3 ano B', 5, 5),
+(25, '2 ano A', 4, 5),
+(26, '2 ano A', 4, 10),
+(27, '2 ano C', 4, 5),
+(28, '1 ano A', 3, 5),
+(29, '2 ano B', 3, 31),
+(30, '2 ano B', 3, 5),
+(31, '1 ano C', 2, 5),
+(32, '3 ano A', 1, 1),
+(33, '1 ano B', 1, 5);
 
 -- --------------------------------------------------------
 
@@ -309,7 +346,7 @@ INSERT INTO `turma` (`cod_turma`, `serie`, `num_sala`, `cod_curso`) VALUES
 --
 
 CREATE TABLE `usuario` (
-  `cod_usuario` int NOT NULL,
+  `cod_usuario` int(11) NOT NULL,
   `usuario` varchar(20) NOT NULL,
   `senha` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -323,97 +360,90 @@ INSERT INTO `usuario` (`cod_usuario`, `usuario`, `senha`) VALUES
 (2, 'geral', '456');
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `curso`
+-- Indexes for table `curso`
 --
 ALTER TABLE `curso`
   ADD PRIMARY KEY (`cod_curso`);
 
 --
--- Índices para tabela `horario_aula`
+-- Indexes for table `horario_aula`
 --
 ALTER TABLE `horario_aula`
   ADD PRIMARY KEY (`cod_horario`);
 
 --
--- Índices para tabela `reunioes`
+-- Indexes for table `reunioes`
 --
 ALTER TABLE `reunioes`
   ADD PRIMARY KEY (`cod_reuniao`);
 
 --
--- Índices para tabela `sala`
+-- Indexes for table `sala`
 --
 ALTER TABLE `sala`
   ADD PRIMARY KEY (`num_sala`);
 
 --
--- Índices para tabela `tcc`
+-- Indexes for table `tcc`
 --
 ALTER TABLE `tcc`
   ADD PRIMARY KEY (`cod_tcc`);
 
 --
--- Índices para tabela `turma`
+-- Indexes for table `turma`
 --
 ALTER TABLE `turma`
   ADD PRIMARY KEY (`cod_turma`);
 
 --
--- Índices para tabela `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`cod_usuario`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `curso`
+-- AUTO_INCREMENT for table `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `cod_curso` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+  MODIFY `cod_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
--- AUTO_INCREMENT de tabela `horario_aula`
+-- AUTO_INCREMENT for table `horario_aula`
 --
 ALTER TABLE `horario_aula`
-  MODIFY `cod_horario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
-
+  MODIFY `cod_horario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 --
--- AUTO_INCREMENT de tabela `reunioes`
+-- AUTO_INCREMENT for table `reunioes`
 --
 ALTER TABLE `reunioes`
-  MODIFY `cod_reuniao` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `cod_reuniao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT de tabela `sala`
+-- AUTO_INCREMENT for table `sala`
 --
 ALTER TABLE `sala`
-  MODIFY `num_sala` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
+  MODIFY `num_sala` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
--- AUTO_INCREMENT de tabela `tcc`
+-- AUTO_INCREMENT for table `tcc`
 --
 ALTER TABLE `tcc`
-  MODIFY `cod_tcc` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `cod_tcc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT de tabela `turma`
+-- AUTO_INCREMENT for table `turma`
 --
 ALTER TABLE `turma`
-  MODIFY `cod_turma` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `cod_turma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
+  MODIFY `cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
