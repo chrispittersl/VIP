@@ -17,61 +17,51 @@
 	</head>
 	<body>
 		<?php
-			include 'config.php';
-			include 'mysqlexecuta.php';
-			$con = conectar();
-			mysql_select_db('vip');
+			include_once "../../php/conexao.php";
 			$cod_tcc = $_POST["cod_tcc"];
-			$sql="SELECT * from tcc where cod_tcc = $cod_tcc";
-			$res = mysqlexecuta($con,$sql);
-			$quant = (mysql_num_rows($res));
-
-			if ($quant==0) 
-			{
-				echo "TCC requerido está sem cadastro!";
-			}
-			else 
-			{
-				$row = mysql_fetch_array($res);
+			$stmt = $pdo->prepare("SELECT * from tcc where cod_tcc = $cod_tcc");
+			$stmt->execute();
+			$num_rows = $stmt->rowCount();
+			$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		?>
-			<div class="cont-rotinas-gd">
+		<div class="cont-rotinas-gd">
 
-				<h1>Alteração</h1>
+			<h1>Alteração</h1>
 
-					<form name = "f1" method="POST" action="AltTcc_altera.php">
-					<label>Código do TCC</label>
-					<label id="cod"><?php echo $row['cod_tcc']?></label>
-					<input type="hidden" name="cod_tcc" value=<?php echo $row['cod_tcc'];?>>
-					
-					<label for="horario_tcc">Horário que irá ocorrer</label>
-					<input type='text' name='horario_tcc' value='<?php echo $row['horario_tcc'];?>' required>
-					
-					<label for="data_tcc">Data que irá ocorrer</label>
-					<input type='text' name='data_tcc' value='<?php echo $row['data_tcc'];?>' required>
-					
-					<label for="descricao">Descrição</label> 
-					<textarea name="descricao"><?php echo utf8_encode($row['descricao']);?></textarea>
-					
-					<label for="nome">Nome</label> 
-					<input type='text' name='nome' value='<?php echo utf8_encode($row['nome']);?>' required>
-					
-					<label for="data_agendamento">Data de agendamento</label>
-					<input type='text' name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
-					
-					<label for="num_sala">Numero sala</label>
-					<input type='text' name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $row['num_sala'];?>' required>
-					
-					<label for="cod_usuario">Código de usuário</label>
-					<input type='text' name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
-					
-					<input type="submit" name ="botao" value="Alterar dados">
-					<a href="#">Voltar para a <span>home</span></a>		
-				</form>
-			</div>	
-		<?php
-			}
-		?>
-	<script src="../js/script.js"></script>	
-	<script src="../js/blockletras.js"></script>	
+				<form name = "f1" method="POST" action="AltTcc_altera.php">
+				<label>Código do TCC</label>
+				<label id="cod"><?php echo $row['cod_tcc']?></label>
+				<input type="hidden" id="cod_tcc" name="cod_tcc" value=<?php echo $row['cod_tcc'];?>>
+				
+				<label for="horario_tcc">Horário que irá ocorrer</label>
+				<input type='text' id="horario_tcc" name='horario_tcc' value='<?php echo $row['horario_tcc'];?>' required>
+				
+				<label for="data_tcc">Data que irá ocorrer</label>
+				<input type='text' id="data_tcc" name='data_tcc' value='<?php echo $row['data_tcc'];?>' required>
+				
+				<label for="descricao">Descrição</label> 
+				<textarea id="descricao" name="descricao"><?php echo utf8_encode($row['descricao']);?></textarea>
+				
+				<label for="nome">Nome</label> 
+				<input type='text' id="nome" name='nome' value='<?php echo utf8_encode($row['nome']);?>' required>
+				
+				<label for="data_agendamento">Data de agendamento</label>
+				<input type='text' id="data_agendamento" name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
+				
+				<label for="num_sala">Numero sala</label>
+				<input type='text' id="num_sala" name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $row['num_sala'];?>' required>
+				
+				<label for="cod_usuario">Código de usuário</label>
+				<input type='text' id="cod_usuario" name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
+				
+				<input type="submit" name ="botao" value="Alterar dados">
+				<a href="#">Voltar para a <span>home</span></a>		
+			</form>
+		</div>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="../../js/script.js"></script>	
+	<script src="../../js/blockletras.js"></script>	
+	<script src="../../js/rotinas.js"></script>
 	</body>
 </html>
