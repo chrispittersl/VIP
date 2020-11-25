@@ -75,7 +75,7 @@ $(document).ready(function(){
         var cod_usuario = $('#cod_usuario').val();
         
         $.ajax({
-            url: 'http://localhost/VIP/rotinas/reunioes/AltReuniao_altera.php',
+            url: 'AltReuniao_altera.php',
             method: 'POST',
             data: {cod_reuniao: cod_reuniao, horario_reuniao: horario_reuniao, 
                 data_reuniao: data_reuniao, descricao: descricao,
