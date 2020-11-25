@@ -63,7 +63,7 @@
 							<label for="cod_usuario">Código de usuário</label>
 							<input type='text' name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
 						
-							<input type="submit" name ="botao" value="Alterar dados">
+							<button id="btn-alt2-r"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button>
 							<a href="#">Voltar para a <span>home</span></a>
 						</form>
 					</div>
