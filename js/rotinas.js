@@ -13,7 +13,7 @@ $(document).ready(function(){
         var professor = $('#professor').val();
         
         $.ajax({
-            url: 'http://localhost/VIP/rotinas/horarios/altHorarios_altera.php',
+            url: 'altHorarios_altera.php',
             method: 'POST',
             data: {cod_usuario: cod_usuario, cod_turma: cod_turma, 
                 horainicio: horainicio, horafim: horafim,
@@ -43,7 +43,7 @@ $(document).ready(function(){
         var professor = $('#professor').val();
         
         $.ajax({
-            url: 'http://localhost/VIP/rotinas/horarios/cadHorarios.php',
+            url: 'cadHorarios.php',
             method: 'POST',
             data: {cod_usuario: cod_usuario, cod_turma: cod_turma, 
                 horainicio: horainicio, horafim: horafim,
@@ -75,7 +75,7 @@ $(document).ready(function(){
         var cod_usuario = $('#cod_usuario').val();
         
         $.ajax({
-            url: 'http://localhost/VIP/rotinas/reunioes/AltReuniao_altera.php',
+            url: 'AltReuniao_altera.php',
             method: 'POST',
             data: {cod_reuniao: cod_reuniao, horario_reuniao: horario_reuniao, 
                 data_reuniao: data_reuniao, descricao: descricao,
@@ -137,7 +137,7 @@ $(document).ready(function(){
         var cod_usuario = $('#cod_usuario').val();
         
         $.ajax({
-            url: 'http://localhost/VIP/rotinas/tcc/AltTcc_altera.php',
+            url: 'AltTcc_altera.php',
             method: 'POST',
             data: {cod_tcc: cod_tcc, horario_tcc: horario_tcc, 
                 data_tcc: data_tcc, descricao: descricao,
@@ -170,7 +170,7 @@ $(document).ready(function(){
         var professor = $('#professor').val();
         
         $.ajax({
-            url: 'http://localhost/VIP/rotinas/tcc/CadTcc.php',
+            url: 'TesteCadTcc.php',
             method: 'POST',
             data: {cod_usuario: cod_usuario, cod_turma: cod_turma, 
                 horainicio: horainicio, horafim: horafim,
