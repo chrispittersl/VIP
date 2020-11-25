@@ -170,7 +170,7 @@ $(document).ready(function(){
         var professor = $('#professor').val();
         
         $.ajax({
-            url: 'http://localhost/VIP/rotinas/tcc/CadTcc.php',
+            url: 'CadTcc.php',
             method: 'POST',
             data: {cod_usuario: cod_usuario, cod_turma: cod_turma, 
                 horainicio: horainicio, horafim: horafim,
