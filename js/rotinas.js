@@ -1,4 +1,3 @@
-$(document).ready(function(){
 
     // form Alterar Horarios
     $("#form-altera-horarios").on("submit",function(e){
@@ -102,7 +101,7 @@ $(document).ready(function(){
         var nome = $('#nome').val();
         var data_agendamento = $('#data_agendamento').val();
         var num_sala = $('#num_sala').val();
-        var cod_sala = $('#cod_sala').val();
+        var cod_usuario = $('#cod_usuario').val();
         
         $.ajax({
             url: 'CadReuniao.php',
@@ -110,7 +109,7 @@ $(document).ready(function(){
             data: {horario_reuniao: horario_reuniao, data_reuniao: data_reuniao, 
                 descricao: descricao, nome: nome,
                 data_agendamento: data_agendamento, num_sala: num_sala,
-                cod_sala: cod_sala},
+                cod_usuario: cod_usuario},
             dataType: 'json'
         }).done(function(result){
             if(result == "0"){
@@ -118,12 +117,37 @@ $(document).ready(function(){
                 window.location.href = "CadReuniao.html";
             }
             else{
-                alert("Falha ao cadastrar o registro, favor contactar o administrador.");
+                alert(result);
                 window.location.href = "../../teste/homeadm.html";
             }
         })
     })
-
+    //Form Excluir Reuniao
+    $("#btn-exc-r").on("click",function(e){
+        e.preventDefault();
+        var cod_reuniao = $('#cod_reuniao').val();
+        console.log("sua vaca");
+        
+        $.ajax({
+            url: 'ExclReuniao.php',
+            method: 'POST',
+            data: {cod_reuniao: cod_reuniao},
+            dataType: 'json'
+        }).done(function(result){
+            if(result == "Reunião não cadastrada!"){
+                alert("Reunião não cadastrada!");
+                window.location.href = "ExclReuniao.html";
+            }
+            else if(result == "Excluído com Sucesso"){
+                alert("Excluído com Sucesso");
+                window.location.href = "ExclReuniao.html";
+            }
+            else{
+                alert("Ocorreu um problema no banco de dados, favor contactar o adm");
+                window.location.href = "../../teste/homeadm.html";
+            }
+        })
+    })
     // form Alterar Tcc
     $("#form-altera-tcc").on("submit",function(e){
         e.preventDefault();
@@ -137,7 +161,7 @@ $(document).ready(function(){
         var cod_usuario = $('#cod_usuario').val();
         
         $.ajax({
-            url: 'http://localhost/VIP/rotinas/tcc/AltTcc_altera.php',
+            url: 'AltTcc_altera.php',
             method: 'POST',
             data: {cod_tcc: cod_tcc, horario_tcc: horario_tcc, 
                 data_tcc: data_tcc, descricao: descricao,
@@ -168,7 +192,6 @@ $(document).ready(function(){
         var diadasemana = $('#diadasemana').val();
         var materia = $('#materia').val();
         var professor = $('#professor').val();
-        
         $.ajax({
             url: 'CadTcc.php',
             method: 'POST',
@@ -188,4 +211,3 @@ $(document).ready(function(){
             }
         })
     })
-})
