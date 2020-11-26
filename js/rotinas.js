@@ -90,7 +90,7 @@
             if (verifica_altR==0){
                 var cod_reuniao = $('#cod_reuniao').val();
                 var dados = {cod_reuniao: cod_reuniao};
-                $("#form_ReuniaoAlt1").on("submit",function(){ 
+                $("#form_ReuniaoAlt1").on("submit",function(){
                     window.location.href = "AltReuniao_mostra.php";
                 })
             } 
