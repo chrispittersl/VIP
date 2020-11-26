@@ -17,23 +17,24 @@
 	</head>
 	<body>
 		<?php
-			include 'config.php';
-			include 'mysqlexecuta.php';
-			$con = conectar();
-			mysql_select_db('vip');
-			$codHora = $_POST["txtCod"];
-			$sql="SELECT * from horario_aula where cod_horario = $codHora";
-			$res = mysqlexecuta($con,$sql);
-			$quant = (mysql_num_rows($res));
+				include_once "../../php/conexao.php";
+				$cod_horario=$_POST["cod_horario"];
+				
+				$stmt = $pdo->prepare("SELECT * FROM reunioes where cod_horario = $cod_horario");
+				$stmt->execute();
+				$num_rows = $stmt->rowCount();
+				$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-			if ($quant==0)
-			{
-				echo "Horário não Cadastrado !!";
-			}
-			else 	
-			{
-				$row = mysql_fetch_array($res);
-		?>
+				if ($num_rows==0)
+				{
+					echo "<script type='javascript'>alert('Horário não Cadastrado !!');";
+					header('Location:altHorarios.html');
+				}
+				else
+				{
+					echo "<script type='javascript'>alert('Horário Encontrado !!');";
+				}
+			?>
 			<div class="cont-rotinas-gd">
 				<h1>Alteração</h1>
 					<form name="f1" method="POST" action="altHorarios_altera.php">
@@ -66,11 +67,10 @@
 						<a href="#">Voltar para a <span>home</span></a>
 					</form>
 			</div>
-			
-		<?php
-			}
-		?>
-	<script src="../js/script.js"></script>	
-	<script src="../js/blockletras.js"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="../../js/script.js"></script>	
+	<script src="../../js/blockletras.js"></script>	
+	<script src="../../js/rotinas.js"></script>	
 	</body>
 </html>

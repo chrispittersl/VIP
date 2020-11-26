@@ -27,32 +27,31 @@
 		<div class="cont-rotinas-gd">
 
 			<h1>Alteração</h1>
-
-					<form name = "f1" method="POST" action="AltTcc_altera.php">
+					<form name = "f1" method="POST">
 					<label>Código do TCC</label>
 					<label id="cod"><?php echo $row['cod_tcc']?></label>
-					<input type="hidden" name="cod_tcc" value=<?php echo $row['cod_tcc'];?>>
+					<input type="hidden" id="cod_tcc" name="cod_tcc" value=<?php echo $row['cod_tcc'];?>>
 					
 					<label for="horario_tcc">Horário que irá ocorrer</label>
-					<input type='text' name='horario_tcc' value='<?php echo $row['horario_tcc'];?>' required>
+					<input type='text' id="horario_tcc" name='horario_tcc' value='<?php echo $row['horario_tcc'];?>' required>
 					
 					<label for="data_tcc">Data que irá ocorrer</label>
-					<input type='text' name='data_tcc' value='<?php echo $row['data_tcc'];?>' required>
+					<input type='text' id="data_tcc" name='data_tcc' value='<?php echo $row['data_tcc'];?>' required>
 					
 					<label for="descricao">Descrição</label> 
-					<textarea name="descricao"><?php echo utf8_encode($row['descricao']);?></textarea>
+					<textarea id="descricao" name="descricao"><?php echo utf8_encode($row['descricao']);?></textarea>
 					
 					<label for="nome">Nome</label> 
-					<input type='text' name='nome' value='<?php echo utf8_encode($row['nome']);?>' required>
+					<input type='text' id="nome" name='nome' value='<?php echo utf8_encode($row['nome']);?>' required>
 					
 					<label for="data_agendamento">Data de agendamento</label>
-					<input type='text' name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
+					<input type='text' id="data_agendamento" name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
 					
 					<label for="num_sala">Numero sala</label>
-					<input type='text' name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $row['num_sala'];?>' required>
+					<input type='text' id="num_sala" name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $row['num_sala'];?>' required>
 					
 					<label for="cod_usuario">Código de usuário</label>
-					<input type='text' name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
+					<input type='text' id="cod_usuario" name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
 					
 					<button id="btn-alt2-t"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button>
 					<a href="#">Voltar para a <span>home</span></a>		
@@ -61,7 +60,10 @@
 		<?php
 			}
 		?>
-	<script src="../js/script.js"></script>	
-	<script src="../js/blockletras.js"></script>	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="../../js/blockletras.js"></script>
+		<script src="../../js/script.js"></script>
+		<script src="../../js/rotinas.js"></script>	
 	</body>
 </html>

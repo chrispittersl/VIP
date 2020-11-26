@@ -17,19 +17,19 @@
 	</head>
 	<body>
 		<?php
-			
-			include_once "../../php/conexao.php";
-			$cod_reuniao = $_POST["cod_reuniao"];
-			$stmt = $pdo->prepare("SELECT * from reunioes where cod_reuniao = $cod_reuniao");
-			$stmt->execute();
-			$num_rows = $stmt->rowCount();
-			$row = $stmt->fetch(PDO::FETCH_ASSOC);
-		?>
-
+				include_once "../../php/conexao.php";
+				$cod_reuniao=$_POST["cod_reuniao"];
+				
+				$stmt = $pdo->prepare("SELECT * FROM reunioes where cod_reuniao = $cod_reuniao");
+				$stmt->execute();
+				$num_rows = $stmt->rowCount();
+				$row = $stmt->fetch(PDO::FETCH_ASSOC);
+			?>
 		<div class="cont-rotinas-gd">
 			<h1>Alteração</h1>
 			<form id="form-altera-reunioes" name = "f1">
 			<label>Código de reunião</label>
+			
 			<label id="cod"><?php echo $row['cod_reuniao'] ?></label>
 			<input type="hidden" id="cod_reuniao" name="cod_reuniao" value="<?php echo $row['cod_reuniao'];?>">
 

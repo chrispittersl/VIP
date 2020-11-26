@@ -10,13 +10,10 @@
 		if ($num_rows==0){
 			echo json_encode("Reunião não cadastrada!");
 		}
-		else if($num_rows > 0){
-			$stmt = $pdo->prepare("DELETE FROM reunioes WHERE cod_reuniao = $cod_reuniao");
-			$stmt->execute();
-			echo json_encode("Excluído com sucesso");
+		else if($num_rows>0){
+			echo json_encode("Reunião encontrada!");
 		}
 	}
 	catch(Exception $e){
 		echo json_encode("Ocorreu um problema no banco de dados, favor contactar o administrador");
 	}
-?>
