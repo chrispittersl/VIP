@@ -137,9 +137,9 @@ font-size:1em !important;
     height: 40rem;
     width:100%;
     grid-column: 1/-1;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
 .banner-tcc{
     background:  #5b1c1e;
@@ -147,6 +147,7 @@ font-size:1em !important;
     display:grid;
     grid-template-rows: 2fr 1fr;
     transition: 0.5s;
+    width:33.3%
 }
 .banner-tcc:hover{
     background: #441516;
@@ -158,6 +159,7 @@ font-size:1em !important;
     display:grid;
     grid-template-rows: 2fr 1fr;
     transition: 0.5s;
+    width:33.4%
 }
 .banner-reuniao:hover{
     background:#722325 ;
@@ -168,6 +170,7 @@ font-size:1em !important;
     display:grid;
     grid-template-rows: 2fr 1fr;
     transition: 0.5s;
+    width:33.3%
 }
 .banner-horario:hover{
     background: #a03134;
@@ -440,3 +443,87 @@ hr{
 .home a:hover{
     color: #e5474b;
 }
+
+/* DEIXANDO O SITE RESPONSIVO */
+@media screen and (max-width:375px){
+    
+     /* HEADER RESPONSIVA E LOGO*/
+     .header{
+        grid-column: 1/-1;
+    }
+    .logo{
+        width:130px !important;
+    }
+    /* NAVEGAÇÃO */
+    .btn{
+        margin:2%;
+    }
+    .header .btn span{
+        font-size:20px;
+    }
+    .header .btn.click{
+        left:130px;
+    }
+    .sidebar{
+        width:150px;
+    }
+    .sidebar a{
+        font-size:15px;
+    }
+    .dropdown-btn{
+        font-size:15px;
+    }
+    .fa-caret-down{
+        font-size:15px;
+    }
+    /* BANNER */
+    .banner-adm{
+        height: 18.3rem;
+        flex-direction: column;
+        align-items: start;
+    }
+    .banner-adm p{
+        font-size:1.8em;
+    }
+    .banner-adm a{
+        padding: 4px 5px 5px 5px;
+        font-size:15px;
+        height: 15px !important;
+        width: 120px !important;
+    }
+    .banner-tcc{
+        display:grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        width:100%;
+        height:100px;
+    }
+    .banner-tcc p, .banner-horario p, .banner-reuniao p{
+        align-self:start;
+        margin-top:8px;
+    }
+    .banner-tcc a, .banner-horario a, .banner-reuniao a{
+        align-self:start;
+        justify-self:center;
+        margin-top:30px;
+    }
+    .banner-tcc p{
+        padding:0px 20px;
+    }
+
+    .banner-reuniao{
+        display:grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        width:100%;
+        height:100px;
+    }
+    .banner-horario{
+        display:grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        width:100%;
+        height:100px;
+    }
+}
+
