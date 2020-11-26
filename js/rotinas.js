@@ -65,7 +65,6 @@
     $("#btn-alt1-r").on("click",function(e){
         e.preventDefault();
         var cod_reuniao = $('#cod_reuniao').val();
-        var verifica_altR = 0;
         $.ajax({
         url: 'AltReuniao_verifica.php',
         method: 'POST',
@@ -75,10 +74,10 @@
             switch (result){
                 case "Reunião encontrada!":
                     alert("Reunião encontrada!");
+                    document.form_ReuniaoAlt1.submit();
                     break;
 
                 case "Reunião não cadastrada!":
-                    verifica_altR = 1;
                     alert("Reunião não cadastrada!");
                     window.location.href = "AltReuniao.html";
                     break;
@@ -87,13 +86,6 @@
                     alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
                     window.location.href = "../../teste/homeadm.html";
             }
-            if (verifica_altR==0){
-                var cod_reuniao = $('#cod_reuniao').val();
-                var dados = {cod_reuniao: cod_reuniao};
-                $("#form_ReuniaoAlt1").on("submit",function(){ 
-                    window.location.href = "AltReuniao_mostra.php";
-                })
-            } 
         })   
     })
 
