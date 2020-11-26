@@ -388,6 +388,44 @@ font-size:1em !important;
     background: #e4e3e3;
     border-radius: 5px;
 }
+.home{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin:0px 25px 30px;
+    background: #e4e3e3;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.home img{
+    width:600px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.home button{
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    height: 50px;
+    background-color: #1c1c1c;
+    font-size:25px;
+    color: #e4e3e3;
+    margin:0px 30px;
+    border-radius: 30px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    width:380px;
+    transition:.4s;
+    text-transform: uppercase;
+}
+.home button:hover{
+    border-color:#1c1c1c;
+    background: transparent;
+    color:#1c1c1c;
+}
+.home i {
+    font-size:20px;
+    margin-left: 15px;
+}
 
 .footer{
     grid-area: rodape;
@@ -396,12 +434,8 @@ font-size:1em !important;
     color: rgba(255,255,255, 0.75);
     text-align: center;
 }
-hr{
-    grid-area:conteudo;
-    border-top: none;
-    border-bottom: 4px solid  #e5474b;
-    border-left: none;
-    border-right: none;
+.tudo hr{
+    border: 2px solid #e5474b;
 }
 .footer p{
     font-size: 1em;
@@ -413,36 +447,7 @@ hr{
 .footer a:hover{
     color:#e5474b;
 }
-.home{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin:0px 25px 30px;
-    background: #e4e3e3;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
 
-
-}
-.home img{
-    width:600px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-.home p{
-    align-self: center;
-    text-align: center;
-    font-size: 2em;
-    color: #1c1c1c;
-    font-weight:560;
-    text-transform: uppercase;
-}
-.home a{
-    color: #1c1c1c;
-    transition: .4s;
-}
-.home a:hover{
-    color: #e5474b;
-}
 
 /* DEIXANDO O SITE RESPONSIVO */
 @media screen and (max-width:375px){
@@ -524,6 +529,106 @@ hr{
         grid-template-columns: 1fr 1fr;
         width:100%;
         height:100px;
+    }
+    /* ROTINAS*/
+    .rotinas{
+        margin:5px;
+        padding: 5px;
+    }
+    
+    .rotina-tcc h1, .rotina-horario h1, .rotina-reuniao h1{
+        font-size:1.35em;
+        margin-left: 20px !important;
+    }
+    .rotina-tcc hr, .rotina-horario hr, .rotina-reuniao hr{
+        width:75%;
+        border: 1px solid #e5474b;
+    }
+    .lupa, .mais, .pencil, .borracha{
+        font-size:8px;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 80px 100px;
+        margin-top: 0px;
+    }
+    .org-lupa, .org-mais, .org-pencil, .org-borracha{
+        width:80px;
+        height: 80px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 5px;
+        justify-self: center;
+    }
+    .pesq, .inc, .alt, .exc{
+        justify-self:center;
+        height:100px;
+        margin-bottom: 0px;
+    }
+    .pesq button, .inc button, .alt button, .exc button{
+        height:30px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;;
+    }
+    .pesq button:hover, .inc button:hover, .alt button:hover, .exc button:hover{
+        font-size:1em;
+    }
+    /* CRONOGRAMAS  */  
+    .crono h1{
+        font-size: 1.4em;
+        margin-top:30px !important;
+        margin-right: 20px !important;
+    }
+    .crono-tcc, .crono-reuniao{
+        width:150px;
+    }
+    .crono-tcc img, .crono-reuniao img{
+        width:150px;
+        height:110px;
+    }
+    .crono-tcc button, .crono-reuniao button{
+        width:100px;
+        margin:15px 0px;
+        font-size: 12px;
+        height:26px;
+    }
+    .crono hr{
+        border: 1px solid #e5474b;
+    }
+    /* PARTE PARA VOLTAR PRA HOME */
+    .home{
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr 90px;
+        margin: 0px 10px 30px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 5px;
+    }
+    .home img{
+        width: 100%;
+        grid-row: 1/2;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 5px;;
+    }
+    .home button {
+        background-color: #1c1c1c;
+        padding: 12px;
+        font-size:15px;
+        grid-column: 1/-1;
+        color: #e4e3e3;
+        margin:0px 30px;
+        border-radius: 30px;
+        border: 3px solid transparent;
+        transition: .4s;
+        width:200px !important;
+        text-transform: uppercase;
+    }
+    .home button:hover{
+        border-color:#1c1c1c;
+        background: transparent;
+        color:#1c1c1c;
+    }
+    
+    /* RODAPÉ */
+    .footer p{
+        font-size:.6em;
     }
 }
 

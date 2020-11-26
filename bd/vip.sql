@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5deb2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Tempo de geração: 25/11/2020 às 16:38
--- Versão do servidor: 8.0.22-0ubuntu0.20.04.2
--- Versão do PHP: 7.4.3
+-- Host: 127.0.0.1
+-- Generation Time: 26-Nov-2020 às 09:50
+-- Versão do servidor: 5.7.17
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,23 +19,25 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `vip`
+-- Database: `vip`
 --
+CREATE DATABASE IF NOT EXISTS `vip` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `vip`;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `curso`
+-- Estrutura da tabela `curso`
 --
 
 CREATE TABLE `curso` (
-  `cod_curso` int UNSIGNED NOT NULL,
+  `cod_curso` int(10) UNSIGNED NOT NULL,
   `nome_curso` varchar(40) NOT NULL,
   `tipo_curso` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Despejando dados para a tabela `curso`
+-- Extraindo dados da tabela `curso`
 --
 
 INSERT INTO `curso` (`cod_curso`, `nome_curso`, `tipo_curso`) VALUES
@@ -55,13 +57,13 @@ INSERT INTO `curso` (`cod_curso`, `nome_curso`, `tipo_curso`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `horario_aula`
+-- Estrutura da tabela `horario_aula`
 --
 
 CREATE TABLE `horario_aula` (
-  `cod_horario` int NOT NULL,
-  `cod_usuario` int NOT NULL,
-  `cod_turma` int NOT NULL,
+  `cod_horario` int(11) NOT NULL,
+  `cod_usuario` int(11) NOT NULL,
+  `cod_turma` int(11) NOT NULL,
   `horainicio` time NOT NULL,
   `horafim` time NOT NULL,
   `dia_da_semana` varchar(15) NOT NULL,
@@ -70,7 +72,7 @@ CREATE TABLE `horario_aula` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Despejando dados para a tabela `horario_aula`
+-- Extraindo dados da tabela `horario_aula`
 --
 
 INSERT INTO `horario_aula` (`cod_horario`, `cod_usuario`, `cod_turma`, `horainicio`, `horafim`, `dia_da_semana`, `materia`, `professor`) VALUES
@@ -190,27 +192,461 @@ INSERT INTO `horario_aula` (`cod_horario`, `cod_usuario`, `cod_turma`, `horainic
 (116, 1, 5, '07:30:00', '09:35:00', 'Quinta', 'EDAM', 'Amanda'),
 (117, 1, 5, '09:50:00', '11:55:00', 'Quinta', 'PE', 'Peri'),
 (118, 1, 5, '07:30:00', '09:35:00', 'Sexta', 'CFE', 'Cynthia'),
-(119, 1, 5, '09:50:00', '11:55:00', 'Sexta', 'EEM', 'Ana Moretin');
+(119, 1, 5, '09:50:00', '11:55:00', 'Sexta', 'EEM', 'Ana Moretin'),
+(142, 1, 6, '13:00:00', '13:50:00', 'Segunda', 'Geografia', 'Rafael Almeida'),
+(143, 1, 6, '13:50:00', '14:40:00', 'Segunda', 'Geografia', 'Rafael Almeida'),
+(144, 1, 6, '14:40:00', '15:30:00', 'Segunda', 'Ed Física', 'Jaqueline'),
+(145, 1, 6, '15:45:00', '16:35:00', 'Segunda', 'Ed Física', 'Jaqueline'),
+(146, 1, 6, '16:35:00', '17:25:00', 'Segunda', 'Física', 'Rosania'),
+(147, 1, 6, '17:25:00', '18:15:00', 'Segunda', 'Física', 'Rosania'),
+(148, 1, 6, '13:00:00', '13:50:00', 'Terça', 'AI', 'Edna/Peri'),
+(149, 1, 6, '13:50:00', '14:40:00', 'Terça', 'AI', 'Edna/Peri'),
+(150, 1, 6, '14:40:00', '15:30:00', 'Terça', 'Biologia', 'Cibele'),
+(151, 1, 6, '15:45:00', '16:35:00', 'Terça', 'Biologia', 'Cibele'),
+(152, 1, 6, '16:35:00', '17:25:00', 'Terça', 'Química', 'Erick'),
+(153, 1, 6, '17:25:00', '18:15:00', 'Terça', 'Química', 'Erick'),
+(154, 1, 6, '13:00:00', '13:50:00', 'Quarta', 'Matemática', 'Eduardo Amorim'),
+(155, 1, 6, '13:50:00', '14:40:00', 'Quarta', 'Matemática', 'Eduardo Amorim'),
+(156, 1, 6, '14:40:00', '15:30:00', 'Quarta', 'Inglês', 'Silvana'),
+(157, 1, 6, '15:45:00', '16:35:00', 'Quarta', 'Inglês', 'Silvana'),
+(158, 1, 6, '16:35:00', '17:25:00', 'Quarta', 'POAL', 'Leandro Pedroza'),
+(159, 1, 6, '17:25:00', '18:15:00', 'Quarta', 'POAL', 'Leandro Pedroza'),
+(160, 1, 6, '13:00:00', '13:50:00', 'Quinta', 'LPL', 'Simone Russo'),
+(161, 1, 6, '13:50:00', '14:40:00', 'Quinta', 'LPL', 'Simone Russo'),
+(162, 1, 6, '14:40:00', '15:30:00', 'Quinta', 'Artes', 'Marinês'),
+(163, 1, 6, '15:45:00', '16:35:00', 'Quinta', 'Artes', 'Marinês'),
+(164, 1, 6, '16:35:00', '17:25:00', 'Quinta', 'LPL', 'Simone Russo'),
+(165, 1, 6, '17:25:00', '18:15:00', 'Quinta', 'Matemática', 'Eduardo Amorim'),
+(166, 1, 6, '13:00:00', '13:50:00', 'Sexta', 'EMAL', 'Ullicre'),
+(167, 1, 6, '13:50:00', '14:40:00', 'Sexta', 'EMAL', 'Ullicre'),
+(168, 1, 6, '14:40:00', '15:30:00', 'Sexta', 'EL', 'Leandro Pedroza'),
+(169, 1, 6, '15:45:00', '16:35:00', 'Sexta', 'EL', 'Leandro Pedroza'),
+(170, 1, 6, '16:35:00', '17:25:00', 'Sexta', 'História', 'Marlon'),
+(171, 1, 6, '17:25:00', '18:15:00', 'Sexta', 'História', 'Marlon'),
+(172, 1, 7, '07:30:00', '08:20:00', 'Segunda', 'PW II', 'Edna/Rafael Fernandes'),
+(173, 1, 7, '08:20:00', '09:10:00', 'Segunda', 'PW II', 'Edna/Rafael Fernandes'),
+(174, 1, 7, '09:10:00', '10:00:00', 'Segunda', 'PAM I', 'Rogerio'),
+(175, 1, 7, '10:15:00', '11:05:00', 'Segunda', 'PAM I', 'Rogerio'),
+(176, 1, 7, '11:05:00', '11:55:00', 'Sexta', 'SE', 'Carlos/Wagner Lucca'),
+(177, 1, 7, '11:55:00', '12:45:00', 'Segunda', 'SE', 'Carlos/ Wagner Lucca'),
+(178, 1, 7, '07:30:00', '08:20:00', 'Terça', 'Matemática', '-----'),
+(179, 1, 7, '08:20:00', '09:10:00', 'Terça', 'Matemáica', '----'),
+(180, 1, 7, '09:10:00', '10:00:00', 'Terça', 'APS', 'Emilia'),
+(181, 1, 7, '10:15:00', '11:05:00', 'Terça', 'APS', 'Emilia'),
+(182, 1, 7, '11:05:00', '11:55:00', 'Terça', 'Geografia', 'Rafael'),
+(183, 1, 7, '11:55:00', '12:45:00', 'Terça', 'Geografia', 'Rafael'),
+(184, 1, 7, '07:30:00', '08:20:00', 'Quarta', 'DS', 'Wagner Lucca/Edna'),
+(185, 1, 7, '08:20:00', '09:10:00', 'Quarta', 'DS', 'Wagner Lucca/Edna'),
+(186, 1, 7, '09:10:00', '10:00:00', 'Quarta', 'BD I', 'Edna/Emilia'),
+(187, 1, 7, '10:15:00', '11:05:00', 'Quarta', 'BD I', 'Edna/Emilia'),
+(188, 1, 7, '11:05:00', '11:55:00', 'Quarta', 'Biologia', 'Simone'),
+(189, 1, 7, '11:55:00', '12:45:00', 'Quarta', 'Biologia', 'Simone'),
+(190, 1, 7, '07:30:00', '08:20:00', 'Quinta', 'DS', 'Wagner Lucca/Edna'),
+(191, 1, 7, '08:20:00', '09:10:00', 'Quinta', 'Química', 'Erick'),
+(192, 1, 7, '09:10:00', '10:00:00', 'Quinta', 'Química', 'Erick'),
+(193, 1, 7, '10:15:00', '11:05:00', 'Quinta', 'História', 'Marlon'),
+(194, 1, 7, '11:05:00', '11:55:00', 'Quinta', 'Física', 'Clayton'),
+(195, 1, 7, '11:55:00', '12:45:00', 'Quinta', 'Física', 'Clayton'),
+(196, 1, 7, '07:30:00', '08:20:00', 'Sexta', 'LPL', 'Ivonete'),
+(197, 1, 7, '08:20:00', '09:10:00', 'Sexta', 'LPL', 'Ivonete'),
+(198, 1, 7, '09:10:00', '10:00:00', 'Sexta', 'Inglês', '----'),
+(199, 1, 7, '10:15:00', '11:05:00', 'Sexta', 'Inglês ', '----'),
+(200, 1, 7, '11:05:00', '11:55:00', 'Sexta', 'Ed Física', 'Jaqueline'),
+(201, 1, 7, '11:55:00', '12:45:00', 'Sexta', 'Ed Física', 'Jaqueline'),
+(202, 1, 8, '19:00:00', '20:53:00', 'Segunda', 'PPC', 'Manoel Messias'),
+(203, 1, 8, '21:08:00', '23:01:00', 'Segunda', 'PPC', 'Manoel Messias'),
+(204, 1, 8, '19:00:00', '20:53:00', 'Terça', 'PPP', 'Josenaldo'),
+(205, 1, 8, '21:08:00', '23:01:00', 'Terça', 'PPP', 'Josenaldo'),
+(206, 1, 8, '19:00:00', '20:53:00', 'Quarta', 'DTCC', 'Silvano'),
+(207, 1, 8, '21:08:00', '23:01:00', 'Quarta', 'FMF', 'Esmeralda'),
+(208, 1, 8, '19:00:00', '20:53:00', 'Quinta', 'STN', 'Anderson Meneses'),
+(209, 1, 8, '21:08:00', '23:01:00', 'Quinta', 'STN', 'Anderson Meneses'),
+(210, 1, 8, '19:00:00', '20:53:00', 'Sexta', 'PPT', 'Paulo Candido'),
+(211, 1, 8, '21:08:00', '23:01:00', 'Sexta', 'PPA', 'Paulo Candido'),
+(212, 1, 9, '07:30:00', '08:20:00', 'Segunda', 'Inglês', 'Ivonete'),
+(213, 1, 9, '08:20:00', '09:10:00', 'Segunda', 'Inglês', 'Ivonete'),
+(214, 1, 9, '09:10:00', '10:00:00', 'Segunda', 'CPOC', 'Cyntia'),
+(215, 1, 9, '10:15:00', '11:05:00', 'Segunda', 'Matemáica', 'Geane'),
+(216, 1, 9, '11:05:00', '11:55:00', 'Segunda', 'AI', 'Edna/Fernando Malva'),
+(217, 1, 9, '11:55:00', '12:45:00', 'Segunda', 'AI', 'Edna/Fernando Malva'),
+(218, 1, 9, '07:30:00', '08:20:00', 'Terça', 'Biologia', 'Lucas Cabral'),
+(219, 1, 9, '08:20:00', '09:10:00', 'Terça', 'Biologia', 'Lucas Cabral'),
+(220, 1, 9, '09:10:00', '10:00:00', 'Terça', 'Filosofia', 'Marlon'),
+(221, 1, 9, '10:15:00', '11:05:00', 'Terça', 'LPL', 'Simone Russo'),
+(222, 1, 9, '11:05:00', '11:55:00', 'Terça', 'LPL', 'Simone Russo'),
+(223, 1, 9, '11:55:00', '12:45:00', 'Terça', 'LPL', 'Simone Russo'),
+(224, 1, 9, '07:30:00', '08:20:00', 'Quarta', 'Química', 'Erick'),
+(225, 1, 9, '08:20:00', '09:10:00', 'Quarta', 'Química', 'Erick'),
+(226, 1, 9, '09:10:00', '10:00:00', 'Quarta', 'Matemática', 'Geane'),
+(227, 1, 9, '10:15:00', '11:05:00', 'Quarta', 'Matemática', 'Geane'),
+(228, 1, 9, '11:05:00', '11:55:00', 'Quarta', 'PI II', 'Ullicre'),
+(229, 1, 9, '11:55:00', '12:45:00', 'Quarta', 'PI II', 'Ullicre'),
+(230, 1, 9, '07:30:00', '08:20:00', 'Quinta', 'Física', 'Clayton'),
+(231, 1, 9, '08:20:00', '09:10:00', 'Quinta', 'Física', 'Clayton'),
+(232, 1, 9, '09:10:00', '10:00:00', 'Quinta', 'Geografia', 'Renilson'),
+(233, 1, 9, '10:15:00', '11:05:00', 'Quinta', 'Geografia', 'Renilson'),
+(234, 1, 9, '11:05:00', '11:55:00', 'Quinta', 'RDP', 'Imperio Lombardi'),
+(235, 1, 9, '11:55:00', '12:45:00', 'Quinta', 'RDP', 'Imperio Lombardi'),
+(236, 1, 9, '07:30:00', '08:20:00', 'Sexta', 'Ed Física', 'Jaqueline'),
+(237, 1, 9, '08:20:00', '09:10:00', 'Sexta', 'Ed Física', 'Jaqueline'),
+(238, 1, 9, '09:10:00', '10:00:00', 'Sexta', 'História', 'Marlon'),
+(239, 1, 9, '10:15:00', '11:05:00', 'Sexta', 'CPOC', 'Cyntia'),
+(240, 1, 9, '11:05:00', '11:55:00', 'Sexta', 'CPOC', 'Cyntia'),
+(241, 1, 9, '11:55:00', '12:45:00', 'Sexta', 'História', 'Marlon'),
+(242, 1, 10, '19:00:00', '20:53:00', 'Segunda', 'TIAL', 'Marivaldo'),
+(243, 1, 10, '21:08:00', '23:01:00', 'Segunda', 'TIAL', 'Marivaldo'),
+(244, 1, 10, '19:00:00', '20:53:00', 'Terça', 'DTCC', 'Madalena'),
+(245, 1, 10, '21:08:00', '23:01:00', 'Terça', 'LT', 'Paulo Candido'),
+(246, 1, 10, '19:00:00', '20:53:00', 'Quarta', 'GT', 'Marcos Motta'),
+(247, 1, 10, '21:08:00', '23:01:00', 'Quarta', 'LR', 'Eduardo Amorim'),
+(248, 1, 10, '19:00:00', '21:08:00', 'Quinta', 'GQT', 'Eduardo Amorim'),
+(249, 1, 10, '21:08:00', '23:01:00', 'Quinta', 'LIE', 'Eduardo Amorim'),
+(250, 1, 10, '19:00:00', '20:53:00', 'Sexta', 'GT', 'Marcos Motta'),
+(251, 1, 10, '21:08:00', '23:01:00', 'Sexta', 'SST', 'Diego'),
+(252, 1, 11, '07:30:00', '08:20:00', 'Segunda', 'Matemática', 'Geane'),
+(253, 1, 11, '08:20:00', '09:10:00', 'Segunda', 'Matemática', 'Geane'),
+(254, 1, 11, '09:10:00', '10:00:00', 'Segunda', 'Química', 'Wagner Lucca'),
+(255, 1, 11, '10:15:00', '11:05:00', 'Segunda', 'Química', 'Wagner Lucca'),
+(256, 1, 11, '11:05:00', '11:55:00', 'Segunda', 'Matemática', 'Geane'),
+(257, 1, 11, '11:55:00', '12:45:00', 'Segunda', 'LPL', 'Flávia'),
+(258, 1, 11, '07:30:00', '08:20:00', 'Terça', 'TPA', 'Edna/Wagner Lucca'),
+(259, 1, 11, '08:20:00', '09:10:00', 'Terça', 'TPA', 'Ednna/Wagner Lucca'),
+(260, 1, 11, '09:10:00', '10:00:00', 'Terça', 'História', 'Aguinaldo'),
+(261, 1, 11, '10:15:00', '11:05:00', 'Terça', 'História', 'Aguinaldo'),
+(262, 1, 11, '11:05:00', '11:55:00', 'Terça', 'FI', 'Carlos/Maria Emilia'),
+(263, 1, 11, '11:55:00', '12:45:00', 'Terça', 'FI', 'Carlos/ Maria Emilia'),
+(264, 1, 11, '07:30:00', '08:20:00', 'Quarta', 'Biologia', 'Simone'),
+(265, 1, 11, '08:20:00', '09:10:00', 'Quarta', 'Biologia', 'Simone'),
+(266, 1, 11, '09:10:00', '10:00:00', 'Quarta', 'Inglês', 'Silvana'),
+(267, 1, 11, '10:15:00', '11:05:00', 'Quarta', 'Inglês', 'Silvana'),
+(268, 1, 11, '11:05:00', '11:55:00', 'Quarta', 'Matemática', 'Geane'),
+(269, 1, 11, '11:55:00', '12:45:00', 'Quarta', 'TPA', 'Edna/Wagner Lucca'),
+(270, 1, 11, '07:30:00', '08:20:00', 'Quinta', 'DD', 'Jose Roberto'),
+(271, 1, 11, '08:20:00', '09:10:00', 'Quinta', 'DD', 'Jose Roberto'),
+(272, 1, 11, '09:10:00', '10:00:00', 'Quinta', 'PW I', 'Edna/Jose Roberto'),
+(273, 1, 11, '10:15:00', '11:05:00', 'Quinta', 'PW I', 'Edna/Jose Roberto'),
+(274, 1, 11, '11:05:00', '11:55:00', 'Quinta', 'Artes', 'Marinês'),
+(275, 1, 11, '11:55:00', '12:45:00', 'Quinta', 'Artes', 'Marinês'),
+(276, 1, 11, '07:30:00', '08:20:00', 'Sexta', 'Filosofia', 'Marlon'),
+(277, 1, 11, '08:20:00', '09:10:00', 'Sexta', 'Filosofia', 'Marlon'),
+(278, 1, 11, '09:10:00', '10:00:00', 'sexta', 'Física', 'Geane'),
+(279, 1, 11, '10:15:00', '11:05:00', 'Sexta', 'Física', 'Geane'),
+(280, 1, 11, '11:05:00', '11:55:00', 'Sexta', 'LPL', 'Flavia'),
+(281, 1, 11, '11:55:00', '12:45:00', 'Sexta', 'LPL', 'Flavia'),
+(282, 1, 12, '19:00:00', '20:53:00', 'Segunda', 'MED', 'Uillicre'),
+(283, 1, 12, '21:08:00', '23:01:00', 'Segunda', 'MED', 'Uillcre'),
+(284, 1, 12, '19:00:00', '20:53:00', 'Terça', 'PPCP', 'Marcos Motta'),
+(285, 1, 12, '21:08:00', '23:01:00', 'Terça', 'PTCC', 'Claudio Adão'),
+(286, 1, 12, '19:00:00', '20:53:00', 'Quarta', 'GRM', 'Esmeralda'),
+(287, 1, 12, '21:08:00', '23:01:00', 'Quarta', 'CL', '-----'),
+(288, 1, 12, '19:00:00', '20:53:00', 'Quinta', 'PPCP', 'Marcos Motta'),
+(289, 1, 12, '21:08:00', '23:01:00', 'Quinta', 'MKT', 'Diego'),
+(290, 1, 12, '19:00:00', '20:53:00', 'Sexta', 'GRM', 'Esmeralda'),
+(291, 1, 12, '21:08:00', '23:01:00', 'Sexta', 'GRM', 'Esmeralda'),
+(292, 1, 13, '07:30:00', '08:20:00', 'Segunda', 'RDP', 'Jonathan'),
+(293, 1, 13, '08:20:00', '09:10:00', 'Segunda', 'RDP', 'Jonathan'),
+(294, 1, 13, '09:10:00', '10:00:00', 'Segunda', 'AI', 'Edna/Michely'),
+(295, 1, 13, '10:15:00', '11:05:00', 'Segunda', 'AI', 'Edna/Michely'),
+(296, 1, 13, '11:05:00', '11:55:00', 'Segunda', 'Inglês', 'Silvana'),
+(297, 1, 13, '11:55:00', '12:45:00', 'Segunda', 'Inglês', 'Silvana'),
+(298, 1, 13, '07:30:00', '08:20:00', 'Terça', 'História', 'Aguinaldo'),
+(299, 1, 13, '08:20:00', '09:10:00', 'Terça', 'História ', 'Aguinaldo'),
+(300, 1, 13, '09:10:00', '10:00:00', 'Terça', 'Biologia', 'Lucas Cabral'),
+(301, 1, 13, '10:15:00', '11:05:00', 'Terça', 'Biologia', 'Lucas Cabral'),
+(302, 1, 13, '11:05:00', '11:55:00', 'Terça', 'Artes', 'Marinês'),
+(303, 1, 13, '11:55:00', '12:45:00', 'Terça', 'Artes', 'Marinês'),
+(304, 1, 13, '07:30:00', '08:20:00', 'Quarta', 'Geografia', 'Renilson'),
+(305, 1, 13, '08:20:00', '09:10:00', 'Quarta', 'Geografia', 'Renilson'),
+(306, 1, 13, '09:10:00', '10:00:00', 'Quarta', 'LPL', 'Simone Russo'),
+(307, 1, 13, '10:15:00', '11:05:00', 'Quarta', 'LPL', 'Simone Russo'),
+(308, 1, 13, '11:05:00', '11:55:00', 'Quarta', 'LPL', 'Simone Russo'),
+(309, 1, 13, '11:55:00', '12:45:00', 'Quarta', 'Matemática', 'Enyton'),
+(310, 1, 13, '07:30:00', '08:20:00', 'Quinta', 'PI I', 'Naira Vania'),
+(311, 1, 13, '08:20:00', '09:10:00', 'Quinta', 'PI I', 'Naira Vania'),
+(312, 1, 13, '09:10:00', '10:00:00', 'Quinta', 'Matemática', 'Enyton'),
+(313, 1, 13, '10:15:00', '11:05:00', 'Quinta', 'Matemática', 'Enyton'),
+(314, 1, 13, '11:05:00', '11:55:00', 'Quinta', 'RSP', 'Marco Broco'),
+(315, 1, 13, '11:55:00', '12:45:00', 'Quinta', 'RSP', 'Marco Broco'),
+(316, 1, 13, '07:30:00', '08:20:00', 'Sexta', 'Química', 'Saulo'),
+(317, 1, 13, '08:20:00', '09:10:00', 'Sexta', 'Química', 'Saulo'),
+(318, 1, 13, '10:15:00', '11:05:00', 'Sexta', 'Ed Física', 'Jaqueline'),
+(319, 1, 13, '11:05:00', '11:55:00', 'Sexta', 'Ed Física', 'Jaqueline'),
+(320, 1, 13, '11:05:00', '11:55:00', 'Sexta', 'Física', 'Rosania'),
+(321, 1, 13, '11:55:00', '12:45:00', 'Sexta', 'Física', 'Rosania'),
+(322, 1, 14, '19:00:00', '20:53:00', 'Segunda', 'CTF', 'Carlos Saito'),
+(323, 1, 14, '21:08:00', '23:01:00', 'Segunda', 'CTF', 'Carlos Saito'),
+(324, 1, 14, '19:00:00', '20:53:00', 'Terça', 'EADF', 'Cleonice'),
+(325, 1, 14, '21:08:00', '23:01:00', 'Terça', 'CGE', 'Tamura'),
+(326, 1, 14, '19:00:00', '20:53:00', 'Quarta', 'EADF', 'Cleonice'),
+(327, 1, 14, '21:08:00', '23:01:00', 'Quarta', 'CA', 'Aguinaldo Vicente'),
+(328, 1, 14, '19:00:00', '20:53:00', 'Quinta', 'TEC', 'Madalena'),
+(329, 1, 14, '21:08:00', '23:01:00', 'Quinta', 'DTCC', 'Claudio Adão'),
+(330, 1, 14, '19:00:00', '20:53:00', 'Sexta', 'CP', 'Aguinaldo Vicente'),
+(331, 1, 14, '21:08:00', '23:01:00', 'Sexta', 'TEC', 'Madalena'),
+(332, 1, 15, '07:30:00', '08:20:00', 'Segunda', 'PRA', 'Cyntia'),
+(333, 1, 15, '08:20:00', '09:10:00', 'Segunda', 'PRA', 'Cyntia'),
+(334, 1, 15, '09:10:00', '10:00:00', 'Segunda', 'LPL', 'Simone Russo'),
+(335, 1, 15, '10:15:00', '11:05:00', 'Segunda', 'Matemática', 'Esmeralda'),
+(336, 1, 15, '11:05:00', '11:55:00', 'Segunda', 'LE', 'Paulo Candido'),
+(337, 1, 15, '11:55:00', '12:45:00', 'Segunda', 'LE', 'Paulo Candido'),
+(338, 1, 15, '07:30:00', '08:20:00', 'Terça', 'Geografia', 'Renilson'),
+(339, 1, 15, '08:20:00', '09:10:00', 'Terça', 'Geografia', 'Renilson'),
+(340, 1, 15, '09:10:00', '10:00:00', 'Terça', 'Biologia', 'Cibele'),
+(341, 1, 15, '10:15:00', '11:05:00', 'Terça', 'Artes', 'Marinês'),
+(342, 1, 15, '11:05:00', '11:55:00', 'Terça', 'História', 'Aguinaldo'),
+(343, 1, 15, '11:55:00', '12:45:00', 'Terça', 'História', 'Aguinaldo'),
+(344, 1, 15, '07:30:00', '08:20:00', 'Quarta', 'LPL', 'Simone Russo'),
+(345, 1, 15, '08:20:00', '09:10:00', 'Quarta', 'LPL', 'Simone Russo'),
+(346, 1, 15, '10:15:00', '11:05:00', 'Quarta', 'Química ', 'Erick'),
+(347, 1, 15, '10:15:00', '11:05:00', 'Quarta', 'Química', 'Erick'),
+(348, 1, 15, '11:05:00', '11:55:00', 'Quarta', 'Inglês', 'Silvana'),
+(349, 1, 15, '11:55:00', '12:45:00', 'Quarta', 'Inglês', 'Silvana'),
+(350, 1, 15, '07:30:00', '08:20:00', 'Quinta', 'Ed Física', 'Jaqueline'),
+(351, 1, 15, '08:20:00', '09:10:00', 'Quinta', 'Ed Física', 'Jaqueline'),
+(352, 1, 15, '09:10:00', '10:00:00', 'Quinta', 'Biologia', 'Cibele'),
+(353, 1, 15, '10:15:00', '11:05:00', 'Quinta', 'Artes', 'Marinês'),
+(354, 1, 15, '11:05:00', '11:55:00', 'Quinta', 'PI I', 'Elenice Pissarro'),
+(355, 1, 15, '11:55:00', '12:45:00', 'Quinta', 'PI I', 'Elenice Pissarro'),
+(356, 1, 15, '07:30:00', '08:20:00', 'Sexta', 'Matemática', 'Esmeralda'),
+(357, 1, 15, '08:20:00', '09:10:00', 'Sexta', 'Matemática', 'Esmeralda'),
+(358, 1, 15, '09:10:00', '10:00:00', 'Sexta', 'Física', 'Rosania'),
+(359, 1, 15, '10:15:00', '11:05:00', 'Sexta', 'Física', 'Rosania'),
+(360, 1, 15, '11:05:00', '11:55:00', 'Sexta', 'DAMPC', 'Uillicre'),
+(361, 1, 15, '11:55:00', '12:45:00', 'Sexta', 'DAMPC', 'Uillicre'),
+(362, 1, 16, '19:00:00', '20:53:00', 'Segunda', 'CINTER', 'Madalena'),
+(363, 1, 16, '21:08:00', '23:01:00', 'Segunda', 'CCOM', 'Madalena'),
+(364, 1, 16, '19:00:00', '20:53:00', 'Terça', 'II', 'Andreza'),
+(365, 1, 16, '21:08:00', '23:01:00', 'Terça', 'PTE', 'Diego'),
+(366, 1, 16, '19:00:00', '20:53:00', 'Quarta', 'SIC', 'Eduardo Amorim'),
+(367, 1, 16, '21:08:00', '23:01:00', 'Quarta', 'PTCC', 'Claudio'),
+(368, 1, 16, '19:00:00', '20:53:00', 'Quinta', 'CCUSTO', 'Tamura'),
+(369, 1, 16, '21:08:00', '23:01:00', 'Quinta', 'CCUSTO', 'Tamura'),
+(370, 1, 16, '19:00:00', '20:53:00', 'Sexta', 'PTE', 'Diego'),
+(371, 1, 16, '21:08:00', '23:01:00', 'Sexta', 'PEP', 'Esmeralda'),
+(372, 1, 17, '08:20:00', '09:10:00', 'Segunda', 'Física', 'Clayton'),
+(373, 1, 17, '09:10:00', '10:00:00', 'Segunda', 'Física', 'Clayton'),
+(374, 1, 17, '10:15:00', '11:05:00', 'Segunda', 'Geografia', 'Rafael Almeida'),
+(375, 1, 17, '11:05:00', '11:55:00', 'Segunda', 'Geografia', 'Rafael Almeida'),
+(376, 1, 17, '13:00:00', '13:50:00', 'Segunda', 'Matemática', 'Rosania'),
+(377, 1, 17, '13:50:00', '14:40:00', 'Segunda', 'Matemática', 'Rosania'),
+(378, 1, 17, '14:40:00', '15:30:00', 'Segunda', 'História', 'Marlon'),
+(379, 1, 17, '15:45:00', '16:35:00', 'Segunda', 'História', 'Marlon'),
+(380, 1, 17, '08:20:00', '09:10:00', 'Terça', 'Biologia', 'Edelmar'),
+(381, 1, 17, '09:10:00', '10:00:00', 'Terça', 'Biologia', 'Edelmar'),
+(382, 1, 17, '10:15:00', '11:05:00', 'Terça', 'SST', 'Amanda'),
+(383, 1, 17, '11:05:00', '11:55:00', 'Terça', 'Inglês', '----'),
+(384, 1, 17, '13:00:00', '13:50:00', 'Terça', 'Inglês', '----'),
+(385, 1, 17, '13:50:00', '14:40:00', 'Terça', 'LRGQT', 'Leandro Pedroza'),
+(386, 1, 17, '14:40:00', '15:30:00', 'Terça', 'LRGQT', 'Leandro Pedroza'),
+(387, 1, 17, '15:30:00', '16:35:00', 'Terça', 'Filosofia', 'Marlon'),
+(388, 1, 17, '08:20:00', '09:10:00', 'Quarta', 'Ed Física', 'Jaqueline'),
+(389, 1, 17, '09:10:00', '10:00:00', 'Quarta', 'Ed Física', 'Jaqueline'),
+(390, 1, 17, '10:15:00', '11:05:00', 'Quarta', 'GCAT', 'Uillicre'),
+(391, 1, 17, '11:05:00', '11:55:00', 'Quarta', 'Sociologia', 'Lucia'),
+(392, 1, 17, '08:20:00', '09:10:00', 'Quinta', 'LPL', 'Simone Russo'),
+(393, 1, 17, '09:10:00', '10:00:00', 'Quinta', 'LPL', 'Simone Russo'),
+(394, 1, 17, '10:15:00', '11:05:00', 'Quinta', 'LPL', 'Simone Russo'),
+(395, 1, 17, '11:05:00', '11:55:00', 'Quinta', 'LPL', 'Simone Russo'),
+(396, 1, 17, '13:00:00', '13:50:00', 'Quinta', 'LIELT', 'Leandro Pedroza'),
+(397, 1, 17, '13:50:00', '14:40:00', 'Quinta', 'LIELT', 'Leandro Pedroza'),
+(398, 1, 17, '08:20:00', '09:10:00', 'Sexta', 'GCAT', 'Uillicre'),
+(399, 1, 17, '09:10:00', '10:00:00', 'Sexta', 'GCAT', 'Uillicre'),
+(400, 1, 17, '10:15:00', '11:05:00', 'Sexta', 'Química', 'Erick'),
+(401, 1, 17, '11:05:00', '11:55:00', 'Sexta', 'Química', 'Erick'),
+(402, 1, 17, '13:00:00', '13:50:00', 'Sexta', 'Matemática', 'Rosania'),
+(403, 1, 17, '13:50:00', '14:40:00', 'Sexta', 'Matemática', 'Rosania'),
+(404, 1, 17, '14:40:00', '15:30:00', 'Sexta', 'PDTCC', 'Marcos Motta'),
+(405, 1, 17, '15:30:00', '16:35:00', 'Sexta', 'PDTCC', 'Marcos Motta'),
+(406, 1, 18, '19:00:00', '20:53:00', 'Segunda', 'CFE', 'Eduardo Amorim'),
+(407, 1, 18, '21:08:00', '23:01:00', 'Segunda', 'CFE', 'Eduardo Amorim'),
+(408, 1, 18, '19:00:00', '20:53:00', 'Terça', 'AI', 'Joabs/Wagner Lucca'),
+(409, 1, 18, '21:08:00', '23:01:00', 'Terça', 'II', 'Flavia'),
+(410, 1, 18, '19:00:00', '20:53:00', 'Quarta', 'IL', 'Leandro Pedroza'),
+(411, 1, 18, '21:08:00', '23:01:00', 'Quarta', 'GP', '-----'),
+(412, 1, 18, '19:00:00', '20:53:00', 'Quinta', 'PEE', 'Daniele Xavier'),
+(413, 1, 18, '21:08:00', '23:01:00', 'Quinta', 'PEE', 'Daniele Xavier'),
+(414, 1, 18, '19:00:00', '20:53:00', 'Sexta', 'ECO', 'Elenice Pissarro'),
+(415, 1, 18, '21:08:00', '23:01:00', 'Sexta', 'LTT', 'Simone Russo'),
+(416, 1, 19, '19:00:00', '20:53:00', 'Segunda', 'OF', 'Esmeralda'),
+(417, 1, 19, '21:08:00', '23:01:00', 'Segunda', 'EMF', 'Francimar'),
+(418, 1, 19, '19:00:00', '20:53:00', 'Terça', 'LST', 'Diego'),
+(419, 1, 19, '21:08:00', '23:01:00', 'Terça', 'AI', 'Joabs/Regina Donaire'),
+(420, 1, 19, '19:00:00', '20:53:00', 'Quarta', 'CINTRO', 'Madalena'),
+(421, 1, 19, '21:08:00', '23:01:00', 'Quarta', 'DCE', 'Silvano'),
+(422, 1, 19, '19:00:00', '20:53:00', 'Quinta', 'ECO', 'Daniela Fernandes'),
+(423, 1, 19, '21:08:00', '23:01:00', 'Quinta', 'LTT', 'Flavia'),
+(424, 1, 19, '19:00:00', '20:53:00', 'Sexta', 'CINTRO', 'Madalena'),
+(425, 1, 19, '21:08:00', '23:01:00', 'Sexta', 'GDC', 'Aguinaldo Vicente'),
+(426, 1, 20, '19:00:00', '20:53:00', 'Segunda', 'IDP', 'Silvano'),
+(427, 1, 20, '21:08:00', '23:01:00', 'Segunda', 'IDP', 'Silvano'),
+(428, 1, 20, '19:00:00', '20:53:00', 'Terça', 'IDC', 'Manoel Messias'),
+(429, 1, 20, '21:08:00', '23:01:00', 'Terça', 'PTCC', 'Silvano'),
+(430, 1, 20, '19:00:00', '20:53:00', 'Quarta', 'IDE', 'Paulo Candido'),
+(431, 1, 20, '21:08:00', '23:01:00', 'Quarta', 'IDT', 'Daniela Fernandes'),
+(432, 1, 20, '19:00:00', '20:53:00', 'Quinta', 'IDC', 'Manoel Messias'),
+(433, 1, 20, '21:08:00', '23:01:00', 'Quinta', 'ECO', 'Elenice Pissarro'),
+(434, 1, 20, '19:00:00', '20:53:00', 'Sexta', 'IDA', 'Anderson Meneses'),
+(435, 1, 20, '21:08:00', '23:01:00', 'Sexta', 'IDA', 'Anderson Meneses'),
+(436, 1, 21, '19:00:00', '20:53:00', 'Segunda', 'PW I', 'Edney/Valdeir'),
+(437, 1, 21, '21:08:00', '23:01:00', 'Segunda', 'PW I', 'Edney/Valdeir'),
+(438, 1, 21, '19:00:00', '20:53:00', 'Terça', 'BD I', 'Jose Pimenta/Sarah'),
+(439, 1, 21, '21:08:00', '23:01:00', 'Terça', 'PA', 'Sarah'),
+(440, 1, 21, '19:00:00', '20:53:00', 'Quarta', 'APS', 'Jose Pimenta/ Maria Emilia'),
+(441, 1, 21, '21:08:00', '23:01:00', 'Quarta', 'PA', 'Sarah'),
+(442, 1, 21, '19:00:00', '20:53:00', 'Quinta', 'FI', 'Carlos Alberto/Sarah'),
+(443, 1, 21, '21:08:00', '23:01:00', 'Quinta', 'LTT', 'Rogerio da Costa'),
+(444, 1, 21, '19:00:00', '20:53:00', 'Sexta', 'TP', 'Sara/Rafael Fernandes'),
+(445, 1, 21, '21:08:00', '23:01:00', 'Sexta', 'DD', 'Eliezer/Ediney'),
+(446, 1, 22, '07:30:00', '09:35:00', 'Segunda', 'GPM', 'Bento'),
+(447, 1, 22, '09:50:00', '11:55:00', 'Segunda', 'GPM', 'Bento'),
+(448, 1, 22, '07:30:00', '09:35:00', 'Terça', 'II', '----'),
+(449, 1, 22, '09:50:00', '11:55:00', 'Terça', 'LENI', 'Imperio Lombardi'),
+(450, 1, 22, '07:30:00', '09:35:00', 'Quarta', 'GFE', 'Madalena'),
+(451, 1, 22, '09:50:00', '11:55:00', 'Quarta', 'GFE', 'Madalena'),
+(452, 1, 22, '07:30:00', '09:35:00', 'Quinta', 'LENI', 'Imperio Lombardi'),
+(453, 1, 22, '09:50:00', '11:55:00', 'Quinta', 'DTCC', 'Madalena'),
+(454, 1, 22, '07:30:00', '09:35:00', 'Sexta', 'GP III', 'Jonathan'),
+(455, 1, 22, '09:50:00', '11:55:00', 'Sexta', 'MI', 'Amanda'),
+(456, 1, 23, '13:00:00', '13:50:00', 'Segunda', 'LPL', 'Simone Russo'),
+(457, 1, 23, '13:50:00', '14:40:00', 'Segunda', 'LPL', 'Simone Russo'),
+(458, 1, 23, '14:40:00', '15:30:00', 'Segunda', 'Geografia', 'Rafael Almeida'),
+(459, 1, 23, '15:45:00', '16:35:00', 'Segunda', 'Geografia ', 'Rafael Almeida'),
+(460, 1, 23, '16:35:00', '17:25:00', 'Segunda', 'Ed Física', 'Jaqueline'),
+(461, 1, 23, '17:25:00', '18:15:00', 'Segunda', 'Ed Física', 'Jaqueline'),
+(462, 1, 23, '13:00:00', '13:50:00', 'Terça', 'Biologia', 'Cibele'),
+(463, 1, 23, '13:50:00', '14:40:00', 'Terça', 'Biologia', 'Cibele'),
+(464, 1, 23, '14:40:00', '15:30:00', 'Terça', 'Artes', 'Marinês'),
+(465, 1, 23, '15:45:00', '16:35:00', 'Terça', 'Artes', 'Marinês'),
+(466, 1, 23, '16:35:00', '17:25:00', 'Terça', 'DAMPC', 'Uillicre'),
+(467, 1, 23, '17:25:00', '18:15:00', 'Terça', 'DAMPC', 'Uillicre'),
+(468, 1, 23, '13:00:00', '13:50:00', 'Quarta', 'LE', 'Paulo Candido'),
+(469, 1, 23, '13:50:00', '14:40:00', 'Quarta', 'LE', 'Paulo Candido'),
+(470, 1, 23, '14:40:00', '15:30:00', 'Quarta', 'PI I', 'Amanda'),
+(471, 1, 23, '15:45:00', '16:35:00', 'Quarta', 'PI I', 'Amanda'),
+(472, 1, 23, '16:35:00', '17:25:00', 'Quarta', 'História', 'Aguinaldo'),
+(473, 1, 23, '17:25:00', '18:15:00', 'Quarta', 'História', 'Aguinaldo'),
+(474, 1, 23, '13:00:00', '13:50:00', 'Quinta', 'Física', 'Wagner Lucca'),
+(475, 1, 23, '13:50:00', '14:40:00', 'Quinta', 'Física', 'Wagner Lucca'),
+(476, 1, 23, '14:40:00', '15:30:00', 'Quinta', 'Química', 'Erick'),
+(477, 1, 23, '15:45:00', '16:35:00', 'Quinta', 'Química', 'Erick'),
+(478, 1, 23, '16:35:00', '17:25:00', 'Quinta', 'PRA', 'Madalena'),
+(479, 1, 23, '17:25:00', '18:15:00', 'Quinta', 'PRA', 'Madalena'),
+(480, 1, 23, '13:00:00', '13:50:00', 'Sexta', 'Matemática', 'Mario Tortoreli'),
+(481, 1, 23, '13:50:00', '14:40:00', 'Sexta', 'Matemática', 'Mario Tortoreli'),
+(482, 1, 23, '14:40:00', '15:30:00', 'Sexta', 'Matemáica', 'Mario Tortoreli'),
+(483, 1, 23, '15:45:00', '16:35:00', 'Sexta', 'LPL', 'Simone Russo'),
+(484, 1, 23, '16:35:00', '17:25:00', 'Sexta', 'Inglês', 'Simone Russo'),
+(485, 1, 23, '17:25:00', '18:15:00', 'Sexta', 'Inglês', 'Simone Russo'),
+(486, 1, 24, '19:00:00', '20:53:00', 'Segunda', 'GFE', 'Ana Morettin'),
+(487, 1, 24, '21:08:00', '23:01:00', 'Segunda', 'GPM', 'Mario Alessandro'),
+(488, 1, 24, '19:00:00', '20:53:00', 'Terça', 'GPM', 'Mario Alessandro'),
+(489, 1, 24, '21:08:00', '23:01:00', 'Terça', 'LENI', 'Marcos Motta'),
+(490, 1, 24, '19:00:00', '20:53:00', 'Quarta', 'MI', 'Francimar'),
+(491, 1, 24, '21:08:00', '23:01:00', 'Quarta', 'LENI', 'Marcos Motta'),
+(492, 1, 24, '19:00:00', '20:53:00', 'Quinta', 'II', 'Flavia'),
+(493, 1, 24, '21:08:00', '23:01:00', 'Quinta', 'GP III', 'Giovanna'),
+(494, 1, 24, '19:00:00', '20:53:00', 'Sexta', 'DTCC', 'Claudio Adão'),
+(495, 1, 24, '21:08:00', '23:01:00', 'Sexta', 'GFE', 'Ana Moretin'),
+(496, 1, 25, '07:30:00', '09:35:00', 'Segunda', 'AM', 'Amanda'),
+(497, 1, 25, '09:50:00', '11:55:00', 'Segunda', 'PTCC', 'Madalena'),
+(498, 1, 25, '07:30:00', '09:35:00', 'Terça', 'GEI', 'Cyntia'),
+(499, 1, 25, '09:50:00', '11:55:00', 'Terça', 'CE', 'Ana Morettin/Antonio Tamura'),
+(500, 1, 25, '07:30:00', '09:35:00', 'Quarta', 'GP II', '----'),
+(501, 1, 25, '09:50:00', '11:55:00', 'Quarta', 'COC', 'Cyntia'),
+(502, 1, 25, '07:30:00', '09:35:00', 'Quinta', 'GP II', '----'),
+(503, 1, 25, '09:50:00', '11:55:00', 'Quinta', 'GEI', 'Cyntia'),
+(504, 1, 25, '07:30:00', '09:35:00', 'Sexta', 'AM', 'Amanda'),
+(505, 1, 25, '09:50:00', '11:55:00', 'Sexta', 'LE', 'Peri'),
+(506, 1, 26, '13:00:00', '13:50:00', 'Segunda', 'Ed física', 'Jaqueline'),
+(507, 1, 26, '13:50:00', '14:40:00', 'Segunda', 'Ed física', 'Jaqueline'),
+(508, 1, 26, '14:40:00', '15:30:00', 'Segunda', 'Inglês', 'Alvaro'),
+(509, 1, 26, '15:45:00', '16:35:00', 'Segunda', 'Inglês', 'Alvaro'),
+(510, 1, 26, '16:35:00', '17:25:00', 'Segunda', 'PI', 'Juliana'),
+(511, 1, 26, '17:25:00', '18:15:00', 'Segunda', 'PI', 'Juliana'),
+(512, 1, 26, '13:00:00', '13:50:00', 'Terça', 'ARM', 'Cyntia'),
+(513, 1, 26, '13:50:00', '14:40:00', 'Terça', 'LPL', 'Alvaro'),
+(514, 1, 26, '14:40:00', '15:30:00', 'Terça', 'LPL', 'Alvaro'),
+(515, 1, 26, '15:45:00', '16:35:00', 'Terça', 'LPL', 'Alvaro'),
+(516, 1, 26, '16:35:00', '17:25:00', 'Terça', 'PPCP', 'Leandro Pedroza'),
+(517, 1, 26, '17:25:00', '18:15:00', 'Terça', 'PPCP', 'Leandro Pedroza'),
+(518, 1, 26, '13:00:00', '13:50:00', 'Quarta', 'ARM', 'Cyntia'),
+(519, 1, 26, '13:50:00', '14:40:00', 'Quarta', 'ARM', 'Cyntia'),
+(520, 1, 26, '14:40:00', '15:30:00', 'Quarta', 'Biologia', 'Simone'),
+(521, 1, 26, '15:45:00', '16:35:00', 'Quarta', 'Biologia', 'Simone'),
+(522, 1, 26, '16:35:00', '17:25:00', 'Quarta', 'Geografia', 'Alvaro'),
+(523, 1, 26, '17:25:00', '18:15:00', 'Quarta', 'Geografia', 'Alvaro'),
+(524, 1, 26, '13:00:00', '13:50:00', 'Quinta', 'Química', '----'),
+(525, 1, 26, '13:50:00', '14:40:00', 'Quinta', 'Química', '----'),
+(526, 1, 26, '14:40:00', '15:30:00', 'Quinta', 'Matemática', 'Rosirene'),
+(527, 1, 26, '15:45:00', '16:35:00', 'Quinta', 'Matemática', 'Rosirene'),
+(528, 1, 26, '16:35:00', '17:25:00', 'Quinta', 'História', 'Marlon'),
+(529, 1, 26, '17:25:00', '18:15:00', 'Quinta', 'História', 'Marlon'),
+(530, 1, 26, '13:00:00', '13:50:00', 'Sexta', 'MED', 'Leandro Pedroza'),
+(531, 1, 26, '13:50:00', '14:40:00', 'Sexta', 'MED', 'Leandro Pedroza'),
+(532, 1, 26, '14:40:00', '15:30:00', 'Sexta', 'Filosofia', 'Marlon'),
+(533, 1, 26, '15:45:00', '16:35:00', 'Sexta', 'Matemáttica', 'Rosirene'),
+(534, 1, 26, '16:35:00', '17:25:00', 'Sexta', 'Física', '----'),
+(535, 1, 26, '17:25:00', '18:15:00', 'Sexta', 'Física', '----'),
+(536, 1, 27, '19:00:00', '20:53:00', 'Segunda', 'GP II', 'Mario Alessandro'),
+(537, 1, 27, '21:08:00', '23:01:00', 'Segunda', 'CE', 'Fernando Malva/Humberto'),
+(538, 1, 27, '19:00:00', '20:53:00', 'Terça', 'PTCC', 'Fernando Malva'),
+(539, 1, 27, '21:08:00', '23:01:00', 'Terça', 'GEI', 'Francimar'),
+(540, 1, 27, '19:00:00', '20:53:00', 'Quarta', 'AM', 'Claudio Adão'),
+(541, 1, 27, '21:08:00', '23:01:00', 'Quarta', 'COC', '----'),
+(542, 1, 27, '19:00:00', '20:53:00', 'Quinta', 'LE', 'Paulo Candido'),
+(543, 1, 27, '21:08:00', '23:01:00', 'Quinta', 'GEI', 'Francimar'),
+(544, 1, 27, '19:00:00', '20:53:00', 'Sexta', 'GP II', 'Mario Alessandro'),
+(545, 1, 27, '21:08:00', '23:01:00', 'Sexta', 'AM', 'Claudio Adão'),
+(546, 1, 28, '07:30:00', '09:35:00', 'Segunda', 'AI', 'Izolina/Fernando Malva'),
+(547, 1, 28, '09:50:00', '11:55:00', 'Segunda', 'PRA', 'Uillicre'),
+(548, 1, 28, '07:30:00', '09:35:00', 'Terça', 'LTT', 'Simone Russo'),
+(549, 1, 28, '09:50:00', '11:55:00', 'Terça', 'ECO', 'Elenice'),
+(550, 1, 28, '07:30:00', '09:35:00', 'Quarta', 'CFE', 'Cyntia'),
+(551, 1, 28, '09:50:00', '11:55:00', 'Quarta', 'PRDP', 'Imperio Lombardi'),
+(552, 1, 28, '07:30:00', '09:35:00', 'Quinta', 'EDAM', 'Amanda'),
+(553, 1, 28, '09:50:00', '11:55:00', 'Quinta', 'PE', 'Peri'),
+(554, 1, 28, '07:30:00', '09:35:00', 'Sexta', 'CFE', 'Cyntia'),
+(555, 1, 28, '09:50:00', '11:55:00', 'Sexta', 'EEM', 'Ana Morettin'),
+(556, 1, 29, '13:00:00', '13:50:00', 'Segunda', 'Filosofia', 'Marlon'),
+(557, 1, 29, '13:50:00', '14:40:00', 'Segunda', 'PI II', 'Peri'),
+(558, 1, 29, '14:40:00', '15:30:00', 'Segunda', 'PI II', 'Peri'),
+(559, 1, 29, '15:45:00', '16:35:00', 'Segunda', 'CPOC', 'Amanda'),
+(560, 1, 29, '16:35:00', '17:25:00', 'Segunda', 'Inglês', 'Andreza'),
+(561, 1, 29, '17:25:00', '18:15:00', 'Segunda', 'Inglês', 'Andreza'),
+(562, 1, 29, '13:00:00', '13:50:00', 'Terça', 'Química', 'Erick'),
+(563, 1, 29, '13:50:00', '14:40:00', 'Terça', 'Química', 'Erick'),
+(564, 1, 29, '14:40:00', '15:30:00', 'Terça', 'Física', 'Daniela Machado'),
+(565, 1, 29, '15:45:00', '16:35:00', 'Terça', 'Física', 'Daniela Machado'),
+(566, 1, 29, '16:35:00', '17:25:00', 'Terça', 'Geografia', 'Rafael'),
+(567, 1, 29, '17:25:00', '18:15:00', 'Terça', 'Geografia', 'Rafael'),
+(568, 1, 29, '13:00:00', '13:50:00', 'Quarta', 'AI', 'Edna/Geiza'),
+(569, 1, 29, '13:50:00', '14:40:00', 'Quarta', 'AI', 'Edna/Geiza'),
+(570, 1, 29, '14:40:00', '15:30:00', 'Quarta', 'História', 'Aguinaldo'),
+(571, 1, 29, '15:45:00', '16:35:00', 'Quarta', 'História', 'Aguinaldo'),
+(572, 1, 29, '16:35:00', '17:25:00', 'Quarta', 'RDP', 'Amanda'),
+(573, 1, 29, '17:25:00', '18:15:00', 'Quarta', 'RDP', 'Amanda'),
+(574, 1, 29, '13:00:00', '13:50:00', 'Quinta', 'Matemática', 'Rosirene'),
+(575, 1, 29, '13:50:00', '14:40:00', 'Quinta', 'CPOC', 'Amanda');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `reunioes`
+-- Estrutura da tabela `reunioes`
 --
 
 CREATE TABLE `reunioes` (
-  `cod_reuniao` int NOT NULL,
+  `cod_reuniao` int(11) NOT NULL,
   `horario_reuniao` time NOT NULL,
   `data_reuniao` date NOT NULL,
   `descricao` varchar(250) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `data_agendamento` date NOT NULL,
-  `num_sala` int NOT NULL,
-  `cod_usuario` int NOT NULL
+  `num_sala` int(11) NOT NULL,
+  `cod_usuario` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Despejando dados para a tabela `reunioes`
+-- Extraindo dados da tabela `reunioes`
 --
 
 INSERT INTO `reunioes` (`cod_reuniao`, `horario_reuniao`, `data_reuniao`, `descricao`, `nome`, `data_agendamento`, `num_sala`, `cod_usuario`) VALUES
@@ -223,16 +659,16 @@ INSERT INTO `reunioes` (`cod_reuniao`, `horario_reuniao`, `data_reuniao`, `descr
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sala`
+-- Estrutura da tabela `sala`
 --
 
 CREATE TABLE `sala` (
-  `num_sala` int UNSIGNED NOT NULL,
+  `num_sala` int(10) UNSIGNED NOT NULL,
   `nome_sala` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Despejando dados para a tabela `sala`
+-- Extraindo dados da tabela `sala`
 --
 
 INSERT INTO `sala` (`num_sala`, `nome_sala`) VALUES
@@ -260,22 +696,22 @@ INSERT INTO `sala` (`num_sala`, `nome_sala`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tcc`
+-- Estrutura da tabela `tcc`
 --
 
 CREATE TABLE `tcc` (
-  `cod_tcc` int NOT NULL,
+  `cod_tcc` int(11) NOT NULL,
   `horario_tcc` time NOT NULL,
   `data_tcc` date NOT NULL,
   `descricao` varchar(250) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `data_agendamento` date NOT NULL,
-  `num_sala` int NOT NULL,
-  `cod_usuario` int NOT NULL
+  `num_sala` int(11) NOT NULL,
+  `cod_usuario` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Despejando dados para a tabela `tcc`
+-- Extraindo dados da tabela `tcc`
 --
 
 INSERT INTO `tcc` (`cod_tcc`, `horario_tcc`, `data_tcc`, `descricao`, `nome`, `data_agendamento`, `num_sala`, `cod_usuario`) VALUES
@@ -288,18 +724,18 @@ INSERT INTO `tcc` (`cod_tcc`, `horario_tcc`, `data_tcc`, `descricao`, `nome`, `d
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `turma`
+-- Estrutura da tabela `turma`
 --
 
 CREATE TABLE `turma` (
-  `cod_turma` int NOT NULL,
-  `serie` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `num_sala` int NOT NULL,
-  `cod_curso` int NOT NULL
+  `cod_turma` int(11) NOT NULL,
+  `serie` varchar(30) COLLATE utf8_bin NOT NULL,
+  `num_sala` int(11) NOT NULL,
+  `cod_curso` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Despejando dados para a tabela `turma`
+-- Extraindo dados da tabela `turma`
 --
 
 INSERT INTO `turma` (`cod_turma`, `serie`, `num_sala`, `cod_curso`) VALUES
@@ -308,30 +744,30 @@ INSERT INTO `turma` (`cod_turma`, `serie`, `num_sala`, `cod_curso`) VALUES
 (3, '3 ano A', 9, 4),
 (4, '1 ano A', 15, 3),
 (5, '3 ano c', 6, 5),
-(6, '1 ano A', 6, 10),
-(7, '2 ano A', 16, 7),
+(6, '1 ano A', 6, 9),
+(7, '2 ano A', 16, 6),
 (8, '3 ano A', 16, 3),
-(9, '2 ano A', 14, 31),
-(10, '3 ano B', 14, 11),
-(11, '1 ano A', 13, 7),
-(12, '2 ano B', 13, 11),
+(9, '2 ano A', 14, 12),
+(10, '3 ano B', 14, 10),
+(11, '1 ano A', 13, 6),
+(12, '2 ano B', 13, 10),
 (13, '1 ano A', 12, 2),
-(14, '3 ano B', 12, 8),
-(15, '1 ano A', 11, 31),
-(16, '2 ano B', 11, 8),
-(17, '3 ano A', 10, 12),
-(18, '1 ano B', 10, 11),
-(19, '1 ano B', 9, 8),
+(14, '3 ano B', 12, 7),
+(15, '1 ano A', 11, 12),
+(16, '2 ano B', 11, 7),
+(17, '3 ano A', 10, 11),
+(18, '1 ano B', 10, 10),
+(19, '1 ano B', 9, 7),
 (20, '2 ano A', 8, 3),
-(21, '1 ano A', 7, 9),
+(21, '1 ano A', 7, 8),
 (22, '3 ano A', 5, 5),
-(23, '1 ano B', 5, 31),
+(23, '1 ano B', 5, 12),
 (24, '3 ano B', 5, 5),
 (25, '2 ano A', 4, 5),
-(26, '2 ano A', 4, 10),
+(26, '2 ano A', 4, 9),
 (27, '2 ano C', 4, 5),
 (28, '1 ano A', 3, 5),
-(29, '2 ano B', 3, 31),
+(29, '2 ano B', 3, 12),
 (30, '2 ano B', 3, 5),
 (31, '1 ano C', 2, 5),
 (32, '3 ano A', 1, 1),
@@ -340,17 +776,17 @@ INSERT INTO `turma` (`cod_turma`, `serie`, `num_sala`, `cod_curso`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
-  `cod_usuario` int NOT NULL,
+  `cod_usuario` int(11) NOT NULL,
   `usuario` varchar(20) NOT NULL,
   `senha` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Despejando dados para a tabela `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`cod_usuario`, `usuario`, `senha`) VALUES
@@ -358,97 +794,90 @@ INSERT INTO `usuario` (`cod_usuario`, `usuario`, `senha`) VALUES
 (2, 'geral', '456');
 
 --
--- Índices de tabelas apagadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `curso`
+-- Indexes for table `curso`
 --
 ALTER TABLE `curso`
   ADD PRIMARY KEY (`cod_curso`);
 
 --
--- Índices de tabela `horario_aula`
+-- Indexes for table `horario_aula`
 --
 ALTER TABLE `horario_aula`
   ADD PRIMARY KEY (`cod_horario`);
 
 --
--- Índices de tabela `reunioes`
+-- Indexes for table `reunioes`
 --
 ALTER TABLE `reunioes`
   ADD PRIMARY KEY (`cod_reuniao`);
 
 --
--- Índices de tabela `sala`
+-- Indexes for table `sala`
 --
 ALTER TABLE `sala`
   ADD PRIMARY KEY (`num_sala`);
 
 --
--- Índices de tabela `tcc`
+-- Indexes for table `tcc`
 --
 ALTER TABLE `tcc`
   ADD PRIMARY KEY (`cod_tcc`);
 
 --
--- Índices de tabela `turma`
+-- Indexes for table `turma`
 --
 ALTER TABLE `turma`
   ADD PRIMARY KEY (`cod_turma`);
 
 --
--- Índices de tabela `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`cod_usuario`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `curso`
+-- AUTO_INCREMENT for table `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `cod_curso` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
+  MODIFY `cod_curso` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
--- AUTO_INCREMENT de tabela `horario_aula`
+-- AUTO_INCREMENT for table `horario_aula`
 --
 ALTER TABLE `horario_aula`
-  MODIFY `cod_horario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
-
+  MODIFY `cod_horario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=576;
 --
--- AUTO_INCREMENT de tabela `reunioes`
+-- AUTO_INCREMENT for table `reunioes`
 --
 ALTER TABLE `reunioes`
-  MODIFY `cod_reuniao` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `cod_reuniao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT de tabela `sala`
+-- AUTO_INCREMENT for table `sala`
 --
 ALTER TABLE `sala`
-  MODIFY `num_sala` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
+  MODIFY `num_sala` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
--- AUTO_INCREMENT de tabela `tcc`
+-- AUTO_INCREMENT for table `tcc`
 --
 ALTER TABLE `tcc`
-  MODIFY `cod_tcc` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `cod_tcc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT de tabela `turma`
+-- AUTO_INCREMENT for table `turma`
 --
 ALTER TABLE `turma`
-  MODIFY `cod_turma` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
-
+  MODIFY `cod_turma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `cod_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
+  MODIFY `cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
