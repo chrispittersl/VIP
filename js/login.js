@@ -14,12 +14,16 @@ $(document).ready(function(){
         }).done(function(result){
             $('#user').val('');
             $('#password').val('');
-
-            if(result == "válido"){
-                window.location.href = "home.html";
-            }
-            else{
-                $('#errorLogin').show();
+            switch(result){
+                case 'administrador':
+                    window.location.href = "homeadm.html";
+                    break;
+                case 'válido':
+                    window.location.href = "home.html";
+                    break;
+                case 'inválido':
+                    $('#errorLogin').show();
+                    break;
             }
         })
     })
