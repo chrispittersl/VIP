@@ -1,7 +1,7 @@
 /*===============RESET===============*/
 
 *{
-    font-family: 'Archivo Narrow', sans-serif;
+    font-family: 'Archivo', sans-serif;
     margin:0;
     padding:0;
     font-size:100%;
@@ -22,7 +22,152 @@ ul {
 a {
     text-decoration: none;
 }
+/* NAVEGAÇÃO - LEGENDA */
+.cabecalho{
+    background:transparent;
+    position:fixed;
+}
+.btn{
+    position:absolute;
+    margin:15% 120px;
+    color:#fff;
+    transition: left .5s ease;
+    cursor:pointer;
+    background:rgba(0,0,0, 0.8);
+    border-radius:5px !important;
+}
+/* MAPA */
+.mapa{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #d4d2d2;
+}
+.mapa img{
+    margin-top:10vh;
+    margin-bottom:10vh;
+}
 
+/* BOTÃO */
+.cabecalho .btn.click{
+    left: 180px;
+}
+.btn.click span:before{
+    content: '\f00d';
+}
+.sidebar{
+    margin-top:15%;
+    position:relative;
+    width:265px;
+    background:rgba(0,0,0, 0.8);
+    transition: left 0.5s ease;
+    left: -295px;
+    margin-left:30px;
+    border-radius:5px;
+    overflow: auto;
+    max-height: 90vh;
+}
+.sidebar.show{
+    left:0px;
+}
+.sidebar li button{
+    background:transparent;
+    color:#fff;
+}
+.dropdown-btn {
+    margin-left:10px;
+    padding: 6px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 230px;
+    text-align: left;
+    outline: none;
+    cursor:pointer;
+    margin-bottom:6px;
+    transition: 0.4s;
+}
+.dropdown-btn:hover{
+    color: rgb(214, 211, 211);
+}
+.margin-top{
+    margin-top:10px;
+}
+.margin-bottom{
+    margin-bottom:10px;
+}
+.dropdown-container {
+    display: none;
+    padding-left: 10%;
+    font-size:10px !important;
+    cursor:pointer; 
+}
+.rota{
+    font-size:17px;
+    padding:6px;
+    margin-left:10px;
+    cursor:pointer;
+    transition: 0.4s;
+    width:208px;
+    text-align:left !important;
+}
+.rota:hover{
+    color: rgb(214, 211, 211);
+}
+.fa-chevron-circle-down{
+    padding:8px;
+    font-size:15px !important;
+    color: #e5474b !important;
+    transition:0.4s;
+}
+.fa-chevron-circle-down:hover{
+    color:#b63b40 !important;
+}
+.btn-danger{
+    background:#e5474b !important;
+    width:100px;
+    border:2px solid transparent;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.4s;
+}
+.btn-danger:hover{
+    background:transparent !important;
+    border-color:#e5474b !important;
+    color:#1c1c1c !important;
+}
+/* BARRA DE ROLAGEM -DIV */
+.sidebar::-webkit-scrollbar {
+    width: 10px;
+}
+.sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius:5px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background:#e5474b; 
+    transition:.4s;
+    border-radius:5px;
+}
 
-
-    
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background:#b63b40; 
+}
+/* BARRA DE ROLAGEM - SITE */
+::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-track{
+    background:#d4d2d2;
+}
+::-webkit-scrollbar-thumb{
+    background: gray; 
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    border-radius:5px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(68, 68, 68);
+}
