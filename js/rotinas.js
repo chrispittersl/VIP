@@ -60,8 +60,42 @@
             }
         })
     })
-
+    
     // form Alterar Reunioes
+    function Dados_altReuniao(cod_reuniao){
+        $.ajax({
+            url: 'AltReuniao_mostra.php',
+            method: 'POST',
+            data: {cod_reuniao: cod_reuniao},
+            dataType: 'json'
+        })
+
+    $("#btn-alt1-r").on("click",function(e){
+        e.preventDefault();
+        var cod_reuniao = $('#cod_reuniao').val();
+        $.ajax({
+            url: 'AltReuniao_verifica.php',
+            method: 'POST',
+            data: {cod_reuniao: cod_reuniao},
+            dataType: 'json'
+        }).done(function(result){
+            switch (result){
+                case "Reunião não cadastrada!":
+                    alert("Reunião não cadastrada!");
+                    window.location.href = "AltReuniao.html";
+                    break;
+                
+                case "Reunião encontrada!":
+                    Dados_altReuniao(cod_reuniao);
+                    window.location.href = "AltReuniao_mostra.php";
+                    break;
+
+                default:
+                    alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
+                    window.location.href = "../../teste/homeadm.html";
+            }
+        })
+    })
     $("#btn-alt2-r").on("click",function(e){
         e.preventDefault();
         var cod_reuniao = $('#cod_reuniao').val();
@@ -126,7 +160,6 @@
     $("#btn-exc-r").on("click",function(e){
         e.preventDefault();
         var cod_reuniao = $('#cod_reuniao').val();
-        console.log("sua vaca");
         
         $.ajax({
             url: 'ExclReuniao.php',
@@ -134,16 +167,19 @@
             data: {cod_reuniao: cod_reuniao},
             dataType: 'json'
         }).done(function(result){
-            if(result == "Reunião não cadastrada!"){
+            switch (result){
+                case "Reunião não cadastrada!":
                 alert("Reunião não cadastrada!");
                 window.location.href = "ExclReuniao.html";
-            }
-            else if(result == "Excluído com Sucesso"){
-                alert("Excluído com Sucesso");
+                break;
+                
+                case "Excluído com sucesso":
+                alert("Excluído com sucesso");
                 window.location.href = "ExclReuniao.html";
-            }
-            else{
-                alert("Ocorreu um problema no banco de dados, favor contactar o adm");
+                break;
+
+                default:
+                alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
                 window.location.href = "../../teste/homeadm.html";
             }
         })
@@ -179,7 +215,7 @@
             }
         })
     })
-    
+
     // form cadastrar Tcc
     $("#btn-cad-t").on("click",function(e){
         e.preventDefault();
@@ -210,3 +246,32 @@
             }
         })
     })
+    //Form Excluir TCC
+    $("#btn-exc-t").on("click",function(e){
+        e.preventDefault();
+        var cod_tcc = $('#cod_tcc').val();
+        
+        $.ajax({
+            url: 'exclTcc.php',
+            method: 'POST',
+            data: {cod_tcc: cod_tcc},
+            dataType: 'json'
+        }).done(function(result){
+            switch (result){
+                case "TCC não cadastrada!":
+                alert("TCC não cadastrada!");
+                window.location.href = "exclTcc.html";
+                break;
+                
+                case "Excluído com sucesso":
+                alert("Excluído com sucesso");
+                window.location.href = "exclTcc.html";
+                break;
+
+                default:
+                alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
+                window.location.href = "../../teste/homeadm.html";
+            }
+        })
+    })
+}
