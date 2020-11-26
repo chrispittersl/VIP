@@ -13,11 +13,20 @@
     $dados = $stmt->fetch(PDO::FETCH_ASSOC);
     $num_rows = $stmt->rowCount();
 
-    if($num_rows > 0){
+    if($dados['usuario']=='adm'){
+        echo json_encode("administrador");
+        if(!isset($_SESSION))
+            session_start();
+        $_SESSION['id']=$dados['cod_usuario'];
+        $_SESSION['user']=$dados['usuario'];
+        $_SESSION['password']=$dados['senha'];
+        exit;
+    }
+    else if($num_rows > 0){
         echo json_encode("válido");
         if(!isset($_SESSION))
             session_start();
-        $_SESSION['codUsuario']=$dados['cod_usuario'];
+        $_SESSION['id']=$dados['cod_usuario'];
         $_SESSION['user']=$dados['usuario'];
         $_SESSION['password']=$dados['senha'];
         exit;
