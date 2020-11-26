@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<title>Listagem de reuniões</title>
+		<title>Cadastro de reuniões</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--CSS-->
@@ -18,34 +18,37 @@
 	<body>
 		<div class="cont-rotinas-gd">
 			<h1>Cadastro</h1>
-			<form action="CadReuniao.php" method="POST" name="f1">
+			<form name="f1">
 
 				<label for="horario_reuniao">Horário Reunião</label>
-				<input type="text" name="horario_reuniao" placeholder = "Ex: 08:00:00" required onkeypress="return blokletras(event)">
+				<input type="text" id="horario_reuniao" name="horario_reuniao" placeholder = "Ex: 08:00:00" required onkeypress="return blockletras(event)">
 
 				<label for="data_reuniao">Data Reunião</label>
-				<input type="text" name="data_reuniao"  placeholder = "Ex: 2001-01-01" required onkeypress="return blokletras(event)">
+				<input type="text" id="data_reuniao" name="data_reuniao"  placeholder = "Ex: 2001-01-01" required onkeypress="return blockletras(event)">
 
 				<label for="descricao">Descrição</label>
-				<textarea name="descricao"  placeholder="Ex: Reunião para discussão sobre..."> </textarea>
+				<textarea id="descricao" name="descricao"  placeholder="Ex: Reunião para discussão sobre..."></textarea>
 				
 				<label for="nome">Nome</label>
-				<input type="text" name="nome" placeholder = "Ex: Reunião de pais e mestres" required>
+				<input type="text" id="nome" name="nome" placeholder="Ex: Reunião de pais e mestres" required>
 
 				<label for="data_agendamento">Data de Agendamento</label>
-				<input type="text" name="data_agendamento" placeholder = "Ex: 2001-01-01"  required onkeypress="return blokletras(event)">
+				<input type="text" id="data_agendamento" name="data_agendamento" placeholder = "Ex: 2001-01-01"  required onkeypress="return blockletras(event)">
 
 				<label for="num_sala">Número da sala</label>
-				<input type="text" name="num_sala" onkeypress= "return blockletras(event)" required>
+				<input type="text" id="num_sala" name="num_sala" onkeypress= "return blockletras(event)" required>
 
 				<label for="cod_usuario">Código de usuário</label>
-				<input type="text" name="cod_usuario" onkeypress= "return blockletras(event)" required>
+				<input type="text" id="cod_usuario" name="cod_usuario" onkeypress= "return blockletras(event)" required>
 
 				<button id="btn-cad-r"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
 				<a href="#">Voltar para a <span>home</span></a>
 			</form>
 		</div>
-	<script src="../js/script.js"></script>	
-	<script src="../js/blockletras.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="../../js/rotinas.js"></script>
+		<script src="../../js/script.js"></script>	
+		<script src="../../js/blockletras.js"></script>
 	</body>
 </html>
