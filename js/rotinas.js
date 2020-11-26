@@ -155,32 +155,30 @@ $(document).ready(function(){
             }
         })
     })
-
     
-
-    
-    $("#form-cadastrar-tcc").on("submit",function(e){
+    // form cadastrar Tcc
+    $("#btn-cad-t").on("click",function(e){
         e.preventDefault();
+        var horario_tcc = $('#horario_tcc').val();
+        var data_tcc = $('#data_tcc').val();
+        var descricao = $('#descricao').val();
+        var nome = $('#nome').val();
+        var data_agendamento = $('#data_agendamento').val();
+        var num_sala = $('#num_sala').val();
         var cod_usuario = $('#cod_usuario').val();
-        var cod_turma = $('#cod_turma').val();
-        var horainicio = $('#horainicio').val();
-        var horafim = $('#horafim').val();
-        var diadasemana = $('#diadasemana').val();
-        var materia = $('#materia').val();
-        var professor = $('#professor').val();
         
         $.ajax({
             url: 'CadTcc.php',
             method: 'POST',
-            data: {cod_usuario: cod_usuario, cod_turma: cod_turma, 
-                horainicio: horainicio, horafim: horafim,
-                diadasemana: diadasemana, materia: materia,
-                professor: professor},
+            data: {horario_tcc: horario_tcc, 
+                data_tcc: data_tcc, descricao: descricao,
+                nome: nome, data_agendamento: data_agendamento,
+                num_sala: num_sala, cod_usuario: cod_usuario},
             dataType: 'json'
         }).done(function(result){
             if(result == "0"){
                 alert("Registro cadastrado com sucesso!");
-                window.location.href = "cadHorarios.html";
+                window.location.href = "CadTcc.html";
             }
             else{
                 alert("Falha ao cadastrar o registro, favor contactar o administrador.");
