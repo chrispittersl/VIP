@@ -126,8 +126,6 @@
     $("#btn-exc-r").on("click",function(e){
         e.preventDefault();
         var cod_reuniao = $('#cod_reuniao').val();
-        console.log("sua vaca");
-        
         $.ajax({
             url: 'ExclReuniao.php',
             method: 'POST',
@@ -136,11 +134,11 @@
         }).done(function(result){
             if(result == "Reunião não cadastrada!"){
                 alert("Reunião não cadastrada!");
-                window.location.href = "ExclReuniao.html";
+                window.location.href = "ExclReuniao_mostra.php";
             }
-            else if(result == "Excluído com Sucesso"){
-                alert("Excluído com Sucesso");
-                window.location.href = "ExclReuniao.html";
+            else if(result == "Excluído com sucesso"){
+                alert("Excluído com sucesso");
+                window.location.href = "ExclReuniao_mostra.php";
             }
             else{
                 alert("Ocorreu um problema no banco de dados, favor contactar o adm");
