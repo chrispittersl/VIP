@@ -1,3 +1,6 @@
+<?php
+	include_once "session_geral.php";
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,8 +25,20 @@
                   <span class="fas fa-bars fa-2x"></span>
             </div>
             <div class="btns">
-                <a href="#"><button class="btn-reset margin-zero">RESETAR</button></a>
-                <a href="#"><button  class="btn-reset">SAIR</button></a>
+                <button id="resetar" class="btn-reset margin-zero">RESETAR</button>
+                <?php
+                if($_SESSION['user']=="adm"){
+                    ?>
+                    <a href="../html/homeadm.php"><button  class="btn-reset">VOLTAR</button></a>
+                    <?php
+                }
+                else{
+                    ?>
+                    <a href="../html/home.php"><button  class="btn-reset">VOLTAR</button></a>
+                <?php
+                    }
+                ?>
+                
             </div>
 
             <nav class="legenda">
@@ -52,7 +67,9 @@
                                 <li><button class="rota" id="btn-sala5">Sala 5</button></li>
                                 <li><button class="rota" id="btn-sala6">Sala 6</button></li>
                                 <li><button class="rota" id="btn-sala7">Sala 7</button></li>
-                                <li><button class="rota margin-bottom" id="btn-sala8">Sala 8</button></li>
+                                <li><button class="rota" id="btn-sala8">Sala 6</button></li>
+                                <li><button class="rota" id="btn-banheiros_masc_A">Banheiros Masc.</button></li>
+                                <li><button class="rota margin-bottom" id="btn-banheiros_fem_A">Banheiros Fem.</button></li>
                             </ul>
                         </li>
                         <li>
@@ -65,7 +82,16 @@
                                 <li><button class="rota" id="btn-sala13">Sala 13</button></li>
                                 <li><button class="rota" id="btn-sala14">Sala 14</button></li>
                                 <li><button class="rota" id="btn-sala15">Sala 15</button></li>
-                                <li><button class="rota margin-bottom" id="btn-sala16">Sala 16</button></li>
+                                <li><button class="rota" id="btn-sala16">Sala 16</button></li>
+                                <li><button class="rota" id="btn-banheiros_masc_B">Banheiros Masc.</button></li>
+                                <li><button class="rota margin-bottom" id="btn-banheiros_fem_B">Banheiros Fem.</button></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button class="dropdown-btn">BLOCO C <i class="fa fa-chevron-circle-down" aria-hidden="true"></i></button>
+                            <ul class="dropdown-container">
+                                <li><button class="rota" id="btn-labquimica">Lab. de Química</button></li>
+                                <li><button class="rota margin-bottom" id="btn-labfisica">Lab. de Física</button></li>
                             </ul>
                         </li>
                         <li>
@@ -163,31 +189,6 @@
                 </div>
             </div>
         </div>
-        
-        <script>
-        $('.btn').click(function(){
-          $(this).toggleClass("click");
-          $('.sidebar').toggleClass("show");
-        });
-        
-        var dropdown = document.getElementsByClassName("dropdown-btn");
-        var i;
-
-        for (i = 0; i < dropdown.length; i++) 
-        {
-          dropdown[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          var dropdownContent = this.nextElementSibling;
-          if (dropdownContent.style.display === "block") {
-          dropdownContent.style.display = "none";
-          } 
-          else 
-          {
-          dropdownContent.style.display = "block";
-          }
-          });
-        }
-    </script>
 
         <!-- jQuery, Popper.js, Bootstrap JS -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
