@@ -1,4 +1,7 @@
-	<!DOCTYPE html>
+<?php
+	include_once "../../php/session_adm.php";
+?>
+<!DOCTYPE html>
 <html lang="pt-br">
 	<head>
 		<title>Pesquisa de Reuniões</title>
@@ -19,18 +22,11 @@
 	<body>
 
 		<?php
-			include 'config.php';
-			include 'mysqlexecuta.php';
-			$con = conectar();
-			mysql_select_db('vip');
+			include_once "../../php/conexao.php";
 			$cod_reuniao = $_POST["cod_reuniao"];
-			$sql = "SELECT * FROM reunioes where cod_reuniao like '$cod_reuniao%' order by cod_reuniao";
-			$res = mysqlexecuta($con,$sql);
-			$quant = (mysql_num_rows($res));
-			if ($quant==0){
-				echo "Reunião não cadastrada";
-			}
-			else{
+			$stmt = $pdo->prepare("SELECT * FROM reunioes where cod_reuniao like '$cod_reuniao%' order by cod_reuniao");
+			$stmt->execute();
+			$num_rows = $stmt->rowCount();
 		?>
 		<div class="cont-pesq">
 			<table> 
@@ -45,26 +41,25 @@
 					<th>Código de usuário</th>
 				</tr>	
 		<?php
-			while ($row = mysql_fetch_array($res)) 
+			while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
 			{
 		?>
 
 					<tr>
-						<td><?php echo utf8_encode($row['nome']);?></td>
+						<td><?php echo $row['nome'];?></td>
 						<td><?php echo $row['cod_reuniao'];?></td>
 						<td><?php echo $row['horario_reuniao'];?></td>
 						<td><?php echo $row['data_reuniao'];?></td>
-						<td><?php echo utf8_encode($row['descricao']);?></td>
+						<td><?php echo $row['descricao'];?></td>
 						<td><?php echo $row['data_agendamento'];?></td>
 						<td><?php echo $row['num_sala'];?></td>
 						<td><?php echo $row['cod_usuario'];?></td>
 					</tr>
 		<?php
 			} //fecha o while
-		} // fecha o if
 		?>
 			</table>
-			<a href="#">home </a>
+			<a href="../../html/homeadm.php">home </a>
 		</div>
 	</body>
 </html>
