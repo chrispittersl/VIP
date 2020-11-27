@@ -25,7 +25,7 @@
                   <span class="fas fa-bars fa-2x"></span>
             </div>
             <div class="btns">
-                <button id="resetar" class="btn-reset margin-zero">RESETAR</button>
+                <button id="resetar" class="btn-reset margin-zero">DESFAZER</button>
                 <?php
                 if($_SESSION['user']=="adm"){
                     ?>

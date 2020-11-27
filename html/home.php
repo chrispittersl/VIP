@@ -1,5 +1,5 @@
 <?php
-	include_once "../../php/session_geral.php";
+	include_once "../php/session_geral.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

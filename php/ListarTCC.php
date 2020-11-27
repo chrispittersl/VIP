@@ -32,7 +32,7 @@
           <nav class="sidebar">
             <div id="mySidebar" class="sidebar">
               <ul>
-                <li class="margin"><a href="../html/homeadm.html">Home</a></li>
+                <li class="margin"><a href="../html/homeadm.php">Home</a></li>
                 <li>
                   <button class="dropdown-btn">Monitorar
                     <i class="fa fa-caret-down"></i>

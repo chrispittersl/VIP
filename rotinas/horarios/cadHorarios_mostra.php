@@ -1,3 +1,6 @@
+<?php
+	include_once "../../php/session_adm.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
