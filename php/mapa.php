@@ -4,7 +4,8 @@
         <title>Mapa Completo</title>
         <meta charset="utf-8">
         <!--CSS-->
-		<link rel="stylesheet" href="../css/mapa.css">
+        <link rel="stylesheet" href="../css/mapa.css">
+        <link rel="stylesheet" href="../css/mapa-peq.css" media="screen and (max-width: 375px)" />
         <!-- Bootstrap 4 -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <!--ICONES BOOTSTRAP-->
@@ -137,7 +138,7 @@
 
                 <!-- Sala 16 -->
                 <area href="#" id="sala16" class="view_data" alt="sala16" title="Sala 16" coords="487,915,428,948" shape="rect">
-            </map>
+            </map> 
         </div>
 
         
