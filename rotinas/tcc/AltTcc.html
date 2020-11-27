@@ -18,9 +18,9 @@
 	<body>
 		<div class="cont-rotinas">
 			<h1>Alteração</h1>
-			<form name="f1" action="AltTcc_mostra.php" method="POST" name="f1">
+			<form action="AltTcc_mostra.php" method="POST" name="form_TccAlt1">
 
-				<input type="text" name="cod_tcc" list="cod" autocomplete="off" maxlength="35" onkeypress= "return blockletras(event)" required>
+				<input type="text" placeholder="Código de TCC" id="cod_tcc" name="cod_tcc" list="cod" autocomplete="off" maxlength="35" onkeypress= "return blockletras(event)" required>
 				<datalist id="cod">
 					<!-- ADICIONAR DIRETO DO BD -->
 				</datalist>
@@ -33,7 +33,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-		<script src="../../js/blockletras.js"></script> 
-		<script src="../../js/script.js"></script> 
+		<script src="../../js/script.js"></script>	
+		<script src="../../js/blockletras.js"></script>
+		<script src="../../js/rotinas.js"></script>
 	</body>
 </html>

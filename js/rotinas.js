@@ -1,23 +1,49 @@
 
     // form Alterar Horarios
-    $("#form-altera-horarios").on("submit",function(e){
+    $("#btn-alt1-h").on("click",function(e){
+        e.preventDefault();
+        var cod_horario = $('#cod_horario').val();
+        $.ajax({
+        url: 'altHorarios_verifica.php',
+        method: 'POST',
+        data: {cod_horario: cod_horario},
+        dataType: 'json'
+        }).done(function(result){
+            switch (result){
+                case "Horario encontrado!":
+                    document.form_HorariosAlt1.submit();
+                    break;
+
+                case "Horario não cadastrado!":
+                    alert("Horario não cadastrado!");
+                    window.location.href = "AltHorarios.html";
+                    break;
+
+                default:
+                    alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
+                    window.location.href = "../../teste/homeadm.html";
+            }
+        })   
+    })
+
+    $("#btn-alt2-h").on("click",function(e){
         e.preventDefault();
         var cod_horario = $('#cod_horario').val();
         var cod_usuario = $('#cod_usuario').val();
         var cod_turma = $('#cod_turma').val();
         var horainicio = $('#horainicio').val();
         var horafim = $('#horafim').val();
-        var diaSemana = $('#diaSemana').val();
+        var dia_da_semana = $('#dia_da_semana').val();
         var materia = $('#materia').val();
         var professor = $('#professor').val();
-        
         $.ajax({
             url: 'altHorarios_altera.php',
             method: 'POST',
-            data: {cod_usuario: cod_usuario, cod_turma: cod_turma, 
+            data: {cod_horario: cod_horario,
+                cod_usuario: cod_usuario, cod_turma: cod_turma, 
                 horainicio: horainicio, horafim: horafim,
-                diaSemana: diaSemana, materia: materia,
-                professor: professor, cod_horario: cod_horario},
+                dia_da_semana: dia_da_semana, materia: materia,
+                professor: professor},
             dataType: 'json'
         }).done(function(result){
             if(result == "0"){
@@ -30,14 +56,15 @@
             }
         })
     })
+
     // form Cadastrar Horarios
-    $("#form-cadastrar-horarios").on("submit",function(e){
+    $("#btn-cad-h").on("click",function(e){
         e.preventDefault();
         var cod_usuario = $('#cod_usuario').val();
         var cod_turma = $('#cod_turma').val();
         var horainicio = $('#horainicio').val();
         var horafim = $('#horafim').val();
-        var diadasemana = $('#diadasemana').val();
+        var dia_da_semana = $('#dia_da_semana').val();
         var materia = $('#materia').val();
         var professor = $('#professor').val();
         
@@ -46,7 +73,7 @@
             method: 'POST',
             data: {cod_usuario: cod_usuario, cod_turma: cod_turma, 
                 horainicio: horainicio, horafim: horafim,
-                diadasemana: diadasemana, materia: materia,
+                dia_da_semana: dia_da_semana, materia: materia,
                 professor: professor},
             dataType: 'json'
         }).done(function(result){
@@ -61,6 +88,34 @@
         })
     })
     
+    //Form Excluir Horarios
+    $("#btn-exc-h").on("click",function(e){
+        e.preventDefault();
+        var cod_horario = $('#cod_horario').val();
+        $.ajax({
+            url: 'exclHorarios.php',
+            method: 'POST',
+            data: {cod_horario: cod_horario},
+            dataType: 'json'
+        }).done(function(result){
+            switch (result){
+                case "Horario não cadastrado!":
+                alert("Horario não cadastrado!");
+                window.location.href = "exclHorarios_mostra.php";
+                break;
+                
+                case "Excluído com sucesso!":
+                alert("Excluído com sucesso!");
+                window.location.href = "exclHorarios_mostra.php";
+                break;
+
+                default:
+                alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
+                window.location.href = "../../teste/homeadm.html";
+            }
+        })
+    })
+
     // form Alterar Reunioes
     $("#btn-alt1-r").on("click",function(e){
         e.preventDefault();
@@ -73,7 +128,6 @@
         }).done(function(result){
             switch (result){
                 case "Reunião encontrada!":
-                    alert("Reunião encontrada!");
                     document.form_ReuniaoAlt1.submit();
                     break;
 
@@ -119,6 +173,7 @@
             }
         })
     })
+
     // form Cadastrar Reunioes
     $("#btn-cad-r").on("click",function(e){
         e.preventDefault();
@@ -149,6 +204,7 @@
             }
         })
     })
+
     //Form Excluir Reuniao
     $("#btn-exc-r").on("click",function(e){
         e.preventDefault();
@@ -162,12 +218,12 @@
             switch (result){
                 case "Reunião não cadastrada!":
                 alert("Reunião não cadastrada!");
-                window.location.href = "ExclReuniao.html";
+                window.location.href = "ExclReuniao_mostra.php";
                 break;
                 
-                case "Excluído com sucesso":
-                alert("Excluído com sucesso");
-                window.location.href = "ExclReuniao.html";
+                case "Excluído com sucesso!":
+                alert("Excluído com sucesso!");
+                window.location.href = "ExclReuniao_mostra.php";
                 break;
 
                 default:
@@ -176,8 +232,35 @@
             }
         })
     })
-    // form Alterar Tcc
-    $("#form-altera-tcc").on("submit",function(e){
+
+    // form Alterar TCC
+    $("#btn-alt1-t").on("click",function(e){
+        e.preventDefault();
+        var cod_tcc = $('#cod_tcc').val();
+        $.ajax({
+        url: 'AltTcc_verifica.php',
+        method: 'POST',
+        data: {cod_tcc: cod_tcc},
+        dataType: 'json'
+        }).done(function(result){
+            switch (result){
+                case "TCC encontrado!":
+                    document.form_TccAlt1.submit();
+                    break;
+
+                case "TCC não cadastrado!":
+                    alert("TCC não cadastrado!");
+                    window.location.href = "AltTcc.html";
+                    break;
+
+                default:
+                    alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
+                    window.location.href = "../../teste/homeadm.html";
+            }
+        })   
+    })
+
+    $("#btn-alt2-t").on("click",function(e){
         e.preventDefault();
         var cod_tcc = $('#cod_tcc').val();
         var horario_tcc = $('#horario_tcc').val();
@@ -252,12 +335,12 @@
             switch (result){
                 case "TCC não cadastrada!":
                 alert("TCC não cadastrada!");
-                window.location.href = "exclTcc.html";
+                window.location.href = "exclTcc_mostra.php";
                 break;
                 
-                case "Excluído com sucesso":
-                alert("Excluído com sucesso");
-                window.location.href = "exclTcc.html";
+                case "Excluído com sucesso!":
+                alert("Excluído com sucesso!");
+                window.location.href = "exclTcc_mostra.php";
                 break;
 
                 default:

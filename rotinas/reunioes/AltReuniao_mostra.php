@@ -17,45 +17,45 @@
 	</head>
 	<body>
 		<?php
-				include_once "../../php/conexao.php";
-				$cod_reuniao=$_POST["cod_reuniao"];
-				
-				$stmt = $pdo->prepare("SELECT * FROM reunioes where cod_reuniao = $cod_reuniao");
-				$stmt->execute();
-				$num_rows = $stmt->rowCount();
-				$row = $stmt->fetch(PDO::FETCH_ASSOC);
-			?>
+			include_once "../../php/conexao.php";
+			$cod_reuniao=$_POST["cod_reuniao"];
+			
+			$stmt = $pdo->prepare("SELECT * FROM reunioes where cod_reuniao = $cod_reuniao");
+			$stmt->execute();
+			$num_rows = $stmt->rowCount();
+			$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		?>
 		<div class="cont-rotinas-gd">
 			<h1>Alteração</h1>
 			<form id="form-altera-reunioes" name = "f1">
-			<label>Código de reunião</label>
-			
-			<label id="cod"><?php echo $row['cod_reuniao'] ?></label>
-			<input type="hidden" id="cod_reuniao" name="cod_reuniao" value="<?php echo $row['cod_reuniao'];?>">
+				<label>Código de reunião</label>
+				
+				<label id="cod"><?php echo $row['cod_reuniao'] ?></label>
+				<input type="hidden" id="cod_reuniao" name="cod_reuniao" value="<?php echo $row['cod_reuniao'];?>">
 
-			<label for="horario_reuniao">Horário da Reunião</label>
-			<input type='text' id="horario_reuniao" name='horario_reuniao' value='<?php echo $row['horario_reuniao'];?>' required>
+				<label for="horario_reuniao">Horário da Reunião</label>
+				<input type='text' id="horario_reuniao" name='horario_reuniao' value='<?php echo $row['horario_reuniao'];?>' required>
+				
+				<label for="data_reuniao">Data da reunião</label>
+				<input type='text' id="data_reuniao" name='data_reuniao' value='<?php echo $row['data_reuniao'];?>' required>
+				
+				<label for="descricao">Descrição</label>
+				<textarea id="descricao" name="descricao"><?php echo $row['descricao'];?> </textarea>
+				
+				<label for="nome">Nome</label>
+				<input type='text' id="nome" name='nome' value='<?php echo $row['nome'];?>' required>
+				
+				<label for="data_agendamento">Data de agentamento</label>
+				<input type='text' id="data_agendamento" name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
+				
+				<label for="num_sala">Número de sala</label>
+				<input type='text' id="num_sala" name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $row['num_sala'];?>' required>
+				
+				<label for="cod_usuario">Código de usuário</label>
+				<input type='text' id="cod_usuario" name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
 			
-			<label for="data_reuniao">Data da reunião</label>
-			<input type='text' id="data_reuniao" name='data_reuniao' value='<?php echo $row['data_reuniao'];?>' required>
-			
-			<label for="descricao">Descrição</label>
-			<textarea id="descricao" name="descricao"><?php echo $row['descricao'];?> </textarea>
-			
-			<label for="nome">Nome</label>
-			<input type='text' id="nome" name='nome' value='<?php echo $row['nome'];?>' required>
-			
-			<label for="data_agendamento">Data de agentamento</label>
-			<input type='text' id="data_agendamento" name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
-			
-			<label for="num_sala">Número de sala</label>
-			<input type='text' id="num_sala" name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $row['num_sala'];?>' required>
-			
-			<label for="cod_usuario">Código de usuário</label>
-			<input type='text' id="cod_usuario" name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
-		
-			<button id="btn-alt2-r"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button>
-			<a href="#">Voltar para a <span>home</span></a>
+				<button id="btn-alt2-r"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button>
+				<a href="#">Voltar para a <span>home</span></a>
 			</form>
 		</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

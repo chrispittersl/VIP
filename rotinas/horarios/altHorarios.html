@@ -15,12 +15,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	</head>
-
 	<body>
-		
 		<div class="cont-rotinas">
 			<h1>Alteração</h1>
-			<form action="altHorarios_mostra.php" method="POST" name="f1">
+			<form id="form_HorariosAlt1" action="AltHorarios_mostra.php" method="POST" name="form_HorariosAlt1">
 				<input type="text" id="cod_horario" name="cod_horario" list="cod" placeholder="Código do horário" autocomplete="off" required onkeypress="return blockletras(event)">
 				<datalist id="cod">
 					<!-- ADICIONAR DIRETO DO BD -->
@@ -35,5 +33,6 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 		<script src="../../js/script.js"></script>	
 		<script src="../../js/blockletras.js"></script>
+		<script src="../../js/rotinas.js"></script>
 	</body>
 </html>

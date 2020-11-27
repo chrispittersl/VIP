@@ -46,7 +46,5 @@
 		<script src="../../js/rotinas.js"></script>
 		<script src="../../js/script.js"></script>	
 		<script src="../../js/blockletras.js"></script>
-		
-		
 	</body>
 </html>

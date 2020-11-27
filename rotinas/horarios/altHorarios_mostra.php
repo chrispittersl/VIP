@@ -17,56 +17,47 @@
 	</head>
 	<body>
 		<?php
-				include_once "../../php/conexao.php";
-				$cod_horario=$_POST["cod_horario"];
+			include_once "../../php/conexao.php";
+			$cod_horario=$_POST["cod_horario"];
+			
+			$stmt = $pdo->prepare("SELECT * FROM horario_aula where cod_horario = $cod_horario");
+			$stmt->execute();
+			$num_rows = $stmt->rowCount();
+			$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		?>
+		<div class="cont-rotinas-gd">
+			<h1>Alteração</h1>
+			<form id="form-altera-horarios" name = "f1">
+				<label>Código de horário</label>
+
+				<label id="cod"><?php echo $row['cod_horario'] ?></label>
+				<input type="hidden" id="cod_horario" name="cod_horario" value=<?php echo $row ['cod_horario'];?>>
+
+				<label for="cod_usuario">Código de usuário</label>
+				<input type='text' id="cod_usuario" name='cod_usuario' value='<?php echo $row['cod_usuario'];?>' required>
+					
+				<label for="cod_turma">Código de turma</label>
+				<input type='text' id="cod_turma" name='cod_turma' value='<?php echo $row['cod_turma'];?>' required>
+					
+				<label for="horainicio">Horário de Início</label>
+				<input type='text' id="horainicio" name='horainicio' value='<?php echo $row['horainicio'];?>' required>
+					
+				<label for="horafim">Horário de fim</label>
+				<input type='text' id="horafim" name='horafim' value='<?php echo $row['horafim'];?>' required>
+					
+				<label for="dia_da_semana">	Dia da semana</label>
+				<input type='text' id="dia_da_semana" name='dia_da_semana' value='<?php echo $row['dia_da_semana'];?>' required>
+					
+				<label for="materia">Matéria</label>
+				<input type='text' id="materia" name='materia' value='<?php echo $row['materia'];?>' required>
+					
+				<label for="professor">Professor(a)</label>
+				<input type='text' id="professor" name='professor' value='<?php echo $row['professor'];?>' required>
 				
-				$stmt = $pdo->prepare("SELECT * FROM reunioes where cod_horario = $cod_horario");
-				$stmt->execute();
-				$num_rows = $stmt->rowCount();
-				$row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-				if ($num_rows==0)
-				{
-					echo "<script type='javascript'>alert('Horário não Cadastrado !!');";
-					header('Location:altHorarios.html');
-				}
-				else
-				{
-					echo "<script type='javascript'>alert('Horário Encontrado !!');";
-				}
-			?>
-			<div class="cont-rotinas-gd">
-				<h1>Alteração</h1>
-					<form name="f1" method="POST" action="altHorarios_altera.php">
-						<label>Código de horário</label>
-						<label id="cod"><?php echo $row['cod_horario'] ?></label>
-						<input type="hidden" name="cod_horario" value=<?php echo $row ['cod_horario'];?>>
-
-						<label for="cod_usuario">Código de usuário</label>
-						<input type='text' name='cod_usuario' value='<?php echo $row['cod_usuario'];?>' required>
-							
-						<label for="cod_turma">Código de turma</label>
-						<input type='text' name='cod_turma' value='<?php echo $row['cod_turma'];?>' required>
-							
-						<label for="horainicio">Horário de Início</label>
-						<input type='text' name='horainicio' value='<?php echo $row['horainicio'];?>' required>
-							
-						<label for="horafim">Horário de fim</label>
-						<input type='text' name='horafim' value='<?php echo $row['horafim'];?>' required>
-							
-						<label for="diaSemana">	Dia da semana</label>
-						<input type='text' name='diaSemana' value='<?php echo $row['dia_da_semana'];?>' required>
-							
-						<label for="materia">Matéria</label>
-						<input type='text' name='materia' value='<?php echo $row['materia'];?>' required>
-							
-						<label for="professor">Professor</label>
-						<input type='text' name='professor' value='<?php echo $row['professor'];?>' required>
-						
-						<button id="btn-alt2-h"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> </button>
-						<a href="#">Voltar para a <span>home</span></a>
-					</form>
-			</div>
+				<button id="btn-alt2-h"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> </button>
+				<a href="#">Voltar para a <span>home</span></a>
+			</form>
+		</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="../../js/script.js"></script>	

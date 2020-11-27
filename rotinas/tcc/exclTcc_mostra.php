@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<title>Exclusão de dados: Horário</title>
+		<title>Exclusão de TCC</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--CSS-->
@@ -14,22 +14,37 @@
 		<!--FONTE GOOGLE USADA-->
 		<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-	
-	</script>
 
 	</head>
-	<body >
+	<body>
+		<?php
+			include_once "../../php/conexao.php";
+			$stmt = $pdo->prepare("SELECT * FROM tcc order by cod_tcc asc");
+			$stmt->execute();
+		?>	
 		<div class="cont-rotinas">
 			<h1>Exclusão</h1>
-			<form action="exclHorarios.php" method="POST" name="f1">
-				<input type="text" name="cod_horario" list="cod" autocomplete="off" required onkeypress= "return blockletras(event)" placeholder="Código do horário">
+			<form name="f1">
+				<input type="text" id="cod_tcc" list="cod" name="cod_tcc" autocomplete="off" placeholder="código de TCC" required onkeypress="return blockletras(event)">	
 				<datalist id="cod">
-					<!-- ADICIONAR DIRETO DO BD -->
+					<!-- ADICIONAR DIRETO DO BD  -->
+					<?php
+					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+					?>
+						<option value="<?php echo $dados['cod_tcc'];?>"><?php echo $dados['nome'];?></option>
+					<?php
+					}
+					?>
 				</datalist>
 				<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
-				<button id="btn-exc-h"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+				<button id="btn-exc-t"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
 				<a href="#">Voltar para a <span>home</span></a>
 			</form>
 		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="../../js/rotinas.js"></script>
+		<script src="../../js/script.js"></script>	
+		<script src="../../js/blockletras.js"></script>
 	</body>
 </html>

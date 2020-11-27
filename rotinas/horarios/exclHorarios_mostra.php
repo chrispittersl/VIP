@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<title>Exclusão de TCC</title>
+		<title>Exclusão de dados: Horário</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--CSS-->
@@ -16,16 +16,28 @@
 		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
 	</head>
-	<body>	
+	<body>
+		<?php
+			include_once "../../php/conexao.php";
+			$stmt = $pdo->prepare("SELECT * FROM reunioes order by cod_reuniao asc");
+			$stmt->execute();
+		?>
 		<div class="cont-rotinas">
 			<h1>Exclusão</h1>
-			<form name="f1">
-				<input type="text" id="cod_tcc" list="cod" name="cod_tcc" autocomplete="off" required onkeypress="return blockletras(event)">	
+			<form name="f2">
+				<input type="text" id="cod_horario" list="cod" name="cod_horario" autocomplete="off" required onkeypress= "return blockletras(event)" placeholder="Código do horário">
 				<datalist id="cod">
-					<!-- ADICIONAR DIRETO DO BD  -->
+					<!-- ADICIONAR DIRETO DO BD -->
+					<?php
+					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+					?>
+						<option value="<?php echo $dados['cod_reuniao'];?>"><?php echo $dados['nome'];?></option>
+					<?php
+					}
+					?>
 				</datalist>
 				<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
-				<button id="btn-exc-t"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+				<button id="btn-exc-h"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
 				<a href="#">Voltar para a <span>home</span></a>
 			</form>
 		</div>
