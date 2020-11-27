@@ -84,6 +84,7 @@
                                 <li><button class="rota" id="btn-sala15">Sala 15</button></li>
                                 <li><button class="rota" id="btn-sala16">Sala 16</button></li>
                                 <li><button class="rota" id="btn-banheiros_masc_B">Banheiros Masc.</button></li>
+                                <li><button class="rota" id="btn-banheiros_masc_B">Caguei</button></li>
                                 <li><button class="rota margin-bottom" id="btn-banheiros_fem_B">Banheiros Fem.</button></li>
                             </ul>
                         </li>
@@ -183,7 +184,7 @@
                         
                     <div class="modal-footer">
                         <button type="button" class="btn-danger" data-dismiss="modal">
-                            Pronto
+                            Pronto  
                         </button>
                     </div>
                 </div>
