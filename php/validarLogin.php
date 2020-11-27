@@ -14,22 +14,28 @@
     $num_rows = $stmt->rowCount();
 
     if($dados['usuario']=='adm'){
-        echo json_encode("administrador");
-        if(!isset($_SESSION))
+        if(!isset($_SESSION)){
             session_start();
-        $_SESSION['id']=$dados['cod_usuario'];
-        $_SESSION['user']=$dados['usuario'];
-        $_SESSION['password']=$dados['senha'];
-        exit;
+            $_SESSION['id']=$dados['cod_usuario'];
+            $_SESSION['user']=$dados['usuario'];
+            $_SESSION['password']=$dados['senha'];
+            $_SESSION['logged']=TRUE;
+            echo json_encode("administrador");
+            exit;
+        }
+        
     }
     else if($num_rows > 0){
-        echo json_encode("válido");
-        if(!isset($_SESSION))
+        if(!isset($_SESSION)){
             session_start();
-        $_SESSION['id']=$dados['cod_usuario'];
-        $_SESSION['user']=$dados['usuario'];
-        $_SESSION['password']=$dados['senha'];
+            $_SESSION['id']=$dados['cod_usuario'];
+            $_SESSION['user']=$dados['usuario'];
+            $_SESSION['password']=$dados['senha'];
+            $_SESSION['logged']=TRUE;
+            echo json_encode("válido");
         exit;
+        }
+        
     }
     else{
         echo json_encode("inválido");
