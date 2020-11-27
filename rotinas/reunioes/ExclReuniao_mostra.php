@@ -1,3 +1,6 @@
+<?php
+	include_once "../../php/session_adm.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -38,7 +41,7 @@
 				</datalist>
 				<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
 				<button id="btn-exc-r"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
-				<a href="#">Voltar para a <span>home</span></a>
+				<a href="../../html/homeadm.php">Voltar para a <span>home</span></a>
 			</form>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
