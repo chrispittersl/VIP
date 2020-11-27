@@ -27,12 +27,72 @@ $("#btn-href-home").on("click",function(){
 $(document).ready(function(){
 	$(document).on("click",".view_data",function(){
 		var sala = $(this).attr("id");
+		var sala_val = $(this).attr("id");
 		var dados = {
 			sala: sala
 		};
+		var scroll = 0;
 		$.post('tempoReal.php', dados, function(retorno){
 			$("#conteudo").html(retorno);
 			$("#modalAcontecimentos").modal("show");
+			switch (sala_val){
+				case 'sala1':
+					scroll = 450;
+					break;
+				case 'sala2':
+					scroll = 450;
+					break;
+				case 'sala3':
+					scroll = 450;
+					break;
+				case 'sala4':
+					scroll = 450;
+					break;
+				case 'sala5':
+					scroll = 450;
+					break;
+				case 'sala6':
+					scroll = 450;
+					break;
+				case 'sala7':
+					scroll = 450;
+					break;
+				case 'sala8':
+					scroll = 450;
+					break;
+				case 'sala9':
+					scroll = 750;
+					break;
+				case 'sala10':
+					scroll = 750;
+					break;
+				case 'sala11':
+					scroll = 750;
+					break;
+				case 'sala12':
+					scroll = 750;
+					break;
+				case 'sala13':
+					scroll = 750;
+					break;
+				case 'sala14':
+					scroll = 750;
+					break;
+				case 'sala15':
+					scroll = 750;
+					break;
+				case 'sala16':
+					scroll = 750;
+					break;
+			}
+			$.fn.scrollView = function (scroll_val) {
+				return this.each(function () {
+					$('html').animate({
+						scrollTop: scroll_val,
+					}, 300);
+				});
+			}
+			$(document).scrollView(scroll);
 		});
 	});
 	
