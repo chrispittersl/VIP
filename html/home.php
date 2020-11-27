@@ -38,7 +38,7 @@
                 <nav class="sidebar">
                   <div id="mySidebar" class="sidebar">
                     <ul>
-                      <li class="margin-top margin-bottom"><a href="home.html">Home</a></li>
+                      <li class="margin-top margin-bottom"><a href="home.php">Home</a></li>
                       <li>
                         <button class="dropdown-btn margin-bottom">Cronogramas
                           <i class="fa fa-caret-down"></i>
