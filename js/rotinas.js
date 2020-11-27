@@ -100,18 +100,19 @@
         }).done(function(result){
             switch (result){
                 case "Horario não cadastrado!":
-                alert("Horario não cadastrado!");
-                window.location.href = "exclHorarios_mostra.php";
-                break;
+                    alert("Horario não cadastrado!");
+                    window.location.href = "exclHorarios_mostra.php";
+                    break;
                 
                 case "Excluído com sucesso!":
-                alert("Excluído com sucesso!");
-                window.location.href = "exclHorarios_mostra.php";
-                break;
+                    alert("Excluído com sucesso!");
+                    window.location.href = "exclHorarios_mostra.php";
+                    break;
 
                 default:
-                alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
-                window.location.href = "../../teste/homeadm.html";
+                    alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
+                    window.location.href = "../../teste/homeadm.html";
+                    break;
             }
         })
     })
@@ -133,12 +134,13 @@
 
                 case "Reunião não cadastrada!":
                     alert("Reunião não cadastrada!");
-                    window.location.href = "AltReuniao.html";
+                    window.location.href = "AltReuniao.php";
                     break;
 
                 default:
                     alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
-                    window.location.href = "../../teste/homeadm.html";
+                    window.location.href = "../../html/homeadm.php";
+                    break;
             }
         })   
     })
@@ -165,11 +167,12 @@
         }).done(function(result){
             if(result == "0"){
                 alert("Registro alterado com sucesso!");
-                window.location.href = "AltReuniao.html";
+                window.location.href = "AltReuniao.php";
             }
             else{
                 alert("Falha ao alterar o registro, favor contactar o administrador.");
                 window.location.href = "../../teste/homeadm.html";
+                break;
             }
         })
     })
@@ -196,11 +199,12 @@
         }).done(function(result){
             if(result == "0"){
                 alert("Registro cadastrado com sucesso!");
-                window.location.href = "CadReuniao.html";
+                window.location.href = "CadReuniao_mostra.php";
             }
             else{
-                alert(result);
-                window.location.href = "../../teste/homeadm.html";
+                alert("Erro ao inserir o registro no Banco de Dados");
+                window.location.href = "../../html/homeadm.php";
+                break;
             }
         })
     })
@@ -217,20 +221,48 @@
         }).done(function(result){
             switch (result){
                 case "Reunião não cadastrada!":
-                alert("Reunião não cadastrada!");
-                window.location.href = "ExclReuniao_mostra.php";
-                break;
+                    alert("Reunião não cadastrada!");
+                    window.location.href = "ExclReuniao_mostra.php";
+                    break;
                 
                 case "Excluído com sucesso!":
-                alert("Excluído com sucesso!");
-                window.location.href = "ExclReuniao_mostra.php";
-                break;
+                    alert("Excluído com sucesso!");
+                    window.location.href = "ExclReuniao_mostra.php";
+                    break;
 
                 default:
-                alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
-                window.location.href = "../../teste/homeadm.html";
+                    alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
+                    window.location.href = "../../html/homeadm.php";
+                    break;
             }
         })
+    })
+    // Form Pesquisar Reuniao
+    $("#btn-alt1-r").on("click",function(e){
+        e.preventDefault();
+        var cod_reuniao = $('#cod_reuniao').val();
+        $.ajax({
+        url: 'PesqReuniao_verifica.php',
+        method: 'POST',
+        data: {cod_reuniao: cod_reuniao},
+        dataType: 'json'
+        }).done(function(result){
+            switch (result){
+                case "0":
+                    document.form_ReuniaoAlt1.submit();
+                    break;
+
+                case "1":
+                    alert("Não há reuniões cadastradas!");
+                    window.location.href = "../../html/homeadm.php";
+                    break;
+
+                default:
+                    alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
+                    window.location.href = "../../html/homeadm.php";
+                    break;
+            }
+        })   
     })
 
     // form Alterar TCC
@@ -255,7 +287,7 @@
 
                 default:
                     alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
-                    window.location.href = "../../teste/homeadm.html";
+                    window.location.href = "../../html/homeadm.php";
             }
         })   
     })
@@ -286,7 +318,7 @@
             }
             else{
                 alert("Falha ao alterar o registro, favor contactar o administrador.");
-                window.location.href = "../../teste/homeadm.html";
+                window.location.href = "../../html/homeadm.php";
             }
         })
     })
@@ -317,7 +349,7 @@
             }
             else{
                 alert("Falha ao cadastrar o registro, favor contactar o administrador.");
-                window.location.href = "../../teste/homeadm.html";
+                window.location.href = "../../html/homeadm.php";
             }
         })
     })
@@ -345,7 +377,7 @@
 
                 default:
                 alert("Ocorreu um problema no banco de dados, favor contactar o administrador");
-                window.location.href = "../../teste/homeadm.html";
+                window.location.href = "../../html/homeadm.php";
             }
         })
     })
