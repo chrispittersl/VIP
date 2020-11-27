@@ -447,7 +447,22 @@ font-size:1em !important;
 .footer a:hover{
     color:#e5474b;
 }
-
+/* BARRA DE ROLAGEM */
+::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-track{
+    background:#d4d2d2;
+}
+::-webkit-scrollbar-thumb{
+    background: gray; 
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    height:10px;
+    border-radius:5px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(68, 68, 68);
+}
 
 /* DEIXANDO O SITE RESPONSIVO */
 @media screen and (max-width:375px){
@@ -609,7 +624,6 @@ font-size:1em !important;
     }
     .home button {
         background-color: #1c1c1c;
-        padding: 12px;
         font-size:15px;
         grid-column: 1/-1;
         color: #e4e3e3;
@@ -619,6 +633,7 @@ font-size:1em !important;
         transition: .4s;
         width:200px !important;
         text-transform: uppercase;
+        height:35px !important;
     }
     .home button:hover{
         border-color:#1c1c1c;

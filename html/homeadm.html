@@ -5,7 +5,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!--CSS-->
-      <link rel="stylesheet" href="pag.css">
+      <link rel="stylesheet" href="../css/pagadm.css">
       <!--ICONES BOOTSTRAP-->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
       <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
@@ -21,94 +21,250 @@
 
   </head>
 
-    <body>
-      <!--MENU E NAVEGAÇÃO-->
-      <header class="cabecalho">
-        <a href="home.html"><h1 class="logo">Virtual Increased Plan</h1></a>
-        <div class="btn">
-          <span class="fas fa-bars"></span>
-        </div>
-        <nav class="sidebar">
-          <div id="mySidebar" class="sidebar">
-            <ul>
-              <li class="margin"><a href="homeadm.html">Home</a></li>
-              <li>
-                <button class="dropdown-btn">Monitorar
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <ul class="dropdown-container">
-                  <li><a href="tcc.html">TCCs</a></li>
-                  <li><a href="reuniao.html">Reuniões</a></li> 
-                  <li><a href="horario.html">Horários</a></li> 
-                </ul>
-              </li>
-              <li>
-                <button class="dropdown-btn">Cronogramas
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <ul class="dropdown-container">
-                  <li><a href="../php/ListarReuniao.php">Listar - Reuniões</a></li>
-                  <li><a href="../php/ListarTCC.php">Listar - TCCs</a></li> 
-                </ul>
-              </li>
-            </ul>
+  <body>
+    
+    <div class="tudo"><!-- DIV QUE FARÁ AS COLUNAS -->
+      <!-- HEADER -->
+      <header class="header todas-colunas">
+          <a href="#" class="logo"><img src="../img/logonome.png"></a>
+          <div class="btn">
+            <span class="fas fa-bars fa-lg"></span>
           </div>
-        </nav>
-    </header>  
+          <!-- NAVEGAÇÃO  -->
+          <nav class="sidebar">
+            <div id="mySidebar" class="sidebar">
+              <ul>
+                <li class="margin-top margin-bottom"><a href="home.html">Home</a></li>
+                <li>
+                  <button class="dropdown-btn margin-bottom ">Monitorar
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <ul class="dropdown-container ">
+                    <li><a href="tcc.html" class="margin-bottom">TCCs</a></li>
+                    <li><a href="reuniao.html" class="margin-bottom">Reuniões</a></li> 
+                    <li><a href="horario.html" class="margin-bottom">Horários</a></li> 
+                  </ul>
+                </li>
+                <li>
+                  <button class="dropdown-btn margin-bottom">Listar
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <ul class="dropdown-container">
+                    <li><a href="../php/CronoEventos.php" class="margin-bottom">TCCs</a></li>
+                    <li><a href="../php/cronoReuniao.php" class="margin-bottom">Reuniões de pais</a></li> 
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      </header>  
+      
+      <!-- CONTEUDO  -->
+      <main class="adm-conteudo">
+        <!-- banner  -->
   
-      <!--ROTINAS-->
-      <main class="org">
-            <div id="card-menu">
-                <img src="../img/logotcc.png" alt="Avatar">
-                <div class="container">
-                  <a href="tcc.html"> <button class="monitorar">MONITORAR</button></a>
-                </div>
+        <div class="banner-adm">
+          <div class="banner-tcc">
+            <p>Rotinas Tccs</p>
+            <a href="#tcc">MONITORAR</a>
+          </div>
+          <div class="banner-reuniao">
+            <p>Rotinas Reuniões</p>
+            <a href="#reuniao">MONITORAR</a>
+          </div>
+          <div class="banner-horario">
+            <p>Rotinas Horários</p>
+            <a href="#horario">MONITORAR</a>
+          </div>
+        </div>
+      
+        
+
+        <div id="tcc" class="rotinas">
+          <div class="rotina-tcc">
+            <h1 class="todas-colunas">MONITORAR TCC</h1>
+            <hr class="todas-colunas">
+
+            <div class="lupa">
+              <div class="org-lupa">
+                <br>
+                <i class="fa fa-search fa-6x" aria-hidden="true"></i> 
+              </div>
+              <div class="pesq">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
             </div>
-            <div id="card-menu1">
-                <img src="../img/logoreuniao.png" alt="Avatar">
-                <div class="container">
-                    <a href="reuniao.html"> <button class="monitorar">MONITORAR</button></a>
-                </div>
+
+            <div class="mais">
+              <div class="org-mais">
+                <br>
+                <i class="fa fa-plus fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="inc">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
             </div>
-            <div id="card-menu2">
-                <img src="../img/logohorario.png" alt="Avatar">
-                <div class="container">
-                   <a href="horario.html"> <button class="monitorar">MONITORAR</button> </a>
-                </div>
+
+            <div class="pencil">
+              <div class="org-pencil">
+                <br>
+                <i class="fa fa-pencil-square-o fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="alt">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
             </div>
+
+            <div class="borracha">
+              <div class="org-borracha">
+                <br>
+                <i class="fa fa-trash fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="exc">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div id="reuniao" class="rotinas">
+          <div class="rotina-reuniao">
+            <h1 class="todas-colunas">MONITORAR REUNIÕES</h1>
+            <hr class="todas-colunas">
+            <div class="lupa">
+              <div class="org-lupa">
+                <br>
+                <i class="fa fa-search fa-6x" aria-hidden="true"></i> 
+              </div>
+              <div class="pesq">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+            <div class="mais">
+              <div class="org-mais">
+                <br>
+                <i class="fa fa-plus fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="inc">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+            <div class="pencil">
+              <div class="org-pencil">
+                <br>
+                <i class="fa fa-pencil-square-o fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="alt">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+            <div class="borracha">
+              <div class="org-borracha">
+                <br>
+                <i class="fa fa-trash fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="exc">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="horario" class="rotinas">
+          <div class="rotina-horario">
+            <h1 class="todas-colunas">MONITORAR HORÁRIOS</h1>
+            <hr class="todas-colunas">
+            <div class="lupa">
+              <div class="org-lupa">
+                <br>
+                <i class="fa fa-search fa-6x" aria-hidden="true"></i> 
+              </div>
+              <div class="pesq">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+            <div class="mais">
+              <div class="org-mais">
+                <br>
+                <i class="fa fa-plus fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="inc">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+            <div class="pencil">
+              <div class="org-pencil">
+                <br>
+                <i class="fa fa-pencil-square-o fa-6x" aria-hidden="true"></i> 
+              </div>
+              <div class="alt">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+            <div class="borracha">
+              <div class="org-borracha">
+                <br>
+                <i class="fa fa-trash fa-6x" aria-hidden="true"></i>
+              </div>
+              <div class="exc">
+                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="crono">
+          <h1 class="todas-colunas">listagem dos cronogramas</h1>
+          <hr class="todas-colunas">
+  
+          <div class="crono-tcc">
+            <img src="../img/tcc.png">
+            <a href="#"><button>Listar</button></a>
+          </div>
+          <div class="crono-reuniao">
+            <img src="../img/reuniao.png">
+            <a href="#"><button>Listar</button></a>
+          </div>
+        </div>
+
+        <div class="home">
+          <img src="../img/home.png">
+          <button>Home <i class="fa fa-arrow-right" aria-hidden="true"></i> </button>
+        </div>
+        <hr>
       </main>
+       
+  
+      <footer class="footer">
+        <p><a href="#">Virtual Increased Plan</a> © Todos os direitos reservados - 2020</p>
+      </footer>
+    </div> 
 
-      <!--RODAPÉ-->
-  <!--<div class=linha>
-          <hr>
-      </div>
+  <!--SCRIPT PARA NAVBAR COLLAPSE-->
+  <script>
+      $('.btn').click(function(){
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+      });
+      
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
 
-    <footer class="rodape container bg-gradient">
-      <p class="copyright">
-        © Virtual Increased Plan 2020. Todos os direitos reservados.
-    </footer>   -->
-
-      <script>
-            $('.btn').click(function(){
-              $(this).toggleClass("click");
-              $('.sidebar').toggleClass("show");
-            });
-            var dropdown = document.getElementsByClassName("dropdown-btn");
-            var i;
-
-            for (i = 0; i < dropdown.length; i++) {
-              dropdown[i].addEventListener("click", function() {
-              this.classList.toggle("active");
-              var dropdownContent = this.nextElementSibling;
-              if (dropdownContent.style.display === "block") {
-              dropdownContent.style.display = "none";
-              } else {
-              dropdownContent.style.display = "block";
-              }
-              });
-            }
-      </script>
-        
-    </body>
+      for (i = 0; i < dropdown.length; i++) 
+      {
+        dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+        } 
+        else 
+        {
+        dropdownContent.style.display = "block";
+        }
+        });
+      }
+  </script>
+  </body>
 </html>
-        
