@@ -17,3 +17,4 @@
 	catch(Exception $e){
 		echo json_encode("Ocorreu um problema no banco de dados, favor contactar o administrador");
 	}
+	?>

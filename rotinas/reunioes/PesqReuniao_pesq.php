@@ -25,7 +25,7 @@
 		?>
 		<div class="cont-rotinas">
 			<h1>Pesquisa</h1>
-			<form action="PesqReuniao.php" method="POST" name="f1">
+			<form  name="f1">
 				<input type="text" id="cod_reuniao" name="cod_reuniao" autocomplete="off" list="cod" required  onkeypress= "return blockletras(event)">
 				<datalist id="cod">
 					<!-- ADICIONAR DIRETO DO BD -->
@@ -44,7 +44,10 @@
 				<a href="../../html/homeadm.php">Voltar para a <span>home</span></a>
 			</form>
 		</div>
-	<script src="../js/script.js"></script>	
-	<script src="../js/blockletras.js"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>	
+	<script src="../../js/rotinas.js"></script>
+	<script src="../../js/script.js"></script>	
+	<script src="../../js/blockletras.js"></script>	
 	</body>
 </html>
