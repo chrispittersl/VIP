@@ -21,10 +21,15 @@
             <div class="btn">
                   <span class="fas fa-bars fa-2x"></span>
             </div>
+            <div class="btns">
+                <a href="#"><button class="btn-reset margin-zero">RESETAR</button></a>
+                <a href="#"><button  class="btn-reset">SAIR</button></a>
+            </div>
+
             <nav class="legenda">
                 <div id="mySidebar" class="sidebar">
-                <ul class="items-legenda">
-                    <li >
+                    <ul class="items-legenda">
+                        <li >
                         <button class="dropdown-btn margin-top">BLOCO ADMIN <i class="fa fa-chevron-circle-down" aria-hidden="true"></i></button>
                         <ul class="dropdown-container">
                             <li><button class="rota" id="btn-anexo">Anexo</button></li>
