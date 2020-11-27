@@ -29,7 +29,7 @@
     <div class="tudo"><!-- DIV QUE FARÁ AS COLUNAS -->
       <!-- HEADER -->
       <header class="header todas-colunas">
-          <a href="#" class="logo"><img src="../img/logonome.png"></a>
+          <a href="homeadm.php" class="logo"><img src="../img/logonome.png"></a>
           <div class="btn">
             <span class="fas fa-bars fa-lg"></span>
           </div>
@@ -43,9 +43,9 @@
                     <i class="fa fa-caret-down"></i>
                   </button>
                   <ul class="dropdown-container ">
-                    <li><a href="tcc.html" class="margin-bottom">TCCs</a></li>
-                    <li><a href="reuniao.html" class="margin-bottom">Reuniões</a></li> 
-                    <li><a href="horario.html" class="margin-bottom">Horários</a></li> 
+                    <li><a href="#tcc" class="margin-bottom">TCCs</a></li>
+                    <li><a href="#reuniao" class="margin-bottom">Reuniões</a></li> 
+                    <li><a href="#horario" class="margin-bottom">Horários</a></li> 
                   </ul>
                 </li>
                 <li>
@@ -83,7 +83,7 @@
         </div>
       
         
-
+        <!-- ROTINAS TCC -->
         <div id="tcc" class="rotinas">
           <div class="rotina-tcc">
             <h1 class="todas-colunas">MONITORAR TCC</h1>
@@ -95,7 +95,7 @@
                 <i class="fa fa-search fa-6x" aria-hidden="true"></i> 
               </div>
               <div class="pesq">
-                <a href="../rotinas/horarios/PesqHorarios_pesq.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+                <a href="../rotinas/tcc/PesqTcc_pesq.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
               </div>
             </div>
 
@@ -105,7 +105,7 @@
                 <i class="fa fa-plus fa-6x" aria-hidden="true"></i>
               </div>
               <div class="inc">
-                <a href="../rotinas/horarios/cadHorarios_mostra.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+                <a href="../rotinas/tcc/CadTcc_mostra.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
               </div>
             </div>
 
@@ -115,7 +115,7 @@
                 <i class="fa fa-pencil-square-o fa-6x" aria-hidden="true"></i>
               </div>
               <div class="alt">
-                <a href="../rotinas/horarios/altHorarios.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+                <a href="../rotinas/tcc/AltTcc.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
               </div>
             </div>
 
@@ -125,13 +125,14 @@
                 <i class="fa fa-trash fa-6x" aria-hidden="true"></i>
               </div>
               <div class="exc">
-                <a href="../rotinas/horarios/exclHorarios_mostra.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+                <a href="../rotinas/tcc/exclTcc_mostra.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
               </div>
 
             </div>
           </div>
         </div>
 
+        <!-- ROTINAS REUNIÕES -->
         <div id="reuniao" class="rotinas">
           <div class="rotina-reuniao">
             <h1 class="todas-colunas">MONITORAR REUNIÕES</h1>
@@ -175,6 +176,7 @@
           </div>
         </div>
 
+        <!-- ROTINAS HORÁRIOS -->
         <div id="horario" class="rotinas">
           <div class="rotina-horario">
             <h1 class="todas-colunas">MONITORAR HORÁRIOS</h1>
@@ -185,7 +187,7 @@
                 <i class="fa fa-search fa-6x" aria-hidden="true"></i> 
               </div>
               <div class="pesq">
-                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+                <a href="../rotinas/horarios/PesqHorarios_pesq.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
               </div>
             </div>
             <div class="mais">
@@ -194,7 +196,7 @@
                 <i class="fa fa-plus fa-6x" aria-hidden="true"></i>
               </div>
               <div class="inc">
-                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+                <a href="../rotinas/horarios/cadHorarios_mostra.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
               </div>
             </div>
             <div class="pencil">
@@ -203,7 +205,7 @@
                 <i class="fa fa-pencil-square-o fa-6x" aria-hidden="true"></i> 
               </div>
               <div class="alt">
-                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+                <a href="../rotinas/horarios/altHorarios.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
               </div>
             </div>
             <div class="borracha">
@@ -212,7 +214,7 @@
                 <i class="fa fa-trash fa-6x" aria-hidden="true"></i>
               </div>
               <div class="exc">
-                <a href="#"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
+                <a href="../rotinas/horarios/exclHorarios_mostra.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button></button></a>
               </div>
             </div>
           </div>
@@ -224,11 +226,11 @@
   
           <div class="crono-tcc">
             <img src="../img/tcc.png">
-            <a href="#"><button>Listar</button></a>
+            <a href="../php/CronoEventos.php"><button>Listar</button></a>
           </div>
           <div class="crono-reuniao">
             <img src="../img/reuniao.png">
-            <a href="#"><button>Listar</button></a>
+            <a href="../php/cronoReuniao.php"><button>Listar</button></a>
           </div>
         </div>
 
@@ -241,7 +243,7 @@
        
   
       <footer class="footer">
-        <p><a href="#">Virtual Increased Plan</a> © Todos os direitos reservados - 2020</p>
+        <p><a href="homeadm.php">Virtual Increased Plan</a> © Todos os direitos reservados - 2020</p>
       </footer>
     </div> 
 

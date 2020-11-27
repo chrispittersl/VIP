@@ -30,7 +30,7 @@
             
             <!-- header  -->
             <header class="header">
-                <a href="home.php" class="logo"><img src="../img/logonome.png"></a>
+                <a href="home-visitante.php" class="logo"><img src="../img/logonome.png"></a>
                 <div class="btn">
                   <span class="fas fa-bars"></span>
                 </div>
@@ -38,7 +38,7 @@
                 <nav class="sidebar">
                   <div id="mySidebar" class="sidebar">
                     <ul>
-                      <li class="margin-top margin-bottom"><a href="home.php">Home</a></li>
+                      <li class="margin-top margin-bottom"><a href="home-visitante.php">Home</a></li>
                       <li>
                         <button class="dropdown-btn margin-bottom">Cronogramas
                           <i class="fa fa-caret-down"></i>
@@ -48,7 +48,6 @@
                           <li><a href="../php/cronoReuniao.php" class="margin-bottom">Reuniões de pais</a></li> 
                         </ul>
                       </li>
-                      <li><a href="homeadm.php">Administrador</a></li>
                       <li class="margin-top margin-bottom"><a href="../php/logout.php">Sair</a></li>
                     </ul>
                   </div>
@@ -105,7 +104,7 @@
                     <div class="mapa">
                         <img src="../img/slide2.png" class="borda">
                         <p>mapeamento</p>
-                        <a href="../php/mapa.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i> </button></a>
+                        <a href="../php/mapa_visitante.php"><button><i class="fa fa-arrow-right" aria-hidden="true"></i> </button></a>
                     </div>
                     
                     <!-- acesso ao cronograma reuniao  -->
@@ -131,7 +130,7 @@
         <hr class="todas-colunas">
         <!-- rodape  -->
         <footer class="footer  todas-colunas">
-            <p><a href="home.php">Virtual Increased Plan</a> © Todos os direitos reservados - 2020</p>
+            <p><a href="home-visitante.php">Virtual Increased Plan</a> © Todos os direitos reservados - 2020</p>
         </footer>
     </div>
     

@@ -1,5 +1,5 @@
 <?php
-	include_once "session_geral.php";
+	// include_once "session_geral.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,18 +26,12 @@
             </div>
             <div class="btns">
                 <button id="resetar" class="btn-reset margin-zero">DESFAZER</button>
-                <?php
-                if($_SESSION['user']=="adm"){
-                    ?>
-                    <a href="../html/homeadm.php"><button  class="btn-reset">VOLTAR</button></a>
-                    <?php
-                }
-                else{
-                    ?>
-                    <a href="../html/home.php"><button  class="btn-reset">VOLTAR</button></a>
-                <?php
-                    }
-                ?>
+                
+               
+                    
+                  
+             <a href="../html/home.php"><button  class="btn-reset">VOLTAR</button></a>
+                
                 
             </div>
 
@@ -84,7 +78,6 @@
                                 <li><button class="rota" id="btn-sala15">Sala 15</button></li>
                                 <li><button class="rota" id="btn-sala16">Sala 16</button></li>
                                 <li><button class="rota" id="btn-banheiros_masc_B">Banheiros Masc.</button></li>
-                                <li><button class="rota" id="btn-banheiros_masc_B">Caguei</button></li>
                                 <li><button class="rota margin-bottom" id="btn-banheiros_fem_B">Banheiros Fem.</button></li>
                             </ul>
                         </li>
