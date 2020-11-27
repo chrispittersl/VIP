@@ -172,7 +172,7 @@
             else{
                 alert("Falha ao alterar o registro, favor contactar o administrador.");
                 window.location.href = "../../teste/homeadm.html";
-                break;
+
             }
         })
     })
@@ -204,7 +204,6 @@
             else{
                 alert("Erro ao inserir o registro no Banco de Dados");
                 window.location.href = "../../html/homeadm.php";
-                break;
             }
         })
     })
@@ -238,21 +237,23 @@
         })
     })
     // Form Pesquisar Reuniao
-    $("#btn-alt1-r").on("click",function(e){
+    $("#btn-pesq-r").on("click",function(e){
         e.preventDefault();
         var cod_reuniao = $('#cod_reuniao').val();
+        console.log("vadia puta ta errado");
         $.ajax({
         url: 'PesqReuniao_verifica.php',
         method: 'POST',
         data: {cod_reuniao: cod_reuniao},
         dataType: 'json'
         }).done(function(result){
+            
             switch (result){
-                case "0":
+                case '0':
                     document.form_ReuniaoAlt1.submit();
                     break;
 
-                case "1":
+                case '1':
                     alert("Não há reuniões cadastradas!");
                     window.location.href = "../../html/homeadm.php";
                     break;
