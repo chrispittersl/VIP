@@ -16,10 +16,10 @@ $(document).ready(function(){
             $('#password').val('');
             switch(result){
                 case 'administrador':
-                    window.location.href = "homeadm.html";
+                    window.location.href = "/html/homeadm.php";
                     break;
                 case 'válido':
-                    window.location.href = "home.html";
+                    window.location.href = "/html/home.php";
                     break;
                 case 'inválido':
                     $('#errorLogin').show();
