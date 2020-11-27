@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -60,7 +63,7 @@
 
         <table>
             
-            <!-- <!-- <thead> -->
+            <!-- <thead> -->
                 <tr>
                     <th>TCC</th>
                     <th>Descrição</th>
@@ -72,25 +75,19 @@
             <!-- <tbody> -->
                 <?php 
                 
-                    include 'config.php';
-                    include 'mysqlexecuta.php';
-                    $con = conectar();
-                    mysql_select_db('vip');
-                    $sql = "SELECT * FROM tcc order by data_tcc ASC";
-
-
-                    $consulta = mysqlexecuta($con,$sql);
-
+                    include_once "conexao.php";
+                    $stmt = $pdo->prepare("SELECT * FROM tcc order by data_tcc ASC");
+                    $stmt->execute();
                     //if($rows > 0){ 
-                        while($row = mysql_fetch_assoc($consulta))
-                        {
+                      while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+                        
                             ?>
                                 <tr>
                                 
-                                    <td><?php echo utf8_encode($row['nome']);?></td>
-                                    <td><?php echo utf8_encode($row['descricao']);?></td>
-                                    <td><?php echo utf8_encode($row['horario_tcc']);?></td>
-                                    <td><?php echo utf8_encode($row['data_tcc']);?></td>
+                                    <td><?php echo $dados['nome'];?></td>
+                                    <td><?php echo $dados['descricao'];?></td>
+                                    <td><?php echo $dados['horario_tcc'];?></td>
+                                    <td><?php echo $dados['data_tcc'];?></td>
                                 </tr>
                            <?php
                                     
