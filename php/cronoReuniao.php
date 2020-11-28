@@ -59,27 +59,20 @@
             
                 <?php 
                 
-                    include 'config.php';
-                    include 'mysqlexecuta.php';
-                    $con = conectar();
-                    mysql_select_db('vip');
-                    $sql = "SELECT * FROM reunioes order by data_reuniao ASC";
-
-
-                    $consulta = mysqlexecuta($con,$sql);
-
-                    //if($rows > 0){ 
-                        while($row = mysql_fetch_assoc($consulta))
+                    include_once "conexao.php";
+                    $stmt = $pdo->prepare("SELECT * FROM reunioes order by data_reuniao ASC");
+                    $stmt->execute();
+                        while($row = $stmt->fetch(PDO::FETCH_ASSOC))
                         {
                 ?>
-                                <tr>
-                                    <td><?php echo utf8_encode($row['nome']);?></td>
-                                    <td><?php echo utf8_encode($row['descricao']);?></td>
-                                    <td><?php echo utf8_encode($row['horario_reuniao']);?></td>
-                                    <td><?php echo utf8_encode($row['data_reuniao']);?></td>
-                                    
-                                    
-                                </tr>
+                          <tr>
+                              <td><?php echo utf8_encode($row['nome']);?></td>
+                              <td><?php echo utf8_encode($row['descricao']);?></td>
+                              <td><?php echo utf8_encode($row['horario_reuniao']);?></td>
+                              <td><?php echo utf8_encode($row['data_reuniao']);?></td>
+                              
+                              
+                          </tr>
                 <?php
                                 
                         }
