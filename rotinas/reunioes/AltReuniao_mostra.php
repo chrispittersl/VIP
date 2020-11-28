@@ -60,7 +60,7 @@
 				
 				<label for="num_sala">Número de sala</label>
 				<!-- <input type='text' list="dtl_num_sala" id="num_sala" name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $num_sala;?>' required> -->
-				<select id=num_sala name="num_sala">
+				<select id="num_sala" name="num_sala">
 				<?php
 					$stmt = $pdo->prepare("SELECT * FROM sala");
 					$stmt->execute();
