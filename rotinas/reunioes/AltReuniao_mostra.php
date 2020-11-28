@@ -50,46 +50,46 @@
 				<input type='text' id="data_reuniao" name='data_reuniao' value='<?php echo $data_reuniao;?>' required>
 				
 				<label for="descricao">Descrição</label>
-				<textarea id="descricao" name="descricao"><?php echo $descricao;?> </textarea>
+				<textarea id="descricao" name="descricao"><?php echo utf8_encode($descricao);?> </textarea>
 				
 				<label for="nome">Nome</label>
-				<input type='text' id="nome" name='nome' value='<?php echo $nome;?>' required>
+				<input type='text' id="nome" name='nome' value='<?php echo utf8_encode($nome);?>' required>
 				
 				<label for="data_agendamento">Data de agentamento</label>
 				<input type='text' id="data_agendamento" name='data_agendamento' value='<?php echo $data_agendamento;?>' required>
 				
 				<label for="num_sala">Número de sala</label>
-				<input type='text' list="dtl_num_sala" id="num_sala" name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $num_sala;?>' required>
-				
-				<label for="cod_usuario">Código de usuário</label>
-				<input type='text' list="dtl_cod_usuario" id="cod_usuario" name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $cod_usuario;?>' required>
-				
-
-
-
-
-				<!-- DataLists -->
-				<datalist id="dtl_num_sala">
-					<?php
+				<!-- <input type='text' list="dtl_num_sala" id="num_sala" name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $num_sala;?>' required> -->
+				<select id=num_sala name="num_sala">
+				<?php
 					$stmt = $pdo->prepare("SELECT * FROM sala");
 					$stmt->execute();
 					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
 					?>
-						<option value="<?php echo $dados['num_sala'];?>"><?php echo $dados['nome_sala'];?></option>
+						<option value="<?php echo utf8_encode($dados['num_sala']);?>"><?php echo utf8_encode($dados['num_sala']);?> - <?php echo utf8_encode($dados['nome_sala']);?></option>
 					<?php
 					}
 					?>
-				</datalist>
-				<datalist id="dtl_cod_usuario">
-					<?php
+				</select>
+				
+				<label for="cod_usuario">Código de usuário</label>
+				<!-- <input type='text' list="dtl_cod_usuario" id="cod_usuario" name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $cod_usuario;?>' required> -->
+				<select id=cod_usuario name="cod_usuario">
+				<?php
 					$stmt = $pdo->prepare("SELECT * FROM usuario");
 					$stmt->execute();
 					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
 					?>
-						<option value="<?php echo $dados['cod_usuario'];?>"><?php echo $dados['usuario'];?></option>
+						<option value="<?php echo utf8_encode($dados['cod_usuario']);?>"><?php echo utf8_encode($dados['cod_usuario']);?> - <?php echo utf8_encode($dados['usuario']);?></option>
 					<?php
 					}
 					?>
+				</select>
+
+				
+
+
+				
 				</datalist>
 				<button id="btn-alt2-r"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button>
 				<a href="../../html/homeadm.php">Voltar para a <span>home</span></a>
