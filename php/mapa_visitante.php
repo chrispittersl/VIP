@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Mapa Completo</title>
+        <title>Mapa Simples</title>
         <meta charset="utf-8">
         <!--CSS-->
 		<link rel="stylesheet" href="../css/mapa.css">
@@ -22,8 +22,8 @@
                   <span class="fas fa-bars fa-2x"></span>
             </div>
             <div class="btns">
-                <a href="#"><button class="btn-reset margin-zero">RESETAR</button></a>
-                <a href="#"><button  class="btn-reset">SAIR</button></a>
+                <button id="resetar" class="btn-reset margin-zero">DESFAZER</button>
+                <a href="../html/home-visitante.php"><button  class="btn-reset">VOLTAR</button></a>
             </div>
 
             <nav class="legenda">
