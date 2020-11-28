@@ -39,16 +39,6 @@
               <ul>
                 <li class="margin-top margin-bottom"><a href="home.php">Home</a></li>
                 <li>
-                  <button class="dropdown-btn margin-bottom ">Monitorar
-                    <i class="fa fa-caret-down"></i>
-                  </button>
-                  <ul class="dropdown-container ">
-                    <li><a href="#tcc" class="margin-bottom">TCCs</a></li>
-                    <li><a href="#reuniao" class="margin-bottom">Reuniões</a></li> 
-                    <li><a href="#horario" class="margin-bottom">Horários</a></li> 
-                  </ul>
-                </li>
-                <li>
                   <button class="dropdown-btn margin-bottom">Listar
                     <i class="fa fa-caret-down"></i>
                   </button>
