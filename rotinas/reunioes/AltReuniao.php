@@ -27,18 +27,16 @@
 	<div class="cont-rotinas">
 		<h1>Alteração</h1>
 		<form id="form_ReuniaoAlt1" action="AltReuniao_mostra.php" method="POST" name="form_ReuniaoAlt1">
-			<input type="text" id="cod_reuniao" name="cod_reuniao" list="cod" placeholder="Código da reunião" autocomplete="off" required onkeypress="return blockletras(event)">
-			<datalist id="cod">
-				
-				<!-- ADICIONAR DIRETO DO BD -->
+			<!-- <input type="text" id="cod_reuniao" name="cod_reuniao" list="cod" placeholder="Código da reunião" autocomplete="off" required onkeypress="return blockletras(event)"> -->
+			<select id="cod_reuniao" name="cod_reuniao">
 				<?php
-				while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
-				?>
-					<option value="<?php echo $dados['cod_reuniao'];?>"><?php echo $dados['nome'];?></option>
+					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+					?>
+						<option value="<?php echo utf8_encode($dados['cod_reuniao']);?>"><?php echo utf8_encode($dados['cod_reuniao']);?> - <?php echo utf8_encode($dados['nome']);?></option>
 				<?php
 				}
 				?>
-			</datalist>
+			</select>
 			<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
 			<button id="btn-alt1-r"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
 			<a href="../../html/homeadm.php">Voltar para a <span>home</span></a>
