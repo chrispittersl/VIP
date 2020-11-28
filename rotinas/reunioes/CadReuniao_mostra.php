@@ -29,7 +29,7 @@
 				<label for="horario_reuniao">Horário Reunião</label>
 				<input type="time" id="horario_reuniao" name="horario_reuniao" placeholder = "Ex: 08:00:00" required>
 
-				<label for="data_reuniao">Data Reunião</label>
+				<label for="data_reuniao">Data que irá ocorrer</label>
 				<input type="date" id="data_reuniao" name="data_reuniao"  placeholder = "Ex: 2001-01-01" required>
 
 				<label for="descricao">Descrição</label>
@@ -49,7 +49,7 @@
 					$stmt->execute();
 					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
 					?>
-						<option value="<?php echo utf8_encode($dados['num_sala']);?>"><?php echo utf8_encode($dados['num_sala']);?> - <?php echo utf8_encode($dados['nome_sala']);?></option>
+						<option value="<?php echo $dados['num_sala'];?>"><?php echo $dados['num_sala'];?> - <?php echo $dados['nome_sala'];?></option>
 					<?php
 					}
 					?>
@@ -63,7 +63,7 @@
 					$stmt->execute();
 					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
 					?>
-						<option value="<?php echo utf8_encode($dados['cod_usuario']);?>"><?php echo utf8_encode($dados['cod_usuario']);?> - <?php echo utf8_encode($dados['usuario']);?></option>
+						<option value="<?php echo $dados['cod_usuario'];?>"><?php echo $dados['cod_usuario'];?> - <?php echo $dados['usuario'];?></option>
 				<?php
 				}
 				?>

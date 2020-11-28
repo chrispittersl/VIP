@@ -22,9 +22,11 @@
 		<?php
 			include_once "../../php/conexao.php";
 			$cod_reuniao = $_POST['cod_reuniao'];
-			$stmt = $pdo->prepare("SELECT * FROM reunioes where cod_reuniao = $cod_reuniao");
+			$stmt = $pdo->prepare("SELECT cod_reuniao,horario_reuniao,data_reuniao,descricao,nome,data_agendamento,S.num_sala,U.cod_usuario FROM reunioes AS R INNER JOIN sala AS S ON R.num_sala = S.num_sala INNER JOIN usuario AS U ON R.cod_usuario = U.cod_usuario where cod_reuniao = $cod_reuniao");
 			$stmt->execute();
 			$row = $stmt->fetch(PDO::FETCH_ASSOC);
+			$sala = $row['num_sala'];
+			$cod_usuario = $row['cod_usuario'];
 		?>
 		<div class="cont-rotinas-gd">
 			<h1>Alteração</h1>
@@ -37,7 +39,7 @@
 				<label for="horario_reuniao">Horário da Reunião</label>
 				<input type='time' id="horario_reuniao" name='horario_reuniao' value='<?php echo $row['horario_reuniao'];?>' required>
 				
-				<label for="data_reuniao">Data da reunião</label>
+				<label for="data_reuniao">Data que irá ocorrer</label>
 				<input type='date' id="data_reuniao" name='data_reuniao' value='<?php echo $row['data_reuniao'];?>' required>
 				
 				<label for="descricao">Descrição</label>
@@ -56,9 +58,12 @@
 					$stmt = $pdo->prepare("SELECT * FROM sala");
 					$stmt->execute();
 					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
-					?>
-						<option value="<?php echo $dados['num_sala'];?>"><?php echo $dados['num_sala'];?> - <?php echo $dados['nome_sala'];?></option>
-					<?php
+						if($dados['num_sala'] == $sala){
+							?><option value="<?php echo $dados['num_sala'];?>" selected><?php echo $dados['num_sala'];?> - <?php echo $dados['nome_sala'];?></option><?php
+						}
+						else{
+							?><option value="<?php echo $dados['num_sala'];?>"><?php echo $dados['num_sala'];?> - <?php echo $dados['nome_sala'];?></option><?php
+						}
 					}
 					?>
 				</select>
@@ -70,8 +75,14 @@
 					$stmt = $pdo->prepare("SELECT * FROM usuario");
 					$stmt->execute();
 					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+						if($dados['cod_usuario'] == $cod_usuario){
+							?><option value="<?php echo $dados['cod_usuario'];?>" selected><?php echo $dados['cod_usuario'];?> - <?php echo $dados['usuario'];?></option><?php
+						}
+						else{
+							?><option value="<?php echo $dados['cod_usuario'];?>"><?php echo $dados['cod_usuario'];?> - <?php echo $dados['usuario'];?></option><?php
+						}
 					?>
-						<option value="<?php echo $dados['cod_usuario'];?>"><?php echo $dados['cod_usuario'];?> - <?php echo $dados['usuario'];?></option>
+						
 					<?php
 					}
 					?>

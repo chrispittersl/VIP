@@ -34,7 +34,7 @@
 					<th>Nome</th>
 					<th>Código da reunião</th>
 					<th>Horário da reunião</th>
-					<th>Data da reunião</th>
+					<th>Data que irá ocorrer</th>
 					<th>Descrição</th>
 					<th>Data de agendamento</th>
 					<th>Número da sala</th>
@@ -48,10 +48,10 @@
 					<tr>
 						<td><?php echo $row['nome'];?></td>
 						<td><?php echo $row['cod_reuniao'];?></td>
-						<td><?php echo $row['horario_reuniao'];?></td>
-						<td><?php echo $row['data_reuniao'];?></td>
+						<td><?php echo date('H:i', strtotime($row['horario_reuniao']));?></td>
+						<td><?php echo date('d/m/Y', strtotime($row['data_reuniao']));?></td>
 						<td><?php echo $row['descricao'];?></td>
-						<td><?php echo $row['data_agendamento'];?></td>
+						<td><?php echo date('d/m/Y', strtotime($row['data_agendamento']));?></td>
 						<td><?php echo $row['num_sala'];?></td>
 						<td><?php echo $row['cod_usuario'];?></td>
 					</tr>
