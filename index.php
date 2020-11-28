@@ -1,6 +1,7 @@
 <?php
     session_start();
-    if($_SESSION['logged']==TRUE){
+    $logged = $_SESSION['logged'] ?? NULL;
+    if($logged==TRUE){
         if($_SESSION['user']=="adm"){
             header("Location: html/homeadm.php");
         }
@@ -36,7 +37,7 @@
         <div class="cont-login">
             <div class="content">
                 <div class="first-column">
-                    <img src="../img/logo-mobile.png">
+                    <img src="img/logo-mobile.png">
                     <h1 class="title">Login</h1>
                     <a class="visit" href="#">Acesse como <span>Visitante</span></a>
                 </div>
@@ -59,9 +60,8 @@
         </div>
 
         <!-- script  -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-        <script src="../js/blockletras.js"></script>
-        <script src="../js/login.js"></script>	
+        <script src="js/blockletras.js"></script>
+        <script src="js/login.js"></script>	
     </body>
 </html>
