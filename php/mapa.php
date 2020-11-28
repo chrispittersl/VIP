@@ -1,5 +1,5 @@
 <?php
-	// include_once "session_geral.php";
+	include_once "session_geral.php";
 ?>
 <!DOCTYPE html>
 <html>
