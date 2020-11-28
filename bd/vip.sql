@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: 27-Nov-2020 às 06:35
--- Versão do servidor: 5.7.17
--- PHP Version: 5.6.30
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 28-Nov-2020 às 03:46
+-- Versão do servidor: 5.7.31
+-- versão do PHP: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,10 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `vip`
+-- Banco de dados: `vip`
 --
-CREATE DATABASE IF NOT EXISTS `vip` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
-USE `vip`;
 
 -- --------------------------------------------------------
 
@@ -30,11 +27,13 @@ USE `vip`;
 -- Estrutura da tabela `curso`
 --
 
-CREATE TABLE `curso` (
-  `cod_curso` int(10) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `curso`;
+CREATE TABLE IF NOT EXISTS `curso` (
+  `cod_curso` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `nome_curso` varchar(40) NOT NULL,
-  `tipo_curso` varchar(30) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `tipo_curso` varchar(30) NOT NULL,
+  PRIMARY KEY (`cod_curso`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `curso`
@@ -60,16 +59,18 @@ INSERT INTO `curso` (`cod_curso`, `nome_curso`, `tipo_curso`) VALUES
 -- Estrutura da tabela `horario_aula`
 --
 
-CREATE TABLE `horario_aula` (
-  `cod_horario` int(11) NOT NULL,
+DROP TABLE IF EXISTS `horario_aula`;
+CREATE TABLE IF NOT EXISTS `horario_aula` (
+  `cod_horario` int(11) NOT NULL AUTO_INCREMENT,
   `cod_usuario` int(11) NOT NULL,
   `cod_turma` int(11) NOT NULL,
   `horainicio` time NOT NULL,
   `horafim` time NOT NULL,
   `dia_da_semana` varchar(15) NOT NULL,
   `materia` varchar(50) NOT NULL,
-  `professor` varchar(60) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `professor` varchar(60) NOT NULL,
+  PRIMARY KEY (`cod_horario`)
+) ENGINE=MyISAM AUTO_INCREMENT=658 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `horario_aula`
@@ -714,16 +715,18 @@ INSERT INTO `horario_aula` (`cod_horario`, `cod_usuario`, `cod_turma`, `horainic
 -- Estrutura da tabela `reunioes`
 --
 
-CREATE TABLE `reunioes` (
-  `cod_reuniao` int(11) NOT NULL,
+DROP TABLE IF EXISTS `reunioes`;
+CREATE TABLE IF NOT EXISTS `reunioes` (
+  `cod_reuniao` int(11) NOT NULL AUTO_INCREMENT,
   `horario_reuniao` time NOT NULL,
   `data_reuniao` date NOT NULL,
   `descricao` varchar(250) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `data_agendamento` date NOT NULL,
   `num_sala` int(11) NOT NULL,
-  `cod_usuario` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `cod_usuario` int(11) NOT NULL,
+  PRIMARY KEY (`cod_reuniao`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `reunioes`
@@ -731,7 +734,7 @@ CREATE TABLE `reunioes` (
 
 INSERT INTO `reunioes` (`cod_reuniao`, `horario_reuniao`, `data_reuniao`, `descricao`, `nome`, `data_agendamento`, `num_sala`, `cod_usuario`) VALUES
 (1, '15:30:00', '2020-10-08', 'Reunião de pais da turma 3 ano Etim Informáica, a professora Ivonete conduzirá a reunião', 'Reunião de pais e mestres', '2020-09-01', 18, 1),
-(2, '12:30:00', '2020-10-23', 'Reunião de pais da turma 2 ano MTEC Recursos Humanos, o professor Elpidio conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-15', 18, 1),
+(2, '12:30:00', '2020-10-23', 'Reunião de pais da turma 2 ano MTEC Recursos Humanos, o professor Elpidio conduzirá a reunião ', 'Reunião de pais e mestres', '2020-10-15', 5, 1),
 (3, '12:30:00', '2020-10-23', 'Reunião de pais da turma 1 módulo do curso Técnico Administração, a professora Amanda conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-07', 18, 1),
 (4, '16:35:00', '2020-11-01', 'Reunião de pais da turma 3 ano Etim administração, professora Silvana conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-16', 18, 1),
 (5, '19:00:00', '2020-11-10', 'Reunião de pais da turma 1 módulo do curso Técnico Serviços Jurídicos, professor Francimar conduzirá a reunião', 'Reunião de pais e mestres', '2020-10-13', 18, 1);
@@ -742,10 +745,12 @@ INSERT INTO `reunioes` (`cod_reuniao`, `horario_reuniao`, `data_reuniao`, `descr
 -- Estrutura da tabela `sala`
 --
 
-CREATE TABLE `sala` (
-  `num_sala` int(10) UNSIGNED NOT NULL,
-  `nome_sala` varchar(30) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `sala`;
+CREATE TABLE IF NOT EXISTS `sala` (
+  `num_sala` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nome_sala` varchar(30) NOT NULL,
+  PRIMARY KEY (`num_sala`)
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `sala`
@@ -779,16 +784,18 @@ INSERT INTO `sala` (`num_sala`, `nome_sala`) VALUES
 -- Estrutura da tabela `tcc`
 --
 
-CREATE TABLE `tcc` (
-  `cod_tcc` int(11) NOT NULL,
+DROP TABLE IF EXISTS `tcc`;
+CREATE TABLE IF NOT EXISTS `tcc` (
+  `cod_tcc` int(11) NOT NULL AUTO_INCREMENT,
   `horario_tcc` time NOT NULL,
   `data_tcc` date NOT NULL,
   `descricao` varchar(250) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `data_agendamento` date NOT NULL,
   `num_sala` int(11) NOT NULL,
-  `cod_usuario` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `cod_usuario` int(11) NOT NULL,
+  PRIMARY KEY (`cod_tcc`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tcc`
@@ -807,12 +814,14 @@ INSERT INTO `tcc` (`cod_tcc`, `horario_tcc`, `data_tcc`, `descricao`, `nome`, `d
 -- Estrutura da tabela `turma`
 --
 
-CREATE TABLE `turma` (
-  `cod_turma` int(11) NOT NULL,
+DROP TABLE IF EXISTS `turma`;
+CREATE TABLE IF NOT EXISTS `turma` (
+  `cod_turma` int(11) NOT NULL AUTO_INCREMENT,
   `serie` varchar(30) COLLATE utf8_bin NOT NULL,
   `num_sala` int(11) NOT NULL,
-  `cod_curso` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `cod_curso` int(11) NOT NULL,
+  PRIMARY KEY (`cod_turma`)
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Extraindo dados da tabela `turma`
@@ -859,11 +868,13 @@ INSERT INTO `turma` (`cod_turma`, `serie`, `num_sala`, `cod_curso`) VALUES
 -- Estrutura da tabela `usuario`
 --
 
-CREATE TABLE `usuario` (
-  `cod_usuario` int(11) NOT NULL,
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `cod_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(20) NOT NULL,
-  `senha` varchar(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `senha` varchar(20) NOT NULL,
+  PRIMARY KEY (`cod_usuario`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -872,92 +883,7 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`cod_usuario`, `usuario`, `senha`) VALUES
 (1, 'adm', '123'),
 (2, 'geral', '456');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `curso`
---
-ALTER TABLE `curso`
-  ADD PRIMARY KEY (`cod_curso`);
-
---
--- Indexes for table `horario_aula`
---
-ALTER TABLE `horario_aula`
-  ADD PRIMARY KEY (`cod_horario`);
-
---
--- Indexes for table `reunioes`
---
-ALTER TABLE `reunioes`
-  ADD PRIMARY KEY (`cod_reuniao`);
-
---
--- Indexes for table `sala`
---
-ALTER TABLE `sala`
-  ADD PRIMARY KEY (`num_sala`);
-
---
--- Indexes for table `tcc`
---
-ALTER TABLE `tcc`
-  ADD PRIMARY KEY (`cod_tcc`);
-
---
--- Indexes for table `turma`
---
-ALTER TABLE `turma`
-  ADD PRIMARY KEY (`cod_turma`);
-
---
--- Indexes for table `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`cod_usuario`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `curso`
---
-ALTER TABLE `curso`
-  MODIFY `cod_curso` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT for table `horario_aula`
---
-ALTER TABLE `horario_aula`
-  MODIFY `cod_horario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=658;
---
--- AUTO_INCREMENT for table `reunioes`
---
-ALTER TABLE `reunioes`
-  MODIFY `cod_reuniao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `sala`
---
-ALTER TABLE `sala`
-  MODIFY `num_sala` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
---
--- AUTO_INCREMENT for table `tcc`
---
-ALTER TABLE `tcc`
-  MODIFY `cod_tcc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `turma`
---
-ALTER TABLE `turma`
-  MODIFY `cod_turma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
---
--- AUTO_INCREMENT for table `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
