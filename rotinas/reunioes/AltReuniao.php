@@ -5,7 +5,7 @@
 <html lang="pt-br">
 	<head>
 		<title>Alteração de Reuniões </title>
-		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS-->
 		<link rel="stylesheet" href="../css/rotinas-tudo.css">
@@ -19,23 +19,24 @@
 		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	</head>
 	<body>
-	<?php
-		include_once "../../php/conexao.php";
-		$stmt = $pdo->prepare("SELECT * FROM reunioes order by cod_reuniao asc");
-		$stmt->execute();
-	?>
+	
 	<div class="cont-rotinas">
 		<h1>Alteração</h1>
 		<form id="form_ReuniaoAlt1" action="AltReuniao_mostra.php" method="POST" name="form_ReuniaoAlt1">
 			<!-- <input type="text" id="cod_reuniao" name="cod_reuniao" list="cod" placeholder="Código da reunião" autocomplete="off" required onkeypress="return blockletras(event)"> -->
 			<select id="cod_reuniao" name="cod_reuniao">
 				<?php
-					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
-					?>
-						<option value="<?php echo utf8_encode($dados['cod_reuniao']);?>"><?php echo utf8_encode($dados['cod_reuniao']);?> - <?php echo utf8_encode($dados['nome']);?></option>
+				include_once "../../php/conexao.php";
+				$stmt = $pdo->prepare("SELECT * FROM reunioes");
+
+				$stmt->execute();
+				while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+				?>
+					<option value="<?php echo $dados['cod_reuniao'];?>"><?php echo $dados['cod_reuniao'];?> - <?php echo $dados['nome'];?></option>
 				<?php
 				}
 				?>
+				
 			</select>
 			<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
 			<button id="btn-alt1-r"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>

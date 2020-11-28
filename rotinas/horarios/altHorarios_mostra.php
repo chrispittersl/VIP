@@ -43,12 +43,15 @@
 				<input type='text' id="cod_turma" name='cod_turma' value='<?php echo $row['cod_turma'];?>' required>
 					
 				<label for="horainicio">Horário de Início</label>
-				<input type='text' id="horainicio" name='horainicio' value='<?php echo $row['horainicio'];?>' required>
+				<input type='time' id="horainicio" name='horainicio' value='<?php echo $row['horainicio'];?>' required>
 					
 				<label for="horafim">Horário de fim</label>
-				<input type='text' id="horafim" name='horafim' value='<?php echo $row['horafim'];?>' required>
+				<input type='time' id="horafim" name='horafim' value='<?php echo $row['horafim'];?>' required>
 					
 				<label for="dia_da_semana">	Dia da semana</label>
+				<select>
+					<option value=""></option>
+				</select>	
 				<input type='text' id="dia_da_semana" name='dia_da_semana' value='<?php echo $row['dia_da_semana'];?>' required>
 					
 				<label for="materia">Matéria</label>

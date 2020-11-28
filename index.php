@@ -39,7 +39,7 @@
                 <div class="first-column">
                     <img src="img/logo-mobile.png">
                     <h1 class="title">Login</h1>
-                    <a class="visit" href="#">Acesse como <span>Visitante</span></a>
+                    <a class="visit" href="html/home-visitante.php">Acesse como <span>Visitante</span></a>
                 </div>
 
                 <div class="second-column">

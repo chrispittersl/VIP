@@ -40,10 +40,10 @@
             $sala = "Sala 16 - Bloco B";
 
         /* Setando o fuso horário local do servidor */
-        
+        date_default_timezone_set("America/Sao_Paulo");
         setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-        $dia = ucfirst(strftime('%A'));
-        $hora = ucfirst(strftime('%T'));
+        $dia = ucfirst(utf8_encode(strftime('%A')));
+        $hora = ucfirst(utf8_encode(strftime('%T')));
 
         $stmt = $pdo->prepare("SELECT horainicio,horafim,dia_da_semana,materia,professor,serie,nome_curso,tipo_curso,
         nome_sala FROM horario_aula AS H INNER JOIN turma  AS T ON H.cod_turma = T.cod_turma INNER JOIN curso AS 

@@ -22,23 +22,22 @@
 	<body>
 		<?php
 		include_once "../../php/conexao.php";
+		$stmt = $pdo->prepare("SELECT * FROM reunioes order by cod_reuniao asc");
+		$stmt->execute();;
 		?>
 		<div class="cont-rotinas">
 			<h1>Pesquisa</h1>
-			<form  name="f1">
-				<input type="text" id="cod_reuniao" name="cod_reuniao" autocomplete="off" list="cod" required  onkeypress= "return blockletras(event)">
-				<datalist id="cod">
-					<!-- ADICIONAR DIRETO DO BD -->
-					<?php
-					$stmt = $pdo->prepare("SELECT * FROM reunioes");
-					$stmt->execute();
+			<form  name="f1" action="PesqReuniao.php" method="post">
+				<!-- <input type="text" id="cod_reuniao" name="cod_reuniao" autocomplete="off" list="cod" required  onkeypress= "return blockletras(event)"> -->
+				<select id="cod_reuniao" name="cod_reuniao">
+				<?php
 					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
 					?>
-						<option value="<?php echo $dados['cod_reuniao'];?>"><?php echo $dados['nome'];?></option>
+						<option value="<?php echo $dados['cod_reuniao'];?>"><?php echo $dados['cod_reuniao'];?> - <?php echo $dados['nome'];?></option>
 					<?php
 					}
 					?>
-				</datalist>
+				</select>
 				<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
 				<button id="btn-pesq-r"><i class="fa fa-search fa-lg" aria-hidden="true"></i> </button>
 				<a href="../../html/homeadm.php">Voltar para a <span>home</span></a>

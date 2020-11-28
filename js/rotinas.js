@@ -250,7 +250,7 @@
             
             switch (result){
                 case '0':
-                    document.form_ReuniaoAlt1.submit();
+                    document.f1.submit();
                     break;
 
                 case '1':

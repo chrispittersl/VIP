@@ -1,67 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <title>Cronograma de TCCs</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS-->
-        <link rel="stylesheet" href="../css/pag.css">
-        <link rel="stylesheet" href="../css/cronogramas.css">
+        <link rel="stylesheet" href="../rotinas/css/pesquisas.css">
         <!--ICONES BOOTSTRAP-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin = "anonymous">
         <!--ICON PAGINA-->
         <link rel = "shortcut icon" type = "imagem/x-icon" href = "../img/logo.ico"/>
-        <!--FONTE GOOGLE USADA-->
-        <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+        <!--FONTE GOOGLE USADA TITULO-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        <!-- FONTE CORPO DO SITE -->
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo&display=swap" rel="stylesheet">
         <!--IMPORTANDO JQUERY-->
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    
+
     </head>
 
     <body>
-        <!--MENU E NAVEGAÇÃO-->
-      <header class="cabecalho">
-          <a href="home.html"><h1 class="logo">Virtual Increased Plan</h1></a>
-          <div class="btn">
-            <span class="fas fa-bars"></span>
-          </div>
-          <nav class="sidebar">
-            <div id="mySidebar" class="sidebar">
-              <ul>
-                <li class="margin"><a href="../html/home.html">Home</a></li>
-                <li>
-                  <button class="dropdown-btn">Cronogramas
-                    <i class="fa fa-caret-down"></i>
-                  </button>
-                  <ul class="dropdown-container">
-                    <li><a href="CronoEventos.php">TCCs</a></li>
-                    <li><a href="cronoReuniao.php">Reuniões de pais</a></li> 
-                  </ul>
-                </li>
-                <li><a href="../html/login.html">Administrador</a></li>
-              </ul>
-            </div>
-          </nav>
-      </header>  
-
-      <div class="cronograma">
-        <div class="titulo">
-          <h2>Cronograma de TCCs</h2>
-        </div>
-
+      <div class="cont-pesq">
         <table>
-            
-            <!-- <!-- <thead> -->
                 <tr>
                     <th>TCC</th>
                     <th>Descrição</th>
                     <th>Horário</th>
                     <th id="col-data">Data</th>
                 </tr>
-            <!-- </thead> -->
         
-            <!-- <tbody> -->
                 <?php 
                 
                     include_once "conexao.php";
@@ -85,9 +54,8 @@
                     ?>
             <!-- </tbody> -->
         </table>
-        <div class="fechando">
-          <h3>.</h3>
-       </div>
+            <a href="#">VOLTAR</a>
+    </div>
         <!--SCRIPT PARA NAVBAR COLLAPSE-->
       <script>
             $('.btn').click(function(){

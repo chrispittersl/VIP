@@ -61,7 +61,7 @@
                                 <li><button class="rota" id="btn-sala5">Sala 5</button></li>
                                 <li><button class="rota" id="btn-sala6">Sala 6</button></li>
                                 <li><button class="rota" id="btn-sala7">Sala 7</button></li>
-                                <li><button class="rota" id="btn-sala8">Sala 6</button></li>
+                                <li><button class="rota" id="btn-sala8">Sala 8</button></li>
                                 <li><button class="rota" id="btn-banheiros_masc_A">Banheiros Masc.</button></li>
                                 <li><button class="rota margin-bottom" id="btn-banheiros_fem_A">Banheiros Fem.</button></li>
                             </ul>
