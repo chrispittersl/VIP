@@ -1,6 +1,7 @@
 <?php
     session_start();
-    if($_SESSION['logged'] == TRUE){
+    $logged = $_SESSION['logged'] ?? NULL;
+    if($logged == TRUE){
         
     }
     else{

@@ -33,7 +33,7 @@
             $_SESSION['password']=$dados['senha'];
             $_SESSION['logged']=TRUE;
             echo json_encode("válido");
-        exit;
+            exit;
         }
         
     }
