@@ -57,8 +57,8 @@
                           <tr>
                               <td><?php echo $row['nome'];?></td>
                               <td><?php echo $row['descricao'];?></td>
-                              <td><?php echo $row['horario_reuniao'];?></td>
-                              <td><?php echo $row['data_reuniao'];?></td>
+                              <td><?php echo date('H:i',strtotime($row['horario_reuniao']));?></td>
+                              <td><?php echo date('d/m/Y',strtotime($row['data_reuniao']));?></td>
                               
                               
                           </tr>
@@ -73,10 +73,10 @@
               ?> <a href="../html/home-visitante.php">VOLTAR</a>  <?php
               break;
             case '1':
-              ?>  <a href="../html/home.php">VOLTAR</a> <?php
+              ?>  <a href="../html/homeadm.php">VOLTAR</a> <?php
               break;
             case '2':
-              ?> <a href="../html/homeadm.php">VOLTAR</a> <?php
+              ?> <a href="../html/home.php">VOLTAR</a> <?php
               break;
           }
         ?>
