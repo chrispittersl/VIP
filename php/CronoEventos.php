@@ -1,3 +1,19 @@
+<?php
+  session_start();
+  $logged = $_SESSION['logged'] ?? NULL;
+  $controle = 0;
+  if($logged == TRUE){
+    if($_SESSION['user']=='adm'){
+      $controle = 1;
+    }
+    else{
+      $controle = 2;
+    }
+  }
+  else{
+    $controle = 0;
+  }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -42,10 +58,10 @@
                         ?>
                             <tr>
                             
-                                <td><?php echo utf8_encode($row['nome']);?></td>
-                                <td><?php echo utf8_encode($row['descricao']);?></td>
-                                <td><?php echo utf8_encode($row['horario_tcc']);?></td>
-                                <td><?php echo utf8_encode($row['data_tcc']);?></td>
+                                <td><?php echo $row['nome'];?></td>
+                                <td><?php echo $row['descricao'];?></td>
+                                <td><?php echo date("H:i",strtotime($row['horario_tcc']));?></td>
+                                <td><?php echo date('d/m/Y', strtotime($row['data_tcc']));?></td>
                             </tr>
                         <?php
                                 
@@ -54,7 +70,19 @@
                     ?>
             <!-- </tbody> -->
         </table>
-            <a href="#">VOLTAR</a>
+        <?php
+          switch ($controle){
+            case '0':
+              ?> <a href="../html/home-visitante.php">VOLTAR</a>  <?php
+              break;
+            case '1':
+              ?>  <a href="../html/homeadm.php">VOLTAR</a> <?php
+              break;
+            case '2':
+              ?> <a href="../html/home.php">VOLTAR</a> <?php
+              break;
+          }
+        ?>
     </div>
         <!--SCRIPT PARA NAVBAR COLLAPSE-->
       <script>
