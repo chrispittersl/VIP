@@ -22,13 +22,25 @@
 		<div class="cont-rotinas">
 			<h1>Alteração</h1>
 			<form id="form_HorariosAlt1" action="AltHorarios_mostra.php" method="POST" name="form_HorariosAlt1">
-				<input type="text" id="cod_horario" name="cod_horario" list="cod" placeholder="Código do horário" autocomplete="off" required onkeypress="return blockletras(event)">
-				<datalist id="cod">
-					<!-- ADICIONAR DIRETO DO BD -->
-				</datalist>
+				<!-- <input type="text" id="cod_horario" name="cod_horario" list="cod" placeholder="Código do horário" autocomplete="off" required onkeypress="return blockletras(event)"> -->
+				<select id="cod_horario" name="cod_horario">
+					<?php
+					include_once "../../php/conexao.php";
+					$stmt = $pdo->prepare("SELECT cod_horario,T.cod_turma,horainicio,horafim,dia_da_semana,materia,professor,serie,nome_curso,tipo_curso,
+					nome_sala FROM horario_aula AS H INNER JOIN turma  AS T ON H.cod_turma = T.cod_turma INNER JOIN curso AS 
+					C ON T.cod_curso = C.cod_curso INNER JOIN sala AS S ON T.num_sala = S.num_sala");
+					$stmt->execute();
+					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+					?>
+						<option value="<?php echo $dados['cod_horario'];?>"><?php echo $dados['cod_horario'];?> - <?php echo $dados['serie'];?> <?php echo $dados['nome_curso']; ?></option>
+					<?php
+					}
+					?>
+
+				</select>
 				<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
 				<button id="btn-alt1-h"><i class="fa fa-search fa-lg" aria-hidden="true"></i> </button>
-				<a href="#">Voltar para a <span>home</span></a>
+				<a href="../../html/homeadm.php">Voltar para a <span>home</span></a>
 			</form>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

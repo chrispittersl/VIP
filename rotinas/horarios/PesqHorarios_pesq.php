@@ -1,7 +1,10 @@
+<?php
+	include_once "../../php/session_adm.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<title>Pesquisa de Horários</title>
+		<title>Pesquisa de Dados: Horários</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--CSS-->
@@ -21,12 +24,18 @@
 			<h1>Pesquisa</h1>
 			<form action="PesqHorarios.php" method="POST" name="f1"> 
 				
-				<input type="text" name="cod_turma" required  onkeypress= "return blockletras(event)">
-				<datalist id="cod">
-					<!-- ADICIONAR DIRETO DO BD -->
-				</datalist>
+				<select id="cod_turma" name="cod_turma">
+					<?php
+						include_once "../../php/conexao.php";
+						$stmt = $pdo->prepare("SELECT cod_turma,serie,nome_curso FROM turma AS T INNER JOIN curso AS C ON T.cod_curso = C.cod_curso");
+						$stmt->execute();
+						while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+							?><option value="<?php echo $dados['cod_turma'];?>"><?php echo $dados['cod_turma'];?> - <?php echo $dados['serie']." ".$dados['nome_curso'];?> </option><?php
+						}
+					?>
+				</select>
 				<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
-				<button id="btn-pesq"><i class="fa fa-search fa-lg" aria-hidden="true"></i> </button>
+				<button id="btn-pesq-h"><i class="fa fa-search fa-lg" aria-hidden="true"></i> </button>
 				<a href="#">Voltar para a <span>home</span></a>
 			</form>
 		</div>

@@ -5,14 +5,14 @@
 	$cod_turma= $_POST["cod_turma"];
 	$horainicio= $_POST["horainicio"];
 	$horafim= $_POST["horafim"];
-	$diadasemana= $_POST["diadasemana"];
+	$dia_da_semana= $_POST["dia_da_semana"];
 	$materia= $_POST["materia"];
 	$professor= $_POST["professor"];
 	$error = 0;
 
 	try{
 		$stmt = $pdo->prepare("INSERT INTO horario_aula(cod_usuario,cod_turma,horainicio,horafim,dia_da_semana,materia,professor) 
-		Values($cod_usuario,$cod_turma,'$horainicio','$horafim','$diadasemana','$materia','$professor')");
+		Values($cod_usuario,$cod_turma,'$horainicio','$horafim','$dia_da_semana','$materia','$professor')");
 		$stmt->execute();
 	}
 	catch(Exception $e){

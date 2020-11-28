@@ -17,19 +17,10 @@
 	</head>
 	<body >
 		<?php
-			include 'config.php';
-			include 'mysqlexecuta.php';
-			$con = conectar();
-			mysql_select_db('vip');
+			include_once "../../php/conexao.php";
 			$cod_turma = $_POST["cod_turma"];
-			$sql = "SELECT * FROM horario_aula where cod_turma like '$cod_turma%' order by cod_turma";
-			$res = mysqlexecuta($con,$sql);
-			$quant = (mysql_num_rows($res));
-			if ($quant==0)
-			{
-				echo "Horários da turma não Cadastrado";
-			}
-			else{
+			$stmt = $pdo->prepare("SELECT * FROM horario_aula where cod_turma = $cod_turma order by cod_turma");
+			$stmt->execute();
 		?>
 		<div class="cont-pesq">
 			<table> 
@@ -44,26 +35,25 @@
 					<th>Professor</th>
 				</tr>	
 			<?php
-				while ($row = mysql_fetch_array($res)) 
+				while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
 				{
 			?>
 				<tr>
 					<td><?php echo $row['cod_horario'];?></td>
 					<td><?php echo $row['cod_usuario'];?></td>
 					<td><?php echo $row['cod_turma'];?></td>
-					<td><?php echo $row['horainicio'];?></td>
-					<td><?php echo $row['horafim'];?></td>
-					<td><?php echo utf8_encode($row['dia_da_semana']);?></td>
-					<td><?php echo utf8_encode($row['materia']);?></td>
-					<td><?php echo utf8_encode($row['professor']);?></td>
+					<td><?php echo date("H:i",strtotime($row['horainicio']));?></td>
+					<td><?php echo date("H:i",strtotime($row['horafim']));?></td>
+					<td><?php echo $row['dia_da_semana'];?></td>
+					<td><?php echo $row['materia'];?></td>
+					<td><?php echo $row['professor'];?></td>
 				</tr>
 		<?php
 			} 
-		} 
 		?>
 
 			</table>
-			<a href="#">home </a>
+			<a href="../../html/homeadm.php">home </a>
 		</div>
 	</body>
 </html>

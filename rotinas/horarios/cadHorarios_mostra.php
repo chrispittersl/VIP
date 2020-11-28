@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<title>Cadastro de Horários</title>
+		<title>Cadastro de Dados: Horários</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--CSS-->
@@ -24,28 +24,55 @@
 			<form name="f1">
 
 				<label for="cod_usuario">Código de usuário</label>
-				<input type="text" id="cod_usuario" name="cod_usuario" autocomplete="off" required onkeypress= "return blockletras(event)">
-
+				<!-- <input type="text" id="cod_usuario" name="cod_usuario" autocomplete="off" required onkeypress= "return blockletras(event)"> -->
+				<select id="cod_usuario" name="cod_usuario">
+					<?php
+						include_once "../../php/conexao.php";
+						$stmt = $pdo->prepare("SELECT * FROM usuario");
+						$stmt->execute();
+						while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+						?>
+							<option value="<?php echo $dados['cod_usuario'];?>"><?php echo $dados['cod_usuario'];?> - <?php echo $dados['usuario'];?></option>
+					<?php
+					}
+					?>
+				</select>
 				<label for="cod_turma">Código de turma</label>
-				<input type="text" id="cod_turma" name="cod_turma" autocomplete="off"  required onkeypress= "return blockletras(event)">
+				<!-- <input type="text" id="cod_turma" name="cod_turma" autocomplete="off"  required onkeypress= "return blockletras(event)"> -->
+				<select id="cod_turma" name="cod_turma">
+					<?php
+
+						$stmt = $pdo->prepare("SELECT cod_turma,serie,nome_curso FROM turma AS T INNER JOIN curso AS C ON T.cod_curso = C.cod_curso");
+						$stmt->execute();
+						while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+							?><option value="<?php echo $dados['cod_turma'];?>"><?php echo $dados['cod_turma'];?> - <?php echo $dados['serie']." ".$dados['nome_curso'];?> </option><?php
+						}
+					?>
+				</select>
 
 				<label for="horainicio">Horário de início</label>
-				<input type="text" id="horainicio" name="horainicio" required autocomplete="off" placeholder="Ex: 08:00:00">
+				<input type="time" id="horainicio" name="horainicio" required autocomplete="off" placeholder="Ex: 08:00:00">
 
 				<label for="horafim">Horário de fim</label>
-				<input type="text" id="horafim" name="horafim" required autocomplete="off" placeholder="Ex: 16:20:00">
+				<input type="time" id="horafim" name="horafim" required autocomplete="off" placeholder="Ex: 16:20:00">
 
-				<label for="diadasemana">Dia da Semana</label>
-				<input type="text" id="diadasemana" name="diadasemana" required autocomplete="off" placeholder="Ex: Segunda-Feira">
-
+				<label for="dia_da_semana">Dia da Semana</label>
+				<!-- <input type="text" id="diadasemana" name="diadasemana" required autocomplete="off" placeholder="Ex: Segunda-Feira"> -->
+				<select id="dia_da_semana" name="dia_da_semana">
+					<option value="Segunda-feira">Segunda</option>
+					<option value="Terça-feira">Terça</option>
+					<option value="Quarta-feira">Quarta</option>
+					<option value="Quinta-feira">Quinta</option>
+					<option value="Sexta-feira">Sexta</option>
+				</select>	
 				<label for="materia">Matéria</label>
-				<input type="text" id="materia" name="materia" required autocomplete="off" placeholder="Ex: Filosofia">
+				<input type="text" id="materia" name="materia" required placeholder="Ex: Filosofia">
 
 				<label for="professor">Professor</label>
-				<input type="text" id="professor" name="professor" required autocomplete="off" placeholder="Ex: Marlon">
+				<input type="text" id="professor" name="professor" required placeholder="Ex: Marlon">
 				
 				<button id="btn-cad-h"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
-				<a href="#">Voltar para a <span>home</span></a>
+				<a href="../../html/homeadm.php">Voltar para a <span>home</span></a>
 			</form>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
