@@ -7,7 +7,7 @@ $(document).ready(function(){
         var password = $('#password').val();
         
         $.ajax({
-            url: '../php/validarLogin.php',
+            url: 'php/validarLogin.php',
             method: 'POST',
             data: {user: user, password: password},
             dataType: 'json'
@@ -16,10 +16,10 @@ $(document).ready(function(){
             $('#password').val('');
             switch(result){
                 case 'administrador':
-                    window.location.href = "/html/homeadm.php";
+                    window.location.href = "html/homeadm.php";
                     break;
                 case 'válido':
-                    window.location.href = "/html/home.php";
+                    window.location.href = "html/home.php";
                     break;
                 case 'inválido':
                     $('#errorLogin').show();
