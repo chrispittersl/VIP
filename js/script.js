@@ -21,7 +21,7 @@ for (i = 0; i < dropdown.length; i++) {
 	});
 }
 $("#btn-href-home").on("click",function(){
-	window.location.href = "/html/home.php";
+	window.location.href = "/VIP/html/home.php";
 })
 
 $(document).ready(function(){
@@ -107,6 +107,7 @@ $("#resetar").on("click",function(e){
 	img.src = "../img/Mapeamento/Mapa.png";
 })
 $(document).on("click",".rota",function(){
+	console.log("vadia puta");
 	var local = $(this).attr("id");
 	var img = document.getElementById("mapa");
 
@@ -120,7 +121,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala1').scrollView();
+			$(document).scrollView();
 			
 			break;
 		case 'btn-sala2':
@@ -132,7 +133,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala2').scrollView();
+			$(document).scrollView();
 			break;
 		case 'btn-sala3':
 			img.src = "../img/Mapeamento/bloco_A/sala3.png";
@@ -143,7 +144,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala3').scrollView();
+			$(document).scrollView();
 			break;
 		case 'btn-sala4':
 			img.src = "../img/Mapeamento/bloco_A/sala4.png";
@@ -154,7 +155,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala4').scrollView();
+			$(document).scrollView();
 			break;
 		case 'btn-sala5':
 			img.src = "../img/Mapeamento/bloco_A/sala5.png";
@@ -176,7 +177,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala6').scrollView();
+			$(document).scrollView();
 			break;
 		case 'btn-sala7':
 			img.src = "../img/Mapeamento/bloco_A/sala7.png";
@@ -187,7 +188,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala7').scrollView();
+			$(document).scrollView();
 			break;
 		case 'btn-sala8':
 			img.src = "../img/Mapeamento/bloco_A/sala8.png";
@@ -209,7 +210,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala9').scrollView();
+			$(document).scrollView();
 			break;
 		case 'btn-sala10':
 			img.src = "../img/Mapeamento/bloco_B/sala10.png";
@@ -220,7 +221,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala10').scrollView();
+			$(document).scrollView();
 			break;
 		case 'btn-sala11':
 			img.src = "../img/Mapeamento/bloco_B/sala11.png";
@@ -231,7 +232,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala11').scrollView();
+			$(document).scrollView();
 			break;
 		case 'btn-sala12':
 			img.src = "../img/Mapeamento/bloco_B/sala12.png";
@@ -242,7 +243,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala12').scrollView();
+			$(document).scrollView();
 			break;
 		case 'btn-sala13':
 			img.src = "../img/Mapeamento/bloco_B/sala13.png";
@@ -253,7 +254,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala13').scrollView();
+			$(document).scrollView();
 			break;
 		case 'btn-sala14':
 			img.src = "../img/Mapeamento/bloco_B/sala14.png";
@@ -264,7 +265,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala14').scrollView();
+			$(document).scrollView();
 			break;
 		case 'btn-sala15':
 			img.src = "../img/Mapeamento/bloco_B/sala15.png";
@@ -275,7 +276,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala15').scrollView();
+			$(document).scrollView();
 			break;
 		case 'btn-sala16':
 			img.src = "../img/Mapeamento/bloco_B/sala16.png";
@@ -286,7 +287,7 @@ $(document).on("click",".rota",function(){
 					}, 1000);
 				});
 			}
-			$('#sala16').scrollView();
+			$(document).scrollView();
 			break;	
 		case 'btn-auditorio':
 			img.src = "../img/Mapeamento/Externos/Auditorio.png";
