@@ -73,7 +73,13 @@ th{
 {
   color: #000;
 }
-.cont-pesq a{
+
+.btn-home{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.btn-home a{
   align-self: center;
   width:20%;
   margin:20px 0px 50px 0px;
@@ -86,11 +92,37 @@ th{
   transition: 0.4s;
   text-align:center;
   font-size:1.2em;
-  padding:6px 0px 0px 0px;
+  padding: 6px 0px 0px 0px;
+  cursor: pointer;
 }
-
-.cont-pesq a:hover{
+.btn-nome button{
+  background: transparent !important;
+}
+.btn-home a:hover{
   border-color: #1c1c1c;
   color:#1c1c1c;
   background: transparent;
+}
+/* RESPONSIVO */
+@media only screen and (max-width:375px){
+  .cont-pesq{
+    width: 100%;
+    gap:30px;
+    height: 560px;
+    overflow-y: auto;
+  }
+  table{
+    width:100%; 
+    height: 100% ;
+    font-size:15px;
+    margin:0px;
+    overflow-y: auto;
+  }
+  th{
+    font-size:1.2em !important;
+  }
+  .btn-home a{
+     width:200px !important;
+     
+  }
 }

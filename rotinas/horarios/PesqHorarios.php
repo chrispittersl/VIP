@@ -14,8 +14,8 @@
 		<!--FONTE GOOGLE USADA-->
 		<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-	</head>
-	<body >
+		
+	<body>
 		<?php
 			include_once "../../php/conexao.php";
 			$cod_turma = $_POST["cod_turma"];
@@ -23,7 +23,7 @@
 			$stmt->execute();
 		?>
 		<div class="cont-pesq">
-			<table> 
+			<table>
 				<tr id="titulo"> 
 					<th id="espaco">Cód. Horário</th>
 					<th id="espaco">Cód. Usuário</th>
@@ -53,7 +53,11 @@
 		?>
 
 			</table>
-			<a href="../../html/homeadm.php">home </a>
+			
 		</div>
+		<div class="btn-home">
+			<a href="../../html/homeadm.php">HOME </a>
+		</div>
+		
 	</body>
 </html>

@@ -59,7 +59,10 @@
 			} //fecha o while
 		?>
 			</table>
-			<a href="../../html/homeadm.php">home </a>
+			
+		</div>
+		<div class="btn-home">
+			<a href="../../html/homeadm.php">HOME </a>
 		</div>
 	</body>
 </html>
