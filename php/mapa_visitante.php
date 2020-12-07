@@ -21,14 +21,13 @@
             <div class="btn">
                   <span class="fas fa-bars fa-2x"></span>
             </div>
-            <div class="btns">
-                <button id="resetar" class="btn-reset margin-zero">DESFAZER</button>
-                <a href="../html/home-visitante.php"><button  class="btn-reset">VOLTAR</button></a>
-            </div>
+           
 
             <nav class="legenda">
                 <div id="mySidebar" class="sidebar">
                     <ul class="items-legenda">
+                    <li><button id="resetar" class="others margin-top">DESFAZER <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></li>
+                        <li><a class="e" href="../html/home-visitante.php"><button class="others">VOLTAR <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></a></li>
                         <li >
                         <button class="dropdown-btn margin-top">BLOCO ADMIN <i class="fa fa-chevron-circle-down" aria-hidden="true"></i></button>
                         <ul class="dropdown-container">
