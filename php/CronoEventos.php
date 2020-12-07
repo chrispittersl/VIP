@@ -70,7 +70,10 @@
                     ?>
             <!-- </tbody> -->
         </table>
-        <?php
+      
+    </div>
+    <div class="btn-home">
+       <?php
           switch ($controle){
             case '0':
               ?> <a href="../html/home-visitante.php">VOLTAR</a>  <?php
@@ -83,7 +86,7 @@
               break;
           }
         ?>
-    </div>
+		  </div>
         <!--SCRIPT PARA NAVBAR COLLAPSE-->
       <script>
             $('.btn').click(function(){
