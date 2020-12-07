@@ -237,3 +237,68 @@ h1{
 ::-webkit-scrollbar-thumb:hover{
     background: rgb(68, 68, 68);
 }
+/* TRANSFORMANDO EM SITE RESPONSIVO */
+@media only screen and (max-width:375px){
+    /* ROTINAS PEQUENAS */
+    .cont-rotinas{
+        width:340px !important;
+        margin-top:33vh !important;
+        margin-left:10px;
+        
+    }
+    h1{
+        font-size:1.8em;
+    }
+    .cont-rotinas select{
+        width:90%;
+        font-size:1.2em !important;
+        padding: 0px 0px 4px 42px;
+        border:1.8px solid rgba(0, 0, 0, 0.7);;
+    }
+    .fa-list-ol{
+        margin-left: 15px;
+    }
+    .cont-rotinas button{
+        width:100px;
+    }
+    .cont-rotinas option{
+        padding:0px !important;
+        font-size:12px;
+        overflow-x: auto;
+    }
+    /* ROTINAS GRANDES */
+    .cont-rotinas-gd{
+        width:340px;
+    }
+    .cont-rotinas-gd input{
+        width:90%;
+        font-size:1.1em;
+    }
+    .cont-rotinas-gd label{
+        margin-left:6%;
+        font-size:1.2em;
+    }
+    .cont-rotinas-gd h1{
+        font-size:1.8em;
+    }
+    .cont-rotinas-gd textarea{
+        width:90%;
+        font-size:1.1em;
+    }
+    .cont-rotinas-gd button{
+        width:120px;
+    }
+    .cont-rotinas-gd select{
+        width:90%;
+        font-size: 1.1em;
+    }
+    .cont-rotinas-gd option{
+        padding:0px !important;
+        font-size:12px;
+        overflow-x: auto;
+        margin-right:20px;
+    }
+    #cod{
+        margin-left:7%;
+    }
+}
