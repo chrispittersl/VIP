@@ -141,3 +141,44 @@ img{
     font-size:15px;
     margin-bottom:20px;
 }
+.visitante-mobile{
+    display: none;
+}
+@media only screen and (max-width:375px){
+    
+    .first-column{
+        display: none;
+    }
+    .visitante-mobile{
+        display: block;
+        
+    }
+    .visitante-mobile a{
+        color:#e5474b;
+    }
+    .visitante-mobile span{
+        color:#1c1c1c;
+    }
+    .second-column{
+        margin-left: 10px;
+        width:340px !important;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        align-content:center ;
+    }
+    #form-login input[type="submit"]{
+        margin-top:60px;
+        width: 200px;
+    }
+    .fa-user-circle{
+        margin-left: 40px;
+        margin-top:-220px;
+    }
+    .fa-key{
+        margin-left: 40px;
+        margin-top:-95px;
+    }
+    .erro{
+        margin-left:210px;
+    }
+}

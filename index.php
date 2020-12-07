@@ -54,6 +54,10 @@
                         </div>
                     
                         <input type="submit" form="form-login"  value="Login" id="btn-submit">
+
+                        <div class="visitante-mobile">
+                            <a class="visit" href="html/home-visitante.php"><span>Acesse como</span> Visitante</a>
+                        </div>
                     </form>
                 </div>
             </div>
