@@ -16,18 +16,11 @@
 	</head>
 	<body>
 		<?php
-			include 'config.php';
-			include 'mysqlexecuta.php';
-			$con = conectar();
-			mysql_select_db('vip');
-			$nome = $_POST["nome"];
-			$sql = "SELECT * FROM TCC where nome like '$nome%' order by nome";
-			$res = mysqlexecuta($con,$sql);
-			$quant = (mysql_num_rows($res));
-			if ($quant==0){echo "TCC requerido está sem cadastro(a)";
-			}
-				else
-				{	
+			include_once "../../php/conexao.php";
+			$cod_tcc = $_POST["cod_tcc"];
+			$stmt = $pdo->prepare("SELECT * FROM tcc where cod_tcc=$cod_tcc");
+			$stmt->execute();
+
 		?>
 		<div class="cont-pesq">
 			<table>
@@ -42,26 +35,26 @@
 					<th>Código de usuário</th>
 				</tr>
 			<?php
-				while ($row = mysql_fetch_array($res)) 
+				while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
 				{
 			?>	
 				<tr>
 					<td id="corpreta"><?php echo $row['cod_tcc'];?></td>	
-					<td id="corpreta"><?php echo $row['horario_tcc'];?></td>	
-					<td id="corpreta"><?php echo $row['data_tcc'];?></td>	
-					<td id="corpreta"><?php echo utf8_encode($row['descricao']);?></td>
-					<td id="corpreta"><?php echo utf8_encode($row['nome']);?></td>	
-					<td id="corpreta"><?php echo $row['data_agendamento'];?></td>	
+					<td id="corpreta"><?php echo date('H:i',strtotime($row['horario_tcc']));?></td>	
+					<td id="corpreta"><?php echo date('d/m/Y',strtotime($row['data_tcc']));?></td>	
+					<td id="corpreta"><?php echo $row['descricao'];?></td>
+					<td id="corpreta"><?php echo $row['nome'];?></td>	
+					<td id="corpreta"><?php echo date('d/m/Y',strtotime($row['data_agendamento']));?></td>	
 					<td id="corpreta"><?php echo $row['num_sala'];?></td>	
 					<td id="corpreta"><?php echo $row['cod_usuario'];?></td>
 				</tr>
 
 		<?php
 				}
-			}
+			
 		?>
 			</table>
-			<a href="#">home </a>
+			<a href="../../html/homeadm.php">home </a>
 		</div>
 	</body>
 </html>

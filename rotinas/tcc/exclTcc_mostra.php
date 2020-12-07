@@ -25,20 +25,20 @@
 		<div class="cont-rotinas">
 			<h1>Exclusão</h1>
 			<form name="f1">
-				<input type="text" id="cod_tcc" list="cod" name="cod_tcc" autocomplete="off" placeholder="código de TCC" required onkeypress="return blockletras(event)">	
-				<datalist id="cod">
-					<!-- ADICIONAR DIRETO DO BD  -->
+				<!-- <input type="text" id="cod_tcc" list="cod" name="cod_tcc" autocomplete="off" placeholder="código de TCC" required onkeypress="return blockletras(event)">	 -->
+				<select name="cod_tcc" id="cod_tcc">
 					<?php
 					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
 					?>
-						<option value="<?php echo $dados['cod_tcc'];?>"><?php echo $dados['nome'];?></option>
+						<option value="<?php echo $dados['cod_tcc'];?>"><?php echo $dados['cod_tcc'];?> - <?php echo $dados['nome'];?></option>
 					<?php
 					}
 					?>
-				</datalist>
+				</select>
+
 				<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
 				<button id="btn-exc-t"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
-				<a href="#">Voltar para a <span>home</span></a>
+				<a href="../../html/homeadm.php">Voltar para a <span>home</span></a>
 			</form>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

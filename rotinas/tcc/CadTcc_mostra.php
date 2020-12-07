@@ -16,15 +16,18 @@
 		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 	</head>
 	<body>
+		<?php
+			include_once "../../php/conexao.php";
+		?>
 		<div class="cont-rotinas-gd">
 			<h1>Cadastrar</h1>
 			<form name="f1">
 
 				<label for="horario_tcc">Horário tcc</label>
-				<input type="text" id="horario_tcc" name="horario_tcc" placeholder="Ex: 08:00:00" required>	
+				<input type="time" id="horario_tcc" name="horario_tcc" placeholder="Ex: 08:00:00" required>	
 				
 				<label for="data_tcc">Data tcc</label>
-				<input type="text" id="data_tcc" name="data_tcc" placeholder="Ex: 2001-01-01" required>	
+				<input type="date" id="data_tcc" name="data_tcc" placeholder="Ex: 2001-01-01" required>	
 				
 				<label for="descricao">Descricao</label>
 				<textarea id="descricao" name="descricao" placeholder="Ex: Apresentação de tcc do grupo..." required></textarea>
@@ -33,16 +36,32 @@
 				<input type="text" id="nome" name="nome" placeholder="Ex: VIP - Virtual Increased Plan" required>	
 				
 				<label for="data_agendamento">Data de agendamento</label>
-				<input type="text" id="data_agendamento" name="data_agendamento" placeholder="Ex: 2001-01-01" required>	
+				<input type="date" id="data_agendamento" name="data_agendamento" placeholder="Ex: 2001-01-01" required>	
 				
 				<label for="num_sala">Número de sala</label>
-				<input type="text" id="num_sala" name="num_sala" required onkeypress= "return blockletras(event)">
-				
+				<!-- <input type="text" id="num_sala" name="num_sala" required onkeypress= "return blockletras(event)"> -->
+				<select name="num_sala" id="num_sala">
+					<?php 
+						$stmt = $pdo->prepare("SELECT * FROM sala");
+						$stmt->execute();
+						while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+							?><option value="<?php echo $dados['num_sala'];?>"><?php echo $dados['num_sala'];?> - <?php echo $dados['nome_sala'];?></option><?php
+						}
+					?>
+				</select>
 				<label for="cod_usuario">Código de usuario</label>
-				<input type="text" id="cod_usuario" name="cod_usuario" required onkeypress= "return blockletras(event)">
-				
-				<button id="btn-cad-t"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button>
-				<a href="#">Voltar para a <span>home</span></a>
+				<!-- <input type="text" id="cod_usuario" name="cod_usuario" required onkeypress= "return blockletras(event)"> -->
+				<select name="cod_usuario" id="cod_usuario">
+						<?php 
+							$stmt = $pdo->prepare("SELECT * FROM usuario");
+							$stmt->execute();
+							while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+								?><option value="<?php echo $dados['cod_usuario'];?>"><?php echo $dados['cod_usuario'];?> - <?php echo $dados['usuario'];?></option><?php
+							}
+						?>
+					</select>
+				<button id="btn-cad-t"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
+				<a href="../../html/homeadm.php">Voltar para a <span>home</span></a>
 			</form>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

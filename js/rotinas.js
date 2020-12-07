@@ -343,7 +343,7 @@
         }).done(function(result){
             if(result == "0"){
                 alert("Registro alterado com sucesso!");
-                window.location.href = "AltTcc.html";
+                window.location.href = "AltTcc.php";
             }
             else{
                 alert("Falha ao alterar o registro, favor contactar o administrador.");
@@ -374,7 +374,7 @@
         }).done(function(result){
             if(result == "0"){
                 alert("Registro cadastrado com sucesso!");
-                window.location.href = "CadTcc.html";
+                window.location.href = "CadTcc_mostra.php";
             }
             else{
                 alert("Falha ao cadastrar o registro, favor contactar o administrador.");

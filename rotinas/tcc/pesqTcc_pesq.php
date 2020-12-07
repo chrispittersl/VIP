@@ -17,16 +17,27 @@
 	</head>
 
 	<body>
+		<?php
+			include_once "../../php/conexao.php";
+			$stmt = $pdo->prepare("SELECT * FROM tcc order by cod_tcc asc");
+			$stmt->execute();
+		?>	
 		<div class="cont-rotinas">
 			<h1>Pesquisa</h1>
 			<form action="pesqTcc.php" method="POST" name="f1">
-				<input type="text" list="cod" name="nome" placeholder="Código de TCC" autocomplete="off" placeholder="Nome do TCC" required > 
-				<datalist id="cod">
-					<!-- ADICIONAR DIRETO DO BD -->
-				</datalist>
+				<!-- <input type="text" list="cod" name="nome" placeholder="Código de TCC" autocomplete="off" placeholder="Nome do TCC" required >  -->
+				<select name="cod_tcc" id="cod_tcc">
+					<?php
+					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+					?>
+						<option value="<?php echo $dados['cod_tcc'];?>"><?php echo $dados['cod_tcc'];?> - <?php echo $dados['nome'];?></option>
+					<?php
+					}
+					?>
+				</select>
 				<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
 				<button id="btn-pesq-t"><i class="fa fa-search fa-lg" aria-hidden="true"></i> </button>
-				<a href="#">Voltar para a <span>home</span></a>
+				<a href="../../html/homeadm.php">Voltar para a <span>home</span></a>
 			</form>
 		</div>	
 	</body>

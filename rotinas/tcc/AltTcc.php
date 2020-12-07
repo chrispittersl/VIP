@@ -20,14 +20,21 @@
 			<h1>Alteração</h1>
 			<form action="AltTcc_mostra.php" method="POST" name="form_TccAlt1">
 
-				<input type="text" placeholder="Código de TCC" id="cod_tcc" name="cod_tcc" list="cod" autocomplete="off" maxlength="35" onkeypress= "return blockletras(event)" required>
-				<datalist id="cod">
-					<!-- ADICIONAR DIRETO DO BD -->
-				</datalist>
+				<!-- <input type="text" placeholder="Código de TCC" id="cod_tcc" name="cod_tcc" list="cod" autocomplete="off" maxlength="35" onkeypress= "return blockletras(event)" required> -->
+				<select id="cod_tcc" name="cod_tcc">
+					<?php
+					include_once "../../php/conexao.php";
+					$stmt = $pdo->prepare("SELECT cod_tcc,nome FROM tcc");
+					$stmt->execute();
+					while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+						?><option value="<?php echo $dados['cod_tcc'];?>"><?php echo $dados['cod_tcc'];?> - <?php echo $dados['nome']; ?></option><?php
+					}
+					?>
+
+				</select>
 				<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
 				<button id="btn-alt1-t"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
-				<a href="#">Voltar para a <span>home</span></a>
-
+				<a href="../../html/homeadm.php">Voltar para a <span>home</span></a>
 			</form>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

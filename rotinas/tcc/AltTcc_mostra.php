@@ -19,7 +19,7 @@
 		<?php
 			include_once "../../php/conexao.php";
 			$cod_tcc = $_POST["cod_tcc"];
-			$stmt = $pdo->prepare("SELECT * from tcc where cod_tcc = $cod_tcc");
+			$stmt = $pdo->prepare("SELECT cod_tcc,horario_tcc,data_tcc,descricao,nome,data_agendamento,S.num_sala,U.cod_usuario from tcc AS T INNER JOIN sala AS S ON T.num_sala=S.num_sala INNER JOIN usuario AS U ON T.cod_usuario=U.cod_usuario where cod_tcc = $cod_tcc");
 			$stmt->execute();
 			$num_rows = $stmt->rowCount();
 			$row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -33,28 +33,57 @@
 					<input type="hidden" id="cod_tcc" name="cod_tcc" value=<?php echo $row['cod_tcc'];?>>
 					
 					<label for="horario_tcc">Horário que irá ocorrer</label>
-					<input type='text' id="horario_tcc" name='horario_tcc' value='<?php echo $row['horario_tcc'];?>' required>
+					<input type='time' id="horario_tcc" name='horario_tcc' value='<?php echo $row['horario_tcc'];?>' required>
 					
 					<label for="data_tcc">Data que irá ocorrer</label>
-					<input type='text' id="data_tcc" name='data_tcc' value='<?php echo $row['data_tcc'];?>' required>
+					<input type='date' id="data_tcc" name='data_tcc' value='<?php echo $row['data_tcc'];?>' required>
 					
 					<label for="descricao">Descrição</label> 
-					<textarea id="descricao" name="descricao" required><?php echo utf8_encode($row['descricao']);?></textarea>
+					<textarea id="descricao" name="descricao" required><?php echo $row['descricao'];?></textarea>
 					
 					<label for="nome">Nome</label> 
-					<input type='text' id="nome" name='nome' value='<?php echo utf8_encode($row['nome']);?>' required>
+					<input type='text' id="nome" name='nome' value='<?php echo $row['nome'];?>' required>
 					
 					<label for="data_agendamento">Data de agendamento</label>
-					<input type='text' id="data_agendamento" name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
+					<input type='date' id="data_agendamento" name='data_agendamento' value='<?php echo $row['data_agendamento'];?>' required>
 					
 					<label for="num_sala">Numero sala</label>
-					<input type='text' id="num_sala" name='num_sala' onkeypress= "return blockletras(event)" value='<?php echo $row['num_sala'];?>' required>
-					
+					<!-- <input type='text' id="num_sala" name='num_sala' onkeypress= "return blockletras(event)" value='<?php // echo $row['num_sala'];?>' required> -->
+					<select name="num_sala" id="num_sala">
+						<?php 
+							$stmt = $pdo->prepare("SELECT * FROM sala");
+							$stmt->execute();
+							while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+								if($dados['num_sala'] == $row['num_sala']){
+									?><option value="<?php echo $dados['num_sala'];?>" selected><?php echo $dados['num_sala'];?> - <?php echo $dados['nome_sala'];?></option><?php
+								}
+								else{
+									?><option value="<?php echo $dados['num_sala'];?>"><?php echo $dados['num_sala'];?> - <?php echo $dados['nome_sala'];?></option><?php
+								}
+							}
+						?>
+					</select>
+
 					<label for="cod_usuario">Código de usuário</label>
-					<input type='text' id="cod_usuario" name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php echo $row['cod_usuario'];?>' required>
-					
+					<!-- <input type='text' id="cod_usuario" name='cod_usuario' onkeypress= "return blockletras(event)" value='<?php // echo $row['cod_usuario'];?>' required> -->
+					<select name="cod_usuario" id="cod_usuario">
+						<?php 
+							$stmt = $pdo->prepare("SELECT * FROM usuario");
+							$stmt->execute();
+							while($dados = $stmt->fetch(PDO::FETCH_ASSOC)){
+								if($dados['cod_usuario'] == $row['cod_usuario']){
+									?><option value="<?php echo $dados['cod_usuario'];?>" selected><?php echo $dados['cod_usuario'];?> - <?php echo $dados['usuario'];?></option><?php
+								}
+								else{
+									?><option value="<?php echo $dados['cod_usuario'];?>"><?php echo $dados['cod_usuario'];?> - <?php echo $dados['usuario'];?></option><?php
+								}
+								
+							}
+						?>
+					</select>
+
 					<button id="btn-alt2-t"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button>
-					<a href="#">Voltar para a <span>home</span></a>		
+					<a href="../../html/homeadm.php">Voltar para a <span>home</span></a>		
 				</form>
 			</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
