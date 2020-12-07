@@ -28,7 +28,7 @@
 			$stmt->execute();
 			$num_rows = $stmt->rowCount();
 		?>
-		<div class="cont-pesq">
+		<div class="cont-pesq2">
 			<table> 
 				<tr id="titulo"> 
 					<th>Nome</th>

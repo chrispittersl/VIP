@@ -22,13 +22,13 @@
 			$stmt->execute();
 
 		?>
-		<div class="cont-pesq">
+		<div class="cont-pesq2">
 			<table>
 				<tr>
 					<th>Código TCC</th>	
 					<th>Horario TCC</th>	
 					<th>Data TCC</th>	
-					<th>Descrição</th>	
+					<th id="espaco">Descrição</th>	
 					<th>Nome</th>	
 					<th>Data de agendamento</th>	
 					<th>Número Sala</th>	
@@ -54,7 +54,10 @@
 			
 		?>
 			</table>
-			<a href="../../html/homeadm.php">home </a>
+			
+		</div>
+		<div class="btn-home">
+			<a href="../../html/homeadm.php">HOME </a>
 		</div>
 	</body>
 </html>

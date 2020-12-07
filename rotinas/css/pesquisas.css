@@ -33,6 +33,13 @@
   align-content: center;
   justify-content: center;
 }
+.cont-pesq2{
+  background-color: #d4d2d2;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
 table, th, td{
    border-collapse: collapse;
 }
@@ -67,7 +74,7 @@ th{
    padding:10px;
 }
 #espaco{
-  width:100px;
+  width:500px;
 }
 #corpreta
 {
@@ -125,4 +132,11 @@ th{
      width:200px !important;
      
   }
+  .cont-pesq2{
+    width: 100%;
+    gap:30px;
+    height: 300px;
+    overflow-y: auto;
+  }
+  /* pesquisas tcc e reunioes */
 }
